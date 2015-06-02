@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 8 May 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>ISP update</Title>
+      <Description>
+    &lt;p&gt;
+        Brian (no blog?) suggested &lt;a href=" http://www.alentus.com/hosting/aspnethosting.asp "&gt;Alentus.com&lt;/a&gt; (where
+        do people come up with these names?).&amp;#160; This looks like the best deal I've seen
+        so far: $25/mo for 400MB.&amp;#160; I'm off to Seattle for a couple of days now so I'll
+        have to check this out when I get back.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I've gotten another nibble but I haven't heard back yet, so I'm still looking.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>93</BlogEntryNumber>
+      <PubDate>Thu, 08 May 2003 13:05:37 GMT</PubDate>
+      <LocalPubDate>Thu, 08 May 2003 07:05:37</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

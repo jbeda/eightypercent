@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 18 Oct 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>My PDC schedule</Title>
+      <Description>
+    &lt;p&gt;
+        I made the cut and I'm going to be going to the PDC.&amp;#160; Here is the where and when
+        of where I'm going to be for sure: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            I will be proctoring some of the client "Hands On Labs."&amp;#160; I'll be working Monday,
+            Tuesday and Wednesday mornings. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            I'm going to be an Expert at the "Ask the Experts" event on Tuesday night.&amp;#160; I
+            don't remember the exact name of the table/room we'll be in, but look for the closest
+            thing to Avalon client graphics. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            I'll be cheering Greg Schechter on as he presents an in depth intro to Avalon graphics
+            at the CLI341 breakout on Tuesday afternoon (3:45-5:00). 
+        &lt;/li&gt;
+        &lt;li&gt;
+            I'm not scheduled to officially man the Avalon booth, but I'll probably be hanging
+            out there some of the time. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Anything else you guys think I should hit?&amp;#160; Some of the "Birds of a Feather"
+        sessions look like fun.&amp;#160; The one titled: "Strategic Decisions and Rich Client
+        War Stories: Designing today for "Whidbey" and "Longhorn"" looks good along with the
+        "VS.NET Secret Tips &amp;amp; Tricks" session.&amp;#160; "What is Windows in an HD World?"
+        looks like fun too! 
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you want to get ahold of me during the PDC, post a comment to something up here
+        or send email to "pdc at bedafamily.com" and we'll figure out a way to meet. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>143</BlogEntryNumber>
+      <PubDate>Sat, 18 Oct 2003 15:23:08 GMT</PubDate>
+      <LocalPubDate>Sat, 18 Oct 2003 08:23:08</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Anita is sick</Title>
+      <Description>
+    Best wishes go out to &lt;a href="http://www.anitarowland.com/gmarchives/00001429.html"&gt;Anita
+    Rowland&lt;/a&gt;&amp;#160;as she recovers from surgery.&amp;#160; I worked with Anita back in the
+    day on IE4/5.&amp;#160; I hope she has a fast and full recovery.</Description>
+      <BlogEntryNumber>142</BlogEntryNumber>
+      <PubDate>Sat, 18 Oct 2003 15:18:42 GMT</PubDate>
+      <LocalPubDate>Sat, 18 Oct 2003 08:18:42</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

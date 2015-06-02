@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 11 Dec 2005">
+  <Entries>
+    <BlogEntry>
+      <BlogEntryNumber>258</BlogEntryNumber>
+      <PubDate>Sun, 11 Dec 2005 22:43:38 GMT</PubDate>
+      <LocalPubDate>Sun, 11 Dec 2005 14:43:38</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Google Talk Blog</Title>
+      <Description>
+    &lt;p&gt;
+        Long time no blog.&amp;#160; We've been super busy with the holidays and little Annie.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In case you missed it you should check out the &lt;a href="http://googletalk.blogspot.com/"&gt;official
+        Google Talk blog&lt;/a&gt;.&amp;#160; Thanks to Ana and Mike for putting this together.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Any team member (or Googler that has an interest in Talk) is welcome to post but I'm
+        not sure what everyone might be interested.&amp;#160; If you have an idea leave a comment
+        here and I'll see what I can do.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>257</BlogEntryNumber>
+      <PubDate>Sun, 11 Dec 2005 22:34:39 GMT</PubDate>
+      <LocalPubDate>Sun, 11 Dec 2005 14:34:39</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

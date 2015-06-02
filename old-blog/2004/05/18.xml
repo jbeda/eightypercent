@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 18 May 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>WinHEC slides</Title>
+      <Description>
+    &lt;p&gt;
+        The &lt;a href="http://www.microsoft.com/whdc/winhec/pres04-tech.mspx"&gt;slides&lt;/a&gt; from&amp;#160;the
+        WinHEC sessions are posted up at ms.com.&amp;#160; We had 4 sessions that were Avalon
+        specific: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Greg Schecter: &lt;a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04036_WINHEC2004.ppt"&gt;Avalon
+            Graphics Stack Overview [682 KB]&lt;/a&gt; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Joe Beda (me): &lt;a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04006_WINHEC2004.ppt"&gt;Avalon
+            Graphics - 2D, 3D, Imaging and Composition [284 KB]&lt;/a&gt; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Kerry Hammil: &lt;a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04013_WINHEC2004.ppt"&gt;Graphics
+            on the Windows Desktop [496 KB]&lt;/a&gt; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            David Brown: &lt;a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04007_WINHEC2004.ppt"&gt;Avalon
+            Text [1.05 MB]&lt;/a&gt; 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Since most people who read this weren't there and couldn't ask questions, don't be
+        afraid to ask questions here.&amp;#160; I'll either answer them here or try to get an
+        answer for you.
+    &lt;/p&gt;
+    &lt;p&gt;
+        While reading these slides, keep in mind that we were targeting hardware people.&amp;#160;
+        This was really about letting IHVs know what they can do to prepare for what is coming
+        in Longhorn and Avalon.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>185</BlogEntryNumber>
+      <PubDate>Tue, 18 May 2004 20:34:42 GMT</PubDate>
+      <LocalPubDate>Tue, 18 May 2004 13:34:42</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 8 Mar 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>More on C# and Photoshop</Title>
+      <Description>
+    &lt;p&gt;
+        A &lt;a href="http://www.eightypercent.net/Archive/2004/06/25.html"&gt;while ago&lt;/a&gt; I needed
+        to do some stuff in Photoshop that wasn't easy to do from the interface.&amp;#160; I decided
+        to automate it from C#.
+    &lt;/p&gt;
+    &lt;p&gt;
+        John Deurbrouck just sent me a link to a page where he has decoded some more of the
+        wacky photoshop ScriptListener output.&amp;#160; He even has a routine to drive PS to
+        convert a RAW image.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Check it out &lt;a href="http://www.pcpix.com/Photoshop/"&gt;here&lt;/a&gt;&amp;#160;and contact John
+        if you are interested in moving&amp;#160;the knowledge in this area forward.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Very cool, John!
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>234</BlogEntryNumber>
+      <PubDate>Tue, 08 Mar 2005 16:44:43 GMT</PubDate>
+      <LocalPubDate>Tue, 08 Mar 2005 08:44:43</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

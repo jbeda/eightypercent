@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 24 Feb 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Skewed view</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://weblogs.asp.net/cumpsd/archive/2004/02/22/78076.aspx"&gt;David Cumps&lt;/a&gt; is
+        playing around with XAML and skewing UI controls.&amp;#160; He found a bug which causes
+        some rendering artifacts when doing a skew of a listbox.&amp;#160; I tried some of his
+        XAML out on the latest and greatest bits and didn't find the bug.&amp;#160; So, this is
+        either a video driver issue, or it is something that we've fixed since the PDC.&amp;#160;
+        Here is a (badly encoded -- thanks mspaint.exe) gif of a skewed list box: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="A skewed list box" hspace="0" src="http://www.eightypercent.net/Images/skewbug.gif" align="baseline" border="0" /&gt; 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>167</BlogEntryNumber>
+      <PubDate>Tue, 24 Feb 2004 18:30:58 GMT</PubDate>
+      <LocalPubDate>Tue, 24 Feb 2004 10:30:58</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

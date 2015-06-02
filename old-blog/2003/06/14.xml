@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 14 Jun 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Wireless speed</Title>
+      <Description>
+    &lt;p&gt;
+        I just don't get the excitement around 802.11a and 802.11g standards.&amp;#160; Sure --
+        5 times as fast would be nice, but in reality, I'm not using my wireless connection
+        for anything that requires faster speeds.&amp;#160; God knows my broadband connection
+        can't keep up with 11Mbps.&amp;#160; And if I do (like copying GBs of photos around) I
+        just plug in to an ethernet cable. I know, eventually we'll get video on demand and
+        all sorts of other high end services over these wireless links.
+    &lt;/p&gt;
+    &lt;p&gt;
+        802.11b strikes a great balance of speed and range.&amp;#160; The build-out is happening.&amp;#160;
+        Why is the press trying to make such a big deal of it?&amp;#160; Or is it not the press
+        and there are people who are&amp;#160;really excited about this stuff?
+    &lt;/p&gt;
+    &lt;p&gt;
+        (10Gb ethernet might be more interesting as this means the network is approaching
+        bus speeds.)
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>109</BlogEntryNumber>
+      <PubDate>Sat, 14 Jun 2003 15:01:24 GMT</PubDate>
+      <LocalPubDate>Sat, 14 Jun 2003 09:01:24</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Watch out for the horns!</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.snapple.com/bull/movies/ad_H.wmv"&gt;&lt;img alt="Guinea Pick licking Snapple Bottle" src="http://www.eightypercent.net/Images/GPBulls.jpg" /&gt; &lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        You have to own a guinea pig to appreciate &lt;a href="http://www.snapple.com/bull/"&gt;this&lt;/a&gt;.&amp;#160;
+        Make sure you actually wait and watch the ad.&amp;#160; &lt;a href="http://www.snapple.com/bull/movies/ad_H.wmv"&gt;Here&lt;/a&gt; is
+        a direct link to the ad video file in wmv format (other formats are available on the
+        site).
+    &lt;/p&gt;
+    &lt;p&gt;
+        I was busting a gut on this.&amp;#160; They even say "Moo" at the end.
+    &lt;/p&gt;
+    &lt;p&gt;
+        (Getting that snapshot of the video was a total PITA.&amp;#160; Because of video overlays,
+        PrintScreen didn't work.&amp;#160; I had to turn off all of the video acceleration features
+        via the display control panel so that the video went through the normal display pipeline.&amp;#160;
+        Overlays suck -- and they don't work with a desktop compositor.&amp;#160; &lt;em&gt;Hint, hint&lt;/em&gt;.)
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>108</BlogEntryNumber>
+      <PubDate>Sat, 14 Jun 2003 14:38:14 GMT</PubDate>
+      <LocalPubDate>Sat, 14 Jun 2003 08:38:14</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

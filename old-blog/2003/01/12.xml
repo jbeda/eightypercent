@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 12 Jan 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Quiet night with friends</Title>
+      <Description>&lt;P&gt;I didn't get off my ass and create my own system yet so I'm still using Radio. As long as I keep things simple I only have to shut it down once per entry.&amp;nbsp; I did do a little bit of work on my RSS Aggregator.&amp;nbsp; It is starting to look like a real program.&amp;nbsp; Sometime over the next week &lt;A href="http://www.25hoursaday.com/"&gt;Dare&lt;/A&gt; and I are going to get together and merge codebases.&lt;/P&gt;
+&lt;P&gt;&lt;A href="http://www.gerhardschneider.net/"&gt;Gerhard&lt;/A&gt; and Angela came over tonight and we made dinner.&amp;nbsp; We did a recipe out of the &lt;A href="http://www.altonbrown.com"&gt;Alton Brown&lt;/A&gt;&amp;nbsp;&lt;A href="http://www.altonbrown.com/pages/bookit.html"&gt;cookbook&lt;/A&gt;.&amp;nbsp; I really like this book and Alton's show, &lt;EM&gt;Good Eats&lt;/EM&gt;.&amp;nbsp; We did the "Chicken Piccata" on page 170 and it turned out pretty good.&amp;nbsp; For desert we made a something from one of his shows: &lt;A href="http://www.foodtv.com/foodtv/print/recipe/0,6255,18457,00.html"&gt;Spicy Pineapple Sauce&lt;/A&gt;.&amp;nbsp; That turned out well also.&lt;/P&gt;
+&lt;P&gt;The spicy pineapple sauce calls for&amp;nbsp;a finely minced habanero pepper.&amp;nbsp; I did the mincing and about an hour latter I rubbed my eye.&amp;nbsp; The searing pain could only be stopped with prolonged dunking of my head under the sink.&amp;nbsp; Where is one of those eye wash things from chemistry class when you need them?&amp;nbsp; I've learned my lesson -- always wear gloves when dealing with hot peppers.&lt;/P&gt;</Description>
+      <BlogEntryNumber>4</BlogEntryNumber>
+      <PubDate>Mon, 13 Jan 2003 06:39:04 GMT</PubDate>
+      <LocalPubDate>Sun, 12 Jan 2003 22:39:04</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Radio sucks...</Title>
+      <Description>&lt;P&gt;Radio just doesn't work.&amp;nbsp; There are some serious bugs that aren't being addressed.&amp;nbsp; I'd update here a lot more often if I didn't have to restart radio 3 times to get stuff to update.&lt;/P&gt;
+&lt;P&gt;I'm going to roll my own solution for this.&amp;nbsp; Stay tuned.&lt;/P&gt;</Description>
+      <BlogEntryNumber>3</BlogEntryNumber>
+      <PubDate>Sun, 12 Jan 2003 23:01:02 GMT</PubDate>
+      <LocalPubDate>Sun, 12 Jan 2003 15:01:02</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

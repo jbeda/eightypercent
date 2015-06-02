@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 29 May 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Whole site syndication</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.neelbubba.com/"&gt;Bubba&lt;/a&gt; has some &lt;a href="http://www.neelbubba.com/Thesis/Archive/2003_05_01_index.php#95045729"&gt;interesting
+        ideas&lt;/a&gt; around subscribing to an entire site instead of just "news."&amp;#160; He is
+        doing his Master's thesis on blogging so he has been spending a lot of time thinking
+        about htis stuff. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        RSS is a part of the puzzle but only captures a part of what is on a site.&amp;#160; What
+        would you need to move in to the post browser era? 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            A "site.xml" file to describe the type of content available at the site. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            This could point to a set of blogs available on that site.&amp;#160; Bubba (and a lot
+            of others) expose more than one blog, or view of their blog.&amp;#160; Perhaps this is
+            just a pointer to an RSS file. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Included in each RSS file a pointer to the archive for that is important too.&amp;#160;
+            Winer has some stuff on that a while ago that could easily be integrated here. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            A reference from the "site.xml" file to other resources available on that site.&amp;#160;
+            This could include a list of "stories" and photo galleries.&amp;#160; Perhaps specific
+            pages like a disclaimer/license page, a contacts page, etc. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            We could use XHTML for all unstructured content that isn't covered otherwise. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        This is an incremental&amp;#160;start on the semantic web.&amp;#160; If we start with XHTML
+        and start pulling stuff out on a piece by piece basis we can start to reduce the amount
+        of unstructured content. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Any other ideas?&amp;#160; Send me mail or post them to &lt;em&gt;your&lt;/em&gt; blog.&amp;#160; 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>104</BlogEntryNumber>
+      <PubDate>Thu, 29 May 2003 22:41:45 GMT</PubDate>
+      <LocalPubDate>Thu, 29 May 2003 16:41:45</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

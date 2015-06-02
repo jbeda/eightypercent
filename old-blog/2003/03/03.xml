@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 3 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>More FTP stuff</Title>
+      <Description>&lt;p&gt;&lt;a href="http://www.simplegeek.com/permalink.aspx/55cdfe57-82bf-47aa-9beb-5dc06d966724"&gt;Bitch&lt;/a&gt;, &lt;a href="http://www.simplegeek.com/permalink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268"&gt;bitch&lt;/a&gt;, bitch.  Okay, Chris, what &lt;i&gt;do&lt;/i&gt; you want in the FTP upstreamer?  I don't think that Radio's upstreamer deletes either.  Here is what I can do easily:
+&lt;ul&gt;
+&lt;li&gt;CD to a directory.  Throw if the dir isn't there.
+&lt;li&gt;[done] Ensure a directory.  Try my best to make sure that a directory (and the path up to it) exists.
+&lt;li&gt;Delete a directory.  The server will probably return an error if there are files in it.  I will throw.
+&lt;li&gt;Get the current directory.
+&lt;li&gt;Move up a direcotry.
+&lt;li&gt;[done] Upload a file into the current directory.
+&lt;li&gt;Download a file in the current directory and return a stream.  It would be easiest to buffer the entire file in memory.
+&lt;li&gt;Delete a file in the current directory.
+&lt;li&gt;[done] Return a text string with the current directory listing.
+&lt;li&gt;Call SYST and return whatever the system gives us.  This might help detect the type of system on the other end.
+&lt;/ul&gt;
+&lt;p&gt;The only thing that isn't easy and that will probably take quite a while to get right is parsing the output of the directory listing.  I don't have a bunch of servers to test this against to make sure it will work.
+&lt;p&gt;As for the upstreamer itself, I'd rather have it not try and sync the stuff on the server (and hence delete stuff) because I'd be afraid of loosing data.  For instance, I upstream into the root of my site and I have all sorts of subdirs off of that.  I'm setting up a weblog for Rachel on eightypercent.net and her root will be a subdir.  I don't want to clobber her stuff whenever I upload my site.</Description>
+      <BlogEntryNumber>56</BlogEntryNumber>
+      <PubDate>Mon, 03 Mar 2003 18:04:00 GMT</PubDate>
+      <LocalPubDate>Mon, 03 Mar 2003 11:04:00</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

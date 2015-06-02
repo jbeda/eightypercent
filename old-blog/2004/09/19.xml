@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 19 Sep 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>NY Post article</Title>
+      <Description>
+    &lt;p&gt;
+        Check it the article about Google hiring at the &lt;a href="http://www.nypost.com/business/30438.htm"&gt;NY
+        Post&lt;/a&gt;.&amp;#160; The mention me and this blog but of course don't link to me.&amp;#160;
+        This media stuff is pretty crazy.&amp;#160; I don't think that someone like me moving
+        around is really that newsworthy.&amp;#160; I'm definitely not as high profile as &lt;a href="http://www.adambosworth.net/"&gt;Adam&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One correction:&amp;#160; I wasn't &lt;em&gt;the&lt;/em&gt; lead developer on Avalon, but rather one
+        of many lead developers.&amp;#160; The group is pretty big and my leaving, while I'm sure
+        they will miss having me around, won't put the project in jeopardy or anything.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>214</BlogEntryNumber>
+      <PubDate>Sun, 19 Sep 2004 20:53:06 GMT</PubDate>
+      <LocalPubDate>Sun, 19 Sep 2004 13:53:06</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 18 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>FTP support</Title>
+      <Description>&lt;P&gt;I'm busy getting my FTP support up and working.  Learning all of this new stuff is fun.  I'm working directly off of &lt;a href="http://www.faqs.org/rfcs/rfc959.html"&gt;RFC 959&lt;/a&gt; and looking at the debug log stuff in SmartFTP.
+&lt;P&gt;So far I can connect, log in, create a passive connection and list the root directory.  Once I have enough support to upload a file (real close now) I'll be set.  I probably have another hour or two to get that working.
+&lt;P&gt;However, I'm going to be travelling back to Seattle the rest of this week so I won't be able to work on my little tool here.
+</Description>
+      <BlogEntryNumber>40</BlogEntryNumber>
+      <PubDate>Wed, 19 Feb 2003 06:23:25 GMT</PubDate>
+      <LocalPubDate>Tue, 18 Feb 2003 23:23:25</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Photo workshop</Title>
+      <Description>&lt;P&gt;So, &lt;a href="http://michaelw.net"&gt;MichaelW&lt;/a&gt; invited me to the Montreal F1 races this summer.  I would love to be able to go but it is just too much money. I haven't been at Microsoft as long as Michael has...
+&lt;P&gt;Instead, I'm in the process of trying to sign up to go on &lt;a href="http://luminous-landscape.com/workshops/sk-dv-work.shtml"&gt;this photo workshop&lt;/a&gt;, led by Steve Kossack.  This will be the first of this type of trip that I will have gone on.  It still isn't cheap but looks to be in line with similar excursions.  It also isn't &lt;a href="http://luminous-landscape.com/workshops/africa-ws.shtml"&gt;this trip&lt;/a&gt;.</Description>
+      <BlogEntryNumber>39</BlogEntryNumber>
+      <PubDate>Wed, 19 Feb 2003 01:35:50 GMT</PubDate>
+      <LocalPubDate>Tue, 18 Feb 2003 18:35:50</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>MSFT @ 24</Title>
+      <Description>&lt;P&gt;Okay, I can't be the only one who was freaked out to see &lt;a href="http://finance.yahoo.com/q?s=MSFT&amp;d=c&amp;k=c4&amp;t=5d"&gt;MSFT&lt;/a&gt; trading at 24 and change this morning.  I breathed a sigh of relief when I remembered the split.  So far, we've gotten a nice boost today...</Description>
+      <BlogEntryNumber>38</BlogEntryNumber>
+      <PubDate>Tue, 18 Feb 2003 16:30:39 GMT</PubDate>
+      <LocalPubDate>Tue, 18 Feb 2003 09:30:39</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

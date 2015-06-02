@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Fri, 5 Dec 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Avalon Changeable pattern</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://weblogs.asp.net/greg_schechter/"&gt;Greg Schechter&lt;/a&gt; (whose office
+        is right next to mine) has a new blog and has posted some &lt;a href="http://weblogs.asp.net/greg_schechter/posts/41362.aspx"&gt;great
+        info&lt;/a&gt; on the Avalon Changeable pattern.&amp;#160; This pattern was originally developed
+        for the graphics space but is useful in many other places.&amp;#160; I was going to write
+        about changeables at some point but Greg beat me to it.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>160</BlogEntryNumber>
+      <PubDate>Fri, 05 Dec 2003 18:29:10 GMT</PubDate>
+      <LocalPubDate>Fri, 05 Dec 2003 10:29:10</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 24 Jun 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Lies, Damn Lies and Benchmarks...</Title>
+      <Description>
+    It looks like &lt;a href="http://www.haxial.com/spls-soapbox/apple-powermac-G5/"&gt;there
+    is more&lt;/a&gt; to the G5 benchmarks than meets the eye.&amp;#160; My favorite part are the
+    flames toward the bottom of the page.&amp;#160;&amp;#160;[via &lt;a href="http://slashdot.org/article.pl?sid=03/06/24/1232237"&gt;SlashDot&lt;/a&gt;]</Description>
+      <BlogEntryNumber>117</BlogEntryNumber>
+      <PubDate>Tue, 24 Jun 2003 15:32:33 GMT</PubDate>
+      <LocalPubDate>Tue, 24 Jun 2003 09:32:33</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

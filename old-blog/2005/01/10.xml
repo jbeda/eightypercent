@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 10 Jan 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>A picture I didn't take</Title>
+      <Description>
+    &lt;p&gt;
+        Here is a photo that I didn't take:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="" hspace="0" src="http://www.eightypercent.net/photos/BabyBedaUltrasound.jpg" align="baseline" border="0" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Good news!&amp;#160; We are having a baby.&amp;#160; My wife is pregnant. I know that people
+        usually say "we are pregnant" but she is the one that went through the nausea and
+        has to deal with carrying the baby around for 9 months.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The ultrasound from this morning looks good.&amp;#160; It is still pretty early yet (she
+        is 17 weeks along -- due date is June 21st) but the ultrasound tech said that it looked
+        like our baby is a girl.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Now I have to figure out how to be a father!
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>229</BlogEntryNumber>
+      <PubDate>Tue, 11 Jan 2005 05:47:39 GMT</PubDate>
+      <LocalPubDate>Mon, 10 Jan 2005 21:47:39</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

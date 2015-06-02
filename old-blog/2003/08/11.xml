@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 11 Aug 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Can't blog...</Title>
+      <Description>
+    ... too busy &lt;a href="http://www.wired.com/news/culture/0,1284,59964,00.html"&gt;playing&lt;/a&gt; "Knights
+    of the Old Republic"...</Description>
+      <BlogEntryNumber>128</BlogEntryNumber>
+      <PubDate>Mon, 11 Aug 2003 16:25:19 GMT</PubDate>
+      <LocalPubDate>Mon, 11 Aug 2003 09:25:19</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

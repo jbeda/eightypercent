@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 5 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Another stupid quiz...</Title>
+      <Description>&lt;a href="http://home.att.net/~slugbutter/evil/" target="new"&gt;&lt;img src="http://home.att.net/~slugbutter/evil/neutral.jpg" border=0&gt;&lt;/a&gt;&lt;br&gt;&lt;a href="http://home.att.net/~slugbutter/evil/" target="new"&gt;How evil are &lt;i&gt;you&lt;/i&gt;?&lt;/a&gt;</Description>
+      <BlogEntryNumber>57</BlogEntryNumber>
+      <PubDate>Wed, 05 Mar 2003 16:52:23 GMT</PubDate>
+      <LocalPubDate>Wed, 05 Mar 2003 09:52:23</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

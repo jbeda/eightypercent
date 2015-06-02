@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 14 Jun 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>More fun with Panos</Title>
+      <Description>
+    &lt;p&gt;
+        Since writing the &lt;a href="http://www.eightypercent.net/Archive/2004/05/25.html#a188"&gt;article&lt;/a&gt; in
+        the Luminous Landscape, I've run across Max Lyon's &lt;a href="http://www.tawbaware.com/cgi-bin/forum/cutecast.pl"&gt;forums&lt;/a&gt; covering
+        all things pano.&amp;#160; Cool stuff I've discovered or been alerted to: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            A really sweet cheap&lt;a href="http://www.tawbaware.com/cgi-bin/forum/cutecast.pl?forum=4&amp;amp;thread=278"&gt; DIY
+            pano tripod&lt;/a&gt; head using 8020 aluminum extrusion stock.&amp;#160; I built one of these
+            last week and it works great! 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.le-geo.com/kolor/autopano/"&gt;Autopano&lt;/a&gt; -- a&amp;#160;helper to automatically
+            find the control points for panotools.&amp;#160; PTAssembler can be set up to call this
+            directly. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www-cad.eecs.berkeley.edu/~mihal/enblend/"&gt;Enblend&lt;/a&gt; -- a tool to
+            automatically do the blending between images based on the spatial frequency of the
+            image at the seam. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://hugin.sourceforge.net/"&gt;Hugin&lt;/a&gt; -- a free (as in speech) appliaction
+            for driving PanoTools.&amp;#160; There is also an experimental replacement for PanoTools
+            called nona.&amp;#160; I haven't played with this yet but it is interesting to see this
+            stuff develop.&amp;#160; If this weren't GPL'd and similar to my real job, I'd love to
+            get involved and write some code. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.ngallery.org/"&gt;nGallery&lt;/a&gt; -- I installed this on an ASP.Net
+            server and I'll be posting some new pictures soon.&amp;#160; It was super easy to get
+            up and running and looks configurable.&amp;#160; This is something that I &lt;em&gt;could&lt;/em&gt; get
+            involved in and write some code. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Hopefully I'll have some example panos put together using the new setup soon. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>189</BlogEntryNumber>
+      <PubDate>Tue, 15 Jun 2004 01:22:34 GMT</PubDate>
+      <LocalPubDate>Mon, 14 Jun 2004 18:22:34</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

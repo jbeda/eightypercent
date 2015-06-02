@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 9 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>The three B's</Title>
+      <Description>&lt;p&gt;Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.</Description>
+      <BlogEntryNumber>64</BlogEntryNumber>
+      <PubDate>Sun, 09 Mar 2003 18:08:53 GMT</PubDate>
+      <LocalPubDate>Sun, 09 Mar 2003 11:08:53</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Stupid XSLT tricks</Title>
+      <Description>&lt;p&gt;In talking with &lt;a href="http://ocw.abf.tulane.edu/blog/"&gt;Jorge&lt;/a&gt; about how he does his site, he pointed me to his XSLT source.  I'll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven't discovered yet.  Here is one of them: &lt;a href="http://www.w3.org/TR/xslt#dt-attribute-value-template"&gt;http://www.w3.org/TR/xslt#dt-attribute-value-template&lt;/a&gt;.  This is a huge keystroke saver.  It lets me go from this:
+&lt;pre&gt;
+&amp;lt;A class="ArchiveLink"&amp;gt;
+    &amp;lt;xsl:attribute name="href"&amp;gt;
+        &amp;lt;xsl:value-of select="$SiteRoot"/&amp;gt;&amp;lt;xsl:value-of 
+            select="user:FormatArchiveLink(LocalPubDate)"/&amp;gt;#a&amp;lt;xsl:value-of 
+            select="BlogEntryNumber"/&amp;gt;
+    &amp;lt;/xsl:attribute&amp;gt;
+    &amp;lt;!--....--&amp;gt;
+&amp;lt;/A&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;To this:
+&lt;pre&gt;
+&amp;lt;A class="ArchiveLink" href="{$SiteRoot}{user:FormatArchiveLink(LocalPubDate)}#a{BlogentryNumber}"&amp;gt;
+    &amp;lt;!--....--&amp;gt;
+&amp;lt;/A&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Very cool!</Description>
+      <BlogEntryNumber>63</BlogEntryNumber>
+      <PubDate>Sun, 09 Mar 2003 18:00:02 GMT</PubDate>
+      <LocalPubDate>Sun, 09 Mar 2003 11:00:02</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>More on RSS dates</Title>
+      <Description>&lt;p&gt;&lt;a href="http://ocw.abf.tulane.edu/blog/"&gt;Jorge Curioso&lt;/a&gt; &lt;a href="http://ocw.abf.tulane.edu/blog/?item=63182667125303"&gt;posted on his blog&lt;/a&gt; some comments around dealing with dates in RSS and the .Net framework.  I figure I'd put some more detail up here on how I handle dates in JoeBlogger.
+&lt;ol&gt;
+&lt;li&gt;I store both GMT and local time when creating an entry.  I should probably keep a "last updated" time too but I haven't done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
+&lt;li&gt;I used C# to do all of my date processing.  Here is the code for my properites for these things:
+&lt;pre&gt;
+        // The PubDate here is in universal time -- UTC
+        [XmlIgnore]
+        public DateTime PubDate;
+
+        [XmlElement(ElementName="PubDate")]
+        public string PubDateString 
+        {
+            get
+            {
+                return PubDate.ToString("r");
+            }
+            set
+            {
+                PubDate = DateTime.ParseExact(value,"r", null);
+            }
+        }
+
+        [XmlIgnore]
+        public DateTime LocalPubDate;
+
+        [XmlElement(ElementName="LocalPubDate")]
+        public string LocalPubDateString 
+        {
+            get
+            {
+                return LocalPubDate.ToString("ddd, dd MMM yyyy HH':'mm':'ss");
+            }
+            set
+            {
+                try
+                {
+                    LocalPubDate = DateTime.ParseExact(value,"ddd, dd MMM yyyy HH':'mm':'ss", null);
+                }
+                catch (FormatException)
+                {
+                    LocalPubDate = DateTime.MinValue;
+                }
+            }
+        }
+&lt;/pre&gt;
+&lt;li&gt;Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  &lt;a href="http://www.eightypercent.net/Stuff/SourceExample.xml"&gt;Here&lt;/a&gt; is an example of a source XML document for my main page and &lt;a href="http://www.eightypercent.net/Templates/Main.xslt"&gt;here&lt;/a&gt; is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
+&lt;pre&gt;
+    &amp;lt;msxsl:script implements-prefix='user' language='CSharp'&amp;gt;
+        &amp;lt;![CDATA[
+        public string FormatTime(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
+            return dt.ToString("h':'mm':'ss tt");
+        }
+        public string FormatArchiveLink(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
+            return String.Format(@"/Archive/{0:D4}/{1:D2}/{2:D2}.html", dt.Date.Year, dt.Date.Month, dt.Date.Day);
+        }
+        ]]&amp;gt;
+    &amp;lt;/msxsl:script&amp;gt;
+&lt;/pre&gt;
+And then use that in the output like this:
+&lt;pre&gt;
+&amp;lt;xsl:value-of select="user:FormatTime(LocalPubDate)"/&amp;gt;
+&lt;/pre&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having "First published" and "Last changed" times might be interesting also.  Perhaps I'll write something up at some point.
+</Description>
+      <BlogEntryNumber>62</BlogEntryNumber>
+      <PubDate>Sun, 09 Mar 2003 17:26:04 GMT</PubDate>
+      <LocalPubDate>Sun, 09 Mar 2003 10:26:04</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

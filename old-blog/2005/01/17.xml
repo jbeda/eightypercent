@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 17 Jan 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>Picasa 2</Title>
+      <Description>
+    &lt;p&gt;
+        Congrats to the &lt;a href="http://www.picasa.com/"&gt;Picasa&lt;/a&gt; guys on shipping v2!&amp;#160;
+        I know that they've been working super hard to get this out the door.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="Picasa 2" hspace="0" src="http://www.eightypercent.net/Images/Picasa2.gif" align="baseline" border="0" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you do anything with photos and haven't had a chance to play with Picasa, you really
+        owe it to yourself to check it out.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>230</BlogEntryNumber>
+      <PubDate>Tue, 18 Jan 2005 03:52:58 GMT</PubDate>
+      <LocalPubDate>Mon, 17 Jan 2005 19:52:58</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

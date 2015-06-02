@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 19 Jun 2006">
+  <Entries>
+    <BlogEntry>
+      <Title>Link-Backup v 0.6</Title>
+      <Description>
+    &lt;p&gt;
+        Scott Ludwig and I have released a new version of&amp;#160;his python based backup script,
+        Link-Backup.&amp;#160; This new version ignores broken symlinks and has an option to ensure
+        that only one backup at a time is going on.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Also with this release is a cgi script (viewlb.cgi) for exploring the backups.&amp;#160;
+        This makes it easy to keep tabs on what is going on.&amp;#160; Scott wrote this script
+        a while ago and I updated and improved it.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Details &lt;a href="http://www.scottlu.com/2006/06/link-backup-v-06.html"&gt;here&lt;/a&gt;.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>269</BlogEntryNumber>
+      <PubDate>Tue, 20 Jun 2006 03:28:01 GMT</PubDate>
+      <LocalPubDate>Mon, 19 Jun 2006 20:28:01</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

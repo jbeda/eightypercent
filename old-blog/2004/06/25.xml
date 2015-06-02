@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Fri, 25 Jun 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Driving Photoshop from C#</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;strong&gt;Update: &lt;/strong&gt;8/29/04 -- There is an updated version of this tool described &lt;a href="http://www.eightypercent.net/Archive/2004/08/28.html#a207"&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you've been a regular reader, you know that I've been &lt;a href="http://www.eightypercent.net/Archive/2004/05/25.html#a188"&gt;having
+        a blast&lt;/a&gt; &lt;a href="http://www.eightypercent.net/Archive/2004/06/14.html#a189"&gt;playing &lt;/a&gt;with
+        making digital panoramas.&amp;#160; The problem that I've been hitting is twofold: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            When I want to use &lt;a href="http://www-cad.eecs.berkeley.edu/~mihal/enblend/"&gt;enblend&lt;/a&gt; to
+            do the blending, I don't get the component layers in photoshop.&amp;#160; I get a flat
+            blended tiff file that usually looks great.&amp;#160; However, if I want to tweak it I
+            have to manually find the tiff file and&amp;#160;import that to a layer so that I can
+            paint the original over the endblended result. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            PanoTools can work with 16bit files just fine but it doesn't know how to create a
+            Photoshop PSD file.&amp;#160; (16 bit layers were only added in Photoshop CS. 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Both of these require the fairly manual process of loading up a bunch of tif files
+        and copying them in to one composite file with masks. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Being a dork, I wrote a program to automate this from the outside.&amp;#160; This is a
+        command line utility that drives photoshop from the outside.&amp;#160; It would be cool
+        if this were a plugin that would go in the "Automate" menu but I didn't have time
+        to figure that out. It just grabs a bunch of files, opens them up one by one and puts
+        them in to a new PS&amp;#160;file.&amp;#160; &amp;#160;This works well with the individual .tif
+        files that PanoTools creates.&amp;#160; If you have feature suggestions let me know and
+        I'll see what I can do. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In any case, here is the &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-exe-1.0.zip"&gt;binary&lt;/a&gt;, &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-src-1.0.zip"&gt;source&lt;/a&gt; and &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/License.txt"&gt;license&lt;/a&gt;.&amp;#160;
+        Please be aware that this requires the version 1.1 .Net runtime.&amp;#160; You can get
+        this from &lt;a href="http://www.windowsupdate.com"&gt;windows update&lt;/a&gt; if you don't already.&amp;#160; &lt;a href="http://msdn.microsoft.com/netframework/technologyinfo/howtoget/default.aspx"&gt;Here&lt;/a&gt; is
+        more info on getting the runtime. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Interesting notes on programming to Photoshop: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There are two ways to automate photoshop (that I've found).&amp;#160; The first is using
+        "Actions".&amp;#160; This is the built in way to record a bunch of steps and replay them.&amp;#160;
+        There is a bunch of UI for this and it is good for simple things.&amp;#160; Actions are
+        to limiting for this problem&amp;#160;as anything that iterates over multiple files or
+        has "if" statements is super hard to do with Actions. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The second way to program is via a set of COM interfaces.&amp;#160; Adobe installs a type
+        library that provides some nice object model to do quite a few things.&amp;#160; My understanding
+        is that this is exposed via a built in javascript engine and via applescript on Macs.&amp;#160;
+        Since COM is language neutral, you can drive it (for example) via the scripting host
+        (JavaScript, VBScript), &amp;#160;&lt;a href="http://www.activestate.com/Products/ActivePerl/"&gt;perl&lt;/a&gt;,
+        VB or C#.&amp;#160; I choose to use C#. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The programmable interface has some pretty glaring holes in its support.&amp;#160; For
+        example, you can't do anything with the tools such as the magic wand.&amp;#160; There
+        is also no easy programmatic access to creation of layer masks.&amp;#160; You can get
+        around this by installing a plugin called the "ScriptListener."&amp;#160; This essentially
+        creates funky unreadable code that (I'm thinking) uses the same hooks as the Actions
+        code.&amp;#160; On windows this is written out as VB or JavaScript.&amp;#160; Here is an example
+        from "c:\ScriptingListenerJS.log" to create a layer mask on the current layer. 
+    &lt;/p&gt;
+    &lt;pre&gt;// =======================================================
+var id375 = charIDToTypeID( "Mk  " );
+    var desc84 = new ActionDescriptor();
+    var id376 = charIDToTypeID( "Nw  " );
+    var id377 = charIDToTypeID( "Chnl" );
+    desc84.putClass( id376, id377 );
+    var id378 = charIDToTypeID( "At  " );
+        var ref66 = new ActionReference();
+        var id379 = charIDToTypeID( "Chnl" );
+        var id380 = charIDToTypeID( "Chnl" );
+        var id381 = charIDToTypeID( "Msk " );
+        ref66.putEnumerated( id379, id380, id381 );
+    desc84.putReference( id378, ref66 );
+    var id382 = charIDToTypeID( "Usng" );
+    var id383 = charIDToTypeID( "UsrM" );
+    var id384 = charIDToTypeID( "RvlA" );
+    desc84.putEnumerated( id382, id383, id384 );
+executeAction( id375, desc84, DialogModes.NO );&lt;/pre&gt;
+    &lt;p&gt;
+        As you can see, this isn't the easiest code to read. The solution is to wrap it in
+        functions that you can call at will. Here is how I created a C# function out of this: 
+    &lt;/p&gt;
+    &lt;pre&gt;void CreateLayerMask()
+{
+    int id375 = app.CharIDToTypeID( "Mk  " );
+    PS.ActionDescriptor desc84 = new PS.ActionDescriptor();
+    int id376 = app.CharIDToTypeID( "Nw  " );
+    int id377 = app.CharIDToTypeID( "Chnl" );
+    desc84.PutClass( id376, id377 );
+    int id378 = app.CharIDToTypeID( "At  " );
+    PS.ActionReference ref66 = new PS.ActionReference();
+    int id379 = app.CharIDToTypeID( "Chnl" );
+    int id380 = app.CharIDToTypeID( "Chnl" );
+    int id381 = app.CharIDToTypeID( "Msk " );
+    ref66.PutEnumerated( id379, id380, id381 );
+    desc84.PutReference( id378, ref66 );
+    int id382 = app.CharIDToTypeID( "Usng" );
+    int id383 = app.CharIDToTypeID( "UsrM" );
+    int id384 = app.CharIDToTypeID( "RvlA" );
+    desc84.PutEnumerated( id382, id383, id384 );
+    app.ExecuteAction( id375, desc84, PS.PsDialogModes.psDisplayNoDialogs );
+}&lt;/pre&gt;
+    &lt;p&gt;
+        This is a little bit of a pain but at least you can get stuff done.&amp;#160; It would
+        be cool if we could build a library of these things.&amp;#160; If anyone else is interested
+        in driving photoshop let me know and I'll help bring this stuff together. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>192</BlogEntryNumber>
+      <PubDate>Sat, 26 Jun 2004 04:27:01 GMT</PubDate>
+      <LocalPubDate>Fri, 25 Jun 2004 21:27:01</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

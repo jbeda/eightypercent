@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 23 Aug 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>Welcome to Google Talk!</Title>
+      <Description>
+    &lt;p&gt;
+        We've been working to bring together our new IM service.&amp;#160; Most of the development
+        was centered up here in the Kirkland office.&amp;#160; Watch this space (and others) for
+        more news over the next couple of days.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="" hspace="0" src="http://www.eightypercent.net/Images/googletalk.gif" align="baseline" border="0" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        In case you've missed the fireworks, here is the summary of what we've done:
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Instant messaging server based on the XMPP/Jabber protocol.&amp;#160; This is an IETF
+            approved protocol.&amp;#160; Check out &lt;a href="http://www.xmpp.org"&gt;www.xmpp.org&lt;/a&gt; for
+            more info.&lt;/li&gt;
+        &lt;li&gt;
+            Out of the box support for many third party clients.&amp;#160; Choose iChat, Gaim, Trillian
+            or a host of others.&amp;#160; We support them from day one.&lt;/li&gt;
+        &lt;li&gt;
+            Our own client available for download from &lt;a href="http://talk.google.com"&gt;talk.google.com&lt;/a&gt;.&amp;#160;
+            We've concentrated on a simple to use and clean interface.&amp;#160; We've tried to strip
+            IM down to its essence.&lt;/li&gt;
+        &lt;li&gt;
+            Support for voice calls between clients that just work.&amp;#160; We've worked hard to
+            support all sorts of network topologies.&amp;#160; We are also using first class industry
+            leading audio codecs.&lt;/li&gt;
+        &lt;li&gt;
+            A commitment to openness moving forward.&amp;#160; Choose your platform (Window, Mac,
+            Linux, etc), choose your client (ours or others) and choose your service provider
+            (we are commited to federation).&amp;#160; We want to make IM as open as the web or email.&lt;/li&gt;
+    &lt;/ul&gt;
+</Description>
+      <BlogEntryNumber>249</BlogEntryNumber>
+      <PubDate>Wed, 24 Aug 2005 03:29:06 GMT</PubDate>
+      <LocalPubDate>Tue, 23 Aug 2005 20:29:06</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

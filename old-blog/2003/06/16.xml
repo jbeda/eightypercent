@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 16 Jun 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Snapshot from Video file</Title>
+      <Description>
+    &lt;p&gt;
+        I got some email from someone who calls himself "RAD Moose" (blogs offline...) on
+        an easier way to take a snapshot from a video file.&amp;#160; This might come in handly
+        later.&amp;#160; Here it is: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            Download Movie 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Open WindowsMovieMaker2 (feature not in WMM1) 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Import Movie 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Scroll thru movie in Preview Window 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Select "Take Picture From Preview Window" item in Tools Menu 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Very cool!&amp;#160; I'll have to download Movie Maker 2 and give this a try! 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>110</BlogEntryNumber>
+      <PubDate>Tue, 17 Jun 2003 00:04:33 GMT</PubDate>
+      <LocalPubDate>Mon, 16 Jun 2003 18:04:33</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

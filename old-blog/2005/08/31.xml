@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 31 Aug 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>On Jabber Federation</Title>
+      <Description>
+    &lt;p&gt;
+        There have been a lot of questions around Google's approach to federation -- both&amp;#160;in
+        the comments on this blog and in other forums (the jdev list, slashdot, etc).&amp;#160;
+        I apologize for the delay in responding to these questions head on. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        We've updated our FAQ to clarify some changes.&amp;#160; To save everyone having to look
+        it up in the Google cache, here is the before: 
+    &lt;/p&gt;
+    &lt;blockquote&gt;&lt;font size="-1"&gt;We look forward to federating with any service provider
+    who shares our belief in enabling user choice and open communications. We do believe,
+    however, that it is important to balance openness with ensuring that we maintain a
+    safe and reliable service that protects user privacy and blocks spam and other abuses.
+    We are using the federation opportunity with EarthLink and Sipphone to develop a set
+    of guidelines by which all members of the federated network can work together to ensure
+    that we protect our users while maximizing the reach of the network. [...]&lt;/font&gt;&lt;/blockquote&gt; 
+    &lt;p&gt;
+        Here is the new text (changes in red): 
+    &lt;/p&gt;
+    &lt;blockquote&gt;&lt;font size="-1"&gt;&lt;strong style="COLOR: red"&gt;We plan to support open server-to-server
+    federation.&lt;/strong&gt; We do believe, however, that it is important to &lt;strong style="COLOR: red"&gt;have
+    the safeguards in place&lt;/strong&gt; to ensure that we maintain a safe and reliable service
+    that protects user privacy and blocks spam and other abuses. We are using the federation
+    opportunity with EarthLink, Sipphone &lt;strong style="COLOR: red"&gt;and other partners&lt;/strong&gt; to
+    develop a set of &lt;strong style="COLOR: red"&gt;best practices&lt;/strong&gt; by which all members
+    of the federated network can work together to ensure that we protect our users while
+    maximizing the reach of the network. [...]&lt;/font&gt;&lt;/blockquote&gt; 
+    &lt;p&gt;
+        On top of that, one of my fellow Google Talk developers, Gary Burd,&amp;#160;has introduced
+        himself to the Jabber developer mailing list.&amp;#160; You can read his first post &lt;a href="http://mail.jabber.org/pipermail/jdev/2005-August/021792.html"&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I, personally, look forward to a long and fruitful partnership between Google and
+        the Jabber community. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>253</BlogEntryNumber>
+      <PubDate>Wed, 31 Aug 2005 15:57:59 GMT</PubDate>
+      <LocalPubDate>Wed, 31 Aug 2005 08:57:59</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

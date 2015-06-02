@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 30 Aug 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Avalon Changes</Title>
+      <Description>
+    &lt;p&gt;
+        Everyone is still digesting what exactly is going on with Avalon, WinFS and Longhorn.&amp;#160; &lt;a href="http://radio.weblogs.com/0001011/2004/08/30.html#a8167"&gt;Scoble&lt;/a&gt; is
+        a great place to start for links to the reaction in general.&amp;#160; ChrisAn also has
+        some &lt;a href="http://www.simplegeek.com/PermaLink.aspx/8ccbbce9-0ec7-408f-9209-6ef233850dbb"&gt;Q&amp;amp;A
+        on what this means to Avalon&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I think that I can answer some more questions that people might have.&amp;#160; I'll take
+        the Q&amp;amp;A format that ChrisAn used. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;1. What does this mean for the Avalon graphics architecture as you &lt;/strong&gt;&lt;a href="http://www.eightypercent.net/Archive/2004/05/18.html"&gt;&lt;strong&gt;presented
+        it at WinHEC&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;?&lt;br /&gt;
+        &lt;/strong&gt;Actually, things&amp;#160;mostly don't change from an architectural point of
+        view.&amp;#160; We will have to make some tweaks and compromises to ensure that Avalon
+        runs well on XP and W2K3.&amp;#160; All of these compromises will be because we probably
+        won't be able to update&amp;#160;any&amp;#160;system binaries (User32, GDI, etc.) 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;2. You said that Avalon &lt;em&gt;had&lt;/em&gt; to have Longhorn to work well.&amp;#160;
+        Now it is going to run on XP and W2k3.&amp;#160; What gives?&lt;/strong&gt; 
+        &lt;br /&gt;
+        There were some very good reasons for us to restrict Avalon to run just on Longhorn.&amp;#160;
+        However, when looking at what customers said and our schedule, it made more sense
+        to bend on some of those reasons than to force developers to wait for wide adoption
+        of Longhorn before being able to write apps.&amp;#160; Here are some areas where we are
+        going to have to get creative in making Avalon work on XP and W2k3: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            &lt;em&gt;Lack of the LDDM (Longhorn Device Driver Model). &lt;/em&gt;Right now the XPDM (XP Driver
+            Model), wrt DX, is really built to work well for one app at a time.&amp;#160; It&amp;#160;uses
+            first come, first server, winner take all approach to resource allocation.&amp;#160; While
+            Avalon runs just fine on the XPDM, it isn't clear that&amp;#160;lots of Avalon apps running
+            at the same time will work really well without the LDDM.&amp;#160; There are also concerns
+            around the stability of current DX drivers under the XPDM.&amp;#160; These drivers have
+            been written with the gaming market in mind.&amp;#160; Using them for every day applications
+            may push them to some breaking points.&amp;#160; All sorts of options are being considered
+            on how to deal with this.&amp;#160; And for machines that we can't support hardware acceleration
+            on, we always have our software rendering layer that we can fall back to.&amp;#160; Early
+            on we decided no to rely on hardware being available on every machine.&amp;#160; That
+            decision is paying off now. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;em&gt;Inability to really tweak User32. &lt;/em&gt;In Longhorn builds we had the ability to
+            do "child window redirection".&amp;#160; This is a Win32 interop solution where child
+            hWnds get redirected by the system to a bitmap that the Avalon compositor then hosts.&amp;#160;
+            This allowed Win32 content to alpha blend and rotate just like any Avalon content.&amp;#160;
+            Since we won't be able to change system binaries on older systems, we won't be able
+            to do this redirection on XP and W2k3.&amp;#160; We'll have to find a compromise solution
+            to hosting legacy content.&amp;#160; You probably won't be able to treat it like regular
+            Avalon content.&amp;#160; Eventually we want to be able to support these advanced legacy
+            hosting solutions, but it probably won't work on XP and W2k3. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;em&gt;Terminal Services and Remote Desktop. &lt;/em&gt;We were planning on remoting Avalon
+            at a completely different layer.&amp;#160; It is unclear how we will address this issue
+            on platforms other than Longhorn.&amp;#160; The long term plan and architecture still
+            encompasses enhanced remoting. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;em&gt;Media decoding system.&amp;#160; &lt;/em&gt;A lot of the video hosting relied on components
+            being delivered from the media team.&amp;#160; Since we are now perhaps shipping via a
+            different mechanism than they are, the level of integration and interdependencies
+            are now up in the air.&amp;#160; We are working on figure that out. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;em&gt;Desktop Window Manager.&amp;#160; &lt;/em&gt;The DWM will still exist and be included as
+            part of Longhorn.&amp;#160; There are no plans to make the DWM run on XP and W2k3.&amp;#160;
+            The cross process UCE architecture presented at WinHEC remains unchanged for when
+            Avalon apps are running under the DWM on Longhorn. 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        &lt;strong&gt;3. How has the Avalon vision changed?&amp;#160; Is it a less ambitious plan now?&lt;br /&gt;
+        &lt;/strong&gt;The long term Avalon vision hasn't changed.&amp;#160; We still want to enable
+        the same hardware accelerated, media rich, easy to develop, network connected&amp;#160;application
+        platform that we've been talking about since the 2003 PDC.&amp;#160; The real change here
+        is a new pragmatic staged approach to getting it out the door and in the hands of
+        developers.&amp;#160; If we've talked about some feature or doodad that has to be compromised
+        to make Avalon work under these new constraints, don't worry.&amp;#160; Chances are that
+        that feature is still on the list for when we &lt;em&gt;can &lt;/em&gt;do it. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;4. What is your personal opinion on these changes, Joe?&lt;br /&gt;
+        &lt;/strong&gt;Thanks for asking!&amp;#160; Personally I'm really excited by these changes.&amp;#160;
+        It is painful to have to sacrifice (at least when running on XP and W2k3 -- they may
+        "light up on Longhorn") some of the features that &lt;em&gt;require&lt;/em&gt; deep changes to
+        the system but the overall result of being able to deliver Avalon to XP and W2k3 outweigh
+        that pain dramatically.&amp;#160; Anything we can do to get Avalon out the door on a more
+        deterministic schedule and to deliver it to a wider audience of developers seems like
+        a good thing to me.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Making hard decisions like this is necessary to get big projects out the door.&amp;#160;
+        While it would have been great if we had figured some of this stuff out a year (or
+        more) ago, this is better late than never.&amp;#160; $50 billion in the bank (or whatever
+        it is these days) is a lot of money but it still doesn't buy you a crystal ball to
+        see in to the future. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>208</BlogEntryNumber>
+      <PubDate>Mon, 30 Aug 2004 14:23:07 GMT</PubDate>
+      <LocalPubDate>Mon, 30 Aug 2004 07:23:07</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

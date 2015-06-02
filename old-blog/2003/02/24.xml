@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 24 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>New tripod</Title>
+      <Description>&lt;P&gt;Ordered one of &lt;a href="http://www.bogenphoto.com/product/templates/templates.php3?sectionid=274&amp;itemid=773"&gt;these&lt;/a&gt; bad boys today.  I can't wait.  I'm also going to order one of &lt;a href="http://acratech.net/prod01.htm"&gt;these&lt;/a&gt; pretty soon too.
+&lt;P&gt;My old tripod had a bent leg and was super heavy.  With this combo I'll be set to carry the tripod on longer hikes.  Things should start warming up soon and I can start exploring the environs around Boise.</Description>
+      <BlogEntryNumber>49</BlogEntryNumber>
+      <PubDate>Tue, 25 Feb 2003 00:05:02 GMT</PubDate>
+      <LocalPubDate>Mon, 24 Feb 2003 17:05:02</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>WWCDD?</Title>
+      <Description>&lt;p&gt;&lt;a href="http://michaelw.net"&gt;Michael Winser&lt;/a&gt; suggested that I should think about taking the same approach that citydesk uses.  They do two things differently than Radio:
+&lt;ul&gt;
+&lt;li&gt;They use a CRC instead of a byte for byte comparison.  Apparently they use this instead of filetimes altogether.  I could compute the CRC (or do the comparison with the file on disk too, I guess) by wrapping the stream that the transform is writing to and doing the CRC/comparison on the fly
+&lt;li&gt;They also post a list of files and CRCs as an xml file on the server. This makes it easier to synchronize files across machines
+&lt;/ul&gt;
+
+&lt;p&gt;I definitely want to enable the cross machine case, and file times do seem a little fragile to me.  This is something I'll have to think about a little more.
+&lt;p&gt;Two way synchronization is really hard though?  What happens if the same file changes on both the client and the server?  How do you handle deleting a file?  (Do you care about deleting a file?)
+&lt;p&gt;Another problem comes up when you have multi-party authoring and syncing and that is with respect to item numbers.  Right now I have an item number count that I store in a config file and update every time I create a new entry (it is currently at 49).  &lt;a href="http://simplegeek.com"&gt;ChrisAn&lt;/a&gt; solves this problem with a good old fashion GUID (I have a bunch cheap if you need them ;)  I might be able to switch over without killing my RSS feed and perma links if I just treat the item ID as a string.</Description>
+      <BlogEntryNumber>48</BlogEntryNumber>
+      <PubDate>Mon, 24 Feb 2003 15:39:35 GMT</PubDate>
+      <LocalPubDate>Mon, 24 Feb 2003 08:39:35</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

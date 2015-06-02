@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 19 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>FTP Library</Title>
+      <Description>&lt;P&gt;&lt;a href="http://www.jelovic.com/weblog/index.htm"&gt;Dejan Jelovic&lt;/a&gt; sent me some mail pointing to his &lt;a href="http://www.jelovic.com/ftplib/"&gt;managed wrapper on wininet&lt;/a&gt;.
+&lt;P&gt;This looks pretty cool and wininet is pretty well tested, if a little quirky.  However, I think that I'm going to do my own thing just for the sake of doing it.  &lt;a href="http://michaelw.net/Articles/Whywere-inventtheweblogwh.html"&gt;I'm having fun&lt;/a&gt; with the little victories of doing something pretty fundamental from the ground up.</Description>
+      <BlogEntryNumber>42</BlogEntryNumber>
+      <PubDate>Wed, 19 Feb 2003 13:53:05 GMT</PubDate>
+      <LocalPubDate>Wed, 19 Feb 2003 06:53:05</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Books</Title>
+      <Description>&lt;P&gt;&lt;a href="http://www.simplegeek.com/permalink.aspx?guid=b6b07998-429a-4bbf-a49e-8fa7f9af4a30"&gt;Chris&lt;/a&gt; recommends &lt;a href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&amp;isbn=0375756787&amp;itm=1"&gt;The Rise of Theodore Roosevelt&lt;/a&gt;.  I'm reading this right now and probably about 3/4 of the way done.  I'm also amazed at the productivity and veriety of experiences this man had at so young an age.  It really drives me to get off of my ass and do something.
+&lt;P&gt;A few weeks ago I finished &lt;a href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&amp;isbn=0385495404&amp;itm=1"&gt;The First American&lt;/a&gt; by H. W. Brands.  This is a biography of Benjamin Franklin.  I'd also highly recommend it.  Again, this is someone who went out and created his own destiny.
+&lt;P&gt;In reading these two back to back, you can't help but see the contrasts.  Roosevelt was the jock intellectual, Franklin was the geek of his time.
+&lt;P&gt;I love american history.  In college I took quite a few courses on 20th century american history.  In the last couple of years I've started reaching back a little further.  It is just so amazing to me to make the connection between now and say, 100 years ago.  When you start reading these histories, time tends to compress and a century is a lot closer than it appears.  Hell, a little over &lt;S&gt;100&lt;/S&gt;150 years ago we were invading Mexico (Mexican/American War).</Description>
+      <BlogEntryNumber>41</BlogEntryNumber>
+      <PubDate>Wed, 19 Feb 2003 13:40:35 GMT</PubDate>
+      <LocalPubDate>Wed, 19 Feb 2003 06:40:35</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

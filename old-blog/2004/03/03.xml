@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 3 Mar 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>IKEA Walkthrough v2.3.1</Title>
+      <Description>
+    &lt;p&gt;
+        Reiner Fink (old buddy and probably responsible for some of the &lt;a href="http://www.kuro5hin.org/story/2004/2/15/71552/7795"&gt;more
+        interesting comments&lt;/a&gt; in the NT source) sent me a link to the &lt;a href="http://www.themorningnews.org/archives/how_to/the_nonexpert_ikea.php"&gt;IKEA
+        Walkthrough&lt;/a&gt;: 
+    &lt;/p&gt;
+    &lt;blockquote&gt;IKEA is a fully immersive, 3D environmental adventure that allows you
+    to role-play the character of someone who gives a shit about home furnishings. In
+    traversing IKEA, you will experience a meticulously detailed alternate reality filled
+    with garish colors, clear-lacquered birch veneer, and a host of NON-PLAYER CHARACTERS
+    (NPCs) with the glazed looks of the recently anesthetized. &lt;/blockquote&gt;
+</Description>
+      <BlogEntryNumber>168</BlogEntryNumber>
+      <PubDate>Wed, 03 Mar 2004 21:35:45 GMT</PubDate>
+      <LocalPubDate>Wed, 03 Mar 2004 13:35:45</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

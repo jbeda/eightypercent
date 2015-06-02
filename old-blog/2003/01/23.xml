@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 23 Jan 2003">
+  <Entries>
+    <BlogEntry>
+      <Title />
+      <Description>
+    &lt;p&gt;
+        I'm really liking &lt;a href="http://www.syndirella.com/"&gt;Syndirella&lt;/a&gt;.&amp;#160; One of
+        the sites that I read a lot is the &lt;a href="http://www.luminous-landscape.com/"&gt;Luminous
+        Landscape&lt;/a&gt;&amp;#160;but it doesn't have an RSS feed.&amp;#160; Instead, I've used the html
+        scraping feature of Syndirella to parse out news items.&amp;#160; The mechanism is pretty
+        limiting, but I was able to make it work.&amp;#160; Here is the data you need (save the
+        file and import to Syndirella): &lt;a href="http://www.eightypercent.net/Stuff/LumLandscape.xml"&gt;LumLandscape.xml&lt;/a&gt;
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>16</BlogEntryNumber>
+      <PubDate>Thu, 23 Jan 2003 17:13:56 GMT</PubDate>
+      <LocalPubDate>Thu, 23 Jan 2003 09:13:56</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 25 Aug 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>Other Google Talk links</Title>
+      <Description>
+    &lt;p&gt;
+        There are some other members of the team who have web sites that I'd like to point
+        to: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.glaak.com/"&gt;Gayle Laakmann&lt;/a&gt; -- Gayle just joined our team a
+            couple of weeks ago, but she has already made her mark. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.brightlycoloredfood.com/"&gt;Chad Thornton&lt;/a&gt; -- Chad was the main
+            designer for Google Talk.&amp;#160; He is one of the reasons that the application has
+            such a clean and fresh look. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.rezab.com"&gt;Reza Behforooz&lt;/a&gt; -- Reza has been working on the
+            Google Talk server from the start.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        There are probably some that I've missed, but I haven't seen their posts yet. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        [&lt;strong&gt;Update: &lt;/strong&gt;Fixed link to Chad!] 
+        &lt;br /&gt;
+        [&lt;strong&gt;Update:&lt;/strong&gt; Added Reza]
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>250</BlogEntryNumber>
+      <PubDate>Thu, 25 Aug 2005 20:20:52 GMT</PubDate>
+      <LocalPubDate>Thu, 25 Aug 2005 13:20:52</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

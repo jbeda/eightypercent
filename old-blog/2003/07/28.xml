@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 28 Jul 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Comments by Haloscan</Title>
+      <Description>
+    &lt;p&gt;
+        I finally signed up at Haloscan and now have comments up here.&amp;#160; I don't know
+        if any of my 2 readers will care, but let's see what happens.
+    &lt;/p&gt;
+    &lt;p&gt;
+        After the first outage at Haloscan, I'll probably give up and write my own comment
+        system.&amp;#160; I want to keep it seperate from JoeBlogger though so that JoeBlogger
+        is still a client render/FTP too.&amp;#160; The comment system will probably be similar
+        to Haloscan in the way it is hosted on a page.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>125</BlogEntryNumber>
+      <PubDate>Mon, 28 Jul 2003 16:15:12 GMT</PubDate>
+      <LocalPubDate>Mon, 28 Jul 2003 09:15:12</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>OSX not a 64 bit OS</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.eightypercent.net/Archive/2003/06/26.html"&gt;Earlier&lt;/a&gt;, I was
+        wondering if the new G5 Macs would have an OS that could take advantage of their 64
+        bit nature, or if Apple was going to take a short cut and run the G5 in a compat mode.&amp;#160;
+        Apparently, that &lt;em&gt;is&lt;/em&gt; going to be the case, at least according to &lt;a href="http://www.theregister.co.uk/content/39/31995.html"&gt;this
+        Register article&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In a lot of ways, this is just more hype from Apple.&amp;#160; Many Intel processesors
+        (I don't know the exact ones) actually have a 36 bit addressing bus.&amp;#160; Those extra
+        4 bits mean that the processor can actually address 16 times as much memory as a 32
+        bit addressing bus.&amp;#160; The difference is between 4GB and 64GB.&amp;#160; However, most
+        Windows machines don't take advantage of that extra capacity.&amp;#160; The APIs &lt;a href="http://msdn.microsoft.com/library/en-us/memory/base/address_windowing_extensions.asp?frame=true"&gt;are
+        there&lt;/a&gt; though, if you want to use them.
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, is the 64 bit nature of the G5 hype?&amp;#160; As far as I can tell, right now the
+        answer is yes.
+    &lt;/p&gt;
+    &lt;p&gt;
+        (Well, I'm sure that someone will port 64 bit Linux to it, and that will be cool.&amp;#160;
+        It might become the cheapest way to get a 64 bit linux machine, if AMD doesn't beat
+        them to the punch)
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>124</BlogEntryNumber>
+      <PubDate>Mon, 28 Jul 2003 15:49:43 GMT</PubDate>
+      <LocalPubDate>Mon, 28 Jul 2003 08:49:43</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

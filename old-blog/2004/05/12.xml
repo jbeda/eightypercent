@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 12 May 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>DanLehen on Avalon 3D</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://blogs.msdn.com/danlehen/"&gt;Dan&lt;/a&gt; has started a blog where he will
+        be talking Avalon 3D.&amp;#160; He is one of the devs that is currently working on this
+        part of Avalon.&amp;#160; Even though the Avalon 3D stuff is still early (we aren't feature
+        complete yet) he plans on talking through what you &lt;em&gt;can&lt;/em&gt; do with the WinHEC
+        build.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Check it out!
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>184</BlogEntryNumber>
+      <PubDate>Wed, 12 May 2004 17:12:34 GMT</PubDate>
+      <LocalPubDate>Wed, 12 May 2004 10:12:34</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

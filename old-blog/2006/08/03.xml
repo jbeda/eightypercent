@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 3 Aug 2006">
+  <Entries>
+    <BlogEntry>
+      <Title>"Avalon marks the end of the American Dream"</Title>
+      <Description>
+    &lt;p&gt;
+        Miguel de Icaza says &lt;a href="http://tirania.org/blog/archive/2006/Aug-02.html"&gt;"Avalon
+        marks the end of the American Dream."&lt;/a&gt;&amp;#160; He also compares it to J2EE -- apparently
+        implying that it is overly complex and overarchitected.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ouch.
+    &lt;/p&gt;
+    &lt;p&gt;
+        While I wouldn't put it that way, I can't disagree.&amp;#160; I left Microsoft almost
+        two years ago and Avalon still hasn't shipped.&amp;#160; A 5+ year ship cycle for a project
+        can't be seen as anything but a sign that something is horribly wrong.&amp;#160; When
+        I was on Avalon we kept talking about building an API for the next 10 years.&amp;#160;
+        Apparently, when Avalon ships there will be 5 years left on that clock.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I take partial responsibility for this.&amp;#160; When we were first starting Avalon,
+        I was all about "Go big or go home" and "We should build something only Microsoft
+        can build."&amp;#160; In retrospect, the project and the company might have been better
+        served by starting with a much smaller team, aiming lower to start and shipping 5
+        times over those 5 years.&amp;#160; Version 1 might not have been that impressive, but
+        relentless improvement would have built something better factored, simpler, and more
+        in tune with what users actually need.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I named this blog "eightypercent" in honor of the 80% rule.&amp;#160; It just so happens
+        there there are lots of 80% rules to apply.&amp;#160; In this case, a simpler system that
+        only solved 80% of the problem would have been good enough and would have shipped
+        multiple times already.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It looks like the &lt;a href="http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;q=%22WPF%2FE%22&amp;amp;btnG=Search"&gt;WPF/E&lt;/a&gt; project
+        is an effort to&amp;#160;strip Avalon down to something much more approachable.&amp;#160;
+        Cross platform, no full CLR, lower memory footprint -- sounds a lot like Flash/Flex.&amp;#160;
+        I know some of the guys working on the project and I have high hopes that it will
+        be something interesting.&amp;#160; The only question, when will&amp;#160;it ship?
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>273</BlogEntryNumber>
+      <PubDate>Thu, 03 Aug 2006 16:56:19 GMT</PubDate>
+      <LocalPubDate>Thu, 03 Aug 2006 09:56:19</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

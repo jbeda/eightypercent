@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Fri, 18 Jun 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Defending the Rich Client</Title>
+      <Description>
+    &lt;p&gt;
+        It probably goes without saying, but these comments are my own and don't represent
+        any official position by Microsoft. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There has been an interesting discussion &lt;a href="http://weblog.infoworld.com/udell/2004/06/09.html#a1019"&gt;started&lt;/a&gt; by
+        Jon Udell and &lt;a href="http://www.joelonsoftware.com/articles/APIWar.html"&gt;continued&lt;/a&gt; by
+        Joel Spolsky (&lt;a href="http://developers.slashdot.org/article.pl?sid=04/06/16/209202&amp;amp;tid="&gt;discussed&lt;/a&gt; on
+        Slashdot). In both of their articles/postings they have referenced the &lt;a href="http://channel9.msdn.com/ShowPost.aspx?PostID=948"&gt;interview&lt;/a&gt; that
+        I gave quite a while back for &lt;a href="http://radio.weblogs.com/0001011/2004/06/18.html#a7784http://scoble.weblogs.com/"&gt;Scoble&lt;/a&gt; for
+        Channel 9. &lt;a href="http://www.25hoursaday.com/weblog/PermaLink.aspx?guid=49250729-fd67-4dd1-a960-2a6a8f55d9cb"&gt;Dare&lt;/a&gt; and &lt;a href="http://www.longhornblogs.com/robert/archive/2004/06/18/3731.aspx"&gt;Robert
+        McLaws&lt;/a&gt; have also responded.&amp;#160; My buddy from high school, Vince Anichini, &lt;a href="http://www.articulatebabble.org/archives/2004/06/17T004246.php"&gt;wants
+        in&lt;/a&gt; on the action too. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Go ahead and read them if you haven't already and then come back. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Here is my summary so that Jon, Joel and everyone else can make sure that I'm reading
+        them right. First, Jon is asking why anyone (and the "enterprise" specifically) would
+        want to write a rich client (probably for any platform) above and beyond a web application.
+        Joel takes this and runs with it -- saying essentially that the rich client is dead
+        and that the Windows API is dying with a whimper. He also says that there are two
+        camps of developers inside of Windows: those that want to keep on the same track and
+        those who are for all the new technologies. 
+    &lt;/p&gt;
+    &lt;h4&gt;IE history 
+    &lt;/h4&gt;
+    &lt;p&gt;
+        Being on the Windows team, and Avalon specifically, my job is to help write a product
+        that is compelling enough to overcome the very valid concerns that these guys have.
+        I started out on the IE team (now you know where at least a little bit of the IE team
+        went, Joel) back in 1997 -- toward the tail end of IE4 development. I firmly believe
+        that we had the better product starting with IE4 and we really turned up the heat
+        with IE5. IE was, in a lot of ways, a rear guard action against Netscape. Netscape
+        was trying to replace the Windows API with a cross platform "Netscape" API. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        IE was, buy many metrics, very successful. First, we gained significant adoption.
+        I personally think that this was mostly due to a superior product. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Second, we also, by making the browser market a 2 horse race, drove baseline interoperability
+        in the web space. Where would the world be without IE? Do you think that we would
+        have an interoperable browser space now? Based on pure psychic reasoning, my guess
+        is that without the healthy competition from MS, Netscape would have owned the client
+        space completely. At this point I don't think that &lt;i&gt;anyone&lt;/i&gt; owns the web client
+        platform. Despite IE's market share, the network addressable platform pieces that
+        anyone uses are largely restricted to the W3C blessed parts. So, taking a look at
+        the IE4 and IE5 timeframe, in some ways you can thank Microsoft for enabling a mostly
+        standards based web by making the browser a two horse race. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Where IE wasn't successful was in bringing the Web model in as a fundamental part
+        of the Windows API. Sure, you had the reusable browser control and the Trident (mshtml.dll)
+        engine. But you were either writing a web-like application (HTAs included) or you
+        were writing a Win32 application. There were certain things that were easy to do with
+        traditional Win32 that you couldn't do with IE and things that you could do easily
+        with IE that you couldn't do with Win32. 
+    &lt;/p&gt;
+    &lt;h4&gt;The best of windows and the best of the web 
+    &lt;/h4&gt;
+    &lt;p&gt;
+        Avalon, and Longhorn in general, is our attempt to reenergize the rich client at Microsoft.
+        Is it, as Joel says, too late? I don't think so. I think that the combination of features
+        we are putting together will be compelling enough to start turning the tide. Are we
+        ever going to see a world where the web is history and all development is focused
+        on writing Longhorn applications? Of course not. Longhorn is a long term investment
+        to start laying the ground work for a rich client that takes advantage of the web
+        in a way that we have never been able to before. This is what we mean when we say
+        that we want to make Avalon the best of Windows and the best of the Web. We want to
+        take some of the advantages of the web and build them in to the windows API. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Why do people write web based client/server apps over writing rich client apps for
+        Windows? 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            Frictionless deployment story 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Cross platform interoperability 
+        &lt;/li&gt;
+        &lt;li&gt;
+            More fun to code -- you can set up your own API system and abstract HTML to a large
+            extent 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Built in network/server awareness 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        You put all of these together and you have a pretty darn compelling story for many
+        scenarios. How can the Windows client compete with this? The key is to take the good
+        things of the web that we can (1, 3 and 4) and combine that with all of the goodness
+        from having stuff run on the client. Don't get me wrong -- I still believe in the
+        web as a way to interoperate and exchange content and as a lowest common denominator
+        for UI interaction. But we can do so much better than HTML with the horsepower that
+        is sitting on our desk when it makes sense to do so. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        For example, Joel says that he can "install" GMail by hitting Ctrl-D, gmail, Ctrl-Enter.
+        My understanding (and I haven't had time to really play with GMail yet) is that Google
+        has written browser specific code to enhance the user experience. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        With Avalon you should be able to implement a GMail like application that takes advantage
+        of the rich client in some very significant ways: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            &lt;b&gt;Rich user experience&lt;/b&gt;.&amp;#160; No page refreshes on simple actions.&amp;#160; Smooth
+            animation and graphical composition.&amp;#160; The ability to do rich real time data visualization. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Local Storage&lt;/b&gt;. Cache the mail data locally for faster access and more integration
+            with other desktop services.&amp;#160; You could also support reading and responding to
+            mail while offline. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Easy network connectivity&lt;/b&gt;.&amp;#160; Using web services, the ability to use widely
+            interoperable protocols to talk with a server. 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Will this be possible in Longhorn? YES. This is the direction that we want to go and
+        what I mean when I say "network connected rich client applications." We aren't replacing
+        the web or the web paradigm. We are instead providing the platform so that it is easy
+        -- and &lt;i style="mso-bidi-font-style: normal"&gt;worthwhile&lt;/i&gt; -- for developers to
+        differentiate when their applications are running on Windows. 
+    &lt;/p&gt;
+    &lt;h4&gt;But what about the enterprise? 
+    &lt;/h4&gt;
+    &lt;p&gt;
+        Now, to get to some specific points brought up in the articles. Jon brings up some
+        good points around the enterprise space. I can only say that we are working hard to
+        build a package of features on the client that will either make enterprise developers
+        willing to standardize on Longhorn or take the extra cost to provide a rich client
+        solution in addition to a web based solution. There are some applications where this
+        will never make sense. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        However, there are a set of applications that are currently being implemented on against
+        today's web clients that could be vastly improved by rich client capabilities. I can
+        definitely see a need for a rich expense reporting application with a good offline
+        mode and rich display and reporting. Anything that involves charting or graphing can
+        also be enhanced by using some rich client technologies. I use Outlook every day to
+        do email. There is a web solution for Exchange called "Outlook Web Access" (OWA) that
+        uses DHTML and all of the other web goodies to provide as good an experience as possible
+        through the web client. While I think that OWA is great and I'm a huge fan of what
+        those guys are doing, I'd still much rather use the real Outlook. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        With Avalon we are hoping to make it vastly easier to write rich data connected applications
+        like Outlook. However, we don't want stop there. We also want developers to be able
+        to get the best of the web. These applications can run in the browser for the browser
+        experience or can be "one click" installed and run on the desktop.&amp;#160; Even when
+        they are "installed" they can be managed from the server and be kept up to date as
+        easily as copying a new version on to the server. Think of how many enterprise LOB
+        apps could benefit from that? Expense reporting (with offline mode), "Digital Dashboard"
+        data aggregation and visualization, integrated content creation, new network connected
+        collaboration applications and more.&amp;#160; 
+    &lt;/p&gt;
+    &lt;h4&gt;Backward compatibility 
+    &lt;/h4&gt;
+    &lt;p&gt;
+        Now, talking to some of Joel's points: He says that we have fundamentally changed
+        our view of backward compatibility. I totally disagree. As one Slashdot poster &lt;a href="http://developers.slashdot.org/comments.pl?sid=111332&amp;amp;cid=9446923"&gt;put
+        it&lt;/a&gt;: "Joel confuses binary compatibility with API compatibility." From the end
+        users point of view we are still completely committed to making apps that run on Windows
+        continue to run on Windows. At the PDC, Jim Allchin showed off &lt;s&gt;Lotus 123&lt;/s&gt; Visicalc
+        running on Longhorn. The developer experience, however, will have a gap -- it is necessary
+        as part of the transition to managed code. He states that VB.Net not being source
+        compatible with VB6 is a first. I would argue that the switch from 16 bit to 32 bit
+        is very similar to the switch from unmanaged code to managed code. Old apps will continue
+        to run and new apps are written to the new technology. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In Avalon we are working very hard to provide rich ways for application developers
+        to tie their old code in with new code that takes advantage of our new technologies.
+        You can host a Win32 hwnd -- WinForms based or not -- in with Avalon content. You
+        can also host Avalon content in a Win32 hwnd. You can nest these completely. While
+        it is true that you have to write new code to get the new features -- and that the
+        new code is part of a completely new framework -- we don't want to force application
+        developers to rewrite everything to start using our stuff. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Above and beyond what Avalon has been doing, the C++ team has heard what the community
+        has been saying and is doing some great work in Whidbey to make the managed version
+        of C++ better than ever.&amp;#160; It will be the best solution for those who have the
+        C++ code and skills and want to start taking advantage of the the CLR. 
+    &lt;/p&gt;
+    &lt;h4&gt;What's a $300B (market cap) company to do? 
+    &lt;/h4&gt;
+    &lt;p&gt;
+        The real question is: What are we to do? Without arguing about the fine points, we
+        are stuck with a choice. We can either continue adding doodad on top of doodad to
+        Win32 (and maintain backward compat from an API and binary perspective) or we can
+        try and make a fresh start with WinFX and set ourselves up for the future. Look at
+        the timelines: Windows 1.0 with the start of Win16 came out in 1985. Windows 95, with
+        the mainstream advent of Win32 came out in 1995. It is now 2004. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Now is the time for Microsoft to either watch the Windows rich client sail in to the
+        sunset or to do its best to reinvigorate it. The only way to make this happen is to
+        go "all-in" and think big. We want to empower developers by making a much richer,
+        network connected and modern API for programming on windows. WinFX is all about taking
+        what we've learned over the last 20 years and creating a solid platform for the next
+        20 years. We will provide the right API, backward compat for old applications and
+        a great bridge between the two for developers. If we really want developers to write
+        code that only runs on windows, we have to provide features and enticements that they
+        can't get anywhere else. While I don't think that it is too late, I do think that
+        we have our work cut out for us. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>190</BlogEntryNumber>
+      <PubDate>Sat, 19 Jun 2004 03:00:58 GMT</PubDate>
+      <LocalPubDate>Fri, 18 Jun 2004 20:00:58</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

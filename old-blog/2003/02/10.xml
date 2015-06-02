@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 10 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Everyone else is doing it...</Title>
+      <Description>&lt;P&gt;I took this last night and this is what I got:&lt;BR&gt;
+
+&lt;a href="http://bbspot.com/News/2003/01/os_quiz.php"&gt;&lt;img
+src="http://www.bbspot.com/Images/News_Features/2003/01/os_quiz/xp.jpg" width="300" height="90"
+border="0" alt="Which OS are You?"&gt;&lt;br&gt;Which OS are You?&lt;/a&gt;
+</Description>
+      <BlogEntryNumber>34</BlogEntryNumber>
+      <PubDate>Mon, 10 Feb 2003 20:30:00 GMT</PubDate>
+      <LocalPubDate>Mon, 10 Feb 2003 13:30:00</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

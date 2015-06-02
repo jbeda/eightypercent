@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 23 Oct 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>scRGB as Unicode</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.joelonsoftware.com/items/2003/10/10.html"&gt;&lt;font color="#336699"&gt;Joel's
+        post&lt;/font&gt;&lt;/a&gt; a couple of days ago reminded me of a conversation I had about a year
+        ago with &lt;a href="http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;q=michael+stokes+color"&gt;&lt;font color="#336699"&gt;Michael
+        Stokes&lt;/font&gt;&lt;/a&gt;, a PM in our group at the time dealing with color.&amp;#160; Specifically,
+        we were talking about how color profiles work and how scRGB makes the world a better
+        place. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'm going to do my best to explain this, but I'm simplifying some of it and I can't
+        claim to be a color expert.&amp;#160; There are many people out there who know much more
+        about this than I do, but I don't think I've seen any body present this to the average
+        programmer.&amp;#160; It goes like this -- there is color data (similar to an 8 bit char)
+        and there is the color profile that describes how to interpret that data (similar
+        to a codepage).&amp;#160; The combination of the&amp;#160;color&amp;#160;and the color profile
+        give you everything you need, in theory,&amp;#160;to get accurate color. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There is a simple standard color space called sRGB which is a formalization of the
+        ad hoc "standard" that has developed over the years.&amp;#160; It is a color space that
+        most monitors and graphics cards support by default.&amp;#160; In other words, if you
+        send&amp;#160;raw RGB data to today's graphics hardware, the thing you see on the screen
+        will be within spitting distance of the sRGB standard.&amp;#160; This is in some ways
+        a parallel to the ASCII with text.&amp;#160; What we end up with is a standard that works
+        well if all you are interested in is showing something on a monitor and you don't
+        care too much about the accuracy of the color.&amp;#160; This is all good and fine as
+        long as you aren't too picky about the color of the shirt you are buying from JCrew.com. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Things start to get complicated once you start talking about gamut.&amp;#160; Any particular
+        device that deals with color (camera, scanner, screen, printer, etc.) has a gamut.&amp;#160;
+        The gamut is the range of physical colors that the device can operate with.&amp;#160;
+        There are colors that you can see that your monitor cannot produce.&amp;#160; Similarly,
+        there are colors that your monitor can produce that your printer can't print.&amp;#160;
+        There are probably even colors that your printer can&amp;#160;put on paper&amp;#160;that your
+        monitor can't display.&amp;#160; In other words, there are physical limitations and characteristics
+        built in to any device.&amp;#160; Since profiles a color space, they too have a gamut. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The sad part here is that sRGB is defined around how computer display hardware happened
+        to work.&amp;#160; There are colors that fall outside of the definition of sRGB.&amp;#160;
+        In fact, there are &lt;em&gt;lots &lt;/em&gt;of colors that fall outside of the sRGB gamut.&amp;#160;
+        My camera (a Canon D60) can capture colors that can't be described by sRGB.&amp;#160;
+        It is like trying to describe a sanskrit character with 7 bit ASCII.&amp;#160; My printer
+        (an Epson 1270) can print colors are also outside of sRGB.&amp;#160; Since I'm in photography
+        for artistic purposes, I'm a bit of a perfectionist and not happy with limiting the
+        colors in my prints by what my monitor can and can't display. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The logical next step here is to redefine the color space so that we can represent
+        colors that sRGB can't represent.&amp;#160; Lots of people have done this.&amp;#160; The most
+        popular color space out there (outside of sRGB) would be AdobeRGB 98 that Adobe popularized
+        via Photoshop.&amp;#160;Reality is that if you define the gamut to be too narrow you end
+        up excluding colors and if you expand the gamut too much you end with too few gradations
+        in colors you care about.&amp;#160; This makes your smooth blue sky look like an&amp;#160;Aztec
+        pyramid.&amp;#160; Because there is a tradeoff here, everyone and their brother have created
+        a color space to fit&amp;#160;a particular need.&amp;#160; The result is that 0xFF0000 (using
+        web syntax) means different things depending on the color space that you are using
+        to interpret it. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Sophisticated software both built into Windows (and Mac OS) and into photoshop does
+        the translation between the data and your screen.&amp;#160; Or from your data to your
+        printer.&amp;#160; Or from you data into a "working color space" and then into the color
+        space of your printer.&amp;#160; This color management software essentially manages mapping
+        from one space to another.&amp;#160; Oh yeah, and don't forget that converting from one
+        space to another is a lossy operation.&amp;#160; All is good and&amp;#160;lightness, right? 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Well, no. Just like 8 bit characters and codepages, it is all too easy to ignore this
+        stuff and just hope for the best.&amp;#160; Almost every consumer level device outputs
+        sRGB, most printer drivers assume sRGB incoming and almost every picture on the web
+        is authored to sRGB (unless it is authored on a Mac which uses a 1.8 gamma space instead
+        of the 2.2 gamma as defined in sRGB).&amp;#160; If most developers just stick their head
+        in the sand and ignore it, then things will mostly work themselves out.&amp;#160; If you
+        take a photo that is encoded in AdobeRGB and interpret it as sRGB, things will mostly
+        work -- it will just look pretty washed out. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Add to this the fact that right now it isn't clear what piece of software is supposed
+        to translate form what space in to whatever other space and at what time and we have
+        a mess on our hands.&amp;#160; Your camera captures more data than can fit in to sRGB
+        but it may throw that data away and store your photo in sRGB.&amp;#160; Photoshop loads
+        this up and throws a dialog that most users have no idea what to do with.&amp;#160; When
+        you print there are an array of choices in both Photoshop and the printer driver.
+        To be honest, I do some of this stuff for a living and I've wasted a lot of paper
+        trying to figure out what the right settings are. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The state of the color union is that most people have just given up and standardized
+        on sRGB across the board.&amp;#160; This is really a shame because we can do so much more.&amp;#160;
+        We are shortchanging ourselves.&amp;#160; This is like asking the entire world to just
+        learn English. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The&amp;#160;way out is Unicode, err, scRGB.&amp;#160; I'm honestly not sure what the 'sc'
+        in scRGB stands for.&amp;#160; scRGB defines a gamut that is much wider than anything
+        you or I can see.&amp;#160; All of the other custom color spaces that have been defined
+        fit inside of scRGB.&amp;#160; However, this comes at a price.&amp;#160; If you were to take
+        an image and encode it in scRGB at 8 bits per channel (bpc), your image would look
+        like crap.&amp;#160; The expanded gamut means that we need much more precision to avoid
+        the color granularity problem described above.&amp;#160; 8bpc isn't good enough.&amp;#160;
+        And you thought we would never need anything more than 16.7 million colors!&amp;#160;
+        The cost of unifying all of the various color spaces is 16bpc or even 32bpc.&amp;#160;
+        Sure it costs more, but your pictures are worth it, right?&amp;#160; Jumping up to 16
+        or 32bpc may seem like a huge leap, but it probably isn't that big a deal in practice.&amp;#160;
+        Memory and disk space is cheap and this stuff can compress pretty well.&amp;#160; Unicode
+        was painful at one point but it is definitely worth it now.&amp;#160; Beyond this, when
+        persisting this stuff out, there are ways to encode scRGB data that recognizes that
+        most of the extra precision isn't needed in many common cases.&amp;#160; This is similar
+        to the UTF-8 or UTF-16 encodings for UCS-4 (in unicode speak). 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The benifits to this switch are huge.&amp;#160; All of the color data that you might want
+        to store can be represented in the scRGB model.&amp;#160; Whereas in today's model converting
+        to any particular color space could be a mistake, converting to scRGB is generally
+        never the wrong thing to do.&amp;#160; With the extended gamut you can be sure that you
+        won't have to clamp or compress your colors and with the extra precision you mitigate
+        the lossyness of&amp;#160;the conversion.&amp;#160; If the printer driver speaks scRGB it
+        can do the best job it knows how to get that on to the paper.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        scRGB is the Unicode of color. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        For more detail, &lt;a href="http://www.extremetech.com/article2/0,3973,15467,00.asp"&gt;&lt;font color="#336699"&gt;here&lt;/font&gt;&lt;/a&gt; is
+        an (old) article on ExtremeTech on scRGB. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Update on April 30, 2005&lt;/strong&gt; 
+        &lt;br /&gt;
+        This article has been in the top 3 results for "scRGB" on Google for quite a while.&amp;#160;
+        I was chatting with Michael Stokes (Color Architect at Microsoft) and he had some
+        comments to add on the naming of scRGB: 
+    &lt;/p&gt;
+    &lt;blockquote&gt;The "sc" in "scRGB" is not defined by IEC, but the annex uses the term
+    "specular component" and that is probably the closest thing to a true definition that
+    IEC has provided.&amp;#160; Historically it was called "sRGB-X" then "XsRGB" (but the
+    marketing folks didn't like "excess" in the pronunciation) and then "sRGB-64" but
+    that was too close to Nintendo 64 and finally "scRGB" but it is all the same thing. &lt;/blockquote&gt;
+</Description>
+      <BlogEntryNumber>146</BlogEntryNumber>
+      <PubDate>Fri, 24 Oct 2003 05:19:34 GMT</PubDate>
+      <LocalPubDate>Thu, 23 Oct 2003 22:19:34</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Here's my card</Title>
+      <Description>
+    &lt;p&gt;
+        This afternoon I went to some meetings on how to present yourself as a Microsoft employee
+        for the PDC.&amp;#160; It was mostly predictable -- use common sense when talking to customers,
+        don't badmouth competitors and be careful around the press.&amp;#160; However, one thing
+        that stuck out in my mind is the fact that we are now encouranged to hand out our
+        business cards.&amp;#160; In the past, it was considered a virtue to keep the development
+        team from getting "distracted" by direction interaction with customers.&amp;#160; I like
+        this new approach a lot more.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>145</BlogEntryNumber>
+      <PubDate>Fri, 24 Oct 2003 05:14:33 GMT</PubDate>
+      <LocalPubDate>Thu, 23 Oct 2003 22:14:33</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>PDCBloggers.com</Title>
+      <Description>
+    I know I'm late to the party here, but I finially &lt;a href="http://pdcbloggers.net/Bloggers/Staff/Joe_Beda.category"&gt;signed
+    up&lt;/a&gt; to get my site listed on PDCBloggers.com.&amp;#160; I'm super jazzed about the
+    PDC and all the stuff that we are presenting there.</Description>
+      <BlogEntryNumber>144</BlogEntryNumber>
+      <PubDate>Fri, 24 Oct 2003 05:04:06 GMT</PubDate>
+      <LocalPubDate>Thu, 23 Oct 2003 22:04:06</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

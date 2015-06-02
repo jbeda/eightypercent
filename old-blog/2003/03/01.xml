@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 1 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Rachel to blog?</Title>
+      <Description>&lt;P&gt;I'm trying to convince my wife that she needs to start a web page to tell funny medical stories.  Stay tuned!</Description>
+      <BlogEntryNumber>53</BlogEntryNumber>
+      <PubDate>Sat, 01 Mar 2003 22:04:46 GMT</PubDate>
+      <LocalPubDate>Sat, 01 Mar 2003 15:04:46</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

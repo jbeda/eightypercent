@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 19 May 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Google Zeitgeist</Title>
+      <Description>
+    &lt;a href="http://www.google.com/press/zeitgeist.html"&gt;This&lt;/a&gt; is very cool.&amp;#160;
+    Now you know that "pigeonry" is the #5 image query on google for April.&amp;#160; Wow!1</Description>
+      <BlogEntryNumber>100</BlogEntryNumber>
+      <PubDate>Mon, 19 May 2003 18:35:43 GMT</PubDate>
+      <LocalPubDate>Mon, 19 May 2003 12:35:43</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

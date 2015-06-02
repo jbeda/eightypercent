@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Fri, 7 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Shiggity Shiggity Shwa</Title>
+      <Description>&lt;a href="http://neelbubba.com/Play/"&gt;Bubba&lt;/a&gt; got all the mad &lt;a href="http://www.gamecubicle.com/specials-mario_twins_shiggidy.htm"&gt;links&lt;/a&gt;.</Description>
+      <BlogEntryNumber>61</BlogEntryNumber>
+      <PubDate>Fri, 07 Mar 2003 21:40:39 GMT</PubDate>
+      <LocalPubDate>Fri, 07 Mar 2003 14:40:39</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>MichaelW's RSS feed</Title>
+      <Description>MichaelW &lt;i&gt;does&lt;/i&gt; have an RSS feed -- he just makes it really hard to find:&lt;br&gt;
+&lt;a href="http://michaelw.net/Articles/YesIhaveanRSSfeed.html"/&gt;http://michaelw.net/Articles/YesIhaveanRSSfeed.html&lt;/a&gt;
+&lt;p&gt;And the latest version of Syndirella can eat his dates but he still has it all screwed up.  I think that he is outputting GMT for when he started the post but marking the date with EST.  Then, when displaying it on his HTML site, he is outputting true EST for the last change of the post.  Times zones and weblogs are hard.  It sounds like they are even harder in CityDesk.  Dates and times are something that everyone stumbles on wrt weblog software..  I know that &lt;a href="http://www.simplegeek.com"&gt;ChrisAn&lt;/a&gt; has had some problems too.</Description>
+      <BlogEntryNumber>60</BlogEntryNumber>
+      <PubDate>Fri, 07 Mar 2003 21:16:43 GMT</PubDate>
+      <LocalPubDate>Fri, 07 Mar 2003 14:16:43</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Code Blue</Title>
+      <Description>&lt;p&gt;My wife, Rachel, has her blog up and running.  It has absolutely nothing whatsoever to do with computers or code.  Instead of being a computer dork, she is going to be a medical dork!  She is going to tell funny stories from the hospital.
+&lt;p&gt;&lt;a href="http://www.eightypercent.net/codeblue"&gt;http://www.eightypercent.net/codeblue&lt;/a&gt;</Description>
+      <BlogEntryNumber>59</BlogEntryNumber>
+      <PubDate>Fri, 07 Mar 2003 17:22:08 GMT</PubDate>
+      <LocalPubDate>Fri, 07 Mar 2003 10:22:08</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

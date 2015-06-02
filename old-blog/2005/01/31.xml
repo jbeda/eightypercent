@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 31 Jan 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>Gizoogle</Title>
+      <Description>
+    &lt;p&gt;
+        I'm not sure who these guys are, but this sure is funny: &lt;a href="http://www.gizoogle.com/"&gt;http://www.gizoogle.com/&lt;/a&gt;.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>231</BlogEntryNumber>
+      <PubDate>Tue, 01 Feb 2005 02:15:13 GMT</PubDate>
+      <LocalPubDate>Mon, 31 Jan 2005 18:15:13</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 27 Oct 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>MSAvalon.Windows.Media</Title>
+      <Description>
+    &lt;p&gt;
+        We are public!&amp;#160; Ask me what you will.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I've been working on the graphics systems for Avalon for over two years now and it
+        is great to&amp;#160;finially talk to people about it.&amp;#160; Let me know what you think
+        and if you have any questions.
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you are here, stop by the hands on labs tomorrow or Wed. and say hi.&amp;#160; They
+        haven't been that busy yet so I'll have plenty of time to chat.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>150</BlogEntryNumber>
+      <PubDate>Tue, 28 Oct 2003 01:59:59 GMT</PubDate>
+      <LocalPubDate>Mon, 27 Oct 2003 17:59:59</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 7 Apr 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Banned from Slashdot</Title>
+      <Description>&lt;p&gt;I was playing around with SharpReader and apparently I hit their server one too many times, as I'm now &lt;a href="http://slashdot.org/faq/accounts.shtml#ac1050"&gt;banned&lt;/a&gt; from the slashdot RSS feed.  Too funny -- I think I'll live.
+&lt;p&gt;You can get banned from the front page too.  I've seen it happen at work when they mistook our proxy servers for someone hammering their machines.  They display a big red page.</Description>
+      <BlogEntryNumber>75</BlogEntryNumber>
+      <PubDate>Tue, 08 Apr 2003 00:35:02 GMT</PubDate>
+      <LocalPubDate>Mon, 07 Apr 2003 18:35:02</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Cheap Pano Head</Title>
+      <Description>&lt;p&gt;To make great panoramic pictures you need a panoramic head.  To make really great pictures you need a &lt;i&gt;spherical&lt;/i&gt; panoramic head.  &lt;a href="http://www.tawbaware.com/maxlyons/"&gt;Max Lyons&lt;/a&gt; and &lt;a href="http://www.caldwellphotographic.com/MosaicTutorial.html&gt;Brian Caldwell&lt;/a&gt; both have examples of what can be done.  (Max says that he uses a homemade pano head with his Nikon 990, but I don't think that would work with my camera -- a Canon D60.)
+&lt;p&gt;Unfortunately, spherical panoramic heads are, for some odd reason, very expensive.  Quality camera equipment, in general, is very very expensive, but these seem to be above and beyond.  For an example, check out &lt;a href="http://www.kaidan.com/Detail.bok?no=44"&gt;this&lt;/a&gt; product from Kaidan.  $740 is too much for me.
+&lt;p&gt;I'm looking a constructing my own Pano head similar to what &lt;a href="http://www.erik-krause.de/panohead/"&gt;Erik ruffle&lt;/a&gt; has done.  I'm looking in to doing this with extruded aluminum "erector set" stock from &lt;a href="http://www.erik-krause.de/panohead/"&gt;8020&lt;/a&gt;.  I'm planning on mounting this on my &lt;a href="http://www.acratech.net/prod01.htm"&gt;Acratech ball head&lt;/a&gt;.  Like Erik, I plan on using the ball head upside down.  I've also purchased a Arca-swiss style quick release clamp from &lt;a href="http://www.kirkphoto.com/platforms.html"&gt;Kirk Photo&lt;/a&gt; to mount the camera.
+&lt;p&gt;I'll post pictures if anything comes of this little project.</Description>
+      <BlogEntryNumber>74</BlogEntryNumber>
+      <PubDate>Tue, 08 Apr 2003 00:19:58 GMT</PubDate>
+      <LocalPubDate>Mon, 07 Apr 2003 18:19:58</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

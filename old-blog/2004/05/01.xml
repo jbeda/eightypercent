@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 1 May 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Talking at WinHEC</Title>
+      <Description>
+    &lt;p&gt;
+        I should have posted this earlier, but better late than never.&amp;#160; I'm going to
+        be speaking at WinHEC.&amp;#160; It'll be session TW04006: Avalon Graphics - 2D, 3D, Imaging
+        and Composition.&amp;#160; If you are there and are interested in Avalon come check it
+        out.&amp;#160; I'll be going in to some detail on what happens between when a developer
+        calls an API and we call Direct3D.&amp;#160;&amp;#160;If you aren't going to be there, wish
+        me luck.&amp;#160; The room holds 700 people (I think) and I've never talked in front
+        of that many people before. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'll also be hanging out in the tech lounge and be at our "Ask the Experts" session. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>181</BlogEntryNumber>
+      <PubDate>Sun, 02 May 2004 03:06:37 GMT</PubDate>
+      <LocalPubDate>Sat, 01 May 2004 20:06:37</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

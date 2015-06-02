@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 15 Dec 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>libjingle</Title>
+      <Description>
+    &lt;p&gt;
+        The second thing that happened today is that we released &lt;a href="http://code.google.com/apis/talk/index.html"&gt;libjingle&lt;/a&gt; on
+        sourceforge.&amp;#160;Full details are up on the &lt;a href="http://googletalk.blogspot.com/2005/12/jingle-all-way.html"&gt;Talk
+        blog&lt;/a&gt;&amp;#160;and at &lt;a href="http://google-code-updates.blogspot.com/2005/12/jingle-bells.html"&gt;code.google.com&lt;/a&gt;.
+        Sean Egan (of Gaim fame) packaged up the code that Talk uses to do p2p as a library
+        for others to use.&amp;#160; Hopefully this will start a flood of interoperable voice
+        (and other p2p applications).&amp;#160; So that anyone can use it the code is released
+        under a berkeley style license. Sean put together some great docs on how to use the
+        new library &lt;a href="http://code.google.com/apis/talk/index.html"&gt;here&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One thing to keep in mind -- we haven't harmonized the specs and libjingle yet.&amp;#160;
+        The goal is to have libjingle implement the spec as it matures.&amp;#160; Right now it
+        just interoperates with Talk and is pretty far from the Jingle docs that the JSF released.&amp;#160;
+        As the spec moves forward the code will converge.&amp;#160; Most of the differences right
+        now are syntax.&amp;#160; For example the underlying technique for punching through NATs
+        is unchanged and is an adaptation of &lt;a href="http://www.ietf.org/internet-drafts/draft-ietf-mmusic-ice-06.txt"&gt;ICE&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        We've wanted to release this core part of the Talk application for a long time now
+        and I'm super excited to see it happen. The combination of these new standards and
+        the libjingle library should be pretty potent.&amp;#160; And since&amp;#160;Jingle can be
+        used for more than just voice, I'm sure we'll see this stuff used in interesting and
+        surprising ways that we never envisioned.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Update12/17/2006: Clarified how divergent spec/code are and pointed to ICE.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>261</BlogEntryNumber>
+      <PubDate>Fri, 16 Dec 2005 05:48:23 GMT</PubDate>
+      <LocalPubDate>Thu, 15 Dec 2005 21:48:23</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Jabber Jingle</Title>
+      <Description>
+    &lt;p&gt;
+        Today is a travel day for me, but I wanted to log in from the airport to post about
+        the release of the Jingle specs.
+    &lt;/p&gt;
+    &lt;p&gt;
+        We've been working with the Jabber community to&amp;#160;standardize the P2P protocols
+        that we've built on top of XMPP/Jabber.&amp;#160; This process has already been super
+        useful in thinking through new scenarios.&amp;#160;&amp;#160; I look forward to continued
+        collaboration between Google and the Jabber community.&amp;#160; More links on this: Peter
+        Saint-Andre's &lt;a href="http://www.saint-andre.com/blog/2005-12.html#2005-12-15T11:51"&gt;blog&lt;/a&gt;.&amp;#160; &lt;a href="http://www.jabber.org/press/2005-12-15.shtml"&gt;Press
+        release&lt;/a&gt; on jabber.org.&amp;#160; &lt;a href="http://www.jabber.org/jeps/jep-0166.html"&gt;JEP-0166&lt;/a&gt; and &lt;a href="http://www.jabber.org/jeps/jep-0167.html"&gt;JEP-0167&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The current protocols are still a work in progress so stay tuned for more developments.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>260</BlogEntryNumber>
+      <PubDate>Thu, 15 Dec 2005 19:34:38 GMT</PubDate>
+      <LocalPubDate>Thu, 15 Dec 2005 11:34:38</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

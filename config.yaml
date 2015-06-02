@@ -1,0 +1,12 @@
+baseurl: http://new.eightypercent.net/
+languageCode: en-us
+title: 80%
+description: The personal blog of Joe Beda
+uglyurls: true
+pluralizelisttitles: false
+
+taxonomies:
+  Archive: archive
+
+params:
+  description: "The personal blog of Joe Beda"

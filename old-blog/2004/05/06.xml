@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 6 May 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Hello Slashdot</Title>
+      <Description>
+    &lt;p&gt;
+        Ha! I get linked from a &lt;a href="http://developers.slashdot.org/comments.pl?sid=106586&amp;amp;cid=9070786"&gt;comment&lt;/a&gt; and
+        I see a spike in traffic.&amp;#160; Slashdot is &lt;em&gt;the&lt;/em&gt; flow machine.&amp;#160; In any
+        case, there are some misstatements in that comment that I'd like to answer.&amp;#160;
+        First, I'm not "the guy from Microsoft behind Avalon."&amp;#160; Rather I'm one on a large
+        team of developers.&amp;#160; My particular area is the graphics APIs.&amp;#160; Avalon is
+        much more than just graphics.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Second, managed code is a different beast that unmanaged code.&amp;#160; While it can
+        make programmers more productive and I totally think that it is the way of the future,
+        a developer can write bad code in any language.&amp;#160; While right now I don't think
+        that anyone would claim that managed code is faster than unmanaged code, the difference
+        is generally not that great.&amp;#160; I've heard of some research that suggests that
+        future JITs may be able to apply run time directed optimizations and recompilation
+        that &lt;em&gt;could&lt;/em&gt; make managed code faster.&amp;#160; But that world isn't here yet.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In the parlance of our time: "Just&amp;#160;my 2 cents"
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>183</BlogEntryNumber>
+      <PubDate>Thu, 06 May 2004 22:58:24 GMT</PubDate>
+      <LocalPubDate>Thu, 06 May 2004 15:58:24</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>WinHEC report</Title>
+      <Description>
+    &lt;p&gt;
+        I'm done with my part of helping make WinHEC a success.&amp;#160; My talk went off pretty
+        well and we got some great questions and comments.&amp;#160; I also worked the booth and
+        showed&amp;#160;industry and press people what Longhorn can do.&amp;#160; The big news for
+        the WinHEC release is that we now have a start to our 3D APIs.&amp;#160; We had a couple
+        of examples that show mixing 3D and 2D in a seamless way.&amp;#160; I tried to go out
+        of my way to make sure that everyone knew that Avalon was much more than just graphics.&amp;#160;
+        We are a full UI platoform that includes controls, styling, databinding, etc.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The main demo I was showing was a simulated "blood sugar tracker."&amp;#160; It essentially
+        has a 3D bar graph in the background that slowly rotates.&amp;#160; Layered on that are
+        semi-transparent buttons.&amp;#160; There is also a details panel that can come up that
+        is semi-transparent and has another 3D scene hosted inside of it.&amp;#160; We have a
+        vector graphic doctor icon in the corner that you can zoom in on to see that it is
+        rasterized at the device resolution.&amp;#160; The really impressive thing here is that
+        our demo team (a dev and a designer) took 2-3 days to turn this from an email idea
+        into reality.&amp;#160; Robert and &lt;a href="http://longhornblogs.com/ndunlap/"&gt;Nathan&lt;/a&gt; did
+        a great job of showing the power of Avalon.&amp;#160; Here is a screen shot:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img src="http://www.eightypercent.net/Images/3dgraph.jpg"&gt;
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>182</BlogEntryNumber>
+      <PubDate>Thu, 06 May 2004 22:41:29 GMT</PubDate>
+      <LocalPubDate>Thu, 06 May 2004 15:41:29</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

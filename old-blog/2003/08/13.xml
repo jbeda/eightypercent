@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 13 Aug 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Job opening</Title>
+      <Description>
+    &lt;p&gt;
+        I know that for the right person &lt;a href="http://www.microsoft.com/careers/search/details.aspx?JobID=3b54249d-9b43-4730-a544-122ac237b086"&gt;this&lt;/a&gt; is
+        a dream job.&amp;#160; Come work for the man on cool new graphics stuff in Longhorn.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>129</BlogEntryNumber>
+      <PubDate>Thu, 14 Aug 2003 06:25:13 GMT</PubDate>
+      <LocalPubDate>Wed, 13 Aug 2003 23:25:13</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

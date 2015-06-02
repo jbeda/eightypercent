@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Fri, 26 Aug 2005">
+  <Entries>
+    <BlogEntry>
+      <Title>Goin' to the PDC</Title>
+      <Description>
+    &lt;p&gt;
+        [In case you aren't up on the MS lingo -- the&amp;#160;&lt;a href="http://msdn.microsoft.com/events/pdc/"&gt;&lt;strong&gt;P&lt;/strong&gt;rofessional &lt;strong&gt;D&lt;/strong&gt;evelopers &lt;strong&gt;C&lt;/strong&gt;onference&lt;/a&gt; is
+        the once in a while conference that Microsoft holds where they talk about all things
+        Microsoft.&amp;#160; It is more forward looking than a lot of the other MS conferences.]
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'm going to the PDC to keep up with what is going on with Windows.&amp;#160; Drop me
+        a line if you'd like to chat about Google Talk or anything else.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'm not sure which sessions I'm going to attend yet, but I can tell you that my interests
+        have shifted somewhat since I've shipped software on the outside.&amp;#160; I'm much more
+        interested in stuff that can help make Google Talk better now than more forward looking
+        stuff that may not ship for another year yet.&amp;#160; I'm also a lot less interested
+        in huge frameworks that tie my product to Windows.&amp;#160; While Google Talk is right
+        now just a Windows only application, we've worked hard to keep the Win32 only stuff
+        isolated so that it will be easier for us to port/write on other platforms.
+    &lt;/p&gt;
+    &lt;p&gt;
+        That being said, is anyone working on an Avalon/.Net Jabber/XMPP client?&amp;#160; I've
+        been looking at the SSL/TLS support in the WinFX SDK and it might be possible to do
+        it without any reliance on external libraries.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>251</BlogEntryNumber>
+      <PubDate>Fri, 26 Aug 2005 14:59:29 GMT</PubDate>
+      <LocalPubDate>Fri, 26 Aug 2005 07:59:29</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

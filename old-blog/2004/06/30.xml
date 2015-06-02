@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 30 Jun 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Avalon Graph Demo Posted</Title>
+      <Description>
+    &lt;p&gt;
+        It's (a)live!&amp;#160; Look &lt;a href="http://www.microsoft.com/downloads/details.aspx?familyid=9C1724D1-B63E-4D7D-835A-FF94A1FAD311&amp;amp;displaylang=en"&gt;here&lt;/a&gt; (up
+        on ms.com) for the 3D Graph demo that shows off the 3D demo from WinHEC that I &lt;a href="http://www.eightypercent.net/Archive/2004/05/06.html#a182"&gt;talked
+        about quite a while ago&lt;/a&gt;.&amp;#160; Here it is again:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="" hspace="0" src="http://www.eightypercent.net/Images/3dgraph.jpg" align="baseline" border="0" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        I apologize that this took so long to get out here.&amp;#160; I've been busy and it has
+        been interesting to get this hosted on MS.com.&amp;#160; I have some other similar samples
+        coming and I think that I'll just host them here directly.&amp;#160; I mostly took the
+        demo code that Nathan and Robert had and cleaned it up for public consumption.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Take a look at it and let me know what you think.&amp;#160; As Avalon moves forward, I'd
+        like to keep this example up to date and add to it.
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you are interested in Avalon 3D and you haven't found his site yet, &lt;a href="http://blogs.msdn.com/danlehen/"&gt;DanLehen&lt;/a&gt; has
+        some great samples up and running.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>193</BlogEntryNumber>
+      <PubDate>Wed, 30 Jun 2004 23:48:26 GMT</PubDate>
+      <LocalPubDate>Wed, 30 Jun 2004 16:48:26</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Date="Tue, 18 Sep 2007">
+  <Entries>
+    <BlogEntry>
+      <Title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</Title>
+      <Description>
+    &lt;p&gt;
+        I haven't updated my blog in forever and I'm probably going to abandon my homebrew
+        static client generated site for something like &lt;a href="http://mephistoblog.com/"&gt;Mephisto&lt;/a&gt; at
+        some point but I haven't had time to make the transition. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In the meantime, I'd like to save people some pain and document the steps I have go
+        through to upgrade my Highpoint RocketRaid 2220 on Linux.&amp;#160; I installed the driver
+        a while ago and don't remember the exact steps for that, so this is just what I do
+        to upgrade.&amp;#160; I wrote a little shell script: 
+    &lt;/p&gt;
+    &lt;pre&gt;#! /bin/sh -v
+
+# Update this version every time you upgrade.
+VER=2.6.15-29-686
+
+# To update the highpoint driver:
+# 1) Download latest highpoint driver from: 
+#
+# http://www.highpoint-tech.com/BIOS_Driver/rr222x/Linux/
+#
+# 2) Patch driver by changing wrong kernel #ifdefs in osm/linux/os_linux.c  
+#   KERNEL_VERSION(2,6,15) -&amp;gt; KERNEL_VERSION(2,6,16)
+
+# Disable sata_mv.ko by moving it to a new directory.  This driver
+# conflicts with highpoint driver.  I don't know if this is the
+# "right" way to do this, but it works.
+sudo mkdir -p /lib/modules/${VER}.disabled
+sudo mv /lib/modules/${VER}/kernel/drivers/scsi/sata_mv.ko /lib/modules/${VER}.disabled/
+
+# Make sure kernel headers are installed
+sudo apt-get install linux-headers-${VER}
+
+# Make new hpt driver:
+cd ~jbeda/sources/rr222x-linux-src-1.07/product/rr2220/linux/
+make KERNELDIR=/lib/modules/${VER}/build
+sudo make install KERNELDIR=/lib/modules/${VER}/build
+
+# make a new ramfs
+# mkinitramfs -o /boot/initrd.img-2.6.15-27-686 /lib/modules/2.6.15-27-686
+sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
+    &lt;p&gt;
+        Good luck. I hope this helps people out there that are stuck with this thing. I'm
+        still looking for a good cheap solution to host lots of SATA drives on Linux.&amp;#160;
+        Port multipliers are there and aren't as cheap as they should be.&amp;#160; The driver
+        situation is pretty dire and there aren't that many non RAID (fake or not) &amp;gt;4 ports
+        out there.&amp;#160; I haven't tried any SAS cards though -- perhaps the situation there
+        is better.&amp;#160; I'm also running an LSI MegaRAID SATA 300-8XLP with the megaraid
+        driver.&amp;#160; It wasn't as cheap but at least it works with a true open driver.&amp;#160; 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>274</BlogEntryNumber>
+      <PubDate>Wed, 19 Sep 2007 05:19:30 GMT</PubDate>
+      <LocalPubDate>Tue, 18 Sep 2007 22:19:30</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

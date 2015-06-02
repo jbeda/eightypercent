@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 22 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Back in Boise</Title>
+      <Description>&lt;P&gt;I'm back in Boise and Chris is still kicking my ass with BlogX.
+&lt;P&gt;I got mail from &lt;a href="http://gary.burd.info/"&gt;Gary Burd&lt;/a&gt; that my RSS feed was valid.  The problem was that I was using relative URLs in some of my entries.  I've fixed up the problem and I'll be sure to keep an eye on that in the future.
+&lt;P&gt;At least I'm putting out good XML, unlike Radio...</Description>
+      <BlogEntryNumber>43</BlogEntryNumber>
+      <PubDate>Sat, 22 Feb 2003 23:25:49 GMT</PubDate>
+      <LocalPubDate>Sat, 22 Feb 2003 16:25:49</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

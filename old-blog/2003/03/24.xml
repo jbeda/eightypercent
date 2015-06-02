@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 24 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Tip of the day -- Symbol Server!</Title>
+      <Description>&lt;p&gt;Now, for the tip of the day (or week, or whatever...)
+&lt;p&gt;In debugging this latest problem, I had to download symbols for various OS components.  Internally, we have a pretty vast symbol server that can get you .PDBs for everything that you need.  Externally, you can get symbols for many components so that you can debug through them.  Nothing beats a good call stack!
+&lt;p&gt;Both our internal and external systems use a &lt;i&gt;symbol server&lt;/i&gt; to locate the right symbols.  We didn't have this until ~2 years ago, and I don't know how we lived without it.  Getting the right symbols used to be voodoo -- now it is super easy.  Here is a page talking about what you have to do: &lt;a href="http://www.microsoft.com/ddk/debugging/symbols.asp"&gt;http://www.microsoft.com/ddk/debugging/symbols.asp&lt;/a&gt;.  
+&lt;p&gt;Also note that with VS.Net you can use this stuff too!  Here is a link on that: &lt;a href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;q319037"&gt;http://support.microsoft.com/default.aspx?scid=kb;EN-US;q319037&lt;/a&gt;</Description>
+      <BlogEntryNumber>70</BlogEntryNumber>
+      <PubDate>Tue, 25 Mar 2003 01:46:22 GMT</PubDate>
+      <LocalPubDate>Mon, 24 Mar 2003 18:46:22</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>So busy...</Title>
+      <Description>&lt;p&gt;I haven't been posting lately because I've been super busy.  I've spent the weekend debugging a tough memory leak in some COM code.  I sure don't miss doing that with managed code!  
+&lt;p&gt;I'm going to be in Redmond again tomorrow and Wednesday so updates won't be happening then either.  Oh well.
+&lt;p&gt;BTW, I've made some progress on my FTP uploader but not as much as I'd like.  I'll post something here when I have something to show.
+</Description>
+      <BlogEntryNumber>69</BlogEntryNumber>
+      <PubDate>Tue, 25 Mar 2003 01:39:09 GMT</PubDate>
+      <LocalPubDate>Mon, 24 Mar 2003 18:39:09</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

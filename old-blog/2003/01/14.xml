@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 14 Jan 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>GeoURL ICBM Address Server</Title>
+      <Description>&lt;P&gt;Okay, I put information on my page about where my house is so now you can check to see who else has registered and is near me.&amp;nbsp;&lt;/P&gt;
+&lt;P&gt;&lt;A title="check out my neighbors in the real world" href="http://geourl.org/near/?p=http://www.eightypercent.net"&gt;&lt;IMG height=14 src="http://geourl.org/geourl.png" width=52 border=0&gt; &lt;/A&gt;&lt;/P&gt;
+&lt;P&gt;It looks like they don't keep enough precision on the position in their data base so &lt;A href="http://www.acme.com/mapper/mapper.cgi?lat=47.653754&amp;amp;long=-122.33776&amp;amp;scale=9&amp;amp;theme=Image&amp;amp;width=5&amp;amp;height=4&amp;amp;dot=Yes"&gt;here&lt;/A&gt;&amp;nbsp;is a map with my real location.&lt;/P&gt;</Description>
+      <BlogEntryNumber>8</BlogEntryNumber>
+      <PubDate>Wed, 15 Jan 2003 04:19:00 GMT</PubDate>
+      <LocalPubDate>Tue, 14 Jan 2003 20:19:00</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Ticking clock</Title>
+      <Description>The clock is ticking.&amp;nbsp; I have 25 days to write a replacement for Radio.&amp;nbsp; I'm not going to pay for this &lt;A href="http://radio.userland.com/discuss/msgReader$21797?mode=topic&amp;amp;y=2003&amp;amp;m=1&amp;amp;d=14"&gt;POS&lt;/A&gt; that doesn't work.</Description>
+      <BlogEntryNumber>7</BlogEntryNumber>
+      <PubDate>Wed, 15 Jan 2003 04:09:18 GMT</PubDate>
+      <LocalPubDate>Tue, 14 Jan 2003 20:09:18</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>MichaelW has a weblog</Title>
+      <Description>&lt;P&gt;Michael says I made him do &lt;A href="http://michaelw.net/Articles/Joemademedoit.html"&gt;it&lt;/A&gt;.&lt;/P&gt;
+&lt;P&gt;Well, &lt;A href="http://www.simplegeek.com"&gt;ChrisAn&lt;/A&gt; made &lt;EM&gt;me&lt;/EM&gt; do it.&lt;/P&gt;
+&lt;P&gt;&lt;A href="http://michaelw.net/Articles/Postingviaemail.html"&gt;BTW&lt;/A&gt;, Michael, blogger supposedly does let you &lt;A href="http://publicmind.blogger.com/enduser/group.jsp;jsessionid=340101A71E4E6122B81601F246ED67E7?node=116"&gt;post via email&lt;/A&gt;.&amp;nbsp; So does Radio, but Radio generally doesn't work for me.&lt;/P&gt;</Description>
+      <BlogEntryNumber>6</BlogEntryNumber>
+      <PubDate>Wed, 15 Jan 2003 04:01:06 GMT</PubDate>
+      <LocalPubDate>Tue, 14 Jan 2003 20:01:06</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>What was kodak thinking?</Title>
+      <Description>&lt;P&gt;Check out the &lt;A href="http://www.dpreview.com/news/0301/03011403kodak14ndelay.asp"&gt;sample images&lt;/A&gt; from Kodaks (twice delayed) 14 megapixel DSLR, the DSC-14n.&lt;/P&gt;
+&lt;P&gt;Now check out the &lt;A href="http://web.canon.jp/Imaging/EOS1DS/EOS1DS_sample-e.html"&gt;samples&lt;/A&gt; from the Canon 1Ds.&lt;/P&gt;
+&lt;P&gt;These pictures are both from the manufacturers served from their websites.&amp;nbsp; Is Kodak really going to sell any of these things?&lt;/P&gt;</Description>
+      <BlogEntryNumber>5</BlogEntryNumber>
+      <PubDate>Tue, 14 Jan 2003 16:32:17 GMT</PubDate>
+      <LocalPubDate>Tue, 14 Jan 2003 08:32:17</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

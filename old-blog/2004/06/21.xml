@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 21 Jun 2004">
+  <Entries>
+    <BlogEntry>
+      <Title> Yet More on the Rich Client</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.articulatebabble.org/archives/2004/06/20T021013.php"&gt;Vince has
+        responded&lt;/a&gt; to my "&lt;a href="http://www.eightypercent.net/Archive/2004/06/18.html#a190"&gt;Defending
+        the Rich Client&lt;/a&gt;" post. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        He works on writing games for &lt;a href="http://www.midway.com/"&gt;Midway&lt;/a&gt; and has
+        a unique perspective.&amp;#160; He says that the type of games that he writes are the
+        ultimate rich client.&amp;#160; To a certain degree I agree, but I'd like to dodge some
+        of that as this is a market where Avalon definately isn't targeted. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        However, Vince does talk about internal authoring tools for games such as level editors
+        and he has some concerns with how plausible it would be for someone to start taking
+        advantage of the CLR and Avalon.&amp;#160; I'm not an interop expert, but here are some
+        thoughts:&amp;#160; 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Add-ins for other packages.&amp;#160; If those packages are DLL based, you can always
+            use MC++ to write add-ins.&amp;#160; With both WinForms (I think) and Avalon, you should
+            be able to write UI that can be hosted via hwnds.&amp;#160; If the package is COM based,
+            you can either use MC++ or CLR COM interop support.&amp;#160; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Writing a new tool. You shouldn't have to start from scratch.&amp;#160; You can host windows
+            that are written in unmanaged code in both WinForms and Avalon.&amp;#160; Beyond this,
+            you can manage internal intefaces via P/Invoke, COM interop or MC++ (if you aren't
+            happy with the current managed C++ implementation, all I can say is that the &lt;a href="http://blogs.msdn.com/slippman/archive/2004/05/28/143886.aspx"&gt;team
+            has heard you&lt;/a&gt; and &lt;a href="http://msdn.microsoft.com/visualc/whidbey/"&gt;changes&lt;/a&gt; are &lt;a href="http://blogs.msdn.com/hsutter/"&gt;in
+            the works&lt;/a&gt;). 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        The next question: Is it worth it?&amp;#160; We definately hope so, but there is nothing
+        stopping you from continuing to use the technologies that you are currently using.&amp;#160;
+        Managed code and garbage collection aren't the solution to every problem.&amp;#160; There
+        are certainly places where it does make sense to drop down in to unmanaged code, just
+        like there are places where it make sense to drop down in to assembly. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, if you do decide to jump, will it do everything that you want?&amp;#160; Vince gives
+        an example where he can't get a specific behavior out of WinForms without dropping
+        down and P/Invoking.&amp;#160; I'm not sure what is going on here, but the reality is
+        that there are going to be things that we don't wrap or don't think of.&amp;#160; That
+        is just the challenge of writing a platform -- we try to expose as much functionality
+        as possible in as easy to program a way as possible while leaving as much room for
+        extensibility as possible.&amp;#160; This is a complicated equation and we are sure to
+        miss stuff.&amp;#160; To complicate things, when we move forward with something that is
+        more than just evolutionary (WinForms and Avalon, for example) there are going to
+        be regressions in functionality.&amp;#160; We may have decided to change the equation
+        from one framework to another.&amp;#160; All I can really say is that we try our best
+        and please let us know if there is something we missed. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Next, Vince looks at my 3 reasons to write rich client apps: presentation, local storage
+        and network connectivity.&amp;#160; How important these are to different developers and
+        users depends on specific circumstances.&amp;#160; While local storage may not be that
+        big a deal for networking, it would be huge for an online image gallery application
+        with a smart client interface (it looks like the guys at &lt;a href="http://www.ngallery.org"&gt;nGallery&lt;/a&gt; are
+        eventually headed in this direction).&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        One area where the web model has been ahead of the traditional Windows APIs is the
+        ease of connecting to the network.&amp;#160; But it was the case where there were things
+        you could do with Win32 (raw network access) that you can't do with a typical browser
+        and there are things that you can do with the browser (talk http to load and display
+        an image asynchronously) that are super hard in Win32.&amp;#160; Making the smart client
+        better is all about removing these "either-or" choices and giving you the best of
+        both worlds. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Lastly, Steve rails on the fact that it looks like MSBuild isn't going to support
+        VC++ out of the box.&amp;#160; I have no clue what is going on here but stay tuned to &lt;a href="http://blogs.msdn.com/akipman/"&gt;AKipman's
+        blog&lt;/a&gt; for news. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Overall, I really think that this is a healty debate and I thank Joel for getting
+        it started.&amp;#160; Hopefully this gives everyone a little insight in to why we are
+        doing what we are doing in Avalon and Longhorn. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>191</BlogEntryNumber>
+      <PubDate>Mon, 21 Jun 2004 18:34:10 GMT</PubDate>
+      <LocalPubDate>Mon, 21 Jun 2004 11:34:10</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

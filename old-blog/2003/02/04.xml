@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 4 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>And I'm off</Title>
+      <Description>&lt;P&gt;I'm off to Boise.  All my stuff is packed up and the guinea pig is packaged up in her carrier.&lt;/P&gt;
+&lt;P&gt;I probably won't have time to post again (and work on my software!) until sometime this weekend.  The cable modem is supposed to be installed on Thursday.  We'll see&lt;/P&gt;
+&lt;P&gt;Wish me luck!&lt;/P&gt;</Description>
+      <BlogEntryNumber>27</BlogEntryNumber>
+      <PubDate>Wed, 05 Feb 2003 06:47:16 GMT</PubDate>
+      <LocalPubDate>Tue, 04 Feb 2003 22:47:16</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Boise, here I come</Title>
+      <Description>&lt;P&gt;I meant to write this earlier but I got carried away working on JoeBlogger
+&lt;P&gt;I'm moving to Boise for the next 5 months (back in July) to be with my wife.  She is a doctor and her residency takes her to Boise for a year.  She has already been out there since the beginning of July 2002, but it has been really hard being apart.
+&lt;P&gt;I've worked it out with my management so that I can telecommute.  Everyone at MSFT has been super supportive about this.  I think that the whole thing is just amazing. I'm looking forward to being able to really crank on stuff without all of the interuptions of being at the office.
+&lt;P&gt;Now all I have to do is avoid all of the "interuptions" at home</Description>
+      <BlogEntryNumber>26</BlogEntryNumber>
+      <PubDate>Tue, 04 Feb 2003 08:56:41 GMT</PubDate>
+      <LocalPubDate>Tue, 04 Feb 2003 00:56:41</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>One more step...</Title>
+      <Description>&lt;P&gt;This is a test of an entry generated in my tool.  I have to type in raw HTML right now, but everything appears to be working...&lt;/P&gt;
+&lt;P&gt;Here is a screen shot of the current UI:&lt;/P&gt;
+&lt;IMG src="/Stuff/JoeBlogger2.JPG" &gt;
+&lt;P&gt;Things yet to do...&lt;/P&gt;
+&lt;UL&gt;
+&lt;LI&gt; Use MSHTML for rich editing.  And switch back and forth in a reasonable way. (Does anyone out there have a simple example I can drop in here?  I'm not looking forward to screwing with all of the interop)
+&lt;LI&gt;Automatic upstreaming
+&lt;LI&gt;Allow changing of time on an entry
+&lt;LI&gt;Deleting and other such management of an entry
+&lt;LI&gt;Categories!
+&lt;LI&gt;Work on my template to improve the look of my site
+&lt;LI&gt;Multiple site management and site configuration.  A lot of stuff is hard coded right now.
+&lt;/UL&gt;
+&lt;P&gt;I've also decided that storing the entries in an xml file per day is a bad idea.  The timezones will get you.  I store the timestamp on an entry using GMT but the XML file (which is used as input into the UI) is based on local time.  I also use localtime all over the place in the UI.  I'll probably move to a flat list of entries (one per XML file) at some point and just figure out the local day assignments at runtime.  This will map much better to a real database anyway.&lt;/P&gt;
+</Description>
+      <BlogEntryNumber>25</BlogEntryNumber>
+      <PubDate>Tue, 04 Feb 2003 08:21:55 GMT</PubDate>
+      <LocalPubDate>Tue, 04 Feb 2003 00:21:55</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

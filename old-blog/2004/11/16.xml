@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 16 Nov 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Jobs at Google</Title>
+      <Description>
+    With the advent of our new office, a lot of people have been asking (via email or
+    comments on the blog here) about jobs at the Kirkland office.&amp;#160; For a variety
+    of reasons, I really can't do much on the recruiting side.&amp;#160; If I've worked with
+    you and you don't work for Microsoft, feel free to drop me a line.&amp;#160; Otherwise,
+    your best bet is to send email to &lt;a href="mailto:jobs@google.com"&gt;jobs@google.com&lt;/a&gt; as
+    specified &lt;a href="http://www.google.com/jobs/"&gt;here&lt;/a&gt;.&amp;#160; Even though Kirkland
+    isn't listed there, I'm sure you can reference the office in any email you send. I
+    wish I could be everybody's inside line, but I can't.</Description>
+      <BlogEntryNumber>221</BlogEntryNumber>
+      <PubDate>Wed, 17 Nov 2004 02:49:08 GMT</PubDate>
+      <LocalPubDate>Tue, 16 Nov 2004 18:49:08</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Random Update</Title>
+      <Description>
+    &lt;p&gt;
+        I've been super busy at work for the last few weeks.&amp;#160; We've been iterating on
+        our stuff and have come up with some cool plans.&amp;#160; Hopefully we can turn those
+        into reality and ship them.&amp;#160; I wish I could say more but I really can't.&amp;#160;
+        I think that one of the reasons that Google is so reluctant to speak publicly about
+        what they are doing is partly to surprise the competition and partly so that we have
+        the freedom to try stuff without committing to deliver it.&amp;#160; There may be some
+        stuff that never sees the light of day, but it is better than announcing it and then
+        it never seeing the light of day.&amp;#160; I think that this probably makes it easier
+        to pull the plug on projects that just aren't converging.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Besides work, some other things are going on that I think are pretty exciting.
+    &lt;/p&gt;
+    &lt;p&gt;
+        First, I've been helping to port &lt;a href="http://enblend.sourceforge.net"&gt;enblend&lt;/a&gt; to
+        build and run natively under Windows.&amp;#160; Enblend is a cool tool to help in the
+        blending stage of making digital panoramas.&amp;#160; My (limited) understanding of the
+        mechanics is that it converts the images into the frequency domain to come up with
+        an optimal blending mask.&amp;#160; Sometime soon I'd like to start delving into the hard
+        parts (Math) and get a better understanding of what is going on.&amp;#160; Andrew (the
+        guy who wrote enblend) just released version 2.1 out into the wild.&amp;#160; Let us know
+        if you have any problems.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Second, I'm going to be missing the Google open house (a rockin' party scheduled for
+        Thursday night) so that I can take a trip down to Page, Arizona to shoot slot canyons
+        and other various rock formations.&amp;#160; I'm going to be doing a lot of panorama and
+        digital mosaic work so look for some cool images soon.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One interesting photography note: I've had one of my large pano's printed up pretty
+        large -- about 40" x 25" (100cm x 64cm, for those of you of the metric persuasion)
+        and have it framed and hanging outside my office.&amp;#160; Even at that large size, the
+        photo is tack sharp.&amp;#160; It is really a lot of fun to make images that large.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Oh yeah, and Halo 2.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>220</BlogEntryNumber>
+      <PubDate>Wed, 17 Nov 2004 02:39:02 GMT</PubDate>
+      <LocalPubDate>Tue, 16 Nov 2004 18:39:02</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

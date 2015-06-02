@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 16 Apr 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Congrats to Scoble</Title>
+      <Description>&lt;p&gt;&lt;a href="http://radio.weblogs.com/0001011/2003/04/15.html#a2766"&gt;Congrats to Scoble&lt;/a&gt;.  You are now shilling for the Man like the rest of us.  Do we pay you enough to get a decent URL yet?</Description>
+      <BlogEntryNumber>80</BlogEntryNumber>
+      <PubDate>Wed, 16 Apr 2003 12:39:35 GMT</PubDate>
+      <LocalPubDate>Wed, 16 Apr 2003 06:39:35</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Upstreamer app</Title>
+      <Description>&lt;p&gt;I'm still working on my &lt;a href="http://www.eightypercent.net/Archive/2003/03/11.html#a66"&gt;FTP upstreamer&lt;/a&gt; app.  I haven't had as much time as I'd have liked to work on it but it is still coming.  The backend code is all there but I haven't had the time to learn enough winforms to write a decent UI for it.  If you really want to look at the code (and itegrate it into your own project?) let me know and I'll send you something.  I'm release the code under the &lt;a href="http://opensource.org/licenses/zlib-license.php"&gt;zlib&lt;/a&gt; license like Chris did for BlogX.
+
+&lt;p&gt;If you do write me, I probably won't get to it until next week as I'm going to be down in Death Valley for a &lt;a href="http://www.eightypercent.net/Archive/2003/02/18.html#a39"&gt;photography&lt;/a&gt; &lt;a href="http://luminous-landscape.com/workshops/sk-dv-work.shtml"&gt;workshop&lt;/a&gt;.
+
+&lt;p&gt;&lt;i&gt;Update:&lt;/i&gt; &lt;a href="http://www.nps.gov/deva/Morning.pdf"&gt;Here&lt;/a&gt; is the weather report down in Death Valley.  Looks perfect!
+</Description>
+      <BlogEntryNumber>79</BlogEntryNumber>
+      <PubDate>Wed, 16 Apr 2003 12:32:16 GMT</PubDate>
+      <LocalPubDate>Wed, 16 Apr 2003 06:32:16</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

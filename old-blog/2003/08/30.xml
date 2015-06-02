@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 30 Aug 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>DSL woes</Title>
+      <Description>
+    Well, it turns out that in my new house I can only get 256kbs up and 256kbs down.&amp;#160;
+    In the old place I was getting 640kbs up and 256kbs down.&amp;#160; I guess I'm just too
+    far from the CO.&amp;#160; My choices are to (a) suck it up, (b) go with a cable modem
+    and their onerous terms of service or (c) shell out big bucks for a business class
+    line.&amp;#160; So far (a) is looking good but I'm not happy about it.</Description>
+      <BlogEntryNumber>133</BlogEntryNumber>
+      <PubDate>Sat, 30 Aug 2003 22:40:47 GMT</PubDate>
+      <LocalPubDate>Sat, 30 Aug 2003 15:40:47</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>New House!</Title>
+      <Description>
+    &lt;p&gt;
+        Well, I'm moved in to my new house.&amp;#160; The DSL is hooked up and we are starting
+        to unpack.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I need to change the &lt;a href="http://www.catb.org/~esr/jargon/html/I/ICBM-address.html"&gt;ICBM&lt;/a&gt; coords
+        for &lt;a href="http://www.geourl.com"&gt;geourl&lt;/a&gt;, along with 10 thousand other things
+        to do when starting out in a new house!
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>132</BlogEntryNumber>
+      <PubDate>Sat, 30 Aug 2003 22:36:18 GMT</PubDate>
+      <LocalPubDate>Sat, 30 Aug 2003 15:36:18</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

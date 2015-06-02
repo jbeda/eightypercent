@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 16 Jan 2003">
+  <Entries>
+    <BlogEntry>
+      <Description>&lt;P&gt;Okay, enough people have given me crap.&lt;/P&gt;
+&lt;P&gt;Tonight I'm going to write my blogging tool.&amp;nbsp; Expect changes here.&amp;nbsp; I'll probably break the permalinks but that is okay as I don't have much here yet.&lt;/P&gt;</Description>
+      <BlogEntryNumber>13</BlogEntryNumber>
+      <PubDate>Thu, 16 Jan 2003 16:54:15 GMT</PubDate>
+      <LocalPubDate>Thu, 16 Jan 2003 08:54:15</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Description>&lt;P&gt;Gary Burd has a new &lt;A href="http://gary.burd.info"&gt;blog&lt;/A&gt;.&amp;nbsp;&amp;nbsp;I worked with Gary back in the day on the IE 4 team.&amp;nbsp; After that he moved on to doing much more interesting things.&lt;/P&gt;
+&lt;P&gt;David Bau also has a &lt;A href="http://www.dabbler.org/"&gt;blog&lt;/A&gt;, but it looks like he doesn't update it much.&amp;nbsp; David was also on the IE team back in the day but he is much more famous now for his little windows helper: &lt;A href="http://notesbydave.com/toolbar/doc.htm"&gt;Dave's Quick Search Toolbar&lt;/A&gt;.&lt;/P&gt;</Description>
+      <BlogEntryNumber>12</BlogEntryNumber>
+      <PubDate>Thu, 16 Jan 2003 16:52:33 GMT</PubDate>
+      <LocalPubDate>Thu, 16 Jan 2003 08:52:33</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

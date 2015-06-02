@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 25 May 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Luminous Lanscape article</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://www.luminous-landscape.com/tutorials/digital-panoramas.shtml"&gt;My article&lt;/a&gt; on
+        doing digital panoramas using PTAssembler and PanoTools is now up at the &lt;a href="http://www.luminous-landscape.com"&gt;Luminous
+        Landscape&lt;/a&gt; photography site.&amp;#160; If you haven't seen it before, this site is
+        a wonderful resource for anyone interested in serious photography.&amp;#160; I'd like
+        to thank Michael Reichmann, the proprietor, for giving me a chance to contribute.
+    &lt;/p&gt;
+    &lt;p&gt;
+        For some earlier entries and photos check out &lt;a href="http://www.eightypercent.net/Archive/2003/04/08.html"&gt;this&lt;/a&gt;, &lt;a href="http://www.eightypercent.net/Archive/2004/03/24.html#a171"&gt;this&lt;/a&gt;, &lt;a href="http://www.eightypercent.net/Archive/2004/03/18.html#a170"&gt;this&lt;/a&gt;&amp;#160;and &lt;a href="http://www.eightypercent.net/Archive/2004/04/10.html"&gt;this&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        As an intersting aside, the Idaho State Capitol building photo (from &lt;a href="http://www.eightypercent.net/Archive/2003/04/08.html"&gt;here&lt;/a&gt;)
+        is an example of what happens if you don't set the reference image and point correctly.&amp;#160;
+        This is very similar to using a large amount of horizontal shift to the right.
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you have any questions on the article, let me know and I'll try to answer them
+        here.&amp;#160; There are a ton of resources out there on doing this stuff, so my main
+        advice is to just jump in and give it a try.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>188</BlogEntryNumber>
+      <PubDate>Wed, 26 May 2004 01:49:40 GMT</PubDate>
+      <LocalPubDate>Tue, 25 May 2004 18:49:40</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

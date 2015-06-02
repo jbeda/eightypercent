@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 28 May 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Joe Bork</Title>
+      <Description>
+    &lt;p&gt;
+        Ha!&amp;#160; &lt;a href="http://headblender.com/joe/blog/archives/microsoft/001168.html#001168"&gt;Joe
+        Bork&lt;/a&gt; linked to me just to let you know that we are not the same person :)
+    &lt;/p&gt;
+    &lt;p&gt;
+        I would have made it to that crossroads thing but I'm stuck here in steamy Boise.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>103</BlogEntryNumber>
+      <PubDate>Wed, 28 May 2003 23:33:56 GMT</PubDate>
+      <LocalPubDate>Wed, 28 May 2003 17:33:56</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>L.A. with pickup trucks</Title>
+      <Description>
+    Ug!&amp;#160; The outside air temp (as reported by my car -- not known for its acuracy)
+    registred as 104F.&amp;#160; Now I remember why I like Seattle.</Description>
+      <BlogEntryNumber>102</BlogEntryNumber>
+      <PubDate>Wed, 28 May 2003 23:30:48 GMT</PubDate>
+      <LocalPubDate>Wed, 28 May 2003 17:30:48</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

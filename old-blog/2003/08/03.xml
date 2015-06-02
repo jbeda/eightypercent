@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 3 Aug 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Ivory Tower?</Title>
+      <Description>
+    &lt;p&gt;
+        I love &lt;a href="http://radio.weblogs.com/0117167/2003/08/01.html#a410"&gt;this&lt;/a&gt;.&amp;#160;
+        When we are designing APIs, we think about this type of thing.&amp;#160; We want to make
+        it easier for the "bad programmer" to write code that isn't so bad.&amp;#160; However,
+        you can only do so much.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>126</BlogEntryNumber>
+      <PubDate>Sun, 03 Aug 2003 17:11:00 GMT</PubDate>
+      <LocalPubDate>Sun, 03 Aug 2003 10:11:00</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

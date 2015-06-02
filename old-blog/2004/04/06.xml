@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 6 Apr 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Channel9</Title>
+      <Description>
+    &lt;p&gt;
+        &lt;a href="http://channel9.msdn.com"&gt;Channel9&lt;/a&gt; is up and running.&amp;#160; &lt;a href="http://scoble.weblogs.com"&gt;Scoble&lt;/a&gt;&amp;#160;interviewed
+        me for this a while ago.&amp;#160; We'll see if and when it shows up!
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>174</BlogEntryNumber>
+      <PubDate>Tue, 06 Apr 2004 20:36:18 GMT</PubDate>
+      <LocalPubDate>Tue, 06 Apr 2004 13:36:18</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

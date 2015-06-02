@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 28 Aug 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>16 bit Panoramas</Title>
+      <Description>
+    &lt;p&gt;
+        I've polished up my pano building tool so that it now works with large 16 bit panoramas.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        To recap from &lt;a href="http://www.eightypercent.net/Archive/2004/06/25.html"&gt;last
+        episode&lt;/a&gt;:&amp;#160; &lt;a href="http://www.tawbaware.com/ptasmblr.htm"&gt;PTAssembler&lt;/a&gt; and &lt;a href="http://www.tawbaware.com/maxlyons/pano12ml.htm"&gt;PanoTools&lt;/a&gt; are &lt;a href="http://www.luminous-landscape.com/tutorials/digital-panoramas.shtml"&gt;really
+        cool&lt;/a&gt;&amp;#160;but there are some bugs in PanoTools that prevent it from working with
+        really large images or 16 bit images.&amp;#160; The first is that PanoTools outputs tiff
+        images that use packbits compression.&amp;#160; For some reason Photoshop chokes when
+        loading these files.&amp;#160; The second issue is that PanoTools doesn't know how to
+        create 16 bit photoshop files with layers as photoshop didn't &lt;em&gt;do&lt;/em&gt; 16 bit layers
+        when it was written.&amp;#160; I've worked around this with my latest version of PanoTiffToPSD. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        It does the following: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            Optionally uses libtiff to reencode a set of tiff&amp;#160;images with no compression.&amp;#160;
+            To save disk space, you can choose to overwrite the original images or do the conversion
+            and leave the original images alone.&amp;#160; The converted version will be deleted after
+            being used by photoshop. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Loads up&amp;#160;each of the tiff files and drives Photoshop (via IDispatch COM interfaces
+            for you dorks out there) to load up each file and move it to a layer in a new image. 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Check it out here: &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-exe-1.1.zip"&gt;Binaries&lt;/a&gt;, &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-src-1.1.zip"&gt;Source&lt;/a&gt; and &lt;a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-License-1.1.txt"&gt;License&lt;/a&gt; (it's
+        free).&amp;#160; It is written in C# and requires the&amp;#160;.Net&amp;#160;Runtime.&amp;#160; That
+        is available&amp;#160;at &lt;a href="http://www.windowsupdate.com"&gt;windowsupdate&lt;/a&gt;. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>207</BlogEntryNumber>
+      <PubDate>Sun, 29 Aug 2004 00:57:12 GMT</PubDate>
+      <LocalPubDate>Sat, 28 Aug 2004 17:57:12</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

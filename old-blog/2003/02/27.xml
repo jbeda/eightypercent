@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 27 Feb 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>PASV ftp</Title>
+      <Description>&lt;P&gt;My FTP code only supports PASV ftp right now.  The reasoning is that I'm behind a NAT firewall and my server isn't.  PASV works much better in that configuration.  &lt;a href="http://www.simplegeek.com/PermaLink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268"&gt;Chris is having problems&lt;/a&gt; getting my code to work and he is blaming this.
+&lt;P&gt;FTP generally has two TCP connections:  a control connection and a data connection.  The control connection is pretty straigtforward.  You connect to port 21 and start sending messages back and forth.  Some of these commands ask to open a data connection -- to upload a file, download a file or get a directory listing.
+&lt;P&gt;There are two ways to establish the data connection:
+&lt;ol&gt;&lt;li&gt;&lt;B&gt;Normal FTP&lt;/B&gt;: you can have the server establish the connection to your machine.  You tell the server that you are listening on a certain port and that he should connect to you there.
+&lt;li&gt;&lt;B&gt;Passive FTP&lt;/B&gt;: you establish the connection to the server.  You ask the server for another address/port and you initiate the connection.
+&lt;/ol&gt;  
+&lt;p&gt;In a world with network address translation (NAT) it is a lot easier to connect from your protected machine out to the network than it is to have another machine connect (on a new port) to you.  This is why I did passive FTP.  Doing normal FTP shouldn't be that hard if this is indeed the problem that Chris is having.
+&lt;p&gt;Oh yeah, and if both client and server are behind NAT, you are screwed.  That is unless one of the NATs is smart enough to understand FTP and translate stuff along the way.  HTTP can work better here since everyone understands it and it all happens on one socket.  However, HTTP servers aren't set up for this type of thing without wacky extensions like WebDAV or the frontpage extensions.
+</Description>
+      <BlogEntryNumber>51</BlogEntryNumber>
+      <PubDate>Thu, 27 Feb 2003 19:25:25 GMT</PubDate>
+      <LocalPubDate>Thu, 27 Feb 2003 12:25:25</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>D60 obsolete</Title>
+      <Description>&lt;p&gt;Well, I knew it was coming, but my *ahem* brand new D60 is now superceded by the new &lt;a href="http://www.dpreview.com/news/0302/03022711canoneos10dpreview.asp"&gt;Canon 10D&lt;/a&gt;.  It has the one thing that I really really want -- a better AF system.  At least I know that mere mortals won't get their hands on them for many months yet.</Description>
+      <BlogEntryNumber>50</BlogEntryNumber>
+      <PubDate>Thu, 27 Feb 2003 19:16:53 GMT</PubDate>
+      <LocalPubDate>Thu, 27 Feb 2003 12:16:53</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

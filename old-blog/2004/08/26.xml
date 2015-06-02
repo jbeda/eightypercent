@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 26 Aug 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Google AdSense</Title>
+      <Description>
+    &lt;p&gt;
+        I'm trying out putting some Google Ads on my web page.&amp;#160; Mostly this is an experiment
+        but I wouldn't mind something to offset the (pretty low already) cost of hosting this
+        site.&amp;#160; It looks like the first batch of ads are all about seattle driving school
+        and legal help.&amp;#160; Apparently my entry on traffic court in Seattle is what the
+        ad algorithm keyed in on. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href="http://www.eightypercent.net"&gt;Check it out&lt;/a&gt;! 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>206</BlogEntryNumber>
+      <PubDate>Fri, 27 Aug 2004 03:07:23 GMT</PubDate>
+      <LocalPubDate>Thu, 26 Aug 2004 20:07:23</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>LensBaby Sample</Title>
+      <Description>
+    &lt;p&gt;
+        I finally got my &lt;a href="http://www.eightypercent.net/Archive/2004/08/08.html#a197"&gt;LensBaby&lt;/a&gt; and
+        had a chance to play with it.&amp;#160; It is a little tricky to get the hang of and not
+        every photo is a winner, but you can get some super cool effects.&amp;#160; Here is a
+        quick sample:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt="" hspace="0" src="http://www.eightypercent.net/photos/LensBaby1.jpg" align="baseline" border="0" /&gt;
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>205</BlogEntryNumber>
+      <PubDate>Thu, 26 Aug 2004 23:49:59 GMT</PubDate>
+      <LocalPubDate>Thu, 26 Aug 2004 16:49:59</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

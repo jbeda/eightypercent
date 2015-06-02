@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 6 Sep 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Trip to Mountain View</Title>
+      <Description>
+    &lt;p&gt;
+        I'm going to be gone all next week doing orientation and training type stuff at Google.&amp;#160;
+        I probably won't be able to update the blog but I will be on email.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'll try to collect some impressions and stories to give a taste of the Google experience.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>212</BlogEntryNumber>
+      <PubDate>Mon, 06 Sep 2004 20:38:49 GMT</PubDate>
+      <LocalPubDate>Mon, 06 Sep 2004 13:38:49</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

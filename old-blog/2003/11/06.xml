@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 6 Nov 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>How about some Longhorn UI here?</Title>
+      <Description>
+    Eric Terrell wrote me asking me to point to his interesting looking &lt;a href="http://www.personalmicrocosms.com/html/cspcalc.html"&gt;RPN
+    calculator&lt;/a&gt; project.&amp;#160; Hey Eric, how about playing around with longhorn and
+    doing the UI in Avalon?</Description>
+      <BlogEntryNumber>154</BlogEntryNumber>
+      <PubDate>Thu, 06 Nov 2003 16:28:38 GMT</PubDate>
+      <LocalPubDate>Thu, 06 Nov 2003 08:28:38</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

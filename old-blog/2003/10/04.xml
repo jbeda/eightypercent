@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sat, 4 Oct 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Beda's Law</Title>
+      <Description>
+    &lt;p&gt;
+        At the party I've come up with a law.&amp;#160; You heard it here first: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;"If I can write&amp;#160;80% of a piece of software in a weekend, there is no
+        business model for that software."&lt;/strong&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I fundamentally believe that there is no money to be made by selling people blogging
+        tools (like Radio).&amp;#160; They are just too easy to write.&amp;#160; Providing a hosting/blogging/etc.
+        service is another thing entirely. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>139</BlogEntryNumber>
+      <PubDate>Sun, 05 Oct 2003 05:46:43 GMT</PubDate>
+      <LocalPubDate>Sat, 04 Oct 2003 22:46:43</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Pics of the new car...</Title>
+      <Description>
+    &lt;p&gt;
+        I really have to write some software for doing picture galleries so that I can put
+        up a bunch of stuff from my trip.&amp;#160; In the meantime, &lt;a href="http://bimmer.roadfly.org/bmw/forums/e85/forum.php?postid=3989380&amp;amp;page=1"&gt;here&lt;/a&gt;&amp;#160;are &lt;a href="http://bimmer.roadfly.org/bmw/forums/e85/forum.php?postid=3990064&amp;amp;page=1"&gt;some&lt;/a&gt; links&amp;#160;to
+        a thread I started over on the roadfly forum about the new ride.&amp;#160; There are some
+        pictures from the trip up there.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>138</BlogEntryNumber>
+      <PubDate>Sun, 05 Oct 2003 05:36:37 GMT</PubDate>
+      <LocalPubDate>Sat, 04 Oct 2003 22:36:37</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Party at the Scoble's!</Title>
+      <Description>
+    I just got back from a house warming party at &lt;a href="http://radio.weblogs.com/0001011/"&gt;Robert&lt;/a&gt; and
+    Maryam Scoble's.&amp;#160; The have a great new house and the party&amp;#160; was a lot of
+    fun.&amp;#160; The food was amazing! I don't think I'll be able to eat for days.</Description>
+      <BlogEntryNumber>137</BlogEntryNumber>
+      <PubDate>Sun, 05 Oct 2003 05:17:16 GMT</PubDate>
+      <LocalPubDate>Sat, 04 Oct 2003 22:17:16</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

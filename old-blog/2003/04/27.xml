@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 27 Apr 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>FTPUpstreamer released</Title>
+      <Description>
+    &lt;p&gt;
+        Version 0.9.0 of my upstreamer is released. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Download the MSI installer &lt;a href="http://www.eightypercent.net/Stuff/FTPUpstreamer/FTPUpstreamer-0.9.0.msi"&gt;here&lt;/a&gt;.
+        The source is available &lt;a href="http://www.eightypercent.net/Stuff/FTPUpstreamer/FTPUpstreamer-0.9.0.zip"&gt;here&lt;/a&gt;.
+        The license for both is a zlib type license. You can read it &lt;a href="http://www.eightypercent.net/Stuff/FTPUpstreamer/License.txt"&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Notes about the release: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            FTPUpstreamer is a utility to upload a local directory to a remote directory on an
+            FTP server. It keeps track of the files that have been uploaded already and the last
+            changed time on those files. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            This is a beta release. Don't expect too much. I've only really tested this against
+            one server (W2k3, I think). I've only tested the client on XP Pro. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            There is no support for listing or deleting files on the server. If you want to do
+            more sophisticated stuff you might want to check out a more fully featured FTP program.
+            I've used &lt;a href="http://www.smartftp.com/"&gt;SmartFTP&lt;/a&gt; and it has worked well for
+            me. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            There is no support for automatic uploading yet. You have to hit the button. At some
+            point I'll have it automatically scan for changes. I'll also make it minimize to a
+            tray icon. I figured getting something out early is best. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            The program requires the .Net framework v1.0. You can get this from Windows Update. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Your FTP password is stored in plain text.&lt;/b&gt; The config file is something like
+            "c:\Documents and Settings\Joe\Local Settings\Application Data\FTPUploadConfig.xml".
+            I don't think the uninstaller removes this. There are some other data files in the
+            same directory that will also not be removed. Buyer beware. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        If you have any problems go ahead and write me email at FTPUpstreamer at BedaFamily.com.
+        If I'm not super responsive (I have a day job) you can always update the source yourself.
+        If you send me deltas I'll try to integrate them. At some point I may put the source
+        under some sort of project management like GotDotNet workspaces or Sourceforge. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>85</BlogEntryNumber>
+      <PubDate>Sun, 27 Apr 2003 20:56:32 GMT</PubDate>
+      <LocalPubDate>Sun, 27 Apr 2003 14:56:32</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>GeoURLs near Boise</Title>
+      <Description>&lt;p&gt;Pretty &lt;a href="http://geourl.org/near/?lat=43.6&amp;lon=-116.2&amp;dist=500"&gt;slim&lt;/a&gt; pickings.</Description>
+      <BlogEntryNumber>84</BlogEntryNumber>
+      <PubDate>Sun, 27 Apr 2003 16:14:00 GMT</PubDate>
+      <LocalPubDate>Sun, 27 Apr 2003 10:14:00</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

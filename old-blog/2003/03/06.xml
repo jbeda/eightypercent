@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Thu, 6 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Happy Math</Title>
+      <Description>&lt;a href="http://www.fastcompany.com/online/68/richlife.html"&gt;How To Lead a Rich Life&lt;/a&gt; from &lt;a href="http://www.neelbubba.com/Play/Archive/2003_03_01_index.php#90208936"&gt;Bubba&lt;/a&gt;.  I particularly like the happiness price list.</Description>
+      <BlogEntryNumber>58</BlogEntryNumber>
+      <PubDate>Thu, 06 Mar 2003 18:56:05 GMT</PubDate>
+      <LocalPubDate>Thu, 06 Mar 2003 11:56:05</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

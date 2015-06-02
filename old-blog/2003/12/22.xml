@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Mon, 22 Dec 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Home Theater update</Title>
+      <Description>
+    &lt;p&gt;
+        I haven't been posting in a while as I've been working on my new Home Theater!
+    &lt;/p&gt;
+    &lt;p&gt;
+        Here is the final setup:
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.projectorcentral.com/Sanyo-PLV-Z2.htm"&gt;Sanyo Z2&lt;/a&gt; LCD projector.&amp;#160;
+            1280x720 widescreen.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.paradigm.com/Website/SiteParadigmProduct/ParadigmModels/MonSeriesII/Monseries.html"&gt;Paradigm
+            Monitor&lt;/a&gt; speakers.&amp;#160; I got Monitor 7s in front with the CC-370 center and the
+            ADP-370 dipole surrounds.&amp;#160; I picked these up in Canada on Chris' recommendation.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.svsubwoofers.com/subs_pci_20-39.htm"&gt;SVS 20-39PC&lt;em&gt;i&lt;/em&gt;&lt;/a&gt; subwoofer.&amp;#160;
+            This thing is a beast!&amp;#160; It is over 3 feet high and can really shake the walls.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.usa.denon.com/catalog/products.asp?l=1&amp;amp;c=2"&gt;Denon AVR-3803&lt;/a&gt; reciever.&amp;#160;
+            There was a great deal going on these.&amp;#160; Otherwise it would have been way out
+            of my price range.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.digitalnetworksna.com/shop/_templates/item_mainRTV.asp?model=231&amp;amp;cat=52"&gt;ReplayTV
+            5504&lt;/a&gt; as a TV tuner.&amp;#160; I got one of these as it was priced wrong at Circuit
+            City.&amp;#160; Normally it is ~$450 with 3 years of service, but they were selling them
+            for $150 with 3 years of service as they had updated the pricing for no included service
+            but the units they still had &lt;em&gt;did&lt;/em&gt; have the free service.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href="http://www.xbox.com/en-US/default.htm?culture=0"&gt;XBox&lt;/a&gt;.&amp;#160; Some games
+            (like Amped 2) do 720p natively.&amp;#160; They look pretty sweet.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        I also built my own ceiling mount for the projector and had a friend help me build
+        and paint a screen.&amp;#160; I'll put some pictures up when things get further along.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>165</BlogEntryNumber>
+      <PubDate>Mon, 22 Dec 2003 23:19:04 GMT</PubDate>
+      <LocalPubDate>Mon, 22 Dec 2003 15:19:04</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Changeables desconstructed</Title>
+      <Description>
+    &lt;p&gt;
+        Frank Hileman (no blog, Frank?) has been pounding us (the Avalon team) with some great
+        questions.&amp;#160; Most of these have been conversations in comments, but I figured
+        that I should bring this to the front page, so to speak. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Of of Frank's concerns, at least as expressed in &lt;em&gt;my&lt;/em&gt; comments section, is
+        that we are essentially over engineering with the Changeable pattern.&amp;#160; Specifically,
+        he says this: 
+    &lt;/p&gt;
+    &lt;blockquote&gt; 
+    &lt;p&gt;
+        The non-intrusive part of Changeable has a const flag on stock brushes, etc. This
+        means the user must clone these and write to a copy. This is simple and easy to understand. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The intrusive part of Changeable is the part which introduces the idea of "used" and
+        changes the simple concept of "object reference" into something complicated. From
+        what you have explained, the intrusive part of Changeable exists only to allow simultaneous
+        multi-threaded writers to the scene graph. 
+    &lt;/p&gt;
+    &lt;/blockquote&gt; 
+    &lt;p&gt;
+        I think that the point around threading is a red-herring here.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Changeable Requirements&lt;/strong&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The main problem that changeables are trying to solve is that we want to have, under
+        most circumstances, these changeable API objects (Brush, Pen, etc.) act like value
+        types and other times we want them to act like refernce types.&amp;#160; We essentially
+        want to walk a fine line and get advantages from each.&amp;#160; Frank, forgive me if
+        you've heard a bunch of this before, but I think that this is useful to put together
+        in one place. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        With respect to value types, we want the simple user semantic to be: Modify my local
+        copy and have it be disconnected or "severed" when I pass it in to another object.&amp;#160;
+        When rendering this means that I can do this: 
+    &lt;/p&gt;
+    &lt;pre&gt;SolidColorBrush&amp;#160;scb = new&amp;#160;SolidColorBrush();
+scb.Color = Colors.Blue;
+myDrawingContext.DrawGeometry(scb, null /*pen*/, myGeometry1);
+scb.Color = Colors.Red;
+myDrawingContext.DrawGeometry(scb, null /*pen*/, myGeometry2);
+&lt;/pre&gt;
+    &lt;p&gt;
+        and have my two geometries be drawn with different colors.&amp;#160; Since many times
+        the drawing context is writing in to a metafile like data structure, if we used pure
+        reference semantics both geometries would be drawn as Red.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Another example is setting properties in to a set of elements: 
+    &lt;/p&gt;
+    &lt;pre&gt;SolidColor Brush scb = new SolidColorBrush();
+scb.Color = Colors.Blue;
+myElement1.Background = scb;
+myElement2.Background = scb;
+
+// in some other code...
+((SolidColorBrush)myElement1.Background).Color = Colors.Red;&lt;/pre&gt;
+    &lt;p&gt;
+        I think, in most cases, if some user walks up to an element, such as myElement1 above,
+        and sets the background brush, he doesn't expect that this will have the side effect
+        of changing the background brush of another element.&amp;#160; Side effects like this
+        would make for an unstable system. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Value types don't solve all of our problems though!&amp;#160; We also want the efficiencies
+        and advanatages of making these be reference types.&amp;#160; Specifically, we want to
+        have to have hierarchies, not have to copy the entire thing around and be able to
+        save space by having multiple places reference the same thing.&amp;#160; We imagine a
+        world with lots of elements getting their values via styling.&amp;#160; Because of this,
+        we want the normal case be that a user puts a value in to a style block somewhere
+        and then that object (via reference) gets widely shared, perhaps between hundreds
+        of elements.&amp;#160; We obviously want to make the per-reference cost as small as possible
+        here.&amp;#160; Going with a pure value type system won't work. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;The Builder Pattern&lt;/strong&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The first cut at solving this problem was called the Builder Pattern.&amp;#160; This pattern
+        was a generalization of the StringBuilder pattern.&amp;#160; Specifically, for each type,
+        there was a companion, or Builder type.&amp;#160; The main type was immutable.&amp;#160; In
+        other words, any write operations would raise an exception.&amp;#160; So, for SolidColorBrush,
+        we wrote a SolidColorBrushBuilder.&amp;#160; SolidColorBrush was immutable while SolidColorBrushBuilder
+        was a fully writeable object.&amp;#160; All of the APIs in the system (property types
+        on element, parameters in to DrawingContext methods, etc.) took the non-builder types.&amp;#160;
+        To create one of those non-builder types, the user had to do one of the following: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Create the target type directly by using a constructor. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Create a builder, configure it, and call the ToXXX method on it to construct the main
+            type. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Create a builder by initializing it off of its companion type.&amp;#160; Make a delta
+            and call the ToXXX method to construct the main type. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        From one point of view, this is a great system.&amp;#160; It is very explicit (at compile
+        time) what is editable and what isn't.&amp;#160; However, some early users of our system
+        (ad-hoc usability) ended up really disliking this system.&amp;#160; The need to constantly
+        deal with both types was onourous.&amp;#160; It also meant that the user could never just
+        index directly in to a type and change it.&amp;#160;&amp;#160;To affect any change, it&amp;#160;was
+        always necessary to create the builder, make the change, and set the old value in. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;The Changeable Pattern&lt;/strong&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In response to a hail of internal criticism on the Builder Pattern we went back and
+        came up with the Changeable pattern.&amp;#160; The idea is that we would have one type
+        object with an immutable bit.&amp;#160; Once the immutable bit gets set, all further changes
+        to that object will throw.&amp;#160; This opens the way up to runtime errors (instead
+        of compile time errors) but makes certain "delta" scenarios much easier to deal with. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        However, we still wanted to solve the problems listed in the first part of this post.&amp;#160;
+        Specifically, we didn't want to leave it up to the user to manually flip the immutable
+        bit.&amp;#160; In this way we defined certain types of operations that would automatically
+        create a copy and flip the immutable bit for you if necessary.&amp;#160; We then went
+        further and added advanced modes so that those APIs either make a copy but &lt;em&gt;don't&lt;/em&gt; flip
+        the immutable bit or the APIs just take a reference.&amp;#160; These last modes (whereby
+        something like an element holds on to a &lt;em&gt;mutable&lt;/em&gt; brush) were never possible
+        with the Builder pattern. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        We also added a notification mechanism so that someone who does hold on to an object
+        that isn't immutable can learn when that object changes. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, do you guys (Frank?) like the more explicit builder pattern better?&amp;#160; More
+        questions? 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>164</BlogEntryNumber>
+      <PubDate>Mon, 22 Dec 2003 22:37:29 GMT</PubDate>
+      <LocalPubDate>Mon, 22 Dec 2003 14:37:29</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>DX interop in Avalon</Title>
+      <Description>
+    &lt;p&gt;
+        Vince (who I knew in high school as Steve) wrote in my comments: 
+    &lt;/p&gt;
+    &lt;blockquote&gt; 
+    &lt;p&gt;
+        How can I get to the underlying DX9-esque interface I know you guys gotta be using
+        this stuff. I don't want to deal with EllipseGeometry objects and the like, gimme
+        DrawPrimitive, push buffers, and pain-in-the ass ITexture objects. 
+    &lt;/p&gt;
+    &lt;/blockquote&gt; 
+    &lt;p&gt;
+        Don't worry dude!&amp;#160; The details are still being worked out, but we know that we
+        have to make it possible for people to interop with old code, and with DX.&amp;#160; At
+        the very least, you will be able to host another hwnd window that is written using
+        GDI/User or DX.&amp;#160; The details on when and how DX will get accelerated, and how
+        it will play with the rest of the system are still TBD.&amp;#160; At the very least, when
+        you go full screen with DX you will own the device.
+    &lt;/p&gt;
+    &lt;p&gt;
+        For simple 3D stuff (load up a model and spin it around like a 3D icon) we will have
+        our own 3D API that doesn't pretent to offer all of the flexibility of D3D.
+    &lt;/p&gt;
+    &lt;p&gt;
+        What specific scenarios are you interested in?&amp;#160; My thinking is that you might
+        want to write a tool and have the UI done with Avalon and the "canvas" of the tool
+        done via D3D.&amp;#160; In this scenario, you are in a windowed situation and Avalon is
+        on top.&amp;#160; The 3D stuff is running in a window in an Avalon app.&amp;#160; Another
+        scenario that might be interesting is that you have a D3D app/game and you are using
+        Avalon to drive 2D type UI inside of the game environment.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I can't promise that all of the scenarios will be doable, but let me know what is
+        most important to you.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>162</BlogEntryNumber>
+      <PubDate>Mon, 22 Dec 2003 22:31:18 GMT</PubDate>
+      <LocalPubDate>Mon, 22 Dec 2003 14:31:18</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Holiday parties</Title>
+      <Description>
+    &lt;p&gt;
+        I went to a great holiday party last night thrown by my neighbors, Bob and Carol.&amp;#160;
+        We moved in quite a while ago&amp;#160;but hadn't really had a chance to interact with
+        any of our neighbors yet.&amp;#160; This was a great opportunity for us to not only chat
+        with our hosts, but also others from around the neighborhood.&amp;#160; It turns out that
+        the internet makes the world even smaller.&amp;#160; Bob had run across my blog and already
+        knew more about me (or at least my work!) than I knew about him.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I also chatted with our neighbors on the other side, Gary and Marge.&amp;#160; Gary is
+        a long time photographer that just recently went digital with a Canon 10D and a sweet
+        lens setup.&amp;#160; He sent me a link to some of &lt;a href="http://pbase.com/mgmoogk"&gt;his
+        images&lt;/a&gt;.&amp;#160; These were done with film -- a Pentax 6x7 that he recently sold.&amp;#160;
+        I really need to get off of my butt and put together a gallery of some of my better
+        up on the net.
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>161</BlogEntryNumber>
+      <PubDate>Mon, 22 Dec 2003 22:28:48 GMT</PubDate>
+      <LocalPubDate>Mon, 22 Dec 2003 14:28:48</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

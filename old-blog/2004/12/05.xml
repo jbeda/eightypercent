@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 5 Dec 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>DOS/Windows command line escaping</Title>
+      <Description>
+    &lt;p&gt;
+        Here is a &lt;a href="http://weblogs.asp.net/oldnewthing/"&gt;Raymond&lt;/a&gt;-esque tidbit that
+        I wanted to get out there.&amp;#160; I couldn't find anything on Google and had to figure
+        this stuff out via trail and error. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Okay -- you think you know how to escape stuff on the DOS/Windows command line?&amp;#160;
+        Probably not.&amp;#160; Let's start with a simple python script to show us what we've
+        got: 
+    &lt;/p&gt;
+    &lt;p&gt;
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;type dumpargs.py
+# a simple program to dump the incoming arguments
+import sys
+for arg in sys.argv[1:]:
+    print repr(arg)
+&lt;/pre&gt;
+    &lt;p&gt;
+        Now lets run some tests and see what it spits out: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py "hi there"
+'hi there'
+
+C:\test&amp;gt;dumpargs.py "hi \" there"
+'hi " there'&lt;/pre&gt;
+    &lt;p&gt;
+        So far so good. It looks like we know how to escape a double quote sign ("). But what
+        about the pesky percent sign? DOS/Windows/Command/CMD uses this for variable substitution.
+        Let's try a bunch of stuff and see what we get: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;set foo=bar
+
+C:\test&amp;gt;dumpargs.py "hi there %foo%"
+'hi there bar'
+
+C:\test&amp;gt;dumpargs.py "hi there \%foo\%"
+'hi there \\%foo\\%'&lt;/pre&gt;
+    &lt;p&gt;
+        Hmmm, it looks like the backslash doesn't work. Looking around, it looks like the
+        caret symbol (^) is the way to go. Lets try that out. 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py ^%foo^%
+'%foo%'
+
+C:\test&amp;gt;dumpargs.py "hi there ^%foo^%"
+'hi there ^%foo^%'&lt;/pre&gt;
+    &lt;p&gt;
+        Well, it looks like that works as long as it isn't in quotes. I also found another
+        wacky case: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py "hi there \" ^%foo^%"
+'hi there " %foo%'
+
+C:\test&amp;gt;dumpargs.py "hi there \" \" ^%foo^%"
+'hi there " " ^%foo^%'&lt;/pre&gt;
+    &lt;p&gt;
+        Very odd -- it looks like the caret does work as an escape character as long as there
+        is an odd number of escaped double quote characters before it in the string. The parser
+        here is obviously not a simple as one might first think. Lets try ending the string
+        before we quote the percent sign: 
+    &lt;/p&gt;
+    &lt;p&gt;
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py "hi there "^%"foo"^%" bar"
+'hi there %foo% bar'
+
+C:\test&amp;gt;dumpargs.py "hi \" there "^%"foo"^%" bar"
+'hi " there ^%foo^% bar'&lt;/pre&gt;
+    &lt;p&gt;
+        We are getting closer, but that escaped quote character puts the parser into a wacky
+        state. I finally did find a good solution: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py "hi "^"" there "^%"foo"^%" bar"
+'hi " there %foo% bar'&lt;/pre&gt;
+    &lt;p&gt;
+        It turns out that you must replace the double quote (") with the following sequence:
+        "^"". You must also quote the percent character (%) with this sequence: "^%". I think
+        that everything else is okay inside of the double quotes. Very strange but true. I
+        guess this is what 20 years of back compat get you. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>226</BlogEntryNumber>
+      <PubDate>Mon, 06 Dec 2004 03:46:31 GMT</PubDate>
+      <LocalPubDate>Sun, 05 Dec 2004 19:46:31</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Arizona Desert Photo 2</Title>
+      <Description>
+    &lt;p&gt;
+        Here is another photo from the trip that I described &lt;a href="http://www.eightypercent.net/Archive/2004/11/27.html#a223"&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href="http://www.eightypercent.net/Photos/SnowTrees1-small.jpg"&gt;&lt;img alt="Snowy Trees above Page, AZ" src="http://www.eightypercent.net/Photos/SnowTrees1-thumb.jpg" border="0" /&gt;&lt;/a&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        This was a pretty lean day on the workshop.&amp;#160; This was our day to go and hike
+        out to "the wave."&amp;#160; The Wave is a really cool set of sandstone rock formations
+        buried in the north part of &lt;a href="http://www.az.blm.gov/paria/cbusereg2.html"&gt;Coyote
+        Buttes&lt;/a&gt;.&amp;#160; A permit is required to hike Coyote Buttes and the BLM restricts
+        it to 10 people per day.&amp;#160; The problem is that on the weather had taken a turn
+        for the worse during the night.&amp;#160; When we work up at 5 AM on Sunday, it was raining
+        in page.&amp;#160; As we drove toward the trailhead we gained elevation and it started
+        snowing.&amp;#160; Around 6 AM we needed to start driving on gravel roads.&amp;#160; It was
+        still snowing pretty hard and we decided to turn back.&amp;#160; I was looking forward
+        to a good hike and was disappointed that we didn't make it to the Wave. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        When we got back to the motel, we picked up everyone else and went "hunting."&amp;#160;
+        Off the side of the road outside of Page, as we were climbing, we stopped to photograph
+        some fresh snow on desert trees.&amp;#160; This is one of the images that resulted. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Technical details: Original composition was 24 images (8x3).&amp;#160; I cropped out just
+        a corner of that to make the composition as seen above.&amp;#160; Total images used then
+        is probably more like 15 (5x3).&amp;#160; Each was shot at 1/25 sec, f/11, ISO 100 with
+        the 24-70 f/2.8L @ 50mm.&amp;#160; Final image is 6000x6000 or 36 megapixel. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>225</BlogEntryNumber>
+      <PubDate>Mon, 06 Dec 2004 03:24:10 GMT</PubDate>
+      <LocalPubDate>Sun, 05 Dec 2004 19:24:10</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

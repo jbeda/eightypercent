@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Sun, 28 Nov 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>1.2TB = $2k?</Title>
+      <Description>
+    &lt;p&gt;
+        I know it seems hard to believe in this day and age of 300GB hard drives, but I've
+        run out of hard drive space.&amp;#160; My plan up until now was to keep a bunch of stuff
+        on a &lt;s&gt;RAID 0&lt;/s&gt; RAID 1 (RAID0 is simple striping with no redundency. RAID 1 is
+        mirrored.) 120GB set of drives.&amp;#160; As that fills up, I've been archiving stuff
+        to DVD.&amp;#160; The problem is that I've had to start archiving stuff sooner than I
+        thought and I don't trust the DVDs.&amp;#160; In fact, I've gotten read errors on some
+        already.&amp;#160; They may be fine for video, but I don't want to archive data on them. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I'm faced with a couple of options.&amp;#160; The first option is to half ass it some
+        more and put a couple of more drives into my current computer.&amp;#160; I'm hoping the
+        power supply can take it.&amp;#160; I think I can fit them in there but it may be tight.&amp;#160;
+        Thank god for serial ATA at least.&amp;#160; I don't think I could fit them in with regular
+        old parallel ATA.&amp;#160; A Maxtor 300GB SATA drive is urrently $206 at newegg.&amp;#160;
+        300GB more (mirrored) would be a good start, but I'm sure I'd run out of space sooner
+        or later. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The other options I was thinking about was putting together a storage server and running
+        RAID 5 (stripe set with parity -- it spreads the data across multiple drives but duplicates
+        some of the data for redundency).&amp;#160; I'd like something that I can grow with so
+        I'd like to be able to increase the amount of space for just the cost of more drives.&amp;#160;
+        Here is what I came up with: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Computer guts: 
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewProductDesc.asp?description=13-151-133&amp;amp;depa=0"&gt;TYAN
+                    Tomcat i7210 motherboard&lt;/a&gt;&amp;#160;($222)&amp;#160; This is a P4 motherboard with 64bit
+                    PCI support. This is the cheapest motherboard with 64bit PCI support I could find.&amp;#160;
+                    It also comes with SATA RAID on board if I need it.&amp;#160; Dual gigabit ethernet --
+                    yum. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewproduct.asp?description=19-116-171"&gt;Intel P4
+                    3.0E w/ 800MHz FSB and 1MB L2 Cache&lt;/a&gt;&amp;#160;($185)&amp;#160; This seems to be a pretty
+                    good price for a fast processor.&amp;#160; Since I'm going to be doing RAID 5 in software
+                    it seems worthwhile to pay for a decent proc. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewProductDesc.asp?description=20-141-165&amp;amp;depa=0"&gt;2&amp;#160;*
+                    256MB cheap-o PC3200 RAM&lt;/a&gt; (2 * $35 = $70) If it goes bad I can always replace it
+                    or upgrade to 1GB. 
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Case: 
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewProductDesc.asp?description=11-182-005&amp;amp;depa=0"&gt;CODEGEN
+                    "Silver Server" 13 bay monster case&lt;/a&gt; ($130)&amp;#160; This thing looks like a beast
+                    but the price is right. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewProductDesc.asp?description=17-121-405&amp;amp;depa=0"&gt;Supermicro
+                    5bay SATA HDD enclosure&lt;/a&gt; ($118)&amp;#160; This is what really brought it home for me.&amp;#160;
+                    This is a little cage that holds 5 hard drives in the space of 3 5.25" external bays.&amp;#160;
+                    It comes with a fan and a "backplane" for all of the drives.&amp;#160; And you get cool
+                    blinking lights and such.&amp;#160; There is enough room in the monster case to fit two
+                    of these for 10 data drives total. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/viewProductDesc.asp?description=17-103-910&amp;amp;depa=0"&gt;Antec
+                    550W power supply&lt;/a&gt; ($100)&amp;#160; Hopefully this will be enough. 
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Hard drives: 
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/ViewProductDesc.asp?description=16-115-020&amp;amp;depa=0"&gt;HighPoint
+                    SATA RAID controller card&lt;/a&gt; ($204)&amp;#160; This thing can drive 8 SATA hard drives.&amp;#160;
+                    That should be enough to get me started.&amp;#160; It uses the host processor for doing
+                    the RAID 5 stuff, but it is a lot cheaper than the cards that do RAID 5 in hardware.&amp;#160;
+                    Since I'm not all that concerned with speed, the savings should be good enough.&amp;#160;
+                    The &lt;a href="http://www.newegg.com/app/ViewProductDesc.asp?description=16-125-005&amp;amp;depa=0"&gt;Broadcom
+                    card&lt;/a&gt; is another option but it is $100 more.&amp;#160; Tom's hardware did an &lt;a href="http://www6.tomshardware.com/storage/20041006/index.html"&gt;interesting
+                    expriment&lt;/a&gt; with these where they drove 32 drives off of one computer. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/ViewProductDesc.asp?description=22-145-049&amp;amp;depa=0"&gt;80GB
+                    system drive&lt;/a&gt; ($60)&amp;#160; You generally don't want to run the OS off of your data
+                    array. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href="http://www.newegg.com/app/ViewProductDesc.asp?description=22-144-359&amp;amp;depa=0"&gt;4&amp;#160;*
+                    Maxtor 300GB 7200RPM SATA drives w/ 16MB buffer&lt;/a&gt; (4&amp;#160;* $206 = $824).&amp;#160;
+                    This seems to be a sweet spot in capacity right now. The 250GB drives aren't that
+                    much cheaper and the 400GB drives are super expensive.&amp;#160; The Maxtor also comes
+                    with a 3 year warranty. 
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Total price: &lt;strong&gt;$1913&lt;/strong&gt; plus shipping and software.&amp;#160; I'd probably
+        run Windows as I think I have a legit copy of SBS 2k3 that MS gave me when I still
+        worked there.&amp;#160; It should run Linux fine too if all you want to do is serve files. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        With RAID 5 this will give me ~900GB of redundant storage.&amp;#160; I can easily double
+        the size with another hard drive cage and a set of drives ($942).&amp;#160; This seams
+        like a pretty wild deal to me.&amp;#160; Sure it won't be the fastest thing out there
+        but it is pretty darn cheap for a ton of storage.&amp;#160; I probably won't drop the
+        money on something like this for a while, so I'm expecting it to just get cheaper. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, am I missing anything?&amp;#160; Is someone going to come out with a turnkey system
+        for half the price?&amp;#160; The closest comparable thing I could find where the NAS
+        systems that various people are selling.&amp;#160; Nothing could touch this setup on price.&amp;#160;
+        I looked at the Apple XServe (I do love blinking lights...) but they start at $6000
+        for 1TB and require fiber channel.&amp;#160; Way overkill for me.&amp;#160; There is also
+        something like the &lt;a href="http://www.lacie.com/products/product.htm?pid=10462"&gt;LaCie
+        terrabyte drive&lt;/a&gt;&amp;#160;($1000).&amp;#160; This seems like an amazingly bad idea to me.&amp;#160;
+        They must 4 drives in there.&amp;#160; If one fails you loose all of your data.&amp;#160;
+        The chances of loosing all of your data is 4 times as likely. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I like pricing out stuff like this even though I may never buy it :) 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>224</BlogEntryNumber>
+      <PubDate>Mon, 29 Nov 2004 06:16:39 GMT</PubDate>
+      <LocalPubDate>Sun, 28 Nov 2004 22:16:39</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

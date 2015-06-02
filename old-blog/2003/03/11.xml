@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Tue, 11 Mar 2003">
+  <Entries>
+    <BlogEntry>
+      <Title>Golden Nugget</Title>
+      <Description>&lt;p&gt;My wife, Rachel, has &lt;a href="http://www.eightypercent.net/CodeBlue/Archive/2003/03/11.html#a9"&gt;another funny story&lt;/a&gt; on her blog.  Check it out.</Description>
+      <BlogEntryNumber>68</BlogEntryNumber>
+      <PubDate>Wed, 12 Mar 2003 05:08:18 GMT</PubDate>
+      <LocalPubDate>Tue, 11 Mar 2003 22:08:18</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Out of town for the rest of the week</Title>
+      <Description>&lt;P&gt;I'm heading to sunny Seattle for the rest of the week so no updates until then.</Description>
+      <BlogEntryNumber>67</BlogEntryNumber>
+      <PubDate>Wed, 12 Mar 2003 04:39:39 GMT</PubDate>
+      <LocalPubDate>Tue, 11 Mar 2003 21:39:39</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>FTP Upstreamer a go</Title>
+      <Description>&lt;p&gt;I've gotten some nibbles from at least 4 people on the upstreamer.  That isn't all 7 of you out there but I guess this will do :)
+&lt;p&gt;I'll start on it this weekend or sometime early next week.  Hopefully it will go fast as I already have the FTP code.
+&lt;p&gt;&lt;a href="http://gary.burd.info"&gt;Gary Burd&lt;/a&gt; suggested a combo of ssh, rsync and a crontab entry. It looks like you can &lt;a href="http://optics.ph.unimelb.edu.au/help/rsync/"&gt;install RSync on windows&lt;/a&gt; if you try hard enough. However, I don't have that much control over all of the machines that I want to upload to, so this looks like a non-starter -- at least for me.  Getting a more secure connection would be nice, though.
+&lt;p&gt;I also was thinking about taking advantage of the shadow copy stuff in XP but it looks like you need to sign an NDA to get at that SDK.  Oh well.</Description>
+      <BlogEntryNumber>66</BlogEntryNumber>
+      <PubDate>Wed, 12 Mar 2003 03:47:03 GMT</PubDate>
+      <LocalPubDate>Tue, 11 Mar 2003 20:47:03</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>FTP Upstreamer project</Title>
+      <Description>&lt;P&gt;I want to gauge interest in a new project.  How many of you out there (and I know there are something like 7 of you :) would actually use a utility that did the following:
+&lt;ul&gt;&lt;li&gt;Had a list of local directories and FTP servers/paths
+&lt;li&gt;Monitored those dirs (timer or file change notifications) for changes.
+&lt;li&gt;Upstream new files (based on file times) to the FTP server.  This wouldn't be a full sync but would rather be a copy.  It would never delete anything from the server.
+&lt;li&gt;Has a tray icon to let you know what is going on.
+&lt;/ul&gt;
+
+&lt;P&gt;BTW, this is a feature stolen almost verbatim from Radio.  I think that it would be useful to break it out into its own utility.
+
+&lt;P&gt;The real reason I would want this is that frickin' VS.Net doesn't have a way to deply an ASP.Net application to an FTP server.  You can copy it or use FP extentions, but you can't FTP that guy up there.
+
+&lt;P&gt;I would include source and an installer for this guy.
+&lt;P&gt;If you are interested, email me at &lt;a href="mailto:eightypercent at bedafamily.com"&gt;eightypercent at bedafamily.com&lt;/a&gt; and I'll think about putting something together.</Description>
+      <BlogEntryNumber>65</BlogEntryNumber>
+      <PubDate>Tue, 11 Mar 2003 19:27:38 GMT</PubDate>
+      <LocalPubDate>Tue, 11 Mar 2003 12:27:38</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>

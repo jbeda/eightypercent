@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<BlogDay xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Date="Wed, 7 Apr 2004">
+  <Entries>
+    <BlogEntry>
+      <Title>Great feedback!</Title>
+      <Description>
+    I'd like to point to and recognize &lt;a href="http://www.kevlindev.com/blog/weblog.php?id=0"&gt;Kevin
+    Lindsey&lt;/a&gt;&amp;#160;for his &lt;a href="http://www.kevlindev.com/blog/comments.php?id=47_0_1_0_C"&gt;great&lt;/a&gt; &lt;a href="http://www.kevlindev.com/blog/comments.php?id=42_0_1_0_C"&gt;comments&lt;/a&gt;, &lt;a href="http://www.kevlindev.com/blog/comments.php?id=41_0_1_0_C"&gt;feedback&lt;/a&gt; and &lt;a href="http://www.kevlindev.com/blog/comments.php?id=40_0_1_0_C"&gt;bug&lt;/a&gt; &lt;a href="http://www.kevlindev.com/blog/comments.php?id=39_0_1_0_C"&gt;reports&lt;/a&gt; on
+    graphics in Avalon.&amp;#160; Comments and feedback like this is one of the reasons that
+    we gave out the PDC build so early.&amp;#160; Thanks Kevin!</Description>
+      <BlogEntryNumber>177</BlogEntryNumber>
+      <PubDate>Thu, 08 Apr 2004 02:00:56 GMT</PubDate>
+      <LocalPubDate>Wed, 07 Apr 2004 19:00:56</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>Welcome Channel9 visitors</Title>
+      <Description>
+    &lt;p&gt;
+        In case you haven't seen it, part of my interview that I did with &lt;a href="http://scoble.weblogs.com"&gt;Scoble&lt;/a&gt;&amp;#160;is
+        up at &lt;a href="http://channel9.msdn.com"&gt;Channel9&lt;/a&gt;.&amp;#160; [BTW, big congrats to
+        the Channel9 guys.&amp;#160; The site looks great and it survived being slashdotted on
+        its first day.&amp;#160; How many dynamic sites do you know can handle a load like that
+        so soon after launch?]
+    &lt;/p&gt;
+    &lt;p&gt;
+        I did a long interview with Scoble and he asked me a lot of questions. It is interesting
+        that he the topic of "Is Avalon a way to take over the Web" is the first that they
+        put up there.&amp;#160; I'm glad that it is though as this is definately a hot button
+        topic.&amp;#160; I'll be sure to keep an eye on the comments on the video and answer any
+        questions that you guys have. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        A little background on me: I joined the IE group at Microsoft in the middle of 1997
+        right out of college.&amp;#160; I'd interned twice -- once on a forgotten product called
+        TeamManager and the second time on the OpenGL inside of Windows.&amp;#160; When working
+        on IE, I was responsible for, mostly, the data model for how we stored HTML in memory
+        for processing and rendering.&amp;#160; I touched a lot of other code, but my original
+        nickname was "Tree Boy" (to &lt;a href="http://www.ericvasilik.com/"&gt;Eric Vasilik's&lt;/a&gt; "Tree
+        Man" :)&amp;#160; If you have questions on &lt;a href="http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;q=IMarkupServices"&gt;IMarkupServices&lt;/a&gt;,
+        I can probably answer them for you. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        A couple of years ago, I moved over to the then (very newly) formed Avalon Media Integration
+        Layer and helped define the early vision of what we were going to do with 2D UI level
+        graphics in Longhorn. (The DX team is all over 3D and games!)&amp;#160; At one point all
+        we knew that we wanted was CFS, which stood for "Cool Flying Stuff".&amp;#160; We upgraded
+        thaet to "Clickable Flying Stuff" and the graphics strategy for Avalon was born.&amp;#160;
+        Since then I've been hard at work helping to define and implement a lot of the graphics
+        functionality in Longhorn.&amp;#160; Seriously, I think that we are making a huge leap
+        ahead for Windows and look forward to helping everyone understand what we are about.&amp;#160;
+        I'm also interested in hearing comments, suggestions and bug reports. 
+    &lt;/p&gt;
+</Description>
+      <BlogEntryNumber>176</BlogEntryNumber>
+      <PubDate>Wed, 07 Apr 2004 23:25:49 GMT</PubDate>
+      <LocalPubDate>Wed, 07 Apr 2004 16:25:49</LocalPubDate>
+    </BlogEntry>
+    <BlogEntry>
+      <Title>RSS History</Title>
+      <Description>
+    &lt;p&gt;
+        I had a rant here wrt RSS history, but considering the fact that it really doesn't
+        matter and it is always best to stay positive, I'll withold comment :).
+    &lt;/p&gt;
+    &lt;p&gt;
+        Onward and upward with Avalon!
+    &lt;/p&gt;
+&lt;!--
+    &lt;p&gt;
+        Dave Winer has a bug up his but to &lt;a href="http://archive.scripting.com/2004/04/06#When:6:58:43PM"&gt;try
+        and claim&lt;/a&gt; that he invented the idea of syndication through XML (embodied via the
+        RSS format).&amp;#160; I don't think that anyone will argue that Dave has been syndication's
+        biggest evangelist and has driven his fork of the formats forward relentlessly. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I just wish he wasn't such an ass.&amp;#160; RSS (and syndication) like so many things
+        in the computer world evolved out of a soup of ideas that stretches way back.&amp;#160;
+        Every time Dave &lt;a href="http://blogs.law.harvard.edu/tech/rssVersionHistory"&gt;(re)writes
+        a history of RSS&lt;/a&gt;, he always lists himself as the original invetor and visionary.&amp;#160;
+        The particular history linked to above fails to mention a format that was introduced
+        with IE 4 called CDF.&amp;#160; This was &lt;a href="http://www.w3.org/Submission/1997/2/"&gt;submitted
+        to the W3C&lt;/a&gt; at least 9 months before the earliest date on Dave's "history."&amp;#160;
+        Now, I'd also venture a guess that there are tons of other prior art in the soup that
+        CDF came out of.&amp;#160; For someone who rails against the patent system for the way
+        it cements credit for ideas that come out of a soup (think Amazon 1-click) he does
+        a good job of trying to "patent" RSS. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The really sad part here is that Dave does himself such a disservice.&amp;#160; He has
+        a huge bully pulpit that he could use to push his (often) very good ideas.&amp;#160; Instead,
+        he spends time trying to rewrite this particular history.&amp;#160; He undercuts his own
+        credibility in the process.&amp;#160; Instead of being an elder statesman of the computer
+        industry who can cut through the red tape, he sets himself up as a mini Napoleon and
+        creates more divisiveness. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I think this quote from &lt;a href="http://www.imdb.com/title/tt0118715/"&gt;The Big Labowski&lt;/a&gt;&amp;#160;sums
+        up my thoughts on the subject: 
+    &lt;/p&gt;
+    &lt;blockquote&gt;&lt;b&gt;Walter&lt;/b&gt;: Am I wrong?&lt;br /&gt;
+    &lt;b&gt;Dude&lt;/b&gt;: No you're not wrong.&lt;br /&gt;
+    &lt;b&gt;Walter&lt;/b&gt;: Am I wrong?&lt;br /&gt;
+    &lt;b&gt;Dude&lt;/b&gt;: You're not wrong Walter. You're just an asshole.&lt;br /&gt;
+    &lt;b&gt;Walter&lt;/b&gt;: All right then. &lt;/blockquote&gt;
+--&gt;</Description>
+      <BlogEntryNumber>175</BlogEntryNumber>
+      <PubDate>Wed, 07 Apr 2004 17:29:20 GMT</PubDate>
+      <LocalPubDate>Wed, 07 Apr 2004 10:29:20</LocalPubDate>
+    </BlogEntry>
+  </Entries>
+</BlogDay>
