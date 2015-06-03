@@ -6,7 +6,7 @@ uglyurls: true
 pluralizelisttitles: false
 
 taxonomies:
-  Archive: archive
+  archive: archive
 
 params:
   description: "The personal blog of Joe Beda"

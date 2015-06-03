@@ -11,6 +11,8 @@ import (
 	"time"
 )
 
+const destPath = "../content/post/old"
+
 type Time struct {
 	time.Time
 }
@@ -38,18 +40,19 @@ type BlogDay struct {
 }
 
 type FrontMatter struct {
-	Title   string
-	Date    time.Time
-	Archive []string
+	Title   string    `json:"title"`
+	Section string    `json:"section"`
+	Date    time.Time `json:"date"`
+	Archive []string  `json:"archive"`
 }
 
 func main() {
 	log.SetFlags(0)
-	log.Printf("Removing ../content/old")
-	os.RemoveAll("../content/old")
+	log.Printf("Removing %s", destPath)
+	os.RemoveAll(destPath)
 
-	log.Printf("Creating ../content/old")
-	os.Mkdir("../content/old", os.ModePerm)
+	log.Printf("Creating %s", destPath)
+	os.Mkdir(destPath, os.ModePerm)
 
 	log.Printf("Reading old blog posts")
 	var entries []Entry
@@ -94,9 +97,10 @@ func main() {
 	log.Printf("Creating new posts")
 	for _, e := range entries {
 		log.Printf("  Creating post %d: %s", e.BlogEntryNumber, e.Title)
-		f, _ := os.Create(fmt.Sprintf("../content/old/%05d.md", e.BlogEntryNumber))
+		f, _ := os.Create(fmt.Sprintf("%s/%05d.md", destPath, e.BlogEntryNumber))
 		fm := FrontMatter{
 			Title:   e.Title,
+			Section: "post",
 			Date:    e.PubDate.In(loc),
 			Archive: []string{e.PubDate.Format("2006/01/02")},
 		}
