@@ -4,6 +4,7 @@ title: 80%
 description: The personal blog of Joe Beda
 uglyurls: true
 pluralizelisttitles: false
+paginate: 10
 
 taxonomies:
   archive: archive

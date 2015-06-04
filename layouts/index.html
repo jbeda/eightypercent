@@ -1,13 +1,21 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
   <div class="container">
-    {{ range where .Data.Pages "Section" "post" }}
+    {{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
+    {{ range $paginator.Pages }}
     <div>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="{{ .Permalink }}">{{ .Title }}</a>
+      </h2>
       <span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-      <p>{{ .Summary }}</p>
+      <div class="readmore">
+        <div class="post">
+            {{ .Content }}
+        </div>
+      </div>
     </div>
     {{ end }}
+    {{ partial "pagination.html" . }}
     {{ partial "container-footer.html" . }}
   </div>
 {{ partial "footer.html" . }}

@@ -450,16 +450,16 @@
 //##
 
 @pagination-color:                     @link-color;
-@pagination-bg:                        #fff;
-@pagination-border:                    #ddd;
+@pagination-bg:                        darken(@theme-blue, 15%);
+@pagination-border:                    darken(@body-bg, 10%);
 
 @pagination-hover-color:               @link-hover-color;
-@pagination-hover-bg:                  @gray-lighter;
-@pagination-hover-border:              #ddd;
+@pagination-hover-bg:                  @pagination-bg;
+@pagination-hover-border:              @pagination-border;
 
-@pagination-active-color:              #fff;
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-border:             @brand-primary;
+@pagination-active-color:              @pagination-color;
+@pagination-active-bg:                 @pagination-bg;
+@pagination-active-border:             @pagination-border;
 
 @pagination-disabled-color:            @gray-light;
 @pagination-disabled-bg:               #fff;

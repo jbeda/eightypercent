@@ -13,3 +13,27 @@ body {
   font-family: Coda;
   font-size: 24px;
 }
+
+.readmore > div {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.readmore:after {
+  content:'';
+  display:block;
+  width:100%;
+  height:100px;
+  position:relative;   
+  margin-top: -100px;
+  background:linear-gradient(transparent, #191919);
+}
+
+.postmark {
+  color: #004885;
+  width: 25px;
+  font-size: 80%;
+  margin-left: -35px;
+  margin-right: 10px;
+}
