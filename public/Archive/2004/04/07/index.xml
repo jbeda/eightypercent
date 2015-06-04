@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/04/07 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/04/07.html</link>
+    <description>Recent content in 2004/04/07 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Apr 2004 19:00:56 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/04/07.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Great feedback!</title>
+      <link>http://new.eightypercent.net/post/old/00177.html</link>
+      <pubDate>Wed, 07 Apr 2004 19:00:56 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00177.html</guid>
+      <description>&lt;p&gt;
+
+    I&#39;d like to point to and recognize &lt;a href=&#34;http://www.kevlindev.com/blog/weblog.php?id=0&#34;&gt;Kevin
+    Lindsey&lt;/a&gt;&amp;#160;for his &lt;a href=&#34;http://www.kevlindev.com/blog/comments.php?id=47_0_1_0_C&#34;&gt;great&lt;/a&gt; &lt;a href=&#34;http://www.kevlindev.com/blog/comments.php?id=42_0_1_0_C&#34;&gt;comments&lt;/a&gt;, &lt;a href=&#34;http://www.kevlindev.com/blog/comments.php?id=41_0_1_0_C&#34;&gt;feedback&lt;/a&gt; and &lt;a href=&#34;http://www.kevlindev.com/blog/comments.php?id=40_0_1_0_C&#34;&gt;bug&lt;/a&gt; &lt;a href=&#34;http://www.kevlindev.com/blog/comments.php?id=39_0_1_0_C&#34;&gt;reports&lt;/a&gt; on
+    graphics in Avalon.&amp;#160; Comments and feedback like this is one of the reasons that
+    we gave out the PDC build so early.&amp;#160; Thanks Kevin!
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Welcome Channel9 visitors</title>
+      <link>http://new.eightypercent.net/post/old/00176.html</link>
+      <pubDate>Wed, 07 Apr 2004 16:25:49 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00176.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        In case you haven&#39;t seen it, part of my interview that I did with &lt;a href=&#34;http://scoble.weblogs.com&#34;&gt;Scoble&lt;/a&gt;&amp;#160;is
+        up at &lt;a href=&#34;http://channel9.msdn.com&#34;&gt;Channel9&lt;/a&gt;.&amp;#160; [BTW, big congrats to
+        the Channel9 guys.&amp;#160; The site looks great and it survived being slashdotted on
+        its first day.&amp;#160; How many dynamic sites do you know can handle a load like that
+        so soon after launch?]
+    &lt;/p&gt;
+    &lt;p&gt;
+        I did a long interview with Scoble and he asked me a lot of questions. It is interesting
+        that he the topic of &#34;Is Avalon a way to take over the Web&#34; is the first that they
+        put up there.&amp;#160; I&#39;m glad that it is though as this is definately a hot button
+        topic.&amp;#160; I&#39;ll be sure to keep an eye on the comments on the video and answer any
+        questions that you guys have. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        A little background on me: I joined the IE group at Microsoft in the middle of 1997
+        right out of college.&amp;#160; I&#39;d interned twice -- once on a forgotten product called
+        TeamManager and the second time on the OpenGL inside of Windows.&amp;#160; When working
+        on IE, I was responsible for, mostly, the data model for how we stored HTML in memory
+        for processing and rendering.&amp;#160; I touched a lot of other code, but my original
+        nickname was &#34;Tree Boy&#34; (to &lt;a href=&#34;http://www.ericvasilik.com/&#34;&gt;Eric Vasilik&#39;s&lt;/a&gt; &#34;Tree
+        Man&#34; :)&amp;#160; If you have questions on &lt;a href=&#34;http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;q=IMarkupServices&#34;&gt;IMarkupServices&lt;/a&gt;,
+        I can probably answer them for you. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        A couple of years ago, I moved over to the then (very newly) formed Avalon Media Integration
+        Layer and helped define the early vision of what we were going to do with 2D UI level
+        graphics in Longhorn. (The DX team is all over 3D and games!)&amp;#160; At one point all
+        we knew that we wanted was CFS, which stood for &#34;Cool Flying Stuff&#34;.&amp;#160; We upgraded
+        thaet to &#34;Clickable Flying Stuff&#34; and the graphics strategy for Avalon was born.&amp;#160;
+        Since then I&#39;ve been hard at work helping to define and implement a lot of the graphics
+        functionality in Longhorn.&amp;#160; Seriously, I think that we are making a huge leap
+        ahead for Windows and look forward to helping everyone understand what we are about.&amp;#160;
+        I&#39;m also interested in hearing comments, suggestions and bug reports. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSS History</title>
+      <link>http://new.eightypercent.net/post/old/00175.html</link>
+      <pubDate>Wed, 07 Apr 2004 10:29:20 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00175.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I had a rant here wrt RSS history, but considering the fact that it really doesn&#39;t
+        matter and it is always best to stay positive, I&#39;ll withold comment :).
+    &lt;/p&gt;
+    &lt;p&gt;
+        Onward and upward with Avalon!
+    &lt;/p&gt;
+&lt;!--
+    &lt;p&gt;
+        Dave Winer has a bug up his but to &lt;a href=&#34;http://archive.scripting.com/2004/04/06#When:6:58:43PM&#34;&gt;try
+        and claim&lt;/a&gt; that he invented the idea of syndication through XML (embodied via the
+        RSS format).&amp;#160; I don&#39;t think that anyone will argue that Dave has been syndication&#39;s
+        biggest evangelist and has driven his fork of the formats forward relentlessly. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I just wish he wasn&#39;t such an ass.&amp;#160; RSS (and syndication) like so many things
+        in the computer world evolved out of a soup of ideas that stretches way back.&amp;#160;
+        Every time Dave &lt;a href=&#34;http://blogs.law.harvard.edu/tech/rssVersionHistory&#34;&gt;(re)writes
+        a history of RSS&lt;/a&gt;, he always lists himself as the original invetor and visionary.&amp;#160;
+        The particular history linked to above fails to mention a format that was introduced
+        with IE 4 called CDF.&amp;#160; This was &lt;a href=&#34;http://www.w3.org/Submission/1997/2/&#34;&gt;submitted
+        to the W3C&lt;/a&gt; at least 9 months before the earliest date on Dave&#39;s &#34;history.&#34;&amp;#160;
+        Now, I&#39;d also venture a guess that there are tons of other prior art in the soup that
+        CDF came out of.&amp;#160; For someone who rails against the patent system for the way
+        it cements credit for ideas that come out of a soup (think Amazon 1-click) he does
+        a good job of trying to &#34;patent&#34; RSS. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The really sad part here is that Dave does himself such a disservice.&amp;#160; He has
+        a huge bully pulpit that he could use to push his (often) very good ideas.&amp;#160; Instead,
+        he spends time trying to rewrite this particular history.&amp;#160; He undercuts his own
+        credibility in the process.&amp;#160; Instead of being an elder statesman of the computer
+        industry who can cut through the red tape, he sets himself up as a mini Napoleon and
+        creates more divisiveness. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I think this quote from &lt;a href=&#34;http://www.imdb.com/title/tt0118715/&#34;&gt;The Big Labowski&lt;/a&gt;&amp;#160;sums
+        up my thoughts on the subject: 
+    &lt;/p&gt;
+    &lt;blockquote&gt;&lt;b&gt;Walter&lt;/b&gt;: Am I wrong?&lt;br /&gt;
+    &lt;b&gt;Dude&lt;/b&gt;: No you&#39;re not wrong.&lt;br /&gt;
+    &lt;b&gt;Walter&lt;/b&gt;: Am I wrong?&lt;br /&gt;
+    &lt;b&gt;Dude&lt;/b&gt;: You&#39;re not wrong Walter. You&#39;re just an asshole.&lt;br /&gt;
+    &lt;b&gt;Walter&lt;/b&gt;: All right then. &lt;/blockquote&gt;
+--&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

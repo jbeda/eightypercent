@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2003/03/03 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00056.html">More FTP stuff</a></h1>
+      <span class="lead">Mon, Mar 3, 2003</span>
+      <div class="post">
+        <p>
+<p><a href="http://www.simplegeek.com/permalink.aspx/55cdfe57-82bf-47aa-9beb-5dc06d966724">Bitch</a>, <a href="http://www.simplegeek.com/permalink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268">bitch</a>, bitch.  Okay, Chris, what <i>do</i> you want in the FTP upstreamer?  I don't think that Radio's upstreamer deletes either.  Here is what I can do easily:
+<ul>
+<li>CD to a directory.  Throw if the dir isn't there.
+<li>[done] Ensure a directory.  Try my best to make sure that a directory (and the path up to it) exists.
+<li>Delete a directory.  The server will probably return an error if there are files in it.  I will throw.
+<li>Get the current directory.
+<li>Move up a direcotry.
+<li>[done] Upload a file into the current directory.
+<li>Download a file in the current directory and return a stream.  It would be easiest to buffer the entire file in memory.
+<li>Delete a file in the current directory.
+<li>[done] Return a text string with the current directory listing.
+<li>Call SYST and return whatever the system gives us.  This might help detect the type of system on the other end.
+</ul>
+<p>The only thing that isn't easy and that will probably take quite a while to get right is parsing the output of the directory listing.  I don't have a bunch of servers to test this against to make sure it will work.
+<p>As for the upstreamer itself, I'd rather have it not try and sync the stuff on the server (and hence delete stuff) because I'd be afraid of loosing data.  For instance, I upstream into the root of my site and I have all sorts of subdirs off of that.  I'm setting up a weblog for Rachel on eightypercent.net and her root will be a subdir.  I don't want to clobber her stuff whenever I upload my site.
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

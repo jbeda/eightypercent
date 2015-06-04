@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+    
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00051.html">PASV ftp</a>
+      </h2>
+      <span class="lead">Thu, Feb 27, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<P>My FTP code only supports PASV ftp right now.  The reasoning is that I'm behind a NAT firewall and my server isn't.  PASV works much better in that configuration.  <a href="http://www.simplegeek.com/PermaLink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268">Chris is having problems</a> getting my code to work and he is blaming this.
+<P>FTP generally has two TCP connections:  a control connection and a data connection.  The control connection is pretty straigtforward.  You connect to port 21 and start sending messages back and forth.  Some of these commands ask to open a data connection -- to upload a file, download a file or get a directory listing.
+<P>There are two ways to establish the data connection:
+<ol><li><B>Normal FTP</B>: you can have the server establish the connection to your machine.  You tell the server that you are listening on a certain port and that he should connect to you there.
+<li><B>Passive FTP</B>: you establish the connection to the server.  You ask the server for another address/port and you initiate the connection.
+</ol>  
+<p>In a world with network address translation (NAT) it is a lot easier to connect from your protected machine out to the network than it is to have another machine connect (on a new port) to you.  This is why I did passive FTP.  Doing normal FTP shouldn't be that hard if this is indeed the problem that Chris is having.
+<p>Oh yeah, and if both client and server are behind NAT, you are screwed.  That is unless one of the NATs is smart enough to understand FTP and translate stuff along the way.  HTTP can work better here since everyone understands it and it all happens on one socket.  However, HTTP servers aren't set up for this type of thing without wacky extensions like WebDAV or the frontpage extensions.
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00050.html">D60 obsolete</a>
+      </h2>
+      <span class="lead">Thu, Feb 27, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<p>Well, I knew it was coming, but my *ahem* brand new D60 is now superceded by the new <a href="http://www.dpreview.com/news/0302/03022711canoneos10dpreview.asp">Canon 10D</a>.  It has the one thing that I really really want -- a better AF system.  At least I know that mere mortals won't get their hands on them for many months yet.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00049.html">New tripod</a>
+      </h2>
+      <span class="lead">Mon, Feb 24, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<P>Ordered one of <a href="http://www.bogenphoto.com/product/templates/templates.php3?sectionid=274&itemid=773">these</a> bad boys today.  I can't wait.  I'm also going to order one of <a href="http://acratech.net/prod01.htm">these</a> pretty soon too.
+<P>My old tripod had a bent leg and was super heavy.  With this combo I'll be set to carry the tripod on longer hikes.  Things should start warming up soon and I can start exploring the environs around Boise.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00048.html">WWCDD?</a>
+      </h2>
+      <span class="lead">Mon, Feb 24, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<p><a href="http://michaelw.net">Michael Winser</a> suggested that I should think about taking the same approach that citydesk uses.  They do two things differently than Radio:
+<ul>
+<li>They use a CRC instead of a byte for byte comparison.  Apparently they use this instead of filetimes altogether.  I could compute the CRC (or do the comparison with the file on disk too, I guess) by wrapping the stream that the transform is writing to and doing the CRC/comparison on the fly
+<li>They also post a list of files and CRCs as an xml file on the server. This makes it easier to synchronize files across machines
+</ul>
+
+<p>I definitely want to enable the cross machine case, and file times do seem a little fragile to me.  This is something I'll have to think about a little more.
+<p>Two way synchronization is really hard though?  What happens if the same file changes on both the client and the server?  How do you handle deleting a file?  (Do you care about deleting a file?)
+<p>Another problem comes up when you have multi-party authoring and syncing and that is with respect to item numbers.  Right now I have an item number count that I store in a config file and update every time I create a new entry (it is currently at 49).  <a href="http://simplegeek.com">ChrisAn</a> solves this problem with a good old fashion GUID (I have a bunch cheap if you need them ;)  I might be able to switch over without killing my RSS feed and perma links if I just treat the item ID as a string.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00047.html">Before I go to bed</a>
+      </h2>
+      <span class="lead">Sun, Feb 23, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<p><a href="http://groups.google.com/groups?hl=en&lr=&ie=ISO-8859-1&safe=off&q=eightypercent&sa=N&tab=wg">Searching</a> google groups for "eightypercent" turns up someone who likes to post in lots of bondage forums.  For the record, that isn't me.  :)
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00046.html">Code review</a>
+      </h2>
+      <span class="lead">Sun, Feb 23, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<p>I have the "comparison before saving" stuff working and that is cutting down my upload times dramatically.  This is almost like a real blogging tool now.  However, one function -- called TransformAndSaveDoc -- turned out really nasty.  This function transforms an xml document with an xslt style sheet.  It then compares the result to what is already on disk and only writes the new result to disk if the new version is different from the old version.
+<p>Suggestions for making this tighter?  Is there some functionality (memcmp?) that I'm missing in the .Net framework?  Since I don't have comments working, send mail to <a href="mailto:eightypercent@bedafamily.com">eightypercent@bedafamily.com</a> and I'll post the best comments up here with credit and eternal thanks.
+<pre>
+        private void TransformAndSaveDoc(XslTransform xslt, XmlDocument xmlSource, string fileName)
+        {           
+            using (MemoryStream memstrm = new MemoryStream())
+            {
+                bool fFileDifferent = false;
+
+                xslt.Transform(xmlSource, null, memstrm);
+
+                FileInfo fi = new FileInfo(fileName);
+
+                // Check for simple things first
+                if (!File.Exists(fileName) || fi.Length != memstrm.Length)
+                    fFileDifferent = true;
+
+                // Actually compare the file to the stream
+                if (!fFileDifferent)
+                {
+                    Byte[] buffer1 = new Byte[8096];
+                    Byte[] buffer2 = new Byte[8096];
+
+                    // compare the existing file with the memory stream
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+                        
+                        int size1 = 0, size2 = 0;
+                        while(  !fFileDifferent 
+                            &&  (0 != (size1 = memstrm.Read(buffer1, 0, 8096))))
+                        {
+                            size2 = fileStream.Read(buffer2, 0, 8096);
+                            Debug.Assert(size1 == size2);
+                            
+                            for (int i = 0; i < size1; i++)
+                            {
+                                if (buffer1[i] != buffer2[i])
+                                {
+                                    fFileDifferent = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Write that puppy out
+                if (fFileDifferent)
+                {
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+
+                        Byte[] buffer = new Byte[8096];
+                        int size;
+                        while(0 != (size = memstrm.Read(buffer, 0, 8096)))
+                        {
+                            fileStream.Write(buffer, 0, size);
+                        }
+                    }
+                }
+            }
+        }
+</pre>
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00045.html">Untitled #45</a>
+      </h2>
+      <span class="lead">Sun, Feb 23, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<p>I have the dictionary done so now I don't upload files that haven't changed.  Now all I have to do is change my generation code so that it doesn't actually write to files that haven't changed.
+<p>I could do this by making sure that I track which data files have changed and figuring out which output files that means that I have to generate.
+<p>Or, I could just always generate every output file, but compare it to what is on disk before writing it.  If it is exactly the same as what is already there, I can just throw away my in memory copy and not write anything.
+<p>Radio took the first approach, except it didn't get it completely right.  If you added a new entry in Radio, it wouldn't update any of the archive pages.  The problem is that you would always see links going further back on the calendar but never going forward, as it would never update one of the archive pages.  With the second approach it may take a little longer to generate the site,  but you'll be sure to update everything that needs to be updated.
+<p>I think that I'm going to go with the second approach.  I can adapt and implement the first as needed (perhaps on a more granular level.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00044.html">FTPUpstreaming?</a>
+      </h2>
+      <span class="lead">Sun, Feb 23, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<P>If you see this then I uploaded everything using my new FTP support.
+<P>Right now I just upload everything every time.  However, it shouldn't be difficult for me to keep a dictionary of file times so I can keep track of what is new since the last upload.
+<P>I also need to do the uploading on a different thread and report status.
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00043.html">Back in Boise</a>
+      </h2>
+      <span class="lead">Sat, Feb 22, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<P>I'm back in Boise and Chris is still kicking my ass with BlogX.
+<P>I got mail from <a href="http://gary.burd.info/">Gary Burd</a> that my RSS feed was valid.  The problem was that I was using relative URLs in some of my entries.  I've fixed up the problem and I'll be sure to keep an eye on that in the future.
+<P>At least I'm putting out good XML, unlike Radio...
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00042.html">FTP Library</a>
+      </h2>
+      <span class="lead">Wed, Feb 19, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+<P><a href="http://www.jelovic.com/weblog/index.htm">Dejan Jelovic</a> sent me some mail pointing to his <a href="http://www.jelovic.com/ftplib/">managed wrapper on wininet</a>.
+<P>This looks pretty cool and wininet is pretty well tested, if a little quirky.  However, I think that I'm going to do my own thing just for the sake of doing it.  <a href="http://michaelw.net/Articles/Whywere-inventtheweblogwh.html">I'm having fun</a> with the little victories of doing something pretty fundamental from the ground up.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+  <nav>
+    <ul class="pager">
+      <li class="previous">
+        <a href="/page/22.html"><span aria-hidden="true">&larr;</span> Newer</a>
+      </li>
+      <li class="next">
+        <a href="/page/24.html">Older <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+  </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

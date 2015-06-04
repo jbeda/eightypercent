@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/07/23 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/07/23.html</link>
+    <description>Recent content in 2003/07/23 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Jul 2003 08:26:38 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/07/23.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>I&#39;m not PM, I&#39;m not a PM</title>
+      <link>http://new.eightypercent.net/post/old/00123.html</link>
+      <pubDate>Wed, 23 Jul 2003 08:26:38 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00123.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Scoble &lt;a href=&#34;http://radio.weblogs.com/0001011/2003/07/23.html#a3879&#34;&gt;linked to
+        me&lt;/a&gt;.&amp;#160; Thanks dude!
+    &lt;/p&gt;
+    &lt;p&gt;
+        However, I&#39;m not a PM.&amp;#160; I&#39;m a Dev Lead.&amp;#160; I don&#39;t know if everyone knows
+        the break down of different jobs at Microsoft, but, in the technical areas, there
+        are three main jobs: &lt;a href=&#34;http://www.microsoft.com/careers/careerpath/technical/programmanagement.aspx&#34;&gt;Program
+        Management&lt;/a&gt;, &lt;a href=&#34;http://www.microsoft.com/careers/careerpath/technical/softwaredevelopment.aspx&#34;&gt;Development&lt;/a&gt;,
+        and &lt;a href=&#34;http://www.microsoft.com/careers/careerpath/technical/softwaretesting.aspx&#34;&gt;Test&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The breakdown goes like this:&amp;#160; PMs talk to customers, develop requirements and
+        write specs, Devs implement the code to those specs and Test validates that the Devs
+        did their job.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Of course, things never work out that cleanly.&amp;#160; For example, the Test team are
+        some of the people first using the product so they may have more and better feedback
+        than just if the program works.&amp;#160; And in a techinical area, like what I&#39;m working
+        on (graphics and APIs), a lot of the design work can be done by devs.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Microsoft is trying to develop higher level individual contributer developers to help
+        lead the architecture of the product.&amp;#160; I&#39;m heading down that track right now.&amp;#160; &lt;a href=&#34;http://www.simplegeek.com&#34;&gt;ChrisAn&lt;/a&gt; is
+        another example of this.&amp;#160; Part of this is that just because you are good at writing
+        code doesn&#39;t mean that you are good at managing people.&amp;#160; Beyond that, it is &lt;em&gt;really&lt;/em&gt; hard
+        to find PMs that can operate at the technical level necessary for some groups -- such
+        as designing windows APIs.&amp;#160; As a result of this, higher level individual contributer
+        devs and technical PMs do many of the same jobs.&amp;#160; This is why I&#39;ve spent that
+        last year or so writing specs!
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

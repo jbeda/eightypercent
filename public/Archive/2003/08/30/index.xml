@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/08/30 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/08/30.html</link>
+    <description>Recent content in 2003/08/30 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Aug 2003 15:40:47 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/08/30.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DSL woes</title>
+      <link>http://new.eightypercent.net/post/old/00133.html</link>
+      <pubDate>Sat, 30 Aug 2003 15:40:47 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00133.html</guid>
+      <description>&lt;p&gt;
+
+    Well, it turns out that in my new house I can only get 256kbs up and 256kbs down.&amp;#160;
+    In the old place I was getting 640kbs up and 256kbs down.&amp;#160; I guess I&#39;m just too
+    far from the CO.&amp;#160; My choices are to (a) suck it up, (b) go with a cable modem
+    and their onerous terms of service or (c) shell out big bucks for a business class
+    line.&amp;#160; So far (a) is looking good but I&#39;m not happy about it.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New House!</title>
+      <link>http://new.eightypercent.net/post/old/00132.html</link>
+      <pubDate>Sat, 30 Aug 2003 15:36:18 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00132.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Well, I&#39;m moved in to my new house.&amp;#160; The DSL is hooked up and we are starting
+        to unpack.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I need to change the &lt;a href=&#34;http://www.catb.org/~esr/jargon/html/I/ICBM-address.html&#34;&gt;ICBM&lt;/a&gt; coords
+        for &lt;a href=&#34;http://www.geourl.com&#34;&gt;geourl&lt;/a&gt;, along with 10 thousand other things
+        to do when starting out in a new house!
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

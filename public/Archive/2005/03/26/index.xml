@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/03/26 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/03/26.html</link>
+    <description>Recent content in 2005/03/26 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Mar 2005 08:16:05 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/03/26.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C&#43;&#43; Standard Libraries?</title>
+      <link>http://new.eightypercent.net/post/old/00237.html</link>
+      <pubDate>Sat, 26 Mar 2005 08:16:05 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00237.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Wow -- &lt;a href=&#34;http://developers.slashdot.org/developers/05/03/25/2129248.shtml?tid=217&amp;amp;tid=8&#34;&gt;Slashdot&lt;/a&gt; &lt;a href=&#34;http://developers.slashdot.org/developers/04/05/23/1737226.shtml?tid=109&amp;amp;tid=185&amp;amp;tid=187&amp;amp;tid=190&amp;amp;tid=201&#34;&gt;again&lt;/a&gt;.&amp;#160;
+        That is always fun.&amp;#160; I&#39;m always amazed at the flow and I love the influx of comments
+        both on Slashdot itself and on my blog.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One comment was from &#34;Dave B&#34; asking me to elaborate on some theories as to why C++
+        hasn&#39;t developed the same set of libraries that other environments such as Perl, Python,
+        Java, C#, etc. have.&amp;#160; Here are a bunch of ideas.&amp;#160; I have no empirical data
+        but just gut feeling.
+    &lt;/p&gt;
+    &lt;p&gt;
+        First off, we must examine the philosophy behind different environments.&amp;#160; I may
+        be making broad generalizations here, but stay with me:
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Java and the CLR (C#, VB.Net): &#34;Make the easy things easy and make the hard things
+            possible.&#34;&amp;#160; These environments try to avoid the inherit complexity that C++ has.&lt;/li&gt;
+        &lt;li&gt;
+            Python and Perl (and perhaps others that I have no experience with): &#34;Make my life
+            easier -- I don&#39;t want to spend more time writing this fast and dirty script than
+            I have to&#34;.&amp;#160; Above all else users here prize being able to get something useful
+            done now.&lt;/li&gt;
+        &lt;li&gt;
+            C++:&amp;#160; &#34;Give me all of the fundamental tools and building blocks and I&#39;ll do it
+            myself.&#34;&amp;#160; Power trumps all.&amp;#160; Templates and the way that people use them
+            are a great example of this.&lt;/li&gt;
+        &lt;li&gt;
+            (I&#39;m sure that there are more categories for things like Lisp and Smalltalk.&amp;#160;
+            Filling out that part of the list is left as an exercise to the reader)&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        With this difference in philosophy it is no wonder that there is such - ahem - diversity
+        in the C++ library space.&amp;#160; Here are some more thoughts.
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            There *are* good sets of libraries out there for doing stuff.&amp;#160; One example would
+            be &lt;a href=&#34;http://www.boost.org/&#34;&gt;boost&lt;/a&gt;.&amp;#160; These have limited uptake I think
+            for a couple of reasons.&amp;#160; First, downloading and building these is a pain.&amp;#160;
+            They don&#39;t already come with your compiler.&amp;#160; Second, these libraries are either
+            laser focused on a specific area (libtiff?) or are more collections/algorithms base.&amp;#160;
+            Boost, for example, doesn&#39;t include an easy interface for dealing with zip files or
+            for writing a single threaded select loop based network server.&lt;/li&gt;
+        &lt;li&gt;
+            The C++ standards process is slow and ponderous.&amp;#160; While there are downsides to
+            these environments being controlled by a single entity or a focused group, but the
+            end result is much faster advancement of the language/runtime/environment.&lt;/li&gt;
+        &lt;li&gt;
+            There are so many ways to do things in C++ that invariably arguments come up over
+            how to do something. Even within one company, people can&#39;t agree.&amp;#160; For some reason
+            C++ programmers seem to be more stubborn on a lot of these points.&amp;#160;&amp;#160;The
+            result is that&amp;#160;everyone just writes their own thing.&lt;/li&gt;
+        &lt;li&gt;
+            It is way to easy to write super hard to use APIs in C++.&amp;#160; Templates make this
+            problem worse.&amp;#160; If you do this stuff day in and day out you get to know it and
+            it makes sense to you, but most C++ libraries are hard to use on a casual basis.&amp;#160;
+            I think that there is a disease where people think that it is their obligation to
+            use templates in as confusing a way as possible.&amp;#160; Any time a class has a templated
+            base class, you are going to go right over the head of 95% of the developers out there.&lt;/li&gt;
+        &lt;li&gt;
+            Opinions are divided around RTTI and exceptions.&amp;#160; Code written to deal with exceptions
+            doesn&#39;t interop well with code that turns exceptions off.&amp;#160; Almost no one turns
+            on RTTI.&amp;#160; In any case, the result is that these are walls to reusing code.&amp;#160;
+            If you don&#39;t use exceptions you have to come up with your own error code space or
+            use platform concepts like HRESULTs.&lt;/li&gt;
+        &lt;li&gt;
+            Everyone likes to replace their allocator but there is no standard way to do that
+            for various libraries.&amp;#160; &lt;em&gt;If&lt;/em&gt; library lets your replace the allocator it
+            is usually something that has to be done on a library by library basis.&amp;#160; So many
+            problems would be solved if the CRT and language had a way to do global hooking of
+            the malloc/free and new/delete at the link level.&lt;/li&gt;
+        &lt;li&gt;
+            DLLs, shared libraries, compiler differences, differing STL support all make it harder
+            to do things in a standard way.&lt;/li&gt;
+        &lt;li&gt;
+            Windows doesn&#39;t have a good standard build system.&amp;#160; The upshot is that libraries
+            are only on Unix or the Windows build is cobbled together.&amp;#160; Environments like
+            Cygwin are really poor compromises.&amp;#160; It would be better for everyone if the unix
+            make/configure systems would be updated to work natively on Windows also. It isn&#39;t
+            like Windows can change anytime soon without breaking the world.&amp;#160; The MS compilers
+            are now free -- the make system is really the only missing part now.&lt;/li&gt;
+        &lt;li&gt;
+            Each codebase has its own way for deciding how header files are included.&amp;#160; Figuring
+            stuff like that out is just a headache.&lt;/li&gt;
+        &lt;li&gt;
+            Lots and lots of different string types.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Does this hurt C++?&amp;#160; Probably not -- it is just targeted at a different audience.&amp;#160;
+        When you need the power you need the power.&amp;#160; If you have to hunt around for example
+        code or a helper library and somehow jam it in to your build system and project then
+        that is the price for playing the game.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Just some random thoughts on a Saturday morning...
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

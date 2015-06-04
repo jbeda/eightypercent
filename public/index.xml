@@ -1,0 +1,1534 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>80%</title>
+    <link>http://new.eightypercent.net/</link>
+    <description>Recent content on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 May 2015 12:19:58 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Test Doc</title>
+      <link>http://new.eightypercent.net/post/first.html</link>
+      <pubDate>Tue, 12 May 2015 12:19:58 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/first.html</guid>
+      <description>
+
+&lt;h1 id=&#34;markdown-syntax:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;Markdown: Syntax&lt;/h1&gt;
+
+&lt;ul id=&#34;ProjectSubmenu&#34;&gt;
+    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/&#34; title=&#34;Markdown Project Page&#34;&gt;Main&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/basics&#34; title=&#34;Markdown Basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&#34;selected&#34; title=&#34;Markdown Syntax Documentation&#34;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/license&#34; title=&#34;Pricing and License Information&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/dingus&#34; title=&#34;Online Markdown Web Form&#34;&gt;Dingus&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#overview&#34;&gt;Overview&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#philosophy&#34;&gt;Philosophy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#html&#34;&gt;Inline HTML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#autoescape&#34;&gt;Automatic Escaping for Special Characters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#block&#34;&gt;Block Elements&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#p&#34;&gt;Paragraphs and Line Breaks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#header&#34;&gt;Headers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blockquote&#34;&gt;Blockquotes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list&#34;&gt;Lists&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#precode&#34;&gt;Code Blocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hr&#34;&gt;Horizontal Rules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#span&#34;&gt;Span Elements&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#link&#34;&gt;Links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#em&#34;&gt;Emphasis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#code&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#img&#34;&gt;Images&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#misc&#34;&gt;Miscellaneous&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#backslash&#34;&gt;Backslash Escapes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#autolink&#34;&gt;Automatic Links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This document is itself written using Markdown; you
+can &lt;a href=&#34;http://new.eightypercent.net/projects/markdown/syntax.text&#34;&gt;see the source for it by adding &amp;lsquo;.text&amp;rsquo; to the URL&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+
+&lt;h3 id=&#34;philosophy&#34;&gt;Philosophy&lt;/h3&gt;
+
+&lt;p&gt;Markdown is intended to be as easy-to-read and easy-to-write as is feasible.&lt;/p&gt;
+
+&lt;p&gt;Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it&amp;rsquo;s been marked up with tags or formatting instructions. While
+Markdown&amp;rsquo;s syntax has been influenced by several existing text-to-HTML
+filters &amp;ndash; including &lt;a href=&#34;http://docutils.sourceforge.net/mirror/setext.html&#34;&gt;Setext&lt;/a&gt;, &lt;a href=&#34;http://www.aaronsw.com/2002/atx/&#34;&gt;atx&lt;/a&gt;, &lt;a href=&#34;http://textism.com/tools/textile/&#34;&gt;Textile&lt;/a&gt;, &lt;a href=&#34;http://docutils.sourceforge.net/rst.html&#34;&gt;reStructuredText&lt;/a&gt;,
+&lt;a href=&#34;http://www.triptico.com/software/grutatxt.html&#34;&gt;Grutatext&lt;/a&gt;, and &lt;a href=&#34;http://ettext.taint.org/doc/&#34;&gt;EtText&lt;/a&gt; &amp;ndash; the single biggest source of
+inspiration for Markdown&amp;rsquo;s syntax is the format of plain text email.&lt;/p&gt;
+
+&lt;p&gt;To this end, Markdown&amp;rsquo;s syntax is comprised entirely of punctuation
+characters, which punctuation characters have been carefully chosen so
+as to look like what they mean. E.g., asterisks around a word actually
+look like *emphasis*. Markdown lists look like, well, lists. Even
+blockquotes look like quoted passages of text, assuming you&amp;rsquo;ve ever
+used email.&lt;/p&gt;
+
+&lt;h3 id=&#34;html&#34;&gt;Inline HTML&lt;/h3&gt;
+
+&lt;p&gt;Markdown&amp;rsquo;s syntax is intended for one purpose: to be used as a
+format for &lt;em&gt;writing&lt;/em&gt; for the web.&lt;/p&gt;
+
+&lt;p&gt;Markdown is not a replacement for HTML, or even close to it. Its
+syntax is very small, corresponding only to a very small subset of
+HTML tags. The idea is &lt;em&gt;not&lt;/em&gt; to create a syntax that makes it easier
+to insert HTML tags. In my opinion, HTML tags are already easy to
+insert. The idea for Markdown is to make it easy to read, write, and
+edit prose. HTML is a &lt;em&gt;publishing&lt;/em&gt; format; Markdown is a &lt;em&gt;writing&lt;/em&gt;
+format. Thus, Markdown&amp;rsquo;s formatting syntax only addresses issues that
+can be conveyed in plain text.&lt;/p&gt;
+
+&lt;p&gt;For any markup that is not covered by Markdown&amp;rsquo;s syntax, you simply
+use HTML itself. There&amp;rsquo;s no need to preface it or delimit it to
+indicate that you&amp;rsquo;re switching from Markdown to HTML; you just use
+the tags.&lt;/p&gt;
+
+&lt;p&gt;The only restrictions are that block-level HTML elements &amp;ndash; e.g. &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;,
+&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;, etc. &amp;ndash; must be separated from surrounding
+content by blank lines, and the start and end tags of the block should
+not be indented with tabs or spaces. Markdown is smart enough not
+to add extra (unwanted) &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags around HTML block-level tags.&lt;/p&gt;
+
+&lt;p&gt;For example, to add an HTML table to a Markdown article:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a regular paragraph.
+
+&amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+        &amp;lt;td&amp;gt;Foo&amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+
+This is another regular paragraph.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that Markdown formatting syntax is not processed within block-level
+HTML tags. E.g., you can&amp;rsquo;t use Markdown-style &lt;code&gt;*emphasis*&lt;/code&gt; inside an
+HTML block.&lt;/p&gt;
+
+&lt;p&gt;Span-level HTML tags &amp;ndash; e.g. &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt; &amp;ndash; can be
+used anywhere in a Markdown paragraph, list item, or header. If you
+want, you can even use HTML tags instead of Markdown formatting; e.g. if
+you&amp;rsquo;d prefer to use HTML &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tags instead of Markdown&amp;rsquo;s
+link or image syntax, go right ahead.&lt;/p&gt;
+
+&lt;p&gt;Unlike block-level HTML tags, Markdown syntax &lt;em&gt;is&lt;/em&gt; processed within
+span-level tags.&lt;/p&gt;
+
+&lt;h3 id=&#34;autoescape&#34;&gt;Automatic Escaping for Special Characters&lt;/h3&gt;
+
+&lt;p&gt;In HTML, there are two characters that demand special treatment: &lt;code&gt;&amp;lt;&lt;/code&gt;
+and &lt;code&gt;&amp;amp;&lt;/code&gt;. Left angle brackets are used to start tags; ampersands are
+used to denote HTML entities. If you want to use them as literal
+characters, you must escape them as entities, e.g. &lt;code&gt;&amp;amp;lt;&lt;/code&gt;, and
+&lt;code&gt;&amp;amp;amp;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ampersands in particular are bedeviling for web writers. If you want to
+write about &amp;lsquo;AT&amp;amp;T&amp;rsquo;, you need to write &amp;lsquo;&lt;code&gt;AT&amp;amp;amp;T&lt;/code&gt;&amp;rsquo;. You even need to
+escape ampersands within URLs. Thus, if you want to link to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;q=larry+bird
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you need to encode the URL as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;in your anchor tag &lt;code&gt;href&lt;/code&gt; attribute. Needless to say, this is easy to
+forget, and is probably the single most common source of HTML validation
+errors in otherwise well-marked-up web sites.&lt;/p&gt;
+
+&lt;p&gt;Markdown allows you to use these characters naturally, taking care of
+all the necessary escaping for you. If you use an ampersand as part of
+an HTML entity, it remains unchanged; otherwise it will be translated
+into &lt;code&gt;&amp;amp;amp;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, if you want to include a copyright symbol in your article, you can write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;copy;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and Markdown will leave it alone. But if you write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AT&amp;amp;T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown will translate it to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;AT&amp;amp;amp;T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Similarly, because Markdown supports &lt;a href=&#34;#html&#34;&gt;inline HTML&lt;/a&gt;, if you use
+angle brackets as delimiters for HTML tags, Markdown will treat them as
+such. But if you write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;4 &amp;lt; 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown will translate it to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;4 &amp;amp;lt; 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, inside Markdown code spans and blocks, angle brackets and
+ampersands are &lt;em&gt;always&lt;/em&gt; encoded automatically. This makes it easy to use
+Markdown to write about HTML code. (As opposed to raw HTML, which is a
+terrible format for writing about HTML syntax, because every single &lt;code&gt;&amp;lt;&lt;/code&gt;
+and &lt;code&gt;&amp;amp;&lt;/code&gt; in your example code needs to be escaped.)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;block&#34;&gt;Block Elements&lt;/h2&gt;
+
+&lt;h3 id=&#34;p&#34;&gt;Paragraphs and Line Breaks&lt;/h3&gt;
+
+&lt;p&gt;A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line &amp;ndash; a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or tabs.&lt;/p&gt;
+
+&lt;p&gt;The implication of the &amp;ldquo;one or more consecutive lines of text&amp;rdquo; rule is
+that Markdown supports &amp;ldquo;hard-wrapped&amp;rdquo; text paragraphs. This differs
+significantly from most other text-to-HTML formatters (including Movable
+Type&amp;rsquo;s &amp;ldquo;Convert Line Breaks&amp;rdquo; option) which translate every line break
+character in a paragraph into a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; tag.&lt;/p&gt;
+
+&lt;p&gt;When you &lt;em&gt;do&lt;/em&gt; want to insert a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt; break tag using Markdown, you
+end a line with two or more spaces, then type return.&lt;/p&gt;
+
+&lt;p&gt;Yes, this takes a tad more effort to create a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;, but a simplistic
+&amp;ldquo;every line break is a &lt;code&gt;&amp;lt;br /&amp;gt;&lt;/code&gt;&amp;rdquo; rule wouldn&amp;rsquo;t work for Markdown.
+Markdown&amp;rsquo;s email-style &lt;a href=&#34;#blockquote&#34;&gt;blockquoting&lt;/a&gt; and multi-paragraph &lt;a href=&#34;#list&#34;&gt;list items&lt;/a&gt;
+work best &amp;ndash; and look better &amp;ndash; when you format them with hard breaks.&lt;/p&gt;
+
+&lt;h3 id=&#34;header&#34;&gt;Headers&lt;/h3&gt;
+
+&lt;p&gt;Markdown supports two styles of headers, &lt;a href=&#34;http://docutils.sourceforge.net/mirror/setext.html&#34;&gt;Setext&lt;/a&gt; and &lt;a href=&#34;http://www.aaronsw.com/2002/atx/&#34;&gt;atx&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Setext-style headers are &amp;ldquo;underlined&amp;rdquo; using equal signs (for first-level
+headers) and dashes (for second-level headers). For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is an H1
+=============
+
+This is an H2
+-------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Any number of underlining &lt;code&gt;=&lt;/code&gt;&amp;rsquo;s or &lt;code&gt;-&lt;/code&gt;&amp;rsquo;s will work.&lt;/p&gt;
+
+&lt;p&gt;Atx-style headers use 1-6 hash characters at the start of the line,
+corresponding to header levels 1-6. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is an H1
+
+## This is an H2
+
+###### This is an H6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Optionally, you may &amp;ldquo;close&amp;rdquo; atx-style headers. This is purely
+cosmetic &amp;ndash; you can use this if you think it looks better. The
+closing hashes don&amp;rsquo;t even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.) :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# This is an H1 #
+
+## This is an H2 ##
+
+### This is an H3 ######
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;blockquote&#34;&gt;Blockquotes&lt;/h3&gt;
+
+&lt;p&gt;Markdown uses email-style &lt;code&gt;&amp;gt;&lt;/code&gt; characters for blockquoting. If you&amp;rsquo;re
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a &lt;code&gt;&amp;gt;&lt;/code&gt; before every line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&amp;gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&amp;gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&amp;gt; 
+&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&amp;gt; id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown allows you to be lazy and only put the &lt;code&gt;&amp;gt;&lt;/code&gt; before the first
+line of a hard-wrapped paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&amp;gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of &lt;code&gt;&amp;gt;&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is the first level of quoting.
+&amp;gt;
+&amp;gt; &amp;gt; This is nested blockquote.
+&amp;gt;
+&amp;gt; Back to the first level.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Blockquotes can contain other Markdown elements, including headers, lists,
+and code blocks:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h2 id=&#34;this-is-a-header:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;This is a header.&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;This is the first list item.&lt;/li&gt;
+&lt;li&gt;This is the second list item.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here&amp;rsquo;s some example code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;return shell_exec(&amp;quot;echo $input | $markdown_script&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text menu.&lt;/p&gt;
+
+&lt;h3 id=&#34;list&#34;&gt;Lists&lt;/h3&gt;
+
+&lt;p&gt;Markdown supports ordered (numbered) and unordered (bulleted) lists.&lt;/p&gt;
+
+&lt;p&gt;Unordered lists use asterisks, pluses, and hyphens &amp;ndash; interchangably
+&amp;ndash; as list markers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Red
+*   Green
+*   Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;is equivalent to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+   Red
++   Green
++   Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-   Red
+-   Green
+-   Blue
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ordered lists use numbers followed by periods:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  Bird
+2.  McHale
+3.  Parish
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to note that the actual numbers you use to mark the
+list have no effect on the HTML output Markdown produces. The HTML
+Markdown produces from the above list is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ol&amp;gt;
+&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;McHale&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Parish&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you instead wrote the list in Markdown like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  Bird
+1.  McHale
+1.  Parish
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or even:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;3. Bird
+1. McHale
+8. Parish
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you&amp;rsquo;d get the exact same HTML output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don&amp;rsquo;t have to.&lt;/p&gt;
+
+&lt;p&gt;If you do use lazy list numbering, however, you should still start the
+list with the number 1. At some point in the future, Markdown may support
+starting ordered lists at an arbitrary number.&lt;/p&gt;
+
+&lt;p&gt;List markers typically start at the left margin, but may be indented by
+up to three spaces. List markers must be followed by one or more spaces
+or a tab.&lt;/p&gt;
+
+&lt;p&gt;To make lists look nice, you can wrap items with hanging indents:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But if you want to be lazy, you don&amp;rsquo;t have to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If list items are separated by blank lines, Markdown will wrap the
+items in &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; tags in the HTML output. For example, this input:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Bird
+*   Magic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will turn into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Magic&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   Bird
+
+*   Magic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will turn into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Bird&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Magic&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one tab:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be
+lazy:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   This is a list item with two paragraphs.
+
+    This is the second paragraph in the list item. You&#39;re
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To put a blockquote within a list item, the blockquote&amp;rsquo;s &lt;code&gt;&amp;gt;&lt;/code&gt;
+delimiters need to be indented:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   A list item with a blockquote:
+
+    &amp;gt; This is a blockquote
+    &amp;gt; inside a list item.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To put a code block within a list item, the code block needs
+to be indented &lt;em&gt;twice&lt;/em&gt; &amp;ndash; 8 spaces or two tabs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*   A list item with a code block:
+
+        &amp;lt;code goes here&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s worth noting that it&amp;rsquo;s possible to trigger an ordered list by
+accident, by writing something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1986. What a great season.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In other words, a &lt;em&gt;number-period-space&lt;/em&gt; sequence at the beginning of a
+line. To avoid this, you can backslash-escape the period:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1986\. What a great season.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;precode&#34;&gt;Code Blocks&lt;/h3&gt;
+
+&lt;p&gt;Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab. For example, given this input:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a normal paragraph:
+
+    This is a code block.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown will generate:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is a normal paragraph:&amp;lt;/p&amp;gt;
+
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;This is a code block.
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One level of indentation &amp;ndash; 4 spaces or 1 tab &amp;ndash; is removed from each
+line of the code block. For example, this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Here is an example of AppleScript:
+
+    tell application &amp;quot;Foo&amp;quot;
+        beep
+    end tell
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will turn into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;
+
+&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &amp;quot;Foo&amp;quot;
+    beep
+end tell
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A code block continues until it reaches a line that is not indented
+(or the end of the article).&lt;/p&gt;
+
+&lt;p&gt;Within a code block, ampersands (&lt;code&gt;&amp;amp;&lt;/code&gt;) and angle brackets (&lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;&lt;/code&gt;)
+are automatically converted into HTML entities. This makes it very
+easy to include example HTML source code using Markdown &amp;ndash; just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example, this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;
+        &amp;amp;copy; 2004 Foo Corporation
+    &amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will turn into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;div class=&amp;quot;footer&amp;quot;&amp;amp;gt;
+    &amp;amp;amp;copy; 2004 Foo Corporation
+&amp;amp;lt;/div&amp;amp;gt;
+&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it&amp;rsquo;s also easy to use Markdown to write about Markdown&amp;rsquo;s own syntax.&lt;/p&gt;
+
+&lt;h3 id=&#34;hr&#34;&gt;Horizontal Rules&lt;/h3&gt;
+
+&lt;p&gt;You can produce a horizontal rule tag (&lt;code&gt;&amp;lt;hr /&amp;gt;&lt;/code&gt;) by placing three or
+more hyphens, asterisks, or underscores on a line by themselves. If you
+wish, you may use spaces between the hyphens or asterisks. Each of the
+following lines will produce a horizontal rule:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;span&#34;&gt;Span Elements&lt;/h2&gt;
+
+&lt;h3 id=&#34;link&#34;&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Markdown supports two style of links: &lt;em&gt;inline&lt;/em&gt; and &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In both styles, the link text is delimited by [square brackets].&lt;/p&gt;
+
+&lt;p&gt;To create an inline link, use a set of regular parentheses immediately
+after the link text&amp;rsquo;s closing square bracket. Inside the parentheses,
+put the URL where you want the link to point, along with an &lt;em&gt;optional&lt;/em&gt;
+title for the link, surrounded in quotes. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is [an example](http://example.com/ &amp;quot;Title&amp;quot;) inline link.
+
+[This link](http://example.net/) has no title attribute.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Will produce:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;
+an example&amp;lt;/a&amp;gt; inline link.&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no
+title attribute.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you&amp;rsquo;re referring to a local resource on the same server, you can
+use relative paths:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;See my [About](/about/) page for details.   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Reference-style links use a second set of square brackets, inside
+which you place a label of your choosing to identify the link:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is [an example][id] reference-style link.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can optionally use a space to separate the sets of brackets:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is [an example] [id] reference-style link.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, anywhere in the document, you define your link label like this,
+on a line by itself:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Square brackets containing the link identifier (optionally
+indented from the left margin using up to three spaces);&lt;/li&gt;
+&lt;li&gt;followed by a colon;&lt;/li&gt;
+&lt;li&gt;followed by one or more spaces (or tabs);&lt;/li&gt;
+&lt;li&gt;followed by the URL for the link;&lt;/li&gt;
+&lt;li&gt;optionally followed by a title attribute for the link, enclosed
+in double or single quotes, or enclosed in parentheses.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following three link definitions are equivalent:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There is a known bug in Markdown.pl 1.0.1 which prevents
+single quotes from being used to delimit link titles.&lt;/p&gt;
+
+&lt;p&gt;The link URL may, optionally, be surrounded by angle brackets:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: &amp;lt;http://example.com/&amp;gt;  &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can put the title attribute on the next line and use extra spaces
+or tabs for padding, which tends to look better with longer URLs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: http://example.com/longish/path/to/resource/here
+    &amp;quot;Optional Title Here&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Link definitions are only used for creating links during Markdown
+processing, and are stripped from your document in the HTML output.&lt;/p&gt;
+
+&lt;p&gt;Link definition names may consist of letters, numbers, spaces, and
+punctuation &amp;ndash; but they are &lt;em&gt;not&lt;/em&gt; case sensitive. E.g. these two
+links:&lt;/p&gt;
+
+&lt;p&gt;[link text][a]
+  [link text][A]&lt;/p&gt;
+
+&lt;p&gt;are equivalent.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;implicit link name&lt;/em&gt; shortcut allows you to omit the name of the
+link, in which case the link text itself is used as the name.
+Just use an empty set of square brackets &amp;ndash; e.g., to link the word
+&amp;ldquo;Google&amp;rdquo; to the google.com web site, you could simply write:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://google.com/&#34;&gt;Google&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And then define the link:&lt;/p&gt;
+
+&lt;p&gt;Because link names may contain spaces, this shortcut even works for
+multiple words in the link text:&lt;/p&gt;
+
+&lt;p&gt;Visit &lt;a href=&#34;http://daringfireball.net/&#34;&gt;Daring Fireball&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;p&gt;And then define the link:&lt;/p&gt;
+
+&lt;p&gt;Link definitions can be placed anywhere in your Markdown document. I
+tend to put them immediately after each paragraph in which they&amp;rsquo;re
+used, but if you want, you can put them all at the end of your
+document, sort of like footnotes.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s an example of reference links in action:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &amp;quot;Google&amp;quot;
+  [2]: http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
+  [3]: http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Using the implicit link name shortcut, you could instead write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        &amp;quot;Google&amp;quot;
+  [yahoo]:  http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;
+  [msn]:    http://search.msn.com/    &amp;quot;MSN Search&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Both of the above examples will produce the following HTML output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;I get 10 times more traffic from &amp;lt;a href=&amp;quot;http://google.com/&amp;quot;
+title=&amp;quot;Google&amp;quot;&amp;gt;Google&amp;lt;/a&amp;gt; than from
+&amp;lt;a href=&amp;quot;http://search.yahoo.com/&amp;quot; title=&amp;quot;Yahoo Search&amp;quot;&amp;gt;Yahoo&amp;lt;/a&amp;gt;
+or &amp;lt;a href=&amp;quot;http://search.msn.com/&amp;quot; title=&amp;quot;MSN Search&amp;quot;&amp;gt;MSN&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For comparison, here is the same paragraph written using
+Markdown&amp;rsquo;s inline link style:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I get 10 times more traffic from [Google](http://google.com/ &amp;quot;Google&amp;quot;)
+than from [Yahoo](http://search.yahoo.com/ &amp;quot;Yahoo Search&amp;quot;) or
+[MSN](http://search.msn.com/ &amp;quot;MSN Search&amp;quot;).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The point of reference-style links is not that they&amp;rsquo;re easier to
+write. The point is that with reference-style links, your document
+source is vastly more readable. Compare the above examples: using
+reference-style links, the paragraph itself is only 81 characters
+long; with inline-style links, it&amp;rsquo;s 176 characters; and as raw HTML,
+it&amp;rsquo;s 234 characters. In the raw HTML, there&amp;rsquo;s more markup than there
+is text.&lt;/p&gt;
+
+&lt;p&gt;With Markdown&amp;rsquo;s reference-style links, a source document much more
+closely resembles the final output, as rendered in a browser. By
+allowing you to move the markup-related metadata out of the paragraph,
+you can add links without interrupting the narrative flow of your
+prose.&lt;/p&gt;
+
+&lt;h3 id=&#34;em&#34;&gt;Emphasis&lt;/h3&gt;
+
+&lt;p&gt;Markdown treats asterisks (&lt;code&gt;*&lt;/code&gt;) and underscores (&lt;code&gt;_&lt;/code&gt;) as indicators of
+emphasis. Text wrapped with one &lt;code&gt;*&lt;/code&gt; or &lt;code&gt;_&lt;/code&gt; will be wrapped with an
+HTML &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; tag; double &lt;code&gt;*&lt;/code&gt;&amp;rsquo;s or &lt;code&gt;_&lt;/code&gt;&amp;rsquo;s will be wrapped with an HTML
+&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt; tag. E.g., this input:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will produce:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;
+
+&amp;lt;em&amp;gt;single underscores&amp;lt;/em&amp;gt;
+
+&amp;lt;strong&amp;gt;double asterisks&amp;lt;/strong&amp;gt;
+
+&amp;lt;strong&amp;gt;double underscores&amp;lt;/strong&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can use whichever style you prefer; the lone restriction is that
+the same character must be used to open and close an emphasis span.&lt;/p&gt;
+
+&lt;p&gt;Emphasis can be used in the middle of a word:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;un*frigging*believable
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But if you surround an &lt;code&gt;*&lt;/code&gt; or &lt;code&gt;_&lt;/code&gt; with spaces, it&amp;rsquo;ll be treated as a
+literal asterisk or underscore.&lt;/p&gt;
+
+&lt;p&gt;To produce a literal asterisk or underscore at a position where it
+would otherwise be used as an emphasis delimiter, you can backslash
+escape it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\*this text is surrounded by literal asterisks\*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
+
+&lt;p&gt;To indicate a span of code, wrap it with backtick quotes (&lt;code&gt;`&lt;/code&gt;).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Use the `printf()` function.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will produce:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To include a literal backtick character within a code span, you can use
+multiple backticks as the opening and closing delimiters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;``There is a literal backtick (`) here.``
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which will produce this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The backtick delimiters surrounding a code span may include spaces &amp;ndash;
+one after the opening, one before the closing. This allows you to place
+literal backtick characters at the beginning or end of a code span:&lt;/p&gt;
+
+&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;will produce:&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;A single backtick in a code span: &lt;code&gt;`&lt;/code&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;A backtick-delimited string in a code span: &lt;code&gt;&lt;code&gt;foo&lt;/code&gt;&lt;/code&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;With a code span, ampersands and angle brackets are encoded as HTML
+entities automatically, which makes it easy to include example HTML
+tags. Markdown will turn this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Please don&#39;t use any `&amp;lt;blink&amp;gt;` tags.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Please don&#39;t use any &amp;lt;code&amp;gt;&amp;amp;lt;blink&amp;amp;gt;&amp;lt;/code&amp;gt; tags.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can write this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;`&amp;amp;#8212;` is the decimal-encoded equivalent of `&amp;amp;mdash;`.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to produce:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;amp;amp;#8212;&amp;lt;/code&amp;gt; is the decimal-encoded
+equivalent of &amp;lt;code&amp;gt;&amp;amp;amp;mdash;&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;img&#34;&gt;Images&lt;/h3&gt;
+
+&lt;p&gt;Admittedly, it&amp;rsquo;s fairly difficult to devise a &amp;ldquo;natural&amp;rdquo; syntax for
+placing images into a plain text document format.&lt;/p&gt;
+
+&lt;p&gt;Markdown uses an image syntax that is intended to resemble the syntax
+for links, allowing for two styles: &lt;em&gt;inline&lt;/em&gt; and &lt;em&gt;reference&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Inline image syntax looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An exclamation mark: &lt;code&gt;!&lt;/code&gt;;&lt;/li&gt;
+&lt;li&gt;followed by a set of square brackets, containing the &lt;code&gt;alt&lt;/code&gt;
+attribute text for the image;&lt;/li&gt;
+&lt;li&gt;followed by a set of parentheses, containing the URL or path to
+the image, and an optional &lt;code&gt;title&lt;/code&gt; attribute enclosed in double
+or single quotes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Reference-style image syntax looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;![Alt text][id]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Where &amp;ldquo;id&amp;rdquo; is the name of a defined image reference. Image references
+are defined using syntax identical to link references:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[id]: url/to/image  &amp;quot;Optional title attribute&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As of this writing, Markdown has no syntax for specifying the
+dimensions of an image; if this is important to you, you can simply
+use regular HTML &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;misc&#34;&gt;Miscellaneous&lt;/h2&gt;
+
+&lt;h3 id=&#34;autolink&#34;&gt;Automatic Links&lt;/h3&gt;
+
+&lt;p&gt;Markdown supports a shortcut style for creating &amp;ldquo;automatic&amp;rdquo; links for URLs and email addresses: simply surround the URL or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://example.com/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown will turn this into:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://example.com/&amp;quot;&amp;gt;http://example.com/&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Automatic links for email addresses work similarly, except that
+Markdown will also perform a bit of randomized decimal and hex
+entity-encoding to help obscure your address from address-harvesting
+spambots. For example, Markdown will turn this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;address@example.com&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;into something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;&amp;amp;#x6D;&amp;amp;#x61;i&amp;amp;#x6C;&amp;amp;#x74;&amp;amp;#x6F;:&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;
+&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;
+&amp;amp;#109;&amp;quot;&amp;gt;&amp;amp;#x61;&amp;amp;#x64;&amp;amp;#x64;&amp;amp;#x72;&amp;amp;#x65;&amp;amp;#115;&amp;amp;#115;&amp;amp;#64;&amp;amp;#101;&amp;amp;#120;&amp;amp;#x61;
+&amp;amp;#109;&amp;amp;#x70;&amp;amp;#x6C;e&amp;amp;#x2E;&amp;amp;#99;&amp;amp;#111;&amp;amp;#109;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which will render in a browser as a clickable link to &amp;ldquo;address@example.com&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;(This sort of entity-encoding trick will indeed fool many, if not
+most, address-harvesting bots, but it definitely won&amp;rsquo;t fool all of
+them. It&amp;rsquo;s better than nothing, but an address published in this way
+will probably eventually start receiving spam.)&lt;/p&gt;
+
+&lt;h3 id=&#34;backslash&#34;&gt;Backslash Escapes&lt;/h3&gt;
+
+&lt;p&gt;Markdown allows you to use backslash escapes to generate literal
+characters which would otherwise have special meaning in Markdown&amp;rsquo;s
+formatting syntax. For example, if you wanted to surround a word
+with literal asterisks (instead of an HTML &lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt; tag), you can use
+backslashes before the asterisks, like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\*literal asterisks\*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Markdown provides backslash escapes for the following characters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plus sign&lt;/li&gt;
+&lt;li&gt;minus sign (hyphen)
+.   dot
+!   exclamation mark&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About 80%</title>
+      <link>http://new.eightypercent.net/about.html</link>
+      <pubDate>Tue, 12 May 2015 12:18:21 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/about.html</guid>
+      <description>&lt;p&gt;80% is the personal blog for Joe Beda.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</title>
+      <link>http://new.eightypercent.net/post/old/00274.html</link>
+      <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00274.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I haven&#39;t updated my blog in forever and I&#39;m probably going to abandon my homebrew
+        static client generated site for something like &lt;a href=&#34;http://mephistoblog.com/&#34;&gt;Mephisto&lt;/a&gt; at
+        some point but I haven&#39;t had time to make the transition. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In the meantime, I&#39;d like to save people some pain and document the steps I have go
+        through to upgrade my Highpoint RocketRaid 2220 on Linux.&amp;#160; I installed the driver
+        a while ago and don&#39;t remember the exact steps for that, so this is just what I do
+        to upgrade.&amp;#160; I wrote a little shell script: 
+    &lt;/p&gt;
+    &lt;pre&gt;#! /bin/sh -v
+
+# Update this version every time you upgrade.
+VER=2.6.15-29-686
+
+# To update the highpoint driver:
+# 1) Download latest highpoint driver from: 
+#
+# http://www.highpoint-tech.com/BIOS_Driver/rr222x/Linux/
+#
+# 2) Patch driver by changing wrong kernel #ifdefs in osm/linux/os_linux.c  
+#   KERNEL_VERSION(2,6,15) -&amp;gt; KERNEL_VERSION(2,6,16)
+
+# Disable sata_mv.ko by moving it to a new directory.  This driver
+# conflicts with highpoint driver.  I don&#39;t know if this is the
+# &#34;right&#34; way to do this, but it works.
+sudo mkdir -p /lib/modules/${VER}.disabled
+sudo mv /lib/modules/${VER}/kernel/drivers/scsi/sata_mv.ko /lib/modules/${VER}.disabled/
+
+# Make sure kernel headers are installed
+sudo apt-get install linux-headers-${VER}
+
+# Make new hpt driver:
+cd ~jbeda/sources/rr222x-linux-src-1.07/product/rr2220/linux/
+make KERNELDIR=/lib/modules/${VER}/build
+sudo make install KERNELDIR=/lib/modules/${VER}/build
+
+# make a new ramfs
+# mkinitramfs -o /boot/initrd.img-2.6.15-27-686 /lib/modules/2.6.15-27-686
+sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
+    &lt;p&gt;
+        Good luck. I hope this helps people out there that are stuck with this thing. I&#39;m
+        still looking for a good cheap solution to host lots of SATA drives on Linux.&amp;#160;
+        Port multipliers are there and aren&#39;t as cheap as they should be.&amp;#160; The driver
+        situation is pretty dire and there aren&#39;t that many non RAID (fake or not) &amp;gt;4 ports
+        out there.&amp;#160; I haven&#39;t tried any SAS cards though -- perhaps the situation there
+        is better.&amp;#160; I&#39;m also running an LSI MegaRAID SATA 300-8XLP with the megaraid
+        driver.&amp;#160; It wasn&#39;t as cheap but at least it works with a true open driver.&amp;#160; 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>&#34;Avalon marks the end of the American Dream&#34;</title>
+      <link>http://new.eightypercent.net/post/old/00273.html</link>
+      <pubDate>Thu, 03 Aug 2006 09:56:19 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00273.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Miguel de Icaza says &lt;a href=&#34;http://tirania.org/blog/archive/2006/Aug-02.html&#34;&gt;&#34;Avalon
+        marks the end of the American Dream.&#34;&lt;/a&gt;&amp;#160; He also compares it to J2EE -- apparently
+        implying that it is overly complex and overarchitected.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ouch.
+    &lt;/p&gt;
+    &lt;p&gt;
+        While I wouldn&#39;t put it that way, I can&#39;t disagree.&amp;#160; I left Microsoft almost
+        two years ago and Avalon still hasn&#39;t shipped.&amp;#160; A 5+ year ship cycle for a project
+        can&#39;t be seen as anything but a sign that something is horribly wrong.&amp;#160; When
+        I was on Avalon we kept talking about building an API for the next 10 years.&amp;#160;
+        Apparently, when Avalon ships there will be 5 years left on that clock.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I take partial responsibility for this.&amp;#160; When we were first starting Avalon,
+        I was all about &#34;Go big or go home&#34; and &#34;We should build something only Microsoft
+        can build.&#34;&amp;#160; In retrospect, the project and the company might have been better
+        served by starting with a much smaller team, aiming lower to start and shipping 5
+        times over those 5 years.&amp;#160; Version 1 might not have been that impressive, but
+        relentless improvement would have built something better factored, simpler, and more
+        in tune with what users actually need.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I named this blog &#34;eightypercent&#34; in honor of the 80% rule.&amp;#160; It just so happens
+        there there are lots of 80% rules to apply.&amp;#160; In this case, a simpler system that
+        only solved 80% of the problem would have been good enough and would have shipped
+        multiple times already.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It looks like the &lt;a href=&#34;http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;q=%22WPF%2FE%22&amp;amp;btnG=Search&#34;&gt;WPF/E&lt;/a&gt; project
+        is an effort to&amp;#160;strip Avalon down to something much more approachable.&amp;#160;
+        Cross platform, no full CLR, lower memory footprint -- sounds a lot like Flash/Flex.&amp;#160;
+        I know some of the guys working on the project and I have high hopes that it will
+        be something interesting.&amp;#160; The only question, when will&amp;#160;it ship?
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Seattle&#39;s Homeless Alcoholics on NPR</title>
+      <link>http://new.eightypercent.net/post/old/00272.html</link>
+      <pubDate>Wed, 19 Jul 2006 10:07:05 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00272.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Coming in this morning, I heard a&amp;#160;&lt;a href=&#34;http://www.npr.org/templates/story/story.php?storyId=5567184&#34;&gt;segment
+        on NPR&lt;/a&gt; covering a unique program that King Country is running to provide &lt;a href=&#34;http://www.desc.org/1811.html&#34;&gt;rooms
+        for homeless alcoholics&lt;/a&gt; in Seattle.&amp;#160; The unique and controversial part of
+        this program is that the residents can continue to drink. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        My wife, Rachel, has first hand experience with this problem from her work at the
+        Harborview ER.&amp;#160;&amp;#160;Some of these &#34;frequent fliers&#34; are indeed part of the community
+        at the ER. In fact, one of the patients that Rachel had lots of interactions with
+        (ever since she was a med student!) recently died and it really shook her up.&amp;#160;
+        Anecdotally, Rachel has seen this program provide a positive impact. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In any case, this novel program seems to me to be a unique way to approach a very
+        difficult problem.&amp;#160; It reduces the cost to the taxpayers and provides a safe
+        place for these individuals.&amp;#160; Obviously we would all like to see these problems
+        solved, but, failing that, at least the county is trying to manage it. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>1 to 30</title>
+      <link>http://new.eightypercent.net/post/old/00271.html</link>
+      <pubDate>Fri, 14 Jul 2006 14:15:05 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00271.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Check &lt;a href=&#34;http://n.nfshost.com/1.html&#34;&gt;this&lt;/a&gt; out.&amp;#160; Get to 30.&amp;#160; Your
+        day is now shot :) 
+    &lt;/p&gt;
+    &lt;p&gt;
+        (I just finished.) 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Custom Weighted Vests</title>
+      <link>http://new.eightypercent.net/post/old/00270.html</link>
+      <pubDate>Tue, 04 Jul 2006 08:50:24 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00270.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Happy fourth!
+    &lt;/p&gt;
+    &lt;p&gt;
+        I just wanted to post a note bragging about my sister, Jill.&amp;#160; The Chicago Tribune
+        just &lt;a href=&#34;http://www.chicagotribune.com/entertainment/chi-0607040196jul04,1,4767917.story?ctrack=1&amp;amp;cset=true&#34;&gt;ran
+        an article&lt;/a&gt; about her and her daughter Ellie.&amp;#160; Ellie has what they are calling
+        &#34;Sensory Integration Disorder.&#34;&amp;#160; She is basically really hyper and needs to jump,
+        spin, rock, swing, etc.&amp;#160; I think I probably had a touch of something similar
+        when I was small.&amp;#160; One of the things that helps&amp;#160;Ellie has been a weighted
+        vest.&amp;#160; Jill couldn&#39;t find any she and Ellie liked and so made one herself.&amp;#160;
+        It turned out so well, she decided to start making them for others.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;ve helped her get a web site up and running to show off what she has done.&amp;#160;
+        Check it out at &lt;a href=&#34;http://www.customweightedvests.com&#34;&gt;www.customweightedvests.com&lt;/a&gt;.
+        You can also check out some other custom sewing she does at &lt;a href=&#34;http://www.stitchessosweet.com&#34;&gt;www.stitchessosweet.com&lt;/a&gt;.&amp;#160; 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Link-Backup v 0.6</title>
+      <link>http://new.eightypercent.net/post/old/00269.html</link>
+      <pubDate>Mon, 19 Jun 2006 20:28:01 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00269.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Scott Ludwig and I have released a new version of&amp;#160;his python based backup script,
+        Link-Backup.&amp;#160; This new version ignores broken symlinks and has an option to ensure
+        that only one backup at a time is going on.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Also with this release is a cgi script (viewlb.cgi) for exploring the backups.&amp;#160;
+        This makes it easy to keep tabs on what is going on.&amp;#160; Scott wrote this script
+        a while ago and I updated and improved it.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Details &lt;a href=&#34;http://www.scottlu.com/2006/06/link-backup-v-06.html&#34;&gt;here&lt;/a&gt;.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Annie loves flowers</title>
+      <link>http://new.eightypercent.net/post/old/00268.html</link>
+      <pubDate>Sat, 03 Jun 2006 20:59:37 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00268.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I haven&#39;t been posting anything lately because I&#39;ve been so busy with work and Annie.&amp;#160;
+        It is funny how life gets in the way. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        In any case, she really loves flowers.&amp;#160; We try and go on a walk in the &lt;a href=&#34;http://depts.washington.edu/wpa/general.htm&#34;&gt;Washington
+        Park Arboretum&lt;/a&gt;&amp;#160;every day.&amp;#160; She loves to hold and pick little flowers.&amp;#160;
+        Here is a quick photo I snapped of her today: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href=&#34;http://www.eightypercent.net/Photos/AnnieFlower-small.jpg&#34;&gt;&lt;img src=&#34;http://www.eightypercent.net/Photos/AnnieFlower-thumb.jpg&#34; /&gt;&lt;/a&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Speaking of the Arboretum, almost every time I go there, I see the official bird of
+        Seattle, the &lt;a href=&#34;http://www.seattleaudubon.org/birding.cfm?id=44&#34;&gt;Great Blue
+        Heron&lt;/a&gt;.&amp;#160; Here is a snap of one of those guys from a couple of weeks ago.&amp;#160;
+        He has just caught himself some dinner.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href=&#34;http://www.eightypercent.net/Photos/Heron-small.jpg&#34;&gt;&lt;img src=&#34;http://www.eightypercent.net/Photos/Heron-thumb.jpg&#34; /&gt;&lt;/a&gt; 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Backing up data</title>
+      <link>http://new.eightypercent.net/post/old/00267.html</link>
+      <pubDate>Sat, 15 Apr 2006 14:12:37 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00267.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Between photos of Annie, other photography and music, I have quite a bit of data.&amp;#160;
+        Probably over 300GB now and growing fast. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Backing up this much data is a challenge.&amp;#160; I&#39;ve set some requirements of for
+        what I needed in a backup system: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Automatic&lt;/strong&gt;.&amp;#160; A backup system is useless if you don&#39;t actually
+            use it.&amp;#160; I know that if I&#39;m required to do anything manually it probably won&#39;t
+            get done. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Off site&lt;/strong&gt;.&amp;#160; There are too many things that can happen if you
+            have an on site backup.&amp;#160; Your house can burn down, you can get robbed, etc. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Virus resistant&lt;/strong&gt;. If somehow a virus were to try and wipe everything
+            out, I&#39;d like my&amp;#160;data to survive. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Versioned&lt;/strong&gt;.&amp;#160; In case I delete something and don&#39;t realize right
+            away, I&#39;d like to keep versions of my data. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Big&lt;/strong&gt;. I have lots of data and I don&#39;t imagine that I&#39;m going to stop
+            accumulating it.&amp;#160; I&#39;d like to plan for 800GB-1TB. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;On line&lt;/strong&gt;.&amp;#160; I want to be able to get to my backup without mounting/moving
+            anything. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        This is a pretty tall order.&amp;#160; Here are some things that I considered but decided
+        not to do: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;RAID&lt;/strong&gt;. Mirroring is pretty secure in the face of hardware failure.&amp;#160;
+            RAID 5 sounds great but stories I hear is that if one drive goes there is a serious
+            chance another will go during the rebuilding.&amp;#160;&amp;#160;Simply doing RAID&amp;#160;also
+            fails to satisfy many of the requirements above. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;DVD&lt;/strong&gt;.&amp;#160; I started backing some stuff up on DVDs.&amp;#160; I got read
+            errors a month later.&amp;#160; Too manual also. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;External Harddrives&lt;/strong&gt;. I thought about having a couple of really big
+            external drives and rotating them.&amp;#160; This solves a lot of the problems above but
+            it is pretty manual.&amp;#160; A friend of mine is going to do this and keep a copy at
+            the office.&amp;#160; He said he planned to backup/move every couple of months.&amp;#160;
+            That is just too long for me. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;NT Volume Shadow Copy&lt;/strong&gt;. This is a cool technology that can keep snapshots
+            through time on a drive.&amp;#160; It looks like the Linux Volume Manager (LVM) can do
+            some similar things.&amp;#160; This isn&#39;t really a backup solution as much as a versioning
+            solution.&amp;#160; This plus RAID 0 is probably pretty good except it isn&#39;t off site. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        I ended up going with a more brute force solution.&amp;#160; I bought and set up two Linux
+        servers.&amp;#160; The first is a home server.&amp;#160; The second is in a datacenter in
+        downtown Seattle. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The home Linux server is a dual core Pentium running Ubuntu 5.10 server.&amp;#160; I have
+        a HW/SW raid card driving 5 250GB drives in RAID 5.&amp;#160; It servers a data share
+        over Samba.&amp;#160; I backup that share to another directory every night.&amp;#160; That
+        archive directory is shared out via Samba also, but as read-only.&amp;#160; This makes
+        the situation fairly virus proof.&amp;#160; Since I have two copies of the data (one that
+        is r/w and the other that is a backup) I might have to add more drives in the future.&amp;#160;
+        I got a big honking case so I&#39;ll have room.&amp;#160; I&#39;m running slimserver on this amoung
+        other things.&amp;#160; I also use it to do long running batch &lt;a href=&#34;http://enblend.sourceforge.net/&#34;&gt;enblend&lt;/a&gt; stitching
+        jobs for panoramas. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The data center machine is a &lt;a href=&#34;http://www.tyan.com/products/html/gt20b5151.html&#34;&gt;1U
+        Tyan server&lt;/a&gt; with 4x320GB drives in Linux SW RAID 5.&amp;#160; It is also running Ubuntu
+        5.10 server.&amp;#160; (Getting Ubuntu installed on a RAID5 drive array was a challenge.&amp;#160;
+        I don&#39;t remember the exact steps I took or I would document them here.)&amp;#160; The
+        cost of doing this can be high unless you have a friend that can get you hooked up.&amp;#160;
+        Even if you can&#39;t, it might be worthwhile.&amp;#160; I&#39;m backing up to this every night
+        over my cable modem.&amp;#160; The cable modem upload speed is okay since I upgraded to
+        Comcast&#39;s higher level of service.&amp;#160; I now have ~768kbps up. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There are a couple of choices for software for doing the backups.&amp;#160; The key is
+        that it has to be bandwidth smart (only update diffs), handle versioning gracefully
+        and be able to do partial copies based on a timer.&amp;#160; The last requirement is so
+        that if I have a ton of data to upload it can go over a couple of nights.&amp;#160; The
+        most obvious candidate for this is rsync.&amp;#160; rsync is an amazing tool for these
+        types of things.&amp;#160; My MS friends think that robocopy is cool -- it can&#39;t hold
+        a candle to rsync.&amp;#160; It also generally operates over ssh so it is also secure.
+        It can also build version trees where unchanged files are hardlinked to previous versions.&amp;#160;
+        The only thing it can&#39;t do is handle files that have moved but haven&#39;t changed, and
+        stop itself after a certain number of minutes. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        To solve this problem, &lt;a href=&#34;http://www.scottlu.com/&#34;&gt;Scott Ludwig&lt;/a&gt; (a coworker
+        of mine who has a similar setup) developed a python script that does much of what
+        rsync does but solves these two last problems.&amp;#160; It is called &#34;link backup&#34; and
+        you can get it &lt;a href=&#34;http://www.scottlu.com/Content/Link-Backup.html&#34;&gt;here&lt;/a&gt;.&amp;#160;
+        Every night starting at 11:30pm, I run this backup script to backup my working directory
+        to the backup directory on my home server.&amp;#160; This is usually pretty quick.&amp;#160;
+        I then backup the latest snapshot of that backup set to the server in the datacenter.&amp;#160;
+        This can take a little longer but at least I don&#39;t have to think about it. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Since I implemented this, Amazon&#39;s S3 has come on the scene.&amp;#160; While it might
+        be interesting to back up using S3, I&#39;m not sure how the economics work out.&amp;#160;
+        At my current level (300GB) and Amazon&#39;s pricing model ($0.15 per GB per month) I
+        would be paying $45 per month.&amp;#160; If I grow to 600GB, I&#39;m up to $90 per month.&amp;#160;
+        Bandwidth is extra, but I don&#39;t use much of that.&amp;#160; It should be easy to find
+        colocation hosting for that amount of coin.&amp;#160; There is the one time cost of the
+        hardware and the work of keeping it up to date also (I think my server came in around
+        $1600 but I probably overbought).&amp;#160; The advantage is that you can run and do other
+        things with your own server in a datacenter. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        [April 16, 2006: Edited to fix Ubuntu version number.]
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Google Talk Client</title>
+      <link>http://new.eightypercent.net/post/old/00266.html</link>
+      <pubDate>Sat, 01 Apr 2006 18:21:45 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00266.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        If you haven&#39;t heard yet, we shipped a new version of the Google Talk client to a
+        small set of testers yesterday.&amp;#160; You can get a review over at &lt;a href=&#34;http://www.customizetalk.com/&#34;&gt;customizetalk.com&lt;/a&gt;.&amp;#160;
+        Hopefully we&#39;ll fix any outstanding issues and get this version out to everyone soon.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I wasn&#39;t super involved in this version but did manage to sneak a couple of features
+        in.&amp;#160; The first was Friend Online notifications (defaults to off to avoid annoying
+        people). I also did the new hover cards for your Friends.&amp;#160; I wanted people to
+        be able to see all of the cool pictures in&amp;#160;true 96x96 pixel alpha blended glory.
+    &lt;/p&gt;
+    &lt;p&gt;
+        We hope you like it!&amp;#160; Let us know what features are important to you by filling
+        out our &lt;a href=&#34;https://services.google.com/inquiry/talk_suggest&#34;&gt;suggestion form&lt;/a&gt;.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Jingle Spec</title>
+      <link>http://new.eightypercent.net/post/old/00265.html</link>
+      <pubDate>Sat, 01 Apr 2006 18:18:49 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00265.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I was going to stay away from all of the April 1st shenanigans, but couldn&#39;t pass
+        up linking to the new Jingle transport spec that Peter Saint-Andre put together: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href=&#34;http://www.jabber.org/jeps/jep-0183.html&#34;&gt;JEP-0183: Jingle Telepathy Transport&lt;/a&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Nice one! 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Swing Years and Beyond</title>
+      <link>http://new.eightypercent.net/post/old/00264.html</link>
+      <pubDate>Sat, 04 Mar 2006 19:16:40 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00264.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I must be getting old because every week I look forward to listening to &lt;a href=&#34;http://www.kuow.org/swing_years.asp&#34;&gt;The
+        Swing Years and Beyond&lt;/a&gt; on KUOW, our local NPR station.&amp;#160; It runs from 7-12
+        every Saturday and is always fun to listen to.&amp;#160; I&#39;m not an expert in the era
+        or anything but Amanda Wilde (and Cynthia Doyon before her) always seem to hit the
+        right note.&amp;#160; When I got my Honda Element it came with a free trial for XM radio.&amp;#160;
+        They have a&amp;#160;1930s big band/swing station but it just isn&#39;t the same. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you don&#39;t live in Seattle you can listen to their &lt;a href=&#34;http://kuow.org/listen_live.asp&#34;&gt;streaming
+        feed&lt;/a&gt;.&amp;#160; No podcast/mp3 available though.
+    &lt;/p&gt;
+    &lt;p&gt;
+        My grandmother died recently and listening to this music always reminds me of her.&amp;#160;
+        One of the songs they played a couple of weeks ago was &#34;Chattanooga Choo Choo.&#34;&amp;#160;
+        I can&#39;t hear it without thinking of her favorite joke (copied from &lt;a href=&#34;http://www.dykerheights.com/jokes.html&#34;&gt;here&lt;/a&gt;): 
+    &lt;/p&gt;
+    &lt;blockquote&gt; 
+    &lt;p&gt;
+        Roy Rogers had just purchased a new set of boots. Going out one day to check on Trigger,
+        Roy stepped in a pile of ... well suffice it to say that Dale told him to leave his
+        boots outside on the porch until he could clean them up. Roy did so and went inside
+        for dinner. In the meantime a cougar wandering around on the property spied the boots,
+        grabbed them up in his mouth and headed for the wilderness. Roy, seeing his new boots
+        heading for the hills, pulled on a pair of old boots, ran out and saddled up Trigger
+        and headed for the hills to cut off the escape path of the cougar. Several hours later
+        Roy returned, new boots in hand and the cougar stretched over the back of Trigger.
+        Dale looking at the scene in front of her said &#34;Pardon me Roy is that the cat that
+        chewed your new shoes?&#34; 
+    &lt;/p&gt;
+    &lt;/blockquote&gt; 
+    &lt;p&gt;
+        There are just so many ways my daughter won&#39;t get this joke. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Peter&#39;s Jabber/Jingle talk</title>
+      <link>http://new.eightypercent.net/post/old/00263.html</link>
+      <pubDate>Sat, 28 Jan 2006 09:51:30 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00263.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;m sorry that I missed &lt;a href=&#34;http://www.saint-andre.com/blog/2006-01.html#2006-01-27T19:31&#34;&gt;Peter
+        Saint-Andre&#39;s presentation&lt;/a&gt; at Etel this last week.&amp;#160; I wanted to be down there
+        but it is hard to get to conferences with the baby and all.&amp;#160; You can check out
+        his slides off of that link.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Peter used a presentation style that I really like a lot.&amp;#160; I&#39;d love to see how
+        he pulled it off.&amp;#160; Perhaps some video will surface?&amp;#160; If you want to see
+        videos of talks done in a similar style check out &lt;a href=&#34;http://video.google.com/videoplay?docid=5100194058815018708&amp;amp;q=lessig&#34;&gt;Larry
+        Lessig&#39;s talk on Google Print&lt;/a&gt;&amp;#160;or &lt;a href=&#34;http://www.identity20.com/media/OSCON2005/&#34;&gt;Dick
+        Hardt&#39;s talk on Identity 2.0&lt;/a&gt;.&amp;#160; Very cool.&amp;#160; I&#39;m not sure I could pull
+        it off though :)
+    &lt;/p&gt;
+    &lt;p&gt;
+        Speaking of conferences, I &lt;em&gt;am&lt;/em&gt; planning on being around for a day or two of &lt;a href=&#34;http://www.von.com/&#34;&gt;Spring
+        VON&lt;/a&gt;.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sleeping through the night</title>
+      <link>http://new.eightypercent.net/post/old/00262.html</link>
+      <pubDate>Sun, 22 Jan 2006 06:19:12 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00262.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Last night was the first time Annie slept through the night.&amp;#160; We put her to bed
+        around 8pm and it is now 6:20am and she is still asleep. We&#39;ve been working over the
+        past couple of nights to eliminate her&amp;#160;late night&amp;#160;feeding and help her to
+        get back to sleep on her own.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I mentioned to my wife this morning I feel like we discovered the lost city of gold.&amp;#160;
+        Even if it doesn&#39;t go like this every night it is good to know that it can be done.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Here is a recent picture of our little babe:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt=&#34;Annie at 7 months&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Photos/Anne7Months.jpg&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

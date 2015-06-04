@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/08/25 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/08/25.html</link>
+    <description>Recent content in 2004/08/25 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Aug 2004 10:10:02 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/08/25.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hamster-power</title>
+      <link>http://new.eightypercent.net/post/old/00204.html</link>
+      <pubDate>Wed, 25 Aug 2004 10:10:02 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00204.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Check out &lt;a href=&#34;http://www.otherpower.com/hamster.html&#34;&gt;this story&lt;/a&gt; about an
+        experiment to hook a generator up to a hamster wheel.&amp;#160; They even hook up a bike
+        computer so that they can calculate the speed and distance that the hamster runs.&amp;#160;
+        [via &lt;a href=&#34;http://www.boingboing.net/2004/08/24/diy_hamsterpowered_n.html&#34;&gt;boing
+        boing&lt;/a&gt;]
+    &lt;/p&gt;
+    &lt;p&gt;
+        The real question here: How many hamster power to the horse power.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

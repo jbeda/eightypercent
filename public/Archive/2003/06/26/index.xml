@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/06/26 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/06/26.html</link>
+    <description>Recent content in 2003/06/26 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jun 2003 21:03:17 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/06/26.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Apple and 64 bits...</title>
+      <link>http://new.eightypercent.net/post/old/00119.html</link>
+      <pubDate>Thu, 26 Jun 2003 21:03:17 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00119.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Just wondering, but does anyone know if Mac OS X actually allows processes to run
+        with a full 64 bit address space?&amp;#160; Or is everything just running in a 32 bit
+        compat mode?&amp;#160; I couldn&#39;t see anything with a quick search on Apple&#39;s web page.
+    &lt;/p&gt;
+    &lt;p&gt;
+        WinNT ran on the 64 bit alpha quite a while ago, but it only ran in a 32 bit mode.&amp;#160;
+        Is Apple doing the same thing here?&amp;#160; Is the whole 64 bit thing, wrt Apple, all
+        flash and no fire?
+    &lt;/p&gt;
+    &lt;p&gt;
+        BTW, just because the&amp;#160;new&amp;#160;G5 machines&amp;#160;can have 8GB of RAM doesn&#39;t mean
+        that an &lt;em&gt;individual&lt;/em&gt; process can access more than 4GB.&amp;#160; Hell,&amp;#160;some
+        Intel procs&amp;#160;can access &amp;gt;4Gb, but they are still 32 bit processors.&amp;#160; For
+        example, the 32 bit version of W2k3 server can support 32GB of RAM.&amp;#160; This extra
+        RAM can be accessed via specialized APIs or you can have, for example, 10 processes
+        each using 2GB.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

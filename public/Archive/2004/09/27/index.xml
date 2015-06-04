@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/09/27 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/09/27.html</link>
+    <description>Recent content in 2004/09/27 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Sep 2004 08:14:59 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/09/27.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Adobe DNG image format</title>
+      <link>http://new.eightypercent.net/post/old/00217.html</link>
+      <pubDate>Mon, 27 Sep 2004 08:14:59 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00217.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Adobe announced today a new image format for storing raw camera data.&amp;#160; Dubbed &lt;a href=&#34;http://www.adobe.com/products/dng/main.html&#34;&gt;DNG&lt;/a&gt;&amp;#160;(for
+        Digital Negative) this format is meant to be a common interchange for the fast proliferating
+        collection of proprietary raw image formats.&amp;#160; By some estimates there are over
+        60 different raw image formats out there.&amp;#160; Because of this, there are really
+        only a couple of software vendors that can afford to get into the raw image processing
+        game.&amp;#160; It appears that Adobe hopes to level this playing field with this new
+        specification. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        To understand the significance of this, it is important that you understand how raw
+        image formats work and why they are different.&amp;#160; When most modern cameras (not
+        using the &lt;a href=&#34;http://www.foveon.com/X3_tech.html&#34;&gt;Foveon&lt;/a&gt; sensor) advertise
+        take a picture, they have a grid of sensors.&amp;#160; These sensors only measure intensity
+        but not color.&amp;#160; To capture color data, a color filter (called a Bayer filter)
+        is placed over the sensor so that each little sensor only sees one color (typically
+        Red, Green and Blue).&amp;#160; That means that the camera only knows one color value
+        at each pixel.&amp;#160; This raw data is then processed using a set of complex algorithms
+        to produce an image that has all the color information for each pixel.&amp;#160; For each
+        pixel in the raw data, these algorithms reconstruct the missing color data by looking
+        at the surrounding pixels and &lt;em&gt;guessing&lt;/em&gt;.&amp;#160; Because of this guessing, there
+        are multiple ways to process this raw data -- and there is the possibility that these
+        algorithms and guessing will get better in the future.&amp;#160; Because of this, all
+        serious cameras offer a raw mode where the raw (or close to it) sensor data is saved
+        in a special format and the complex demosaicing algorithms can be done later on a
+        computer. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, raw images are fundamentally different from regular images in that they store
+        raw sensor data before it has been processed. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The rub comes with the fact that each camera manufacturer has a proprietary raw format
+        (or two or three) and some generally crappy software for dealing with it.&amp;#160; Companies
+        like Adobe (with the Adobe Camera Raw plugin for photoshop) and Capture One have been
+        waging a guerilla war to create products to read all of these formats.&amp;#160; If Adobe
+        can succeed in getting camera manufacturers to implement this format in their cameras,
+        life for many photographers could become much much easier.&amp;#160; But this isn&#39;t a
+        sure thing.&amp;#160; Camera manufacturers are very aware of the business benefits of
+        lock in.&amp;#160; They do it with lens mounts and with their software suites.&amp;#160; Canon
+        or Nikon may see their proprietary formats as an advantage in the marketplace.&amp;#160;
+        Nikon even charges for the software to convert its raw format while Canon and most
+        other manufacturers provide it for free. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I haven&#39;t gotten a read from my buddies in Microsoft imaging, but I&#39;m hoping that
+        DNG is a huge success.&amp;#160; Assuming that Adobe doesn&#39;t try to assert its own proprietary
+        control over the format (Postscript anyone?) it may just let the camera manufacturers
+        concentrate on making cameras and leave the software development up to a third party
+        marketplace. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        [update: RichB points out that there is also an open source utility for dealing with
+        raw camera data called &lt;a href=&#34;http://www.cybercom.net/~dcoffin/dcraw/&#34;&gt;DCRaw&lt;/a&gt; and
+        built by Dave Coffin. Apparently Photoshop (and Capture One?) build on some of Dave&#39;s
+        work.]
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

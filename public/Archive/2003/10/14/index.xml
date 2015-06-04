@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/10/14 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/10/14.html</link>
+    <description>Recent content in 2003/10/14 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Oct 2003 09:43:35 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/10/14.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Joel on Unicode</title>
+      <link>http://new.eightypercent.net/post/old/00141.html</link>
+      <pubDate>Tue, 14 Oct 2003 09:43:35 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00141.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;m sure everyone has seen this now, but &lt;a href=&#34;http://www.joelonsoftware.com/items/2003/10/10.html&#34;&gt;Joel
+        is dead on&lt;/a&gt; wrt Unicode.&amp;#160; I worked on some of the codepage reloading stuff
+        in IE so I&#39;ve lived some of this stuff -- Both recognizing the BOM for Unicode and
+        implementing the reload of an already started page when we hit the codepage meta.&amp;#160;
+        Most of IE is fully unicode of course.&amp;#160; The only exception is when we deal with
+        URLs because, back in the day, they were restricted to 7bit ascii. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There are some other issues that Joel didn&#39;t bring up that devs should be aware of: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Sorting unicode is hard.&amp;#160; Each language has its own sort rules.&amp;#160; Given any
+            particular set of strings, they may be sorted differently depending on the language. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Capitilization can be hard also.&amp;#160; There was a bug in IE at one point where we
+            didn&#39;t deal with capitilization of a japanese string right and someone&#39;s name was
+            transformed into &#34;dead body on beach.&#34;&amp;#160; At the very least that is a rude thing
+            to call someone. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Be aware that text that looks the same on the screen can be backed by different unicode
+            codepoints.&amp;#160; This is a problem with going to unicode for URLs as it makes domain
+            squating more difficult to deal with.&amp;#160; Two people might own two domains that
+            look the same when typed in but are instead actually two different domains from a
+            unicode codepoint point of view.&amp;#160; As an analogy, I was looking at an ancient
+            typewriter the other day that one of our PMs has outside of her office.&amp;#160; It doesn&#39;t
+            have a &#39;1&#39; key!&amp;#160; The solution is to just use the &#39;l&#39; (L) key instead.&amp;#160; Now
+            imagine if the keys are font glyphs as displayed on the screen and the concept of
+            &#39;1&#39; and &#39;l&#39; are unicode codepoints.&amp;#160; &#39;He11o&#39; and &#39;Hello&#39; would look exactly alike
+            on the screen but would actually be different domains.&lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>New Computer</title>
+      <link>http://new.eightypercent.net/post/old/00140.html</link>
+      <pubDate>Tue, 14 Oct 2003 09:39:49 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00140.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        The reason I haven&#39;t been posting is that I&#39;ve been setting up a new computer here
+        at home.&amp;#160; I got rid of my 1.4GHz Athlon and replaced it with a sweet 2.8GHz P4.&amp;#160;
+        The 800MHz memory interface along with a new &lt;a href=&#34;http://www.coolermaster.com/index.php?LT=english&amp;amp;Language_s=2&amp;amp;url_place=product&amp;amp;p_serial=TAC-T01&amp;amp;other_title=+TAC-T01+Wave%20Master&#34;&gt;case&lt;/a&gt;&amp;#160;and
+        mirrored RAID 120GB SATA drives make this a sweet ride.&amp;#160; The main reason that
+        I upgraded is that I&#39;ve been taking a ton of photos and I haven&#39;t been as diligent
+        at backing them up as I should be.&amp;#160; The mirrored drives are an extra level of
+        insurance. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Plus, blue LEDs just look sweet.&amp;#160; Now all I need is a big tailpipe and &#34;Powered
+        by HKS&#34; stickers! 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I haven&#39;t picked a new videocard yet.&amp;#160; But when I do, I&#39;m going to get the most
+        powerful thing that I can afford.&amp;#160; Come to the PDC and you&#39;ll see what I&#39;ve been
+        working on and why!
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

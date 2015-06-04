@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/06/14 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/06/14.html</link>
+    <description>Recent content in 2004/06/14 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Jun 2004 18:22:34 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/06/14.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>More fun with Panos</title>
+      <link>http://new.eightypercent.net/post/old/00189.html</link>
+      <pubDate>Mon, 14 Jun 2004 18:22:34 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00189.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Since writing the &lt;a href=&#34;http://www.eightypercent.net/Archive/2004/05/25.html#a188&#34;&gt;article&lt;/a&gt; in
+        the Luminous Landscape, I&#39;ve run across Max Lyon&#39;s &lt;a href=&#34;http://www.tawbaware.com/cgi-bin/forum/cutecast.pl&#34;&gt;forums&lt;/a&gt; covering
+        all things pano.&amp;#160; Cool stuff I&#39;ve discovered or been alerted to: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            A really sweet cheap&lt;a href=&#34;http://www.tawbaware.com/cgi-bin/forum/cutecast.pl?forum=4&amp;amp;thread=278&#34;&gt; DIY
+            pano tripod&lt;/a&gt; head using 8020 aluminum extrusion stock.&amp;#160; I built one of these
+            last week and it works great! 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://www.le-geo.com/kolor/autopano/&#34;&gt;Autopano&lt;/a&gt; -- a&amp;#160;helper to automatically
+            find the control points for panotools.&amp;#160; PTAssembler can be set up to call this
+            directly. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://www-cad.eecs.berkeley.edu/~mihal/enblend/&#34;&gt;Enblend&lt;/a&gt; -- a tool to
+            automatically do the blending between images based on the spatial frequency of the
+            image at the seam. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://hugin.sourceforge.net/&#34;&gt;Hugin&lt;/a&gt; -- a free (as in speech) appliaction
+            for driving PanoTools.&amp;#160; There is also an experimental replacement for PanoTools
+            called nona.&amp;#160; I haven&#39;t played with this yet but it is interesting to see this
+            stuff develop.&amp;#160; If this weren&#39;t GPL&#39;d and similar to my real job, I&#39;d love to
+            get involved and write some code. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://www.ngallery.org/&#34;&gt;nGallery&lt;/a&gt; -- I installed this on an ASP.Net
+            server and I&#39;ll be posting some new pictures soon.&amp;#160; It was super easy to get
+            up and running and looks configurable.&amp;#160; This is something that I &lt;em&gt;could&lt;/em&gt; get
+            involved in and write some code. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Hopefully I&#39;ll have some example panos put together using the new setup soon. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

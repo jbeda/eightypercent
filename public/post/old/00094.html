@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JoeBlogger 0.9.0 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00094.html">JoeBlogger 0.9.0</a></h1>
+        <span class="lead">Sun, May 11, 2003</span>
+        <div class="post">
+            <p>
+
+    <p>
+        I finally cleaned up my blogging software enough to release the source and an install
+        package.&#160; There is a screenshot <a href="http://www.eightypercent.net/Archive/2003/05/03.html#a88">here</a>.
+        I'm releasing this as 0.9.0. 
+    </p>
+    <p>
+        <a href="http://www.eightypercent.net/Stuff/JoeBlogger/License.txt">License</a> 
+        <br />
+        <a href="http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-0.9.0.msi">MSI install</a> 
+        <br />
+        <a href="http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-src-0.9.0.zip">Source</a> 
+    </p>
+    <p>
+        Once you've installed the binaries, there is a readme on what to do next installed
+        into the programs directory.&#160; You have to copy some stuff around and edit some
+        xml files to configure what is going on.&#160; If any of this is unclear, let me know
+        and I'll update the readme.&#160; The readme is <a href="http://www.eightypercent.net/Stuff/JoeBlogger/Readme-0.9.0.txt">here</a> also. 
+    </p>
+    <p>
+        Here is the basic architecture: 
+    </p>
+    <ul>
+        <li>
+            All data exists in <code>&lt;My Documents&gt;/JoeBlogger</code>.&#160; If you want
+            to back up your site, this is the thing to back up. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Config/Site1.Config</code> is a private config
+            file with various file paths and FTP server information. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Site1</code> is everything that gets uploaded
+            to the server.&#160; This includes the raw XML source data and the generated html
+            files.&#160; If you have images or other files in that directory also, they will get
+            uploaded for you. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Site1/Config/Site.Config</code> contains public
+            config information. 
+        </li>
+        <li>
+            When publishing the client generates the site into the <code>&lt;My Documents&gt;/JoeBlogger/Site1</code> dir
+            and then uploads that to the FTP server. 
+        </li>
+    </ul>
+    <p>
+        Play around with it, send me any deltas you have and spread the word! 
+    </p>
+
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/06/30 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/06/30.html</link>
+    <description>Recent content in 2004/06/30 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Jun 2004 16:48:26 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/06/30.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Avalon Graph Demo Posted</title>
+      <link>http://new.eightypercent.net/post/old/00193.html</link>
+      <pubDate>Wed, 30 Jun 2004 16:48:26 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00193.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        It&#39;s (a)live!&amp;#160; Look &lt;a href=&#34;http://www.microsoft.com/downloads/details.aspx?familyid=9C1724D1-B63E-4D7D-835A-FF94A1FAD311&amp;amp;displaylang=en&#34;&gt;here&lt;/a&gt; (up
+        on ms.com) for the 3D Graph demo that shows off the 3D demo from WinHEC that I &lt;a href=&#34;http://www.eightypercent.net/Archive/2004/05/06.html#a182&#34;&gt;talked
+        about quite a while ago&lt;/a&gt;.&amp;#160; Here it is again:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt=&#34;&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Images/3dgraph.jpg&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        I apologize that this took so long to get out here.&amp;#160; I&#39;ve been busy and it has
+        been interesting to get this hosted on MS.com.&amp;#160; I have some other similar samples
+        coming and I think that I&#39;ll just host them here directly.&amp;#160; I mostly took the
+        demo code that Nathan and Robert had and cleaned it up for public consumption.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Take a look at it and let me know what you think.&amp;#160; As Avalon moves forward, I&#39;d
+        like to keep this example up to date and add to it.
+    &lt;/p&gt;
+    &lt;p&gt;
+        If you are interested in Avalon 3D and you haven&#39;t found his site yet, &lt;a href=&#34;http://blogs.msdn.com/danlehen/&#34;&gt;DanLehen&lt;/a&gt; has
+        some great samples up and running.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

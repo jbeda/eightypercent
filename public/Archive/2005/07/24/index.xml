@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/07/24 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/07/24.html</link>
+    <description>Recent content in 2005/07/24 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jul 2005 18:42:36 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/07/24.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Baby: A Programmers View</title>
+      <link>http://new.eightypercent.net/post/old/00247.html</link>
+      <pubDate>Sun, 24 Jul 2005 18:42:36 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00247.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;m an engineer at heart and I like to understand how things work.&amp;#160; Our new baby, &lt;a href=&#34;http://www.eightypercent.net/Archive/2005/06/25.html#a244&#34;&gt;Anne&lt;/a&gt;,
+        is no exception.&amp;#160; Let&#39;s take a programmers approach to understanding this mysterious
+        black box. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Inputs (the 5 senses): 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Sight &lt;/strong&gt;Anne certainly likes to look around.&amp;#160; My understanding
+            is that babies generally see only high contrast at a pretty short distance (1 foot?)&amp;#160;
+            She certainly likes looking at faces close up. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Sound &lt;/strong&gt;Whitenoise is supposed to be soothing.&amp;#160; She also likes
+            U2 and (heaven help me) Cher.&amp;#160; Loud.&amp;#160; I think she likes my singing too.&amp;#160;
+            I&#39;m not sure why. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Taste &lt;/strong&gt;She eats a lot.&amp;#160; I&#39;m not sure how much variation in taste
+            she actually gets.&amp;#160; There are theories that the mother&#39;s diet can affect the
+            milk, but I haven&#39;t personally verified that. &lt;em&gt;Ewwww.&lt;/em&gt; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Touch &lt;/strong&gt;Babies need to be held and touched.&amp;#160; They also need to
+            be warm.&amp;#160; One input is swaddling&amp;#160;-- wrapping her tightly so that she can&#39;t
+            move her arms or legs. Rocking and dancing with her count here too. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Smell &lt;/strong&gt;Smell is supposed to be one of the most powerful senses.&amp;#160;
+            I&#39;ve yet to see her react to any smells specifically, but I&#39;m sure she is paying attention. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Outputs: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Biological Outputs&lt;/strong&gt; Doctors are funny creatures.&amp;#160;&amp;#160; They
+            are really concerned about all forms of matter escaping from our bodies: liquid, solid
+            or gas.&amp;#160; Parents also pay close attention to this.&amp;#160; The amount, type and
+            origin seem to be important clues to understanding the baby. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Cries &lt;/strong&gt;She has many and varied cries.&amp;#160; Some of them are short
+            yelps to draw attention while others are reports of murder nearby.&amp;#160; Then there
+            is the scary quivering lower lip.&amp;#160; This is supposedly normal and a byproduct
+            of her immature nervous system.&amp;#160; It just kills me to see her do it though. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Posture &lt;/strong&gt;The way she holds her body is an important clue.&amp;#160; If
+            she is curled up like a bug or stretched out and rigid means something. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Eyes and Face &lt;/strong&gt;Her eyes and face are very expressive.&amp;#160; Almost
+            too expressive.&amp;#160; She goes through a facial expression every 5 seconds or so. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Sleep&lt;/strong&gt; You&#39;d think that it would be easy to tell if she is asleep
+            or not.&amp;#160; It really isn&#39;t though.&amp;#160; She can be sleeping with her eyes closed
+            or just pretending to sleep so that the minute you put her down she perks right up
+            again. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        There you have it&amp;#160;-- 5 inputs and 5 outputs.&amp;#160; Sounds like a pretty simple
+        system to me.&amp;#160; The problem is that she is indeed a very complex state machine.&amp;#160;
+        She is so complex that there is no way to map the effect of the inputs (feeding her,
+        for example) to the outputs (her current crying state).&amp;#160; One would think that
+        it would be easy to empirically derive causal relationships between certain inputs
+        and certain outputs.&amp;#160; Nope. She has more states than a Rubik&#39;s cube (&lt;a href=&#34;http://en.wikipedia.org/wiki/Rubik&#39;s_Cube&#34;&gt;43,252,003,274,489,856,000&lt;/a&gt;).
+        The baby is indeed a very complex creature that does not yield her secrets to such
+        a naïve logical approach. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The amazing part is that biology takes over.&amp;#160; My own brain is more complex than
+        it can understand.&amp;#160; It has adapted to the baby and somehow we&#39;re able make it
+        work.&amp;#160; Except when we can&#39;t&amp;#160;-- like last night when all of us were up every
+        90 minutes.&lt;br /&gt;
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Debug Firefox build?</title>
+      <link>http://new.eightypercent.net/post/old/00246.html</link>
+      <pubDate>Sun, 24 Jul 2005 18:20:14 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00246.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Dear Lazyweb, 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Where can I download a debug version of Firefox?&amp;#160; It just started crashing on
+        start for some reason.&amp;#160; I&#39;m sure debug spew would clear it right up.&amp;#160; I
+        now I can build my own copy, but I have other things on my mind right now. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Thanks, 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Joe 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/11/04 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/11/04.html</link>
+    <description>Recent content in 2003/11/04 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Nov 2003 20:25:19 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/11/04.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Avalon, XAML and SVG</title>
+      <link>http://new.eightypercent.net/post/old/00153.html</link>
+      <pubDate>Tue, 04 Nov 2003 20:25:19 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00153.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        There has been a ton of speculation on SVG and its relationship (or lack thereof)
+        to Avalon.&amp;#160; Here is some thoughts on that, collected from various responses I&#39;ve
+        made or others have made. 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Our rendering model is very much like that of SVG.&amp;#160; We support a hierarchical
+            compositing model with transforms that affect items in the hiearchy. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Our markup isn&#39;t the same mostly because XAML is a direct reflection of the programming
+            model.&amp;#160; There is a very solid relationship between the markup and the objects
+            and methods. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Our OM doesn&#39;t match the SVG DOM because we choose to go with an object model that
+            more closely matches what we think &lt;em&gt;our&lt;/em&gt; users expect.&amp;#160; Specifically,
+            we tried hard to make sure that our object model provided a certain amount of consistency
+            with WinForms (and VB and MFC before it)&amp;#160;and ASP.Net.&amp;#160; Beyond this, our
+            object model is strongly typed where much of the SVG DOM is based around strings.&amp;#160; 
+        &lt;/li&gt;
+        &lt;li&gt;
+            WVG is a term that we are no longer using and isn&#39;t, in my opinion, very useful.&amp;#160;
+            We were supposed to have scrubbed this from our documentation, but apparently we missed
+            some stuff.&amp;#160; There is no strick subset of Avalon objects and XAML markup that
+            stands on its own with respect to vector graphics.&amp;#160; 
+            &lt;ul&gt;
+                &lt;li&gt;
+                    Whereas when using SVG inside of XHTML there is a very&amp;#160;bright line, when using
+                    a vector graphic element in a UI authored in XAML, there is no sharp line.&amp;#160; You
+                    can put a Rectangle element, for example, in flow with a document without a Canvas
+                    element.&amp;#160; To do a similar thing with XHTML/SVG, you would need to wrap all SVG
+                    content in an SVG element.&amp;#160; 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    For Avalon, the set of properties and property types is the same between vector graphics
+                    elements and other elements.&amp;#160; In this way the background property for a Button
+                    is of type Brush -- the same as the fill property for a Rectangle. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    There are elements that can very easily be seen to belong to both a control subset
+                    and a vector graphics subset.&amp;#160; For example, Image makes sense in a UI sense but
+                    also in a VG sense.&amp;#160; XHTML and SVG both have image elements.&amp;#160; We avoid this
+                    duplicity.&amp;#160; Text is another area where we avoid a large amount of duplication. 
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            While we share a rendering model with SVG to a large extent, our support and features
+            don&#39;t match up completely.&amp;#160; Some of it is stuff that we haven&#39;t implemented yet
+            and others are due to choices that we&#39;ve made because of programming model concerns.&amp;#160;
+            I&#39;ll try to put together a guide on this stuff at some point in the future.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        I&#39;m sure there are questions around SVG and XAML/Avalon that I haven&#39;t answered here.&amp;#160;
+        Post in the comments and I&#39;ll update this post with the latest and greatest.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I hate Avalon</title>
+      <link>http://new.eightypercent.net/post/old/00152.html</link>
+      <pubDate>Tue, 04 Nov 2003 20:18:52 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00152.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Actually, I&#39;m proud of the work that we are doing on Avalon, but I hate the name.&amp;#160;
+        It just sounds lame and dorky to me.&amp;#160; I guess this is what you get when you vote
+        on a code name.&amp;#160; Aero and Indigo are much better names.&amp;#160; In fact, the shell
+        team has the best code names:&amp;#160;Aero, Jade, Luna, Plex.&amp;#160; I guess it is because
+        they have designers who are creative types.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The worst code name I can think of right now was for NT4.&amp;#160; It started out being
+        just and update to the shell.&amp;#160; So, it was called the &#34;Shell Update Release&#34; that
+        got abbreviated SUR.&amp;#160; They even made T-Shirts that said &#34;We don&#39;t need any stinkin&#39;
+        code name.&#34;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Anyone haved examples of other really bad code names for projects?
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

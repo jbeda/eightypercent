@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+    
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00192.html">Driving Photoshop from C#</a>
+      </h2>
+      <span class="lead">Fri, Jun 25, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        <strong>Update: </strong>8/29/04 -- There is an updated version of this tool described <a href="http://www.eightypercent.net/Archive/2004/08/28.html#a207">here</a>. 
+    </p>
+    <p>
+        If you've been a regular reader, you know that I've been <a href="http://www.eightypercent.net/Archive/2004/05/25.html#a188">having
+        a blast</a> <a href="http://www.eightypercent.net/Archive/2004/06/14.html#a189">playing </a>with
+        making digital panoramas.&#160; The problem that I've been hitting is twofold: 
+    </p>
+    <ol>
+        <li>
+            When I want to use <a href="http://www-cad.eecs.berkeley.edu/~mihal/enblend/">enblend</a> to
+            do the blending, I don't get the component layers in photoshop.&#160; I get a flat
+            blended tiff file that usually looks great.&#160; However, if I want to tweak it I
+            have to manually find the tiff file and&#160;import that to a layer so that I can
+            paint the original over the endblended result. 
+        </li>
+        <li>
+            PanoTools can work with 16bit files just fine but it doesn't know how to create a
+            Photoshop PSD file.&#160; (16 bit layers were only added in Photoshop CS. 
+        </li>
+    </ol>
+    <p>
+        Both of these require the fairly manual process of loading up a bunch of tif files
+        and copying them in to one composite file with masks. 
+    </p>
+    <p>
+        Being a dork, I wrote a program to automate this from the outside.&#160; This is a
+        command line utility that drives photoshop from the outside.&#160; It would be cool
+        if this were a plugin that would go in the "Automate" menu but I didn't have time
+        to figure that out. It just grabs a bunch of files, opens them up one by one and puts
+        them in to a new PS&#160;file.&#160; &#160;This works well with the individual .tif
+        files that PanoTools creates.&#160; If you have feature suggestions let me know and
+        I'll see what I can do. 
+    </p>
+    <p>
+        In any case, here is the <a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-exe-1.0.zip">binary</a>, <a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-src-1.0.zip">source</a> and <a href="http://www.eightypercent.net/Stuff/PanoTiffToPSD/License.txt">license</a>.&#160;
+        Please be aware that this requires the version 1.1 .Net runtime.&#160; You can get
+        this from <a href="http://www.windowsupdate.com">windows update</a> if you don't already.&#160; <a href="http://msdn.microsoft.com/netframework/technologyinfo/howtoget/default.aspx">Here</a> is
+        more info on getting the runtime. 
+    </p>
+    <p>
+        Interesting notes on programming to Photoshop: 
+    </p>
+    <p>
+        There are two ways to automate photoshop (that I've found).&#160; The first is using
+        "Actions".&#160; This is the built in way to record a bunch of steps and replay them.&#160;
+        There is a bunch of UI for this and it is good for simple things.&#160; Actions are
+        to limiting for this problem&#160;as anything that iterates over multiple files or
+        has "if" statements is super hard to do with Actions. 
+    </p>
+    <p>
+        The second way to program is via a set of COM interfaces.&#160; Adobe installs a type
+        library that provides some nice object model to do quite a few things.&#160; My understanding
+        is that this is exposed via a built in javascript engine and via applescript on Macs.&#160;
+        Since COM is language neutral, you can drive it (for example) via the scripting host
+        (JavaScript, VBScript), &#160;<a href="http://www.activestate.com/Products/ActivePerl/">perl</a>,
+        VB or C#.&#160; I choose to use C#. 
+    </p>
+    <p>
+        The programmable interface has some pretty glaring holes in its support.&#160; For
+        example, you can't do anything with the tools such as the magic wand.&#160; There
+        is also no easy programmatic access to creation of layer masks.&#160; You can get
+        around this by installing a plugin called the "ScriptListener."&#160; This essentially
+        creates funky unreadable code that (I'm thinking) uses the same hooks as the Actions
+        code.&#160; On windows this is written out as VB or JavaScript.&#160; Here is an example
+        from "c:\ScriptingListenerJS.log" to create a layer mask on the current layer. 
+    </p>
+    <pre>// =======================================================
+var id375 = charIDToTypeID( "Mk  " );
+    var desc84 = new ActionDescriptor();
+    var id376 = charIDToTypeID( "Nw  " );
+    var id377 = charIDToTypeID( "Chnl" );
+    desc84.putClass( id376, id377 );
+    var id378 = charIDToTypeID( "At  " );
+        var ref66 = new ActionReference();
+        var id379 = charIDToTypeID( "Chnl" );
+        var id380 = charIDToTypeID( "Chnl" );
+        var id381 = charIDToTypeID( "Msk " );
+        ref66.putEnumerated( id379, id380, id381 );
+    desc84.putReference( id378, ref66 );
+    var id382 = charIDToTypeID( "Usng" );
+    var id383 = charIDToTypeID( "UsrM" );
+    var id384 = charIDToTypeID( "RvlA" );
+    desc84.putEnumerated( id382, id383, id384 );
+executeAction( id375, desc84, DialogModes.NO );</pre>
+    <p>
+        As you can see, this isn't the easiest code to read. The solution is to wrap it in
+        functions that you can call at will. Here is how I created a C# function out of this: 
+    </p>
+    <pre>void CreateLayerMask()
+{
+    int id375 = app.CharIDToTypeID( "Mk  " );
+    PS.ActionDescriptor desc84 = new PS.ActionDescriptor();
+    int id376 = app.CharIDToTypeID( "Nw  " );
+    int id377 = app.CharIDToTypeID( "Chnl" );
+    desc84.PutClass( id376, id377 );
+    int id378 = app.CharIDToTypeID( "At  " );
+    PS.ActionReference ref66 = new PS.ActionReference();
+    int id379 = app.CharIDToTypeID( "Chnl" );
+    int id380 = app.CharIDToTypeID( "Chnl" );
+    int id381 = app.CharIDToTypeID( "Msk " );
+    ref66.PutEnumerated( id379, id380, id381 );
+    desc84.PutReference( id378, ref66 );
+    int id382 = app.CharIDToTypeID( "Usng" );
+    int id383 = app.CharIDToTypeID( "UsrM" );
+    int id384 = app.CharIDToTypeID( "RvlA" );
+    desc84.PutEnumerated( id382, id383, id384 );
+    app.ExecuteAction( id375, desc84, PS.PsDialogModes.psDisplayNoDialogs );
+}</pre>
+    <p>
+        This is a little bit of a pain but at least you can get stuff done.&#160; It would
+        be cool if we could build a library of these things.&#160; If anyone else is interested
+        in driving photoshop let me know and I'll help bring this stuff together. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00191.html"> Yet More on the Rich Client</a>
+      </h2>
+      <span class="lead">Mon, Jun 21, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        <a href="http://www.articulatebabble.org/archives/2004/06/20T021013.php">Vince has
+        responded</a> to my "<a href="http://www.eightypercent.net/Archive/2004/06/18.html#a190">Defending
+        the Rich Client</a>" post. 
+    </p>
+    <p>
+        He works on writing games for <a href="http://www.midway.com/">Midway</a> and has
+        a unique perspective.&#160; He says that the type of games that he writes are the
+        ultimate rich client.&#160; To a certain degree I agree, but I'd like to dodge some
+        of that as this is a market where Avalon definately isn't targeted. 
+    </p>
+    <p>
+        However, Vince does talk about internal authoring tools for games such as level editors
+        and he has some concerns with how plausible it would be for someone to start taking
+        advantage of the CLR and Avalon.&#160; I'm not an interop expert, but here are some
+        thoughts:&#160; 
+    </p>
+    <ul>
+        <li>
+            Add-ins for other packages.&#160; If those packages are DLL based, you can always
+            use MC++ to write add-ins.&#160; With both WinForms (I think) and Avalon, you should
+            be able to write UI that can be hosted via hwnds.&#160; If the package is COM based,
+            you can either use MC++ or CLR COM interop support.&#160; 
+        </li>
+        <li>
+            Writing a new tool. You shouldn't have to start from scratch.&#160; You can host windows
+            that are written in unmanaged code in both WinForms and Avalon.&#160; Beyond this,
+            you can manage internal intefaces via P/Invoke, COM interop or MC++ (if you aren't
+            happy with the current managed C++ implementation, all I can say is that the <a href="http://blogs.msdn.com/slippman/archive/2004/05/28/143886.aspx">team
+            has heard you</a> and <a href="http://msdn.microsoft.com/visualc/whidbey/">changes</a> are <a href="http://blogs.msdn.com/hsutter/">in
+            the works</a>). 
+        </li>
+    </ul>
+    <p>
+        The next question: Is it worth it?&#160; We definately hope so, but there is nothing
+        stopping you from continuing to use the technologies that you are currently using.&#160;
+        Managed code and garbage collection aren't the solution to every problem.&#160; There
+        are certainly places where it does make sense to drop down in to unmanaged code, just
+        like there are places where it make sense to drop down in to assembly. 
+    </p>
+    <p>
+        So, if you do decide to jump, will it do everything that you want?&#160; Vince gives
+        an example where he can't get a specific behavior out of WinForms without dropping
+        down and P/Invoking.&#160; I'm not sure what is going on here, but the reality is
+        that there are going to be things that we don't wrap or don't think of.&#160; That
+        is just the challenge of writing a platform -- we try to expose as much functionality
+        as possible in as easy to program a way as possible while leaving as much room for
+        extensibility as possible.&#160; This is a complicated equation and we are sure to
+        miss stuff.&#160; To complicate things, when we move forward with something that is
+        more than just evolutionary (WinForms and Avalon, for example) there are going to
+        be regressions in functionality.&#160; We may have decided to change the equation
+        from one framework to another.&#160; All I can really say is that we try our best
+        and please let us know if there is something we missed. 
+    </p>
+    <p>
+        Next, Vince looks at my 3 reasons to write rich client apps: presentation, local storage
+        and network connectivity.&#160; How important these are to different developers and
+        users depends on specific circumstances.&#160; While local storage may not be that
+        big a deal for networking, it would be huge for an online image gallery application
+        with a smart client interface (it looks like the guys at <a href="http://www.ngallery.org">nGallery</a> are
+        eventually headed in this direction).&#160; 
+    </p>
+    <p>
+        One area where the web model has been ahead of the traditional Windows APIs is the
+        ease of connecting to the network.&#160; But it was the case where there were things
+        you could do with Win32 (raw network access) that you can't do with a typical browser
+        and there are things that you can do with the browser (talk http to load and display
+        an image asynchronously) that are super hard in Win32.&#160; Making the smart client
+        better is all about removing these "either-or" choices and giving you the best of
+        both worlds. 
+    </p>
+    <p>
+        Lastly, Steve rails on the fact that it looks like MSBuild isn't going to support
+        VC++ out of the box.&#160; I have no clue what is going on here but stay tuned to <a href="http://blogs.msdn.com/akipman/">AKipman's
+        blog</a> for news. 
+    </p>
+    <p>
+        Overall, I really think that this is a healty debate and I thank Joel for getting
+        it started.&#160; Hopefully this gives everyone a little insight in to why we are
+        doing what we are doing in Avalon and Longhorn. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00190.html">Defending the Rich Client</a>
+      </h2>
+      <span class="lead">Fri, Jun 18, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        It probably goes without saying, but these comments are my own and don't represent
+        any official position by Microsoft. 
+    </p>
+    <p>
+        There has been an interesting discussion <a href="http://weblog.infoworld.com/udell/2004/06/09.html#a1019">started</a> by
+        Jon Udell and <a href="http://www.joelonsoftware.com/articles/APIWar.html">continued</a> by
+        Joel Spolsky (<a href="http://developers.slashdot.org/article.pl?sid=04/06/16/209202&amp;tid=">discussed</a> on
+        Slashdot). In both of their articles/postings they have referenced the <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=948">interview</a> that
+        I gave quite a while back for <a href="http://radio.weblogs.com/0001011/2004/06/18.html#a7784http://scoble.weblogs.com/">Scoble</a> for
+        Channel 9. <a href="http://www.25hoursaday.com/weblog/PermaLink.aspx?guid=49250729-fd67-4dd1-a960-2a6a8f55d9cb">Dare</a> and <a href="http://www.longhornblogs.com/robert/archive/2004/06/18/3731.aspx">Robert
+        McLaws</a> have also responded.&#160; My buddy from high school, Vince Anichini, <a href="http://www.articulatebabble.org/archives/2004/06/17T004246.php">wants
+        in</a> on the action too. 
+    </p>
+    <p>
+        Go ahead and read them if you haven't already and then come back. 
+    </p>
+    <p>
+        Here is my summary so that Jon, Joel and everyone else can make sure that I'm reading
+        them right. First, Jon is asking why anyone (and the "enterprise" specifically) would
+        want to write a rich client (probably for any platform) above and beyond a web application.
+        Joel takes this and runs with it -- saying essentially that the rich client is dead
+        and that the Windows API is dying with a whimper. He also says that there are two
+        camps of developers inside of Windows: those that want to keep on the same track and
+        those who are for all the new technologies. 
+    </p>
+    <h4>IE history 
+    </h4>
+    <p>
+        Being on the Windows team, and Avalon specifically, my job is to help write a product
+        that is compelling enough to overcome the very valid concerns that these guys have.
+        I started out on the IE team (now you know where at least a little bit of the IE team
+        went, Joel) back in 1997 -- toward the tail end of IE4 development. I firmly believe
+        that we had the better product starting with IE4 and we really turned up the heat
+        with IE5. IE was, in a lot of ways, a rear guard action against Netscape. Netscape
+        was trying to replace the Windows API with a cross platform "Netscape" API. 
+    </p>
+    <p>
+        IE was, buy many metrics, very successful. First, we gained significant adoption.
+        I personally think that this was mostly due to a superior product. 
+    </p>
+    <p>
+        Second, we also, by making the browser market a 2 horse race, drove baseline interoperability
+        in the web space. Where would the world be without IE? Do you think that we would
+        have an interoperable browser space now? Based on pure psychic reasoning, my guess
+        is that without the healthy competition from MS, Netscape would have owned the client
+        space completely. At this point I don't think that <i>anyone</i> owns the web client
+        platform. Despite IE's market share, the network addressable platform pieces that
+        anyone uses are largely restricted to the W3C blessed parts. So, taking a look at
+        the IE4 and IE5 timeframe, in some ways you can thank Microsoft for enabling a mostly
+        standards based web by making the browser a two horse race. 
+    </p>
+    <p>
+        Where IE wasn't successful was in bringing the Web model in as a fundamental part
+        of the Windows API. Sure, you had the reusable browser control and the Trident (mshtml.dll)
+        engine. But you were either writing a web-like application (HTAs included) or you
+        were writing a Win32 application. There were certain things that were easy to do with
+        traditional Win32 that you couldn't do with IE and things that you could do easily
+        with IE that you couldn't do with Win32. 
+    </p>
+    <h4>The best of windows and the best of the web 
+    </h4>
+    <p>
+        Avalon, and Longhorn in general, is our attempt to reenergize the rich client at Microsoft.
+        Is it, as Joel says, too late? I don't think so. I think that the combination of features
+        we are putting together will be compelling enough to start turning the tide. Are we
+        ever going to see a world where the web is history and all development is focused
+        on writing Longhorn applications? Of course not. Longhorn is a long term investment
+        to start laying the ground work for a rich client that takes advantage of the web
+        in a way that we have never been able to before. This is what we mean when we say
+        that we want to make Avalon the best of Windows and the best of the Web. We want to
+        take some of the advantages of the web and build them in to the windows API. 
+    </p>
+    <p>
+        Why do people write web based client/server apps over writing rich client apps for
+        Windows? 
+    </p>
+    <ol>
+        <li>
+            Frictionless deployment story 
+        </li>
+        <li>
+            Cross platform interoperability 
+        </li>
+        <li>
+            More fun to code -- you can set up your own API system and abstract HTML to a large
+            extent 
+        </li>
+        <li>
+            Built in network/server awareness 
+        </li>
+    </ol>
+    <p>
+        You put all of these together and you have a pretty darn compelling story for many
+        scenarios. How can the Windows client compete with this? The key is to take the good
+        things of the web that we can (1, 3 and 4) and combine that with all of the goodness
+        from having stuff run on the client. Don't get me wrong -- I still believe in the
+        web as a way to interoperate and exchange content and as a lowest common denominator
+        for UI interaction. But we can do so much better than HTML with the horsepower that
+        is sitting on our desk when it makes sense to do so. 
+    </p>
+    <p>
+        For example, Joel says that he can "install" GMail by hitting Ctrl-D, gmail, Ctrl-Enter.
+        My understanding (and I haven't had time to really play with GMail yet) is that Google
+        has written browser specific code to enhance the user experience. 
+    </p>
+    <p>
+        With Avalon you should be able to implement a GMail like application that takes advantage
+        of the rich client in some very significant ways: 
+    </p>
+    <ol>
+        <li>
+            <b>Rich user experience</b>.&#160; No page refreshes on simple actions.&#160; Smooth
+            animation and graphical composition.&#160; The ability to do rich real time data visualization. 
+        </li>
+        <li>
+            <b>Local Storage</b>. Cache the mail data locally for faster access and more integration
+            with other desktop services.&#160; You could also support reading and responding to
+            mail while offline. 
+        </li>
+        <li>
+            <b>Easy network connectivity</b>.&#160; Using web services, the ability to use widely
+            interoperable protocols to talk with a server. 
+        </li>
+    </ol>
+    <p>
+        Will this be possible in Longhorn? YES. This is the direction that we want to go and
+        what I mean when I say "network connected rich client applications." We aren't replacing
+        the web or the web paradigm. We are instead providing the platform so that it is easy
+        -- and <i style="mso-bidi-font-style: normal">worthwhile</i> -- for developers to
+        differentiate when their applications are running on Windows. 
+    </p>
+    <h4>But what about the enterprise? 
+    </h4>
+    <p>
+        Now, to get to some specific points brought up in the articles. Jon brings up some
+        good points around the enterprise space. I can only say that we are working hard to
+        build a package of features on the client that will either make enterprise developers
+        willing to standardize on Longhorn or take the extra cost to provide a rich client
+        solution in addition to a web based solution. There are some applications where this
+        will never make sense. 
+    </p>
+    <p>
+        However, there are a set of applications that are currently being implemented on against
+        today's web clients that could be vastly improved by rich client capabilities. I can
+        definitely see a need for a rich expense reporting application with a good offline
+        mode and rich display and reporting. Anything that involves charting or graphing can
+        also be enhanced by using some rich client technologies. I use Outlook every day to
+        do email. There is a web solution for Exchange called "Outlook Web Access" (OWA) that
+        uses DHTML and all of the other web goodies to provide as good an experience as possible
+        through the web client. While I think that OWA is great and I'm a huge fan of what
+        those guys are doing, I'd still much rather use the real Outlook. 
+    </p>
+    <p>
+        With Avalon we are hoping to make it vastly easier to write rich data connected applications
+        like Outlook. However, we don't want stop there. We also want developers to be able
+        to get the best of the web. These applications can run in the browser for the browser
+        experience or can be "one click" installed and run on the desktop.&#160; Even when
+        they are "installed" they can be managed from the server and be kept up to date as
+        easily as copying a new version on to the server. Think of how many enterprise LOB
+        apps could benefit from that? Expense reporting (with offline mode), "Digital Dashboard"
+        data aggregation and visualization, integrated content creation, new network connected
+        collaboration applications and more.&#160; 
+    </p>
+    <h4>Backward compatibility 
+    </h4>
+    <p>
+        Now, talking to some of Joel's points: He says that we have fundamentally changed
+        our view of backward compatibility. I totally disagree. As one Slashdot poster <a href="http://developers.slashdot.org/comments.pl?sid=111332&amp;cid=9446923">put
+        it</a>: "Joel confuses binary compatibility with API compatibility." From the end
+        users point of view we are still completely committed to making apps that run on Windows
+        continue to run on Windows. At the PDC, Jim Allchin showed off <s>Lotus 123</s> Visicalc
+        running on Longhorn. The developer experience, however, will have a gap -- it is necessary
+        as part of the transition to managed code. He states that VB.Net not being source
+        compatible with VB6 is a first. I would argue that the switch from 16 bit to 32 bit
+        is very similar to the switch from unmanaged code to managed code. Old apps will continue
+        to run and new apps are written to the new technology. 
+    </p>
+    <p>
+        In Avalon we are working very hard to provide rich ways for application developers
+        to tie their old code in with new code that takes advantage of our new technologies.
+        You can host a Win32 hwnd -- WinForms based or not -- in with Avalon content. You
+        can also host Avalon content in a Win32 hwnd. You can nest these completely. While
+        it is true that you have to write new code to get the new features -- and that the
+        new code is part of a completely new framework -- we don't want to force application
+        developers to rewrite everything to start using our stuff. 
+    </p>
+    <p>
+        Above and beyond what Avalon has been doing, the C++ team has heard what the community
+        has been saying and is doing some great work in Whidbey to make the managed version
+        of C++ better than ever.&#160; It will be the best solution for those who have the
+        C++ code and skills and want to start taking advantage of the the CLR. 
+    </p>
+    <h4>What's a $300B (market cap) company to do? 
+    </h4>
+    <p>
+        The real question is: What are we to do? Without arguing about the fine points, we
+        are stuck with a choice. We can either continue adding doodad on top of doodad to
+        Win32 (and maintain backward compat from an API and binary perspective) or we can
+        try and make a fresh start with WinFX and set ourselves up for the future. Look at
+        the timelines: Windows 1.0 with the start of Win16 came out in 1985. Windows 95, with
+        the mainstream advent of Win32 came out in 1995. It is now 2004. 
+    </p>
+    <p>
+        Now is the time for Microsoft to either watch the Windows rich client sail in to the
+        sunset or to do its best to reinvigorate it. The only way to make this happen is to
+        go "all-in" and think big. We want to empower developers by making a much richer,
+        network connected and modern API for programming on windows. WinFX is all about taking
+        what we've learned over the last 20 years and creating a solid platform for the next
+        20 years. We will provide the right API, backward compat for old applications and
+        a great bridge between the two for developers. If we really want developers to write
+        code that only runs on windows, we have to provide features and enticements that they
+        can't get anywhere else. While I don't think that it is too late, I do think that
+        we have our work cut out for us. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00189.html">More fun with Panos</a>
+      </h2>
+      <span class="lead">Mon, Jun 14, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Since writing the <a href="http://www.eightypercent.net/Archive/2004/05/25.html#a188">article</a> in
+        the Luminous Landscape, I've run across Max Lyon's <a href="http://www.tawbaware.com/cgi-bin/forum/cutecast.pl">forums</a> covering
+        all things pano.&#160; Cool stuff I've discovered or been alerted to: 
+    </p>
+    <ul>
+        <li>
+            A really sweet cheap<a href="http://www.tawbaware.com/cgi-bin/forum/cutecast.pl?forum=4&amp;thread=278"> DIY
+            pano tripod</a> head using 8020 aluminum extrusion stock.&#160; I built one of these
+            last week and it works great! 
+        </li>
+        <li>
+            <a href="http://www.le-geo.com/kolor/autopano/">Autopano</a> -- a&#160;helper to automatically
+            find the control points for panotools.&#160; PTAssembler can be set up to call this
+            directly. 
+        </li>
+        <li>
+            <a href="http://www-cad.eecs.berkeley.edu/~mihal/enblend/">Enblend</a> -- a tool to
+            automatically do the blending between images based on the spatial frequency of the
+            image at the seam. 
+        </li>
+        <li>
+            <a href="http://hugin.sourceforge.net/">Hugin</a> -- a free (as in speech) appliaction
+            for driving PanoTools.&#160; There is also an experimental replacement for PanoTools
+            called nona.&#160; I haven't played with this yet but it is interesting to see this
+            stuff develop.&#160; If this weren't GPL'd and similar to my real job, I'd love to
+            get involved and write some code. 
+        </li>
+        <li>
+            <a href="http://www.ngallery.org/">nGallery</a> -- I installed this on an ASP.Net
+            server and I'll be posting some new pictures soon.&#160; It was super easy to get
+            up and running and looks configurable.&#160; This is something that I <em>could</em> get
+            involved in and write some code. 
+        </li>
+    </ul>
+    <p>
+        Hopefully I'll have some example panos put together using the new setup soon. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00188.html">Luminous Lanscape article</a>
+      </h2>
+      <span class="lead">Tue, May 25, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        <a href="http://www.luminous-landscape.com/tutorials/digital-panoramas.shtml">My article</a> on
+        doing digital panoramas using PTAssembler and PanoTools is now up at the <a href="http://www.luminous-landscape.com">Luminous
+        Landscape</a> photography site.&#160; If you haven't seen it before, this site is
+        a wonderful resource for anyone interested in serious photography.&#160; I'd like
+        to thank Michael Reichmann, the proprietor, for giving me a chance to contribute.
+    </p>
+    <p>
+        For some earlier entries and photos check out <a href="http://www.eightypercent.net/Archive/2003/04/08.html">this</a>, <a href="http://www.eightypercent.net/Archive/2004/03/24.html#a171">this</a>, <a href="http://www.eightypercent.net/Archive/2004/03/18.html#a170">this</a>&#160;and <a href="http://www.eightypercent.net/Archive/2004/04/10.html">this</a>.
+    </p>
+    <p>
+        As an intersting aside, the Idaho State Capitol building photo (from <a href="http://www.eightypercent.net/Archive/2003/04/08.html">here</a>)
+        is an example of what happens if you don't set the reference image and point correctly.&#160;
+        This is very similar to using a large amount of horizontal shift to the right.
+    </p>
+    <p>
+        If you have any questions on the article, let me know and I'll try to answer them
+        here.&#160; There are a ton of resources out there on doing this stuff, so my main
+        advice is to just jump in and give it a try.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00187.html">IE context menu extensions</a>
+      </h2>
+      <span class="lead">Mon, May 24, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Raymond, ever the source of interesting info, <a href="http://weblogs.asp.net/oldnewthing/archive/2004/05/24/140283.aspx">details</a> how
+        to extend the context menu in IE.&#160; This was the first feature that I coded up
+        at MS after I joined back in 97.&#160; This came in late in the IE4 product cycle.&#160;
+        It is cool to see that it still comes up once in a while.&#160; The original idea
+        was to allow a dictionary program to let you right click on a word to get a definition.&#160;
+        It turns out to be much more powerful than that.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00186.html">Slashdot results</a>
+      </h2>
+      <span class="lead">Mon, May 24, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        My <a href="http://www.eightypercent.net/Archive/2004/05/18.html#a185">entry</a> pointing
+        to our WinHEC slides resulted in links from quite a few sites and a ton of hits.&#160;
+        Top among these was an article on <a href="http://developers.slashdot.org/developers/04/05/23/1737226.shtml?tid=109&amp;tid=185&amp;tid=187&amp;tid=190&amp;tid=201">Slashdot</a>.&#160;
+        Also notable are links from <a href="http://www.osnews.com/comment.php?news_id=7134">OSNews</a>&#160;and <a href="http://www.joeuser.com/index.asp?AID=16309&amp;u=0">Brad
+        Wardell (joeuser.com)</a>.&#160; In the last year my blog has gotten 20k hits (not
+        counting RSS reads).&#160; In the last day it has gotten something like 25k hits.&#160;
+        I'm sure that most of those 25k people won't be back to read this entry, but I'll
+        respond anyway. 
+    </p>
+    <p>
+        I appreciate the attention and I've been trying to keep up with all of the comments.&#160;
+        Here are some notes and responses: 
+    </p>
+    <ul>
+        <li>
+            First off, I can't answer every question.&#160; I have no desire to get in to a flame
+            war over specific details or comparisons. 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232376">Avalon's
+            relationship to Direct3D</a>:&#160; I tried to make this clear in the slides, but
+            it is worth repeating.&#160; We are building a managed presentation and UI layer on
+            top of Direct3D.&#160; While we will be exposing a 3D API, it is meant to round out
+            the UI story and integrate well with our 2D API.&#160; If you are doing super complex
+            3D stuff (FPS games), or want access to the latest and greatest Direct3D features,
+            Direct3D is the way to go.&#160; If you want to mix a little 3D in with your 2D, Avalon's
+            3D APIs will let you do that in a painless way. 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232430">Do
+            we really need the eye candy?</a>: This has been a popular topic ever since we started
+            planning and talking about Avalon.&#160; I'm planning on posting something on this
+            later to start the discussion.&#160; My short take: I think that providing more capability
+            in the platform is a good thing that will make Windows a more attractive place to
+            write applications.&#160; I think that it will also allow our stock user experience
+            (Aero and the shell team) and application developers to push the limits and interact
+            with users in fundamentally better ways.&#160; However, with power comes responsibility.&#160;
+            We are working on a set of <a href="http://msdn.microsoft.com/Longhorn/understanding/ux/default.aspx?pull=/library/en-us/dnaero/html/samplerintro.asp">guidelines</a> (these
+            are the Aero user interface guidelines) to help application authors use this stuff
+            in a consistent way. 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232485">The
+            3D bar graph demo is useless</a>: I admit, this <a href="http://www.eightypercent.net/Archive/2004/05/06.html#a182">example</a> is
+            useless as is.&#160; In a <em>real</em> application there will be a lot more UI about
+            picking what data you want to look at and how you want to look at it.&#160; The position
+            and view of the 3D graph would probably be controlled by the mouse so that you can
+            rotate things around to see hidden data.&#160; There would probably be different types
+            of graphs that you would switch between.&#160; However, this was meant as a demo application
+            that we threw together in a couple of days.&#160; While the application is a demo,
+            the platform that it is running on is real.&#160; There should be nothing stopping
+            someone from building a more industrial strength really usable version of this. 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232540">We
+            are behind the ball on 64 bit</a>:&#160; While Windows had been compiling and shipping
+            (well, in beta to be clear) on 64 bit for quite a while (we handed out ia64 and x64
+            versions of Longhorn at WinHEC and via MSDN) the real call to action here was to IHVs.&#160;
+            Remember this&#160;was the Windows Hardware Engineering Conference.&#160; IHVs have
+            limited resources wrt writing drivers and we want to encourage them to write and maintain
+            64 bit drivers.&#160; This was one of the big pushes for the conference as a whole.&#160;
+            We don't want 64 bit uptake to be slowed down by lack of driver support. 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232633">The
+            longhorn requirements are crazy</a>: I don't know where the requirements listed here
+            came from, but I haven't seen that list.&#160; Obviously we won't see that on a laptop!&#160;
+            There are a couple of things to note here.&#160; 
+            <ul>
+                <li>
+                    First, we will run in software and on lower end machines.&#160; Things may run slower,
+                    but it will run.&#160; 
+                </li>
+                <li>
+                    Second, we are going to offer multiple experiences based on hardware capabilities
+                    and user preferences.&#160; This ranges from a classic view, to Aero to Aero Glass.&#160; 
+                </li>
+                <li>
+                    Third, the current minimum requirement for Aero Glass is a DX9 class card with 64MB
+                    of video memory.&#160; More video memory will be required for higher resolutions or
+                    multiple monitors.&#160; We also require the GPU to support PS 2.0 and have a LDDM
+                    (Longhorn Device Driver Model) driver. 
+                </li>
+                <li>
+                    Fourth, as for processor requirements, most of the time when we have, in the past,
+                    required a certain speed processor it has been because that speed has been an indicator
+                    of the rest of the components in the machine (bus speed, hard driver speed, memory
+                    speed, processor instruction support, etc.)&#160; The idea has been to use that one
+                    number&#160;as a <span style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">heuristic </span>for
+                    the "generation" of the machine.&#160; Hell, I've run Win2k3 server on a 400MHz celeron.&#160; 
+                </li>
+                <li>
+                    Lastly, we <em>are</em> really concerned about battery life and are working hard to
+                    come up with a scalable user experience for times when battery life is more important
+                    than running the GPU at full throttle.&#160; I believe that there are a bunch of slides
+                    in Kerry's talk on that. 
+                </li>
+            </ul>
+        </li>
+        <li>
+            (my favorite) <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9233103">"dipshits
+            still can't code html/css?"</a>: I never claimed to be an artist, but the CSS in question
+            was my attempt to get a little bit funky with the style of my site.&#160; It is on
+            purpose.&#160; I assume that it will work in most browsers but, honestly, I only tested
+            it with IE and Pocket IE.&#160; I posted a <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=201&amp;mode=thread&amp;pid=9233844#9234182">response</a> to
+            this on slashdot but apparently someone <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=201&amp;mode=thread&amp;pid=9234182#9235628">thought
+            I wasn't me</a>.&#160; Too funny! 
+        </li>
+        <li>
+            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9235276">The
+            whole Apple transparent window thing</a>:&#160; I don't read or comment on patents.&#160;
+            However, transparent windows have been around for quite a while.&#160; In the windows
+            world, these things were introduced in W2K with <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwui/html/layerwin.asp">layered
+            window support</a>.&#160; Other OSs may have had something similar earlier. 
+        </li>
+        <li>
+            <a href="http://www.osnews.com/comment.php?news_id=7134&amp;offset=15&amp;rows=30#239957">Longhorn
+            is just vaporware.</a>&#160; <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=109&amp;tid=185&amp;tid=187&amp;tid=190&amp;tid=201&amp;mode=thread&amp;cid=9232324">I'll
+            believe it when it ships in 2017</a>:&#160; I'm not crazy enough to comment on ship
+            dates.&#160; I'll leave that to the PR people and the execs.&#160; However, we are
+            showing off real code.&#160; We've publicly shipped two builds of Longhorn (the PDC
+            and the recent WinHEC build) along with SDKs.&#160; Not everything is done yet and
+            it is rough around the edges, but this isn't just slideware. 
+        </li>
+        <li>
+            <a href="http://www.osnews.com/comment.php?news_id=7134#239905">Innovation</a>:&#160;
+            Innovation is such a loaded word.&#160; Hell, MS probably did more to make it loaded
+            than anyone else :).&#160; However, I never used the word on my blog and I don't know
+            where the guy who posted this to OSNews.com got it.&#160; It really touched off a
+            flamewar there which basically comes down to your definition of innovation.&#160;
+            Leaving that aside...&#160; I think that Avalon, and Longhorn in general, puts a lot
+            of very interesting features together in an integrated API that will benefit developers
+            and end users in very exciting ways.&#160; Use your own definition of innovative to
+            parse that last sentence. 
+        </li>
+    </ul>
+    <p>
+        Well, hopefully that runs the gamut.&#160; I probably missed some stuff, but I have
+        to get some real work done today. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00185.html">WinHEC slides</a>
+      </h2>
+      <span class="lead">Tue, May 18, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        The <a href="http://www.microsoft.com/whdc/winhec/pres04-tech.mspx">slides</a> from&#160;the
+        WinHEC sessions are posted up at ms.com.&#160; We had 4 sessions that were Avalon
+        specific: 
+    </p>
+    <ul>
+        <li>
+            Greg Schecter: <a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04036_WINHEC2004.ppt">Avalon
+            Graphics Stack Overview [682 KB]</a> 
+        </li>
+        <li>
+            Joe Beda (me): <a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04006_WINHEC2004.ppt">Avalon
+            Graphics - 2D, 3D, Imaging and Composition [284 KB]</a> 
+        </li>
+        <li>
+            Kerry Hammil: <a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04013_WINHEC2004.ppt">Graphics
+            on the Windows Desktop [496 KB]</a> 
+        </li>
+        <li>
+            David Brown: <a href="http://download.microsoft.com/download/1/8/f/18f8cee2-0b64-41f2-893d-a6f2295b40c8/TW04007_WINHEC2004.ppt">Avalon
+            Text [1.05 MB]</a> 
+        </li>
+    </ul>
+    <p>
+        Since most people who read this weren't there and couldn't ask questions, don't be
+        afraid to ask questions here.&#160; I'll either answer them here or try to get an
+        answer for you.
+    </p>
+    <p>
+        While reading these slides, keep in mind that we were targeting hardware people.&#160;
+        This was really about letting IHVs know what they can do to prepare for what is coming
+        in Longhorn and Avalon.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00184.html">DanLehen on Avalon 3D</a>
+      </h2>
+      <span class="lead">Wed, May 12, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        <a href="http://blogs.msdn.com/danlehen/">Dan</a> has started a blog where he will
+        be talking Avalon 3D.&#160; He is one of the devs that is currently working on this
+        part of Avalon.&#160; Even though the Avalon 3D stuff is still early (we aren't feature
+        complete yet) he plans on talking through what you <em>can</em> do with the WinHEC
+        build.
+    </p>
+    <p>
+        Check it out!
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00183.html">Hello Slashdot</a>
+      </h2>
+      <span class="lead">Thu, May 6, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Ha! I get linked from a <a href="http://developers.slashdot.org/comments.pl?sid=106586&amp;cid=9070786">comment</a> and
+        I see a spike in traffic.&#160; Slashdot is <em>the</em> flow machine.&#160; In any
+        case, there are some misstatements in that comment that I'd like to answer.&#160;
+        First, I'm not "the guy from Microsoft behind Avalon."&#160; Rather I'm one on a large
+        team of developers.&#160; My particular area is the graphics APIs.&#160; Avalon is
+        much more than just graphics.
+    </p>
+    <p>
+        Second, managed code is a different beast that unmanaged code.&#160; While it can
+        make programmers more productive and I totally think that it is the way of the future,
+        a developer can write bad code in any language.&#160; While right now I don't think
+        that anyone would claim that managed code is faster than unmanaged code, the difference
+        is generally not that great.&#160; I've heard of some research that suggests that
+        future JITs may be able to apply run time directed optimizations and recompilation
+        that <em>could</em> make managed code faster.&#160; But that world isn't here yet.
+    </p>
+    <p>
+        In the parlance of our time: "Just&#160;my 2 cents"
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+  <nav>
+    <ul class="pager">
+      <li class="previous">
+        <a href="/page/8.html"><span aria-hidden="true">&larr;</span> Newer</a>
+      </li>
+      <li class="next">
+        <a href="/page/10.html">Older <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+  </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

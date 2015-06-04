@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/05/08 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/05/08.html</link>
+    <description>Recent content in 2005/05/08 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 May 2005 14:50:16 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/05/08.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>High Dynamic Range and the Quality of the Pixel</title>
+      <link>http://new.eightypercent.net/post/old/00242.html</link>
+      <pubDate>Sun, 08 May 2005 14:50:16 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00242.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I wasn&#39;t going to upgrade to Photoshop CS2 because I didn&#39;t think that I need it.&amp;#160;
+        But that was&amp;#160;before I found out about the new support for High Dynamic Range
+        (HDR) and 32 bits per&amp;#160;channel floating point support.&amp;#160; Michael Reichmann
+        over at The Luminous Landscape has an &lt;a href=&#34;http://www.luminous-landscape.com/tutorials/hdr.shtml&#34;&gt;article&lt;/a&gt; talking
+        about the new &#34;Merge to HDR&#34;.&amp;#160; I was going to how current cameras only handle
+        6 stops and all (and what a stop is) but Michael does a good job of that in his article.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;m excited about this feature because I think that it will enable me to capture images
+        that I haven&#39;t been able to before.&amp;#160; I&#39;ve often shot bracketed exposures with
+        the thought that I would merge them together by hand later. The results rarely are
+        as good as I imagined when I took the image.&amp;#160; For instance, shooting a sunrise
+        of a mountain where the top of the mountain is in the sun but the rest is in shadow
+        can be very difficult.&amp;#160; Having a tool that approaches this in a more methodical
+        way is exciting.&amp;#160; On top of this, I&#39;m excited by the possibilities of this combined
+        with panoramic photography.&amp;#160; Wide angle and pano photography has a problem whereby
+        you are taking in so much of a scene that you are much more likely to have parts of
+        the image be very bright and others be very dark.&amp;#160; One of the skills that I&#39;ve
+        been developing is the ability to pick a scene where I won&#39;t run in to these problems.
+    &lt;/p&gt;
+    &lt;p&gt;
+        But, as great as the new Photoshop might be, there are other parts of the digital
+        photography system that need to catch up.&amp;#160; The first is on the display side.&amp;#160;
+        While the data in a photograph might contain lots of dynamic range, today&#39;s displays
+        can&#39;t show it all.&amp;#160; That is going to change over the next couple of years.&amp;#160;
+        On the software side, there is plumbing being laid to support 32bpp through the Windows
+        desktop and to the video driver.&amp;#160; (The 3D APIs and graphics cards are support
+        a lot of this already because it can be useful in 3D rendering).&amp;#160; The displays
+        are going to get better also.&amp;#160; Over the next couple of years, expect to see wide
+        gamut and HDR screens coming out.&amp;#160; Sunnybrook is one of the companies that has
+        been pioneering this &lt;a href=&#34;http://www.sunnybrooktech.com/hdr/index.html&#34;&gt;LED based
+        display technology&lt;/a&gt;.&amp;#160; Where&amp;#160;normal LCD or CRT displays can get a contrast
+        ratio of 300-400:1, they claim their LED technology can get 60,000:1.&amp;#160; That means
+        the bright spots are brighter and the shadows are darker.&amp;#160; I haven&#39;t seen one
+        of these displays myself, but I&#39;m super excited by the technology.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The other side that needs to improve is on the image capture side.&amp;#160; I have not
+        specific knowledge of any plans from any camera manufacturers, but it is obvious that
+        the megapixel race is slowing down.&amp;#160; We are reaching the limits of the glass.&amp;#160;
+        Another example is the fact that the new prosumer level Nikon SLRs are still only
+        6 megapixel.&amp;#160; It is clear that the camera makers are going to compete on more
+        than just the &lt;em&gt;number of pixels&lt;/em&gt;.&amp;#160; They will start competing on the &lt;em&gt;quality
+        of those pixels&lt;/em&gt;. This is going to be very exciting.&amp;#160; We are entering a world
+        where digital cameras are not just&amp;#160;matching the abilities of film cameras, but
+        they are on the verge of surpassing them.&amp;#160; A camera that can capture higher dynamic
+        range and a wider gamut?&amp;#160; Sign me up!
+    &lt;/p&gt;
+    &lt;p&gt;
+        The big question in my mind is the print making side of the equation.&amp;#160; When I
+        print my photos, I usually send them out (&lt;a href=&#34;http://www.whcc.com/&#34;&gt;WHCC&lt;/a&gt;&amp;#160;or &lt;a href=&#34;http://www.westcoastimaging.com/&#34;&gt;WCI&lt;/a&gt;)
+        to be printed on a Chromira printer.&amp;#160; This is a printer that uses LEDs to expose
+        regular photo paper.&amp;#160; This photo paper is then printed traditionally.&amp;#160; The
+        gamut of these devices (and that of the ink jet processes) can be larger than current
+        displays but is still fairly limited.&amp;#160; The dynamic range of all of these output
+        devices is pretty low compared to what can be done with an emissive display device.&amp;#160;
+        The bottom line is that the printing technology isn&#39;t keeping up with the rest of
+        the system.&amp;#160; What does this mean in the long term?&amp;#160; I&#39;m not sure but we
+        will start to see a vast divergence between the quality of an image when displayed
+        on a good monitor compared to they quality of an image when printed.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It certainly is an exciting time for photography...
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

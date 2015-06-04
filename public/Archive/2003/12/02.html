@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2003/12/02 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00158.html">Avalon Visuals</a></h1>
+      <span class="lead">Tue, Dec 2, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        <a href="http://weblogs.asp.net/dmarsh/">Drew Marsh</a>&#160;posted an interesting
+        article entitled "<a href="http://weblogs.asp.net/dmarsh/posts/40626.aspx">Avalon
+        Dissected</a>."&#160; It is great to see people taking an interest in Avalon at this
+        level.&#160; However, he got some of the details around Visuals wrong. 
+    </p>
+    <p>
+        The graphics system in Avalon is new and is built to take advantage of the hardware.&#160;
+        Beyond this, there is a software engine for the cases when the hardware isn't supported.&#160;
+        On top of this, we've built a "scene graph" system that natively supports animation
+        and remoting.&#160; In the normal case, the actual rendering of the scene graph is
+        done on a dedicated composition thread where third party code isn't allowed to run.&#160;
+        The description of everything on screen and some primitive animation information is
+        passed to this thread so that the rendering can happen independently of what is going
+        on with the regular UI thread.&#160; In the case when you are running an Avalon application
+        from a remote machine (via Terminal Services or Remote Desktop) with an advanced client,
+        this composition thread will run on the remote machine and the actual rendering of
+        the scene graph will happen without any network traffic.&#160; Some animations will
+        be able to run on the remote machine without network traffic also.&#160; 
+    </p>
+    <p>
+        From the programming model point of view, a node in our scene graph is&#160;called <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/visual/visual.aspx">Visual</a>.&#160;
+        There are different types of visuals that are intended to be used for different purposes.&#160;
+        It is also important to note that UIElement derives from Visual so every UIElement <em>is-a</em> Visual.&#160;
+        (At one point an Element <em>had-a</em> visual but this was changed with the rearchitecture
+        that <a href="http://www.simplegeek.com">ChrisAn</a> <a href="http://www.simplegeek.com/PermaLink.aspx/359c73aa-4711-4061-b9d9-16300d8d278e">talks
+        about</a>.) 
+    </p>
+    <p>
+        Every Visual implements an interface called <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/ivisual/ivisual.aspx">IVisual</a>.&#160;
+        There is no situation where a third user should be implementing IVisual.&#160; The
+        reason that we created this interface is so that we can use&#160;<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csref/html/vcwlkExplicitInterfaceImplementationTutorial.asp">explicit
+        interface implementation</a> to hide the methods on IVisual.&#160; We didn't want
+        to pollute the public object model for UIElement (and Button, etc.) with things that
+        most users weren't going to be using. 
+    </p>
+    <p>
+        A Visual has the following capabilities: 
+    </p>
+    <ul>
+        <li>
+            Children with a transform on each child 
+        </li>
+        <li>
+            Opacity 
+        </li>
+        <li>
+            Clip 
+        </li>
+        <li>
+            Content (defined differently for each visual type) 
+        </li>
+        <li>
+            Hit testing services 
+        </li>
+        <li>
+            Coordinate transformation services 
+        </li>
+        <li>
+            Bounding box services 
+        </li>
+        <li>
+            And in the future: blend mode and effect 
+        </li>
+    </ul>
+    <p>
+        For each visual, the content of that visual is rendered followed by the children,
+        from left to right.&#160; The Z-order of any children are completely implied by their
+        order in the visual tree.
+    </p>
+    <p>
+        Different specializations of Visual provide for specific types of content and for
+        different flavors of public programming model.&#160; Here are the main ones: 
+    </p>
+    <ul>
+        <li>
+            <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/containervisual/containervisual.aspx">ContainerVisual</a>.&#160;
+            This Visual has all of its&#160;capabilities reflected publically and has no intrinsic
+            content. 
+        </li>
+        <li>
+            <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/drawingvisual/drawingvisual.aspx">DrawingVisual</a>.&#160;
+            This Visual also has all of its capabilties reflected publically.&#160; Its content
+            is 2D vector data that is stored with it.&#160; You can think of it holding on to
+            a "metafile."&#160; The way you change the content is&#160;call&#160;<a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/drawingvisual/m/renderopen.aspx">DrawingVisual.RenderOpen</a>,
+            get a DrawingContext and draw with that. 
+        </li>
+        <li>
+            <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/retainedvisual/retainedvisual.aspx">RetainedVisual</a>.&#160;
+            This guy is special.&#160;&#160;He is meant to be derived from.&#160; This is the
+            Visual that UIElement derives from.&#160; All of the services and properties are available
+            either via private functions (RenderOpen) or via the IVisual interface only.&#160;
+            This visual can work in two modes: 
+            <ul>
+                <li>
+                    Fully retained.&#160; This is the default case.&#160; In this case the visual is exacly
+                    like&#160;a DrawingVisual except the IVisual members are not reexposed in a public
+                    way.&#160; RenderOpen is also protected instead of private. 
+                </li>
+                <li>
+                    On&#160;demand&#160;retained.&#160; If the&#160;derived class implements <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/iretainedrender/iretainedrender.aspx">IRetainedRender</a>&#160;and
+                    sets the protected <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/retainedvisual/p/renderbounds.aspx">RenderBounds</a> property,
+                    then <a href="http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/iretainedrender/m/render.aspx">IRetainedRender.Render</a> will
+                    be called back as necessary to fill in the "metafile" for this Visual.&#160; They
+                    system looks at the tree and decides, based on the RenderBounds, if this Visual is
+                    on screen.&#160; If it is, then the system calls IRetainedRender.Render and&#160;the
+                    derived class writes into the "metafile" via&#160;a DrawingContext passed.&#160; The
+                    system then caches that metafile.&#160; If the Visual is then pushed off screen for
+                    some reason(scrolling, perhaps), then the system is free to throw away the cached
+                    metafile to save space.&#160; The user can force the system to throw away the metafile
+                    by calling the protected RetainedVisual.InvalidateVisual call.</li>
+            </ul>
+        </li>
+    </ul>
+    <p>
+        When it comes time to render (scheduled via the Dispatcher class and coordinated with
+        the animation system and layout) the system will walk the tree and decide what is
+        and isn't on screen.&#160; It will then call render on any RetainedVisuals as necessary
+        and cache the result.&#160; It also updates the data on the other thread for what
+        is on screen so that the render can happen async from what is going on on the UI thread.&#160;
+        In this way, there is no "render" happening on the UI thread in the normal case.&#160;
+        Instead we are "compiling" the scene graph down to a simpler representation to run
+        asynchronously on another thread or on another machine.
+    </p>
+    <p>
+        The bits that we shipped in the PDC don't have this system fully implemented.&#160;
+        For example, the composition thread isn't running completely async and we don't have
+        rich TS support in.&#160; Come beta, more of our system will be completed and up and
+        working.
+    </p>
+    <p>
+        I'm sure that this is confusing and that I've missed some stuff, so feel free to ask
+        questions and I'll do my best to answer.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

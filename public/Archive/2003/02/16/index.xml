@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/02/16 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/02/16.html</link>
+    <description>Recent content in 2003/02/16 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Feb 2003 18:08:23 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/02/16.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Calendars considered harmful?</title>
+      <link>http://new.eightypercent.net/post/old/00037.html</link>
+      <pubDate>Sun, 16 Feb 2003 18:08:23 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00037.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;Ha, I just read Michaels &lt;a href=&#34;http://michaelw.net/Articles/Idontgettheweblogcalendar.html&#34;&gt;article&lt;/a&gt; on why he considers calendars on weblogs useless.  Funny I read this right after implementing mine.
+&lt;P&gt;Well, the reason that I did mine is that I want my archives to be reachable in some fashion -- perhaps if only for google.  A search or keyword &#34;related&#34; section would be more usable, for sure.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cool calendar, huh?</title>
+      <link>http://new.eightypercent.net/post/old/00036.html</link>
+      <pubDate>Sun, 16 Feb 2003 17:47:44 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00036.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;I have a calendar that now points to my archives.  I think that I&#39;m at feature parity with what I was using from Radio, at least with respect to blog generation.  I didn&#39;t use any tables in my layout, so let me know if things don&#39;t look good in a browser other than IE for windows.
+&lt;P&gt;I think that I&#39;m done for tonight.  Next I&#39;m going to work on an FTP upstreamer so that I can just hit a button (or work it on a timer/file system change notification) to upload the site instead of using &lt;a href=&#34;http://www.smartftp.com&#34;&gt;SmartFTP&lt;/a&gt; to upload manually.
+&lt;P&gt;In some ways this would be a lot easier with a server side solution backed up to SQL server.  I&#39;m tempted to switch over, but I really do like the idea of client side+FTP.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why no updates?</title>
+      <link>http://new.eightypercent.net/post/old/00035.html</link>
+      <pubDate>Sun, 16 Feb 2003 15:33:41 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00035.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;Okay, &lt;a href=&#34;http://www.simplegeek.com/2003/02/16.html#a204&#34;&gt;Chris&lt;/a&gt; has put me to shame.
+
+&lt;p&gt;To try and redeem myself I have my archives working now.  I also have permalinks.
+
+&lt;p&gt;I haven&#39;t uploaded posts in a couple of days as I renumbered all of my entries and I didn&#39;t want to screw everyone&#39;s Syndirella feed until I had permalinks and guids working.
+
+&lt;p&gt;To see some of the workings behind the scenes, &lt;a href=&#34;http://www.eightypercent.net/Templates/Main.xslt&#34;&gt;here&lt;/a&gt; is the xslt for my main page.
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

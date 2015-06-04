@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2004/04/12 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00180.html">Stress duty</a></h1>
+      <span class="lead">Mon, Apr 12, 2004</span>
+      <div class="post">
+        <p>
+
+    <p>
+        Here in Windows (and in other groups around the company) we have a system that is
+        generally called stress.&#160; Different groups have different implementations, but
+        the idea is always the same.&#160; You develop a test suite that hammers you system
+        and&#160;then have everyone install it and run it overnight.&#160; The idea is that
+        this way we can catch those hard to repro issues that only our customers see. 
+    </p>
+    <p>
+        When you get one of these errors, what do you do with it?&#160; Generally there is
+        a team of people who have the thankless job of coming in early, finding all the machines
+        that have broken in to the debugger, logging the failures in a database and having
+        the system send mail to various people to investigate.&#160; The actual debugging
+        is done via the NT command line debugger (<a href="http://www.microsoft.com/whdc/ddk/debugging/default.mspx">cdb</a>)
+        redirected over the network via the remote.exe utility.&#160; It is up to this team
+        to figure out which issues have already been caught and fixed (but perhaps aren't
+        in the build yet) and what issues are new and need to be investigated.&#160; These
+        guys cover a lot of code so the generally don't have the knowledge to figure out what
+        developer should be looking at any particular problem.&#160; That falls to the rotating
+        list of people who are on "stress duty."&#160; The shell team calls it "dev of the
+        day."&#160; We've learned by hard experience that if you send these types of things
+        to a big mailing list, they either get ignored or the same sorry glutton for punishment
+        picks up all of the issues. 
+    </p>
+    <p>
+        I happen to be on stress duty this week.&#160; My job is to handle, in as expedient
+        a fashion as possible, any incoming issues.&#160;&#160;I&#160;have to do my best to
+        exercise&#160;my debugging skills and try to figure out what is going on.&#160; BTW, <a href="http://weblogs.asp.net/oldnewthing/">Raymond
+        Chen</a> is one of the undisputed masters of the cdb kung-fu.&#160; If I can figure
+        out what is going on myself, I can file a bug on the issue and let the person whose
+        machine I'm debugging reclaim their machine.&#160; If the problem is in code that
+        I don't know well it is my job to reassign the issue to someone who does know the
+        code well.&#160; 
+    </p>
+    <p>
+        Beyond handling incoming stress breaks in the morning, I also have to be responsive
+        to all sorts of other issues that might get dropped on the floor.&#160; This includes
+        other random crashes people might have during the day along with helping out to resolve
+        any build breaks.&#160; (We try super hard to make sure that build breaks don't happen,
+        but with something the size of Windows it still sometimes happens.) 
+    </p>
+    <p>
+        Do other companies have systems like this set up?&#160; I'd be interested to hear
+        what works for you. 
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00179.html">Managed/Unmanaged lines</a></h1>
+      <span class="lead">Mon, Apr 12, 2004</span>
+      <div class="post">
+        <p>
+
+    <p>
+        Over on Channel9, there was an <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=1653">interesting
+        question</a> about the history of how my team in Avalon decide to split our component
+        between managed and unmanaged code.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

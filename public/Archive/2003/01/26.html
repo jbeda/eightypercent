@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2003/01/26 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00020.html">Untitled #20</a></h1>
+      <span class="lead">Sun, Jan 26, 2003</span>
+      <div class="post">
+        <p>
+<P>More details:</P>
+    <P>Each day's worth of entries will be stored in an XML file.&nbsp; Schema TBD right now.</P>
+    <P>There will be a configure option for the root of the working directory of the site.&nbsp; This will default to {My Documents}JoeBlogger.&nbsp; Call this {Root}.&nbsp; Things will look like this:</P><PRE>{Root}<BR>&nbsp;&nbsp;&nbsp; Config<BR>&nbsp;&nbsp;&nbsp; Site1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EveryPage<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bloglist.xml<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FavoriteSong.xml<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2003<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 01<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23.xml<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26.xml<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Templates<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RSS.xsl<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Homepage.xsl<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Day.xsl<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OtherStuff<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foo.jpg<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; otherpage.htm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Archive<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2003<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 01<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23.html<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 26.html<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index.htm<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rss.xml<BR>&nbsp;&nbsp;&nbsp; Site2<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</PRE>
+    <P>Everything under the site dir will be uploaded.&nbsp; This means that the Data, templates and anything else anyone puts in this folder will be uploaded.</P>
+    <P>The Archive, index.htm file and rss.xml file will all be generated automatically.&nbsp; Every time the page generator runs, it will generate a source XML data document.&nbsp; This will include the relevant days along with the all of the xml files in the EveryPage directory.&nbsp; This will then be fed through the appropriate XSL sheet to generate the page. Note that this will always be an in memory XmlDocument and will probably never be persisted, except for debugging purposes.&nbsp; Here is what a source doc might look like:</P><PRE>&lt;JoeBloggerData&gt;<BR>&nbsp;&nbsp;&nbsp; &lt;EveryPage&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;File name="Bloglist.xml"&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... verbatim paste of bloglist.xml here<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/File&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... same for every file in the EveryPage dir<BR>&nbsp;&nbsp;&nbsp; &lt;/EveryDay&gt;<BR>&nbsp;&nbsp;&nbsp; &lt;Days&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Day date="Sun, 26 Jan 2003"&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... verbatim paste of 2003/01/26.xml here<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/Day&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... every day relevant to this page.<BR>&nbsp;&nbsp;&nbsp; &lt;/Days&gt;<BR>&lt;/JoeBloggerData&gt;</PRE>
+    <P>Generating a page is now the simple matter of writting an XSL stylesheet that takes this source document and produces the correct output doc.<BR></P>
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00019.html">Untitled #19</a></h1>
+      <span class="lead">Sun, Jan 26, 2003</span>
+      <div class="post">
+        <p>
+<P>Here is a screen shot of what I'm currently thinking:</P><IMG src="/Stuff/JoeBlogger1.jpg">
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00018.html">Untitled #18</a></h1>
+      <span class="lead">Sun, Jan 26, 2003</span>
+      <div class="post">
+        <p>
+<P>Okay, here is the deal.&nbsp; My weblogging software will be similar to Radio in the breakdown of client server, at least to start with.&nbsp; The client will do all of the page generation and formatting and then upload the result to the server.&nbsp; </P>
+<P>However, there is still the problem where you then have one and only one computer that can produce entries.&nbsp; I say we solve this by uploading the raw data and templates up to the server too.&nbsp; Hell, it is just xml, right?&nbsp; It will take a little more room on the server but you get these advantages:</P>
+<UL>
+<LI>Can sync any new client to the state that is currently on the server 
+<LI>Easy to move between servers 
+<LI>Automatic data backup 
+<LI>Can transition to a client/server solution and just upload the data and have the processing happen on the server</LI></UL>
+<P>I think this will work out nicely.&nbsp; Here is my plan of attack:</P>
+<OL>
+<LI>Write a simple XML-&gt;HTML templating engine.&nbsp; I'll probably just base this on XSLT.&nbsp; The input document will have all of the interesting stuff in it.&nbsp; I'll make that source&nbsp;XML tree&nbsp;extensible (via enumerating the file system) so that you can create XML in any way you want (current favorite song, blog roll, etc) and have that included in any interesting page.&nbsp; RSS will be a part of this from the start.
+<LI>Write a simple GUI to generate XML for various entries.&nbsp; This will have one button generation of the site.
+<LI>Integrate FTP support.&nbsp; I've been looking at how to do this and I don't think it will be&nbsp;too hard.&nbsp; I think that I'm only going to support passive mode.&nbsp; It would be nice if the .Net framework provide some FTP libraries out of the box.
+<LI>Make the FTP support smarter so that it only uploads as needed.
+<LI>Add more features like the calandar that Radio produces.&nbsp; I'm sure I'll have a ton ideas once I get started.</LI></OL>
+<P>I have 13 days left on my Radio free trial so I have this weekend and next weekend to get it to a stage where I can stop using radio.&nbsp; I'll also have to write a importer from Radio for the few entries that I have so far.</P>
+<P>&nbsp;</P>
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

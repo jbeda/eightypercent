@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+    
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00182.html">WinHEC report</a>
+      </h2>
+      <span class="lead">Thu, May 6, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I'm done with my part of helping make WinHEC a success.&#160; My talk went off pretty
+        well and we got some great questions and comments.&#160; I also worked the booth and
+        showed&#160;industry and press people what Longhorn can do.&#160; The big news for
+        the WinHEC release is that we now have a start to our 3D APIs.&#160; We had a couple
+        of examples that show mixing 3D and 2D in a seamless way.&#160; I tried to go out
+        of my way to make sure that everyone knew that Avalon was much more than just graphics.&#160;
+        We are a full UI platoform that includes controls, styling, databinding, etc.
+    </p>
+    <p>
+        The main demo I was showing was a simulated "blood sugar tracker."&#160; It essentially
+        has a 3D bar graph in the background that slowly rotates.&#160; Layered on that are
+        semi-transparent buttons.&#160; There is also a details panel that can come up that
+        is semi-transparent and has another 3D scene hosted inside of it.&#160; We have a
+        vector graphic doctor icon in the corner that you can zoom in on to see that it is
+        rasterized at the device resolution.&#160; The really impressive thing here is that
+        our demo team (a dev and a designer) took 2-3 days to turn this from an email idea
+        into reality.&#160; Robert and <a href="http://longhornblogs.com/ndunlap/">Nathan</a> did
+        a great job of showing the power of Avalon.&#160; Here is a screen shot:
+    </p>
+    <p>
+        <img src="http://www.eightypercent.net/Images/3dgraph.jpg">
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00181.html">Talking at WinHEC</a>
+      </h2>
+      <span class="lead">Sat, May 1, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I should have posted this earlier, but better late than never.&#160; I'm going to
+        be speaking at WinHEC.&#160; It'll be session TW04006: Avalon Graphics - 2D, 3D, Imaging
+        and Composition.&#160; If you are there and are interested in Avalon come check it
+        out.&#160; I'll be going in to some detail on what happens between when a developer
+        calls an API and we call Direct3D.&#160;&#160;If you aren't going to be there, wish
+        me luck.&#160; The room holds 700 people (I think) and I've never talked in front
+        of that many people before. 
+    </p>
+    <p>
+        I'll also be hanging out in the tech lounge and be at our "Ask the Experts" session. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00180.html">Stress duty</a>
+      </h2>
+      <span class="lead">Mon, Apr 12, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Here in Windows (and in other groups around the company) we have a system that is
+        generally called stress.&#160; Different groups have different implementations, but
+        the idea is always the same.&#160; You develop a test suite that hammers you system
+        and&#160;then have everyone install it and run it overnight.&#160; The idea is that
+        this way we can catch those hard to repro issues that only our customers see. 
+    </p>
+    <p>
+        When you get one of these errors, what do you do with it?&#160; Generally there is
+        a team of people who have the thankless job of coming in early, finding all the machines
+        that have broken in to the debugger, logging the failures in a database and having
+        the system send mail to various people to investigate.&#160; The actual debugging
+        is done via the NT command line debugger (<a href="http://www.microsoft.com/whdc/ddk/debugging/default.mspx">cdb</a>)
+        redirected over the network via the remote.exe utility.&#160; It is up to this team
+        to figure out which issues have already been caught and fixed (but perhaps aren't
+        in the build yet) and what issues are new and need to be investigated.&#160; These
+        guys cover a lot of code so the generally don't have the knowledge to figure out what
+        developer should be looking at any particular problem.&#160; That falls to the rotating
+        list of people who are on "stress duty."&#160; The shell team calls it "dev of the
+        day."&#160; We've learned by hard experience that if you send these types of things
+        to a big mailing list, they either get ignored or the same sorry glutton for punishment
+        picks up all of the issues. 
+    </p>
+    <p>
+        I happen to be on stress duty this week.&#160; My job is to handle, in as expedient
+        a fashion as possible, any incoming issues.&#160;&#160;I&#160;have to do my best to
+        exercise&#160;my debugging skills and try to figure out what is going on.&#160; BTW, <a href="http://weblogs.asp.net/oldnewthing/">Raymond
+        Chen</a> is one of the undisputed masters of the cdb kung-fu.&#160; If I can figure
+        out what is going on myself, I can file a bug on the issue and let the person whose
+        machine I'm debugging reclaim their machine.&#160; If the problem is in code that
+        I don't know well it is my job to reassign the issue to someone who does know the
+        code well.&#160; 
+    </p>
+    <p>
+        Beyond handling incoming stress breaks in the morning, I also have to be responsive
+        to all sorts of other issues that might get dropped on the floor.&#160; This includes
+        other random crashes people might have during the day along with helping out to resolve
+        any build breaks.&#160; (We try super hard to make sure that build breaks don't happen,
+        but with something the size of Windows it still sometimes happens.) 
+    </p>
+    <p>
+        Do other companies have systems like this set up?&#160; I'd be interested to hear
+        what works for you. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00179.html">Managed/Unmanaged lines</a>
+      </h2>
+      <span class="lead">Mon, Apr 12, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Over on Channel9, there was an <a href="http://channel9.msdn.com/ShowPost.aspx?PostID=1653">interesting
+        question</a> about the history of how my team in Avalon decide to split our component
+        between managed and unmanaged code.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00178.html">Trogdor is waiting!</a>
+      </h2>
+      <span class="lead">Sat, Apr 10, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <img alt="PeasantsQuest" hspace="0" src="http://www.eightypercent.net/Images/PeasantsQuest.GIF" align="right" border="0" /> Check
+    out the trailer for <a href="http://homestarrunner.com/pqtrailer.html">Peasant's Quest</a>!
+    You are Rather Dashing, a peasant whose life is destroyed when Trogdor, the Burinator,
+    destroys your thatched hut.&#160; How much would you pay for this game?&#160; <s>$100</s>?&#160;<s>$50</s>? <s>$0.50</s>?&#160;
+    Don't spend any money because it is <em><a href="http://homestarrunner.com/disk4of12.html">free</a>. </em>See
+    if you can complete it with all 150 points!&#160; I was able to finish the game on
+    my own but couldn't get all of the points without finding a walkthrough. 
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00177.html">Great feedback!</a>
+      </h2>
+      <span class="lead">Wed, Apr 7, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    I'd like to point to and recognize <a href="http://www.kevlindev.com/blog/weblog.php?id=0">Kevin
+    Lindsey</a>&#160;for his <a href="http://www.kevlindev.com/blog/comments.php?id=47_0_1_0_C">great</a> <a href="http://www.kevlindev.com/blog/comments.php?id=42_0_1_0_C">comments</a>, <a href="http://www.kevlindev.com/blog/comments.php?id=41_0_1_0_C">feedback</a> and <a href="http://www.kevlindev.com/blog/comments.php?id=40_0_1_0_C">bug</a> <a href="http://www.kevlindev.com/blog/comments.php?id=39_0_1_0_C">reports</a> on
+    graphics in Avalon.&#160; Comments and feedback like this is one of the reasons that
+    we gave out the PDC build so early.&#160; Thanks Kevin!
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00176.html">Welcome Channel9 visitors</a>
+      </h2>
+      <span class="lead">Wed, Apr 7, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        In case you haven't seen it, part of my interview that I did with <a href="http://scoble.weblogs.com">Scoble</a>&#160;is
+        up at <a href="http://channel9.msdn.com">Channel9</a>.&#160; [BTW, big congrats to
+        the Channel9 guys.&#160; The site looks great and it survived being slashdotted on
+        its first day.&#160; How many dynamic sites do you know can handle a load like that
+        so soon after launch?]
+    </p>
+    <p>
+        I did a long interview with Scoble and he asked me a lot of questions. It is interesting
+        that he the topic of "Is Avalon a way to take over the Web" is the first that they
+        put up there.&#160; I'm glad that it is though as this is definately a hot button
+        topic.&#160; I'll be sure to keep an eye on the comments on the video and answer any
+        questions that you guys have. 
+    </p>
+    <p>
+        A little background on me: I joined the IE group at Microsoft in the middle of 1997
+        right out of college.&#160; I'd interned twice -- once on a forgotten product called
+        TeamManager and the second time on the OpenGL inside of Windows.&#160; When working
+        on IE, I was responsible for, mostly, the data model for how we stored HTML in memory
+        for processing and rendering.&#160; I touched a lot of other code, but my original
+        nickname was "Tree Boy" (to <a href="http://www.ericvasilik.com/">Eric Vasilik's</a> "Tree
+        Man" :)&#160; If you have questions on <a href="http://www.google.com/search?hl=en&amp;lr=&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=IMarkupServices">IMarkupServices</a>,
+        I can probably answer them for you. 
+    </p>
+    <p>
+        A couple of years ago, I moved over to the then (very newly) formed Avalon Media Integration
+        Layer and helped define the early vision of what we were going to do with 2D UI level
+        graphics in Longhorn. (The DX team is all over 3D and games!)&#160; At one point all
+        we knew that we wanted was CFS, which stood for "Cool Flying Stuff".&#160; We upgraded
+        thaet to "Clickable Flying Stuff" and the graphics strategy for Avalon was born.&#160;
+        Since then I've been hard at work helping to define and implement a lot of the graphics
+        functionality in Longhorn.&#160; Seriously, I think that we are making a huge leap
+        ahead for Windows and look forward to helping everyone understand what we are about.&#160;
+        I'm also interested in hearing comments, suggestions and bug reports. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00175.html">RSS History</a>
+      </h2>
+      <span class="lead">Wed, Apr 7, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I had a rant here wrt RSS history, but considering the fact that it really doesn't
+        matter and it is always best to stay positive, I'll withold comment :).
+    </p>
+    <p>
+        Onward and upward with Avalon!
+    </p>
+<!--
+    <p>
+        Dave Winer has a bug up his but to <a href="http://archive.scripting.com/2004/04/06#When:6:58:43PM">try
+        and claim</a> that he invented the idea of syndication through XML (embodied via the
+        RSS format).&#160; I don't think that anyone will argue that Dave has been syndication's
+        biggest evangelist and has driven his fork of the formats forward relentlessly. 
+    </p>
+    <p>
+        I just wish he wasn't such an ass.&#160; RSS (and syndication) like so many things
+        in the computer world evolved out of a soup of ideas that stretches way back.&#160;
+        Every time Dave <a href="http://blogs.law.harvard.edu/tech/rssVersionHistory">(re)writes
+        a history of RSS</a>, he always lists himself as the original invetor and visionary.&#160;
+        The particular history linked to above fails to mention a format that was introduced
+        with IE 4 called CDF.&#160; This was <a href="http://www.w3.org/Submission/1997/2/">submitted
+        to the W3C</a> at least 9 months before the earliest date on Dave's "history."&#160;
+        Now, I'd also venture a guess that there are tons of other prior art in the soup that
+        CDF came out of.&#160; For someone who rails against the patent system for the way
+        it cements credit for ideas that come out of a soup (think Amazon 1-click) he does
+        a good job of trying to "patent" RSS. 
+    </p>
+    <p>
+        The really sad part here is that Dave does himself such a disservice.&#160; He has
+        a huge bully pulpit that he could use to push his (often) very good ideas.&#160; Instead,
+        he spends time trying to rewrite this particular history.&#160; He undercuts his own
+        credibility in the process.&#160; Instead of being an elder statesman of the computer
+        industry who can cut through the red tape, he sets himself up as a mini Napoleon and
+        creates more divisiveness. 
+    </p>
+    <p>
+        I think this quote from <a href="http://www.imdb.com/title/tt0118715/">The Big Labowski</a>&#160;sums
+        up my thoughts on the subject: 
+    </p>
+    <blockquote><b>Walter</b>: Am I wrong?<br />
+    <b>Dude</b>: No you're not wrong.<br />
+    <b>Walter</b>: Am I wrong?<br />
+    <b>Dude</b>: You're not wrong Walter. You're just an asshole.<br />
+    <b>Walter</b>: All right then. </blockquote>
+-->
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00174.html">Channel9</a>
+      </h2>
+      <span class="lead">Tue, Apr 6, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        <a href="http://channel9.msdn.com">Channel9</a> is up and running.&#160; <a href="http://scoble.weblogs.com">Scoble</a>&#160;interviewed
+        me for this a while ago.&#160; We'll see if and when it shows up!
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00173.html">Pigeon Net</a>
+      </h2>
+      <span class="lead">Mon, Mar 29, 2004</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Never underestimate the throughput of a pigeon.&#160; 
+    </p>
+    <p>
+        While in New Zealand, we went on a caving trip that included a 100 meter abseil (rappel)
+        into a cave and then climbed back out.&#160;&#160;One of&#160;the tour guides&#160;had
+        a digital camera in a waterproof housing anchored to his harness.&#160; He took some
+        pictures of us on the way down and when we got to the bottom.&#160; 
+    </p>
+    <p>
+        The tour operator (<a href="http://www.waitomo.co.nz/">Waitomo Adventures</a>) wanted
+        pictures from the adventrue to be ready by the time that we returned so that we could
+        buy them.&#160; To do this they took&#160;the sony memory stick out of the camera
+        and put in in to a little backpack on&#160;a carrier pigeon.&#160; They then let the
+        pigeon go and yelled instructions to it on how to get back to the tour office.&#160;
+        I think that the pigeon already knew the way, though.
+    </p>
+    <p>
+        When we got back (a 20-25 minute trip in a van) the pigeon had arrived and the staff
+        back at the office were busy printing out our pictures.
+    </p>
+    <p>
+        <a href="http://www.waitomo.co.nz/pigeonpix.html"><img alt="" hspace="0" src="http://www.eightypercent.net/Photos/PigeonPix.jpg" align="baseline" border="0" /></a>
+    </p>
+    <p>
+        We bought the pictures on CD also, but I don't have those with me right now.&#160;
+        I'll post those soon so you can see the fruit of the little pigeon's labor.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+  <nav>
+    <ul class="pager">
+      <li class="previous">
+        <a href="/page/9.html"><span aria-hidden="true">&larr;</span> Newer</a>
+      </li>
+      <li class="next">
+        <a href="/page/11.html">Older <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+  </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

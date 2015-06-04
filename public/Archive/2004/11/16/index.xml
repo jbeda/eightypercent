@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/11/16 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/11/16.html</link>
+    <description>Recent content in 2004/11/16 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Nov 2004 18:49:08 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/11/16.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jobs at Google</title>
+      <link>http://new.eightypercent.net/post/old/00221.html</link>
+      <pubDate>Tue, 16 Nov 2004 18:49:08 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00221.html</guid>
+      <description>&lt;p&gt;
+
+    With the advent of our new office, a lot of people have been asking (via email or
+    comments on the blog here) about jobs at the Kirkland office.&amp;#160; For a variety
+    of reasons, I really can&#39;t do much on the recruiting side.&amp;#160; If I&#39;ve worked with
+    you and you don&#39;t work for Microsoft, feel free to drop me a line.&amp;#160; Otherwise,
+    your best bet is to send email to &lt;a href=&#34;mailto:jobs@google.com&#34;&gt;jobs@google.com&lt;/a&gt; as
+    specified &lt;a href=&#34;http://www.google.com/jobs/&#34;&gt;here&lt;/a&gt;.&amp;#160; Even though Kirkland
+    isn&#39;t listed there, I&#39;m sure you can reference the office in any email you send. I
+    wish I could be everybody&#39;s inside line, but I can&#39;t.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Random Update</title>
+      <link>http://new.eightypercent.net/post/old/00220.html</link>
+      <pubDate>Tue, 16 Nov 2004 18:39:02 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00220.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;ve been super busy at work for the last few weeks.&amp;#160; We&#39;ve been iterating on
+        our stuff and have come up with some cool plans.&amp;#160; Hopefully we can turn those
+        into reality and ship them.&amp;#160; I wish I could say more but I really can&#39;t.&amp;#160;
+        I think that one of the reasons that Google is so reluctant to speak publicly about
+        what they are doing is partly to surprise the competition and partly so that we have
+        the freedom to try stuff without committing to deliver it.&amp;#160; There may be some
+        stuff that never sees the light of day, but it is better than announcing it and then
+        it never seeing the light of day.&amp;#160; I think that this probably makes it easier
+        to pull the plug on projects that just aren&#39;t converging.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Besides work, some other things are going on that I think are pretty exciting.
+    &lt;/p&gt;
+    &lt;p&gt;
+        First, I&#39;ve been helping to port &lt;a href=&#34;http://enblend.sourceforge.net&#34;&gt;enblend&lt;/a&gt; to
+        build and run natively under Windows.&amp;#160; Enblend is a cool tool to help in the
+        blending stage of making digital panoramas.&amp;#160; My (limited) understanding of the
+        mechanics is that it converts the images into the frequency domain to come up with
+        an optimal blending mask.&amp;#160; Sometime soon I&#39;d like to start delving into the hard
+        parts (Math) and get a better understanding of what is going on.&amp;#160; Andrew (the
+        guy who wrote enblend) just released version 2.1 out into the wild.&amp;#160; Let us know
+        if you have any problems.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Second, I&#39;m going to be missing the Google open house (a rockin&#39; party scheduled for
+        Thursday night) so that I can take a trip down to Page, Arizona to shoot slot canyons
+        and other various rock formations.&amp;#160; I&#39;m going to be doing a lot of panorama and
+        digital mosaic work so look for some cool images soon.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One interesting photography note: I&#39;ve had one of my large pano&#39;s printed up pretty
+        large -- about 40&#34; x 25&#34; (100cm x 64cm, for those of you of the metric persuasion)
+        and have it framed and hanging outside my office.&amp;#160; Even at that large size, the
+        photo is tack sharp.&amp;#160; It is really a lot of fun to make images that large.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Oh yeah, and Halo 2.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

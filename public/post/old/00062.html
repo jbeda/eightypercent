@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>More on RSS dates &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00062.html">More on RSS dates</a></h1>
+        <span class="lead">Sun, Mar 9, 2003</span>
+        <div class="post">
+            <p>
+<p><a href="http://ocw.abf.tulane.edu/blog/">Jorge Curioso</a> <a href="http://ocw.abf.tulane.edu/blog/?item=63182667125303">posted on his blog</a> some comments around dealing with dates in RSS and the .Net framework.  I figure I'd put some more detail up here on how I handle dates in JoeBlogger.
+<ol>
+<li>I store both GMT and local time when creating an entry.  I should probably keep a "last updated" time too but I haven't done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
+<li>I used C# to do all of my date processing.  Here is the code for my properites for these things:
+<pre>
+        // The PubDate here is in universal time -- UTC
+        [XmlIgnore]
+        public DateTime PubDate;
+
+        [XmlElement(ElementName="PubDate")]
+        public string PubDateString 
+        {
+            get
+            {
+                return PubDate.ToString("r");
+            }
+            set
+            {
+                PubDate = DateTime.ParseExact(value,"r", null);
+            }
+        }
+
+        [XmlIgnore]
+        public DateTime LocalPubDate;
+
+        [XmlElement(ElementName="LocalPubDate")]
+        public string LocalPubDateString 
+        {
+            get
+            {
+                return LocalPubDate.ToString("ddd, dd MMM yyyy HH':'mm':'ss");
+            }
+            set
+            {
+                try
+                {
+                    LocalPubDate = DateTime.ParseExact(value,"ddd, dd MMM yyyy HH':'mm':'ss", null);
+                }
+                catch (FormatException)
+                {
+                    LocalPubDate = DateTime.MinValue;
+                }
+            }
+        }
+</pre>
+<li>Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  <a href="http://www.eightypercent.net/Stuff/SourceExample.xml">Here</a> is an example of a source XML document for my main page and <a href="http://www.eightypercent.net/Templates/Main.xslt">here</a> is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
+<pre>
+    &lt;msxsl:script implements-prefix='user' language='CSharp'&gt;
+        &lt;![CDATA[
+        public string FormatTime(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
+            return dt.ToString("h':'mm':'ss tt");
+        }
+        public string FormatArchiveLink(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
+            return String.Format(@"/Archive/{0:D4}/{1:D2}/{2:D2}.html", dt.Date.Year, dt.Date.Month, dt.Date.Day);
+        }
+        ]]&gt;
+    &lt;/msxsl:script&gt;
+</pre>
+And then use that in the output like this:
+<pre>
+&lt;xsl:value-of select="user:FormatTime(LocalPubDate)"/&gt;
+</pre>
+</ol>
+
+<p>It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having "First published" and "Last changed" times might be interesting also.  Perhaps I'll write something up at some point.
+
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

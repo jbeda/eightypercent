@@ -1,0 +1,46 @@
+/* 
+https://www.google.com/fonts#UsePlace:use/Collection:Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic
+*/
+@import url(http://fonts.googleapis.com/css?family=Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Coda);
+
+body { 
+  /* Make room for the fixed navbar */
+  padding-top: 70px;
+}
+
+.navbar {
+  font-family: Coda;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.readmore > div {
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.readmore:after {
+  content:'';
+  display:block;
+  width:100%;
+  height:100px;
+  position:relative;   
+  margin-top: -100px;
+  background:linear-gradient(transparent, #191919);
+}
+
+.postmark {
+  color: #004885;
+  width: 25px;
+  font-size: 80%;
+  margin-right: 10px;
+}
+@media (min-width: 800px) {
+  .postmark {
+    margin-left: -35px;
+  }
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/10/30 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/10/30.html</link>
+    <description>Recent content in 2003/10/30 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Oct 2003 11:25:40 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/10/30.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Avalon Media FAQs</title>
+      <link>http://new.eightypercent.net/post/old/00151.html</link>
+      <pubDate>Thu, 30 Oct 2003 11:25:40 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00151.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        There are some questions that have been coming up pretty often, so I want to put together
+        a series of posts addressing these.&amp;#160; I don&#39;t have time to do this now, but I
+        wanted to pull together the questions.&amp;#160; Here is what I have so far?
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            SVG vs. XAML?&amp;#160; What up with that?&amp;#160; Why are you guys different?&amp;#160; How
+            can I translate stuff back and forth?&lt;/li&gt;
+        &lt;li&gt;
+            Will I get to write pixel shaders?&lt;/li&gt;
+        &lt;li&gt;
+            What kind of color support are you going to have?&lt;/li&gt;
+        &lt;li&gt;
+            Should I write my custom control using control composition with shapes, or should
+            I be overriding Render or should I start creating Visuals?&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        Are there any others you guys want answered?
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

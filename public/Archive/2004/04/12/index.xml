@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/04/12 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/04/12.html</link>
+    <description>Recent content in 2004/04/12 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Apr 2004 09:30:52 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/04/12.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stress duty</title>
+      <link>http://new.eightypercent.net/post/old/00180.html</link>
+      <pubDate>Mon, 12 Apr 2004 09:30:52 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00180.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Here in Windows (and in other groups around the company) we have a system that is
+        generally called stress.&amp;#160; Different groups have different implementations, but
+        the idea is always the same.&amp;#160; You develop a test suite that hammers you system
+        and&amp;#160;then have everyone install it and run it overnight.&amp;#160; The idea is that
+        this way we can catch those hard to repro issues that only our customers see. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        When you get one of these errors, what do you do with it?&amp;#160; Generally there is
+        a team of people who have the thankless job of coming in early, finding all the machines
+        that have broken in to the debugger, logging the failures in a database and having
+        the system send mail to various people to investigate.&amp;#160; The actual debugging
+        is done via the NT command line debugger (&lt;a href=&#34;http://www.microsoft.com/whdc/ddk/debugging/default.mspx&#34;&gt;cdb&lt;/a&gt;)
+        redirected over the network via the remote.exe utility.&amp;#160; It is up to this team
+        to figure out which issues have already been caught and fixed (but perhaps aren&#39;t
+        in the build yet) and what issues are new and need to be investigated.&amp;#160; These
+        guys cover a lot of code so the generally don&#39;t have the knowledge to figure out what
+        developer should be looking at any particular problem.&amp;#160; That falls to the rotating
+        list of people who are on &#34;stress duty.&#34;&amp;#160; The shell team calls it &#34;dev of the
+        day.&#34;&amp;#160; We&#39;ve learned by hard experience that if you send these types of things
+        to a big mailing list, they either get ignored or the same sorry glutton for punishment
+        picks up all of the issues. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I happen to be on stress duty this week.&amp;#160; My job is to handle, in as expedient
+        a fashion as possible, any incoming issues.&amp;#160;&amp;#160;I&amp;#160;have to do my best to
+        exercise&amp;#160;my debugging skills and try to figure out what is going on.&amp;#160; BTW, &lt;a href=&#34;http://weblogs.asp.net/oldnewthing/&#34;&gt;Raymond
+        Chen&lt;/a&gt; is one of the undisputed masters of the cdb kung-fu.&amp;#160; If I can figure
+        out what is going on myself, I can file a bug on the issue and let the person whose
+        machine I&#39;m debugging reclaim their machine.&amp;#160; If the problem is in code that
+        I don&#39;t know well it is my job to reassign the issue to someone who does know the
+        code well.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Beyond handling incoming stress breaks in the morning, I also have to be responsive
+        to all sorts of other issues that might get dropped on the floor.&amp;#160; This includes
+        other random crashes people might have during the day along with helping out to resolve
+        any build breaks.&amp;#160; (We try super hard to make sure that build breaks don&#39;t happen,
+        but with something the size of Windows it still sometimes happens.) 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Do other companies have systems like this set up?&amp;#160; I&#39;d be interested to hear
+        what works for you. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Managed/Unmanaged lines</title>
+      <link>http://new.eightypercent.net/post/old/00179.html</link>
+      <pubDate>Mon, 12 Apr 2004 09:20:32 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00179.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Over on Channel9, there was an &lt;a href=&#34;http://channel9.msdn.com/ShowPost.aspx?PostID=1653&#34;&gt;interesting
+        question&lt;/a&gt; about the history of how my team in Avalon decide to split our component
+        between managed and unmanaged code.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

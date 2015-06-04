@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/11/23 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/11/23.html</link>
+    <description>Recent content in 2004/11/23 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Nov 2004 11:13:15 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/11/23.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Congrats to the Avalon team</title>
+      <link>http://new.eightypercent.net/post/old/00222.html</link>
+      <pubDate>Tue, 23 Nov 2004 11:13:15 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00222.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I came back from my photo trip and started catching up on email and blogs.&amp;#160; It
+        looks like the Google Kirkland open house went well. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The bigger news, in my mind, is the technical preview that the &lt;a href=&#34;http://msdn.microsoft.com/Longhorn/understanding/pillars/avalon/avnov04ctp/default.aspx&#34;&gt;Avalon
+        guys shipped&lt;/a&gt;.&amp;#160; I&#39;m going to have to download it and play around to see what
+        all changed since I left. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I was really hoping that they would get something out before the Longhorn beta.&amp;#160;
+        I&#39;m sure this was a ton of hard work, but I think that it proves that decoupling Avalon
+        and Longhorn was really the right decision.&amp;#160; It will allow the Avalon guys to
+        go full steam ahead. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        BTW, &lt;a href=&#34;http://www.simplegeek.com&#34;&gt;ChrisAn&#39;s blog&lt;/a&gt; is a good place to start
+        on some of this stuff.&amp;#160; He has an app that you can download and play with. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Congrats! 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

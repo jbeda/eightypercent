@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/06/25 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/06/25.html</link>
+    <description>Recent content in 2003/06/25 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jun 2003 09:26:51 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/06/25.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>JoeBlogger 0.9.1</title>
+      <link>http://new.eightypercent.net/post/old/00118.html</link>
+      <pubDate>Wed, 25 Jun 2003 09:26:51 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00118.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;ve released a new version of JoeBlogger based on feedback from &lt;a href=&#34;http://www.neelbubba.com&#34;&gt;Bubba&lt;/a&gt; and &lt;a href=&#34;http://devhawk.net/&#34;&gt;Harry&lt;/a&gt;.&amp;#160;
+        I&#39;ve also fixed a few problems that I&#39;ve found.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Here is the &lt;a href=&#34;http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-0.9.1.msi&#34;&gt;msi&lt;/a&gt;, &lt;a href=&#34;http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-src-0.9.1.zip&#34;&gt;src&lt;/a&gt;, &lt;a href=&#34;http://www.eightypercent.net/Stuff/JoeBlogger/Readme-0.9.1.txt&#34;&gt;readme&lt;/a&gt; and &lt;a href=&#34;http://www.eightypercent.net/Stuff/JoeBlogger/License.txt&#34;&gt;license&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Changes:
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Fixed data loss issues when hitting &#34;New Entry&#34; button while current entry hasn&#39;t
+            been uploaded.&lt;/li&gt;
+        &lt;li&gt;
+            Fixed FTP issues with multi-line responses from FTP server.&lt;/li&gt;
+        &lt;li&gt;
+            Added a &#34;FilePutDelay&#34; parameter to the site1.config file for dealing with FTP servers
+            that get confused if you move too fast.&amp;#160; This is in milliseconds.&amp;#160; 1000
+            seems to solve most problems.&lt;/li&gt;
+        &lt;li&gt;
+            Moved some code around and had to put a custom binder in the upstreamer deserialization.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        There aren&#39;t any big new features yet.&amp;#160; I just haven&#39;t had time.&amp;#160; However,
+        when the new system goes up at gotdotnet.com, I&#39;ll probably start a workspace over
+        there.&amp;#160; I haven&#39;t done it already because the current source control system that
+        comes with the workspaces is really really bad.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Oh, and since pretty pictures make everything go down smoother, here is a screenshot:
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt=&#34;&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Stuff/JoeBlogger4.jpg&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Send feedback!&amp;#160; If you are using it let me know!
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

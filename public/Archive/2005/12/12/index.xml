@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/12/12 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/12/12.html</link>
+    <description>Recent content in 2005/12/12 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2005 23:29:41 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/12/12.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Converting Digicam Video</title>
+      <link>http://new.eightypercent.net/post/old/00259.html</link>
+      <pubDate>Mon, 12 Dec 2005 23:29:41 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00259.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        For serious portraits or low light situations, we&#39;ve been taking lots of pictures
+        of Annie with my Canon 20D.&amp;#160; I also have a Canon SD300 for convience and video.&amp;#160;
+        The video modes on these small cameras are amazing!&amp;#160; I can&#39;t see myself needing
+        more than a couple minutes of video.&amp;#160; Who needs a video camera for their kids
+        these days? 
+    &lt;/p&gt;
+    &lt;p&gt;
+        However, dealing with the video out of these things can be tricky.&amp;#160; I post my
+        pictures to &lt;a href=&#34;http://www.smugmug.com/&#34;&gt;smugmug.com&lt;/a&gt; (if you sign up use
+        my referrer coupon: &lt;span class=&#34;title&#34;&gt;aoVCSFuPXSipF&lt;/span&gt;).&amp;#160; I&#39;ve got a plan
+        that also lets me upload videos.&amp;#160; The only format they take is MPEG 1 (for compat
+        reasons)&amp;#160;but the camera produces MJpeg AVI files.&amp;#160; Converting these things
+        can be trickier than you&#39;d think.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Here is what I&#39;ve ended up doing -- if someone else has a better solution let me know. 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            Download &#39;MPlayer-mingw32-1.0pre7.zip&#39; from &lt;a href=&#34;http://www2.mplayerhq.hu/MPlayer/releases/win32-beta/&#34;&gt;here&lt;/a&gt;&amp;#160;[7.8M].
+            There are a lot of distributions out there but most of the older ones don&#39;t work for
+            some reason.&amp;#160; This one at least does something reasonable. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Unzip this into a directory.&amp;#160; I put it under an MPlayer dir in my &#34;program files&#34;
+            dir. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Create a batch file with this in it (call it &lt;code&gt;convert-avi.cmd&lt;/code&gt; or something):&lt;pre&gt;@echo off
+setlocal
+
+set CL=&#34;c:\Program Files\MPlayer\mencoder&#34;
+set CL=%CL% -oac lavc -ovc lavc -of mpeg -mpegopts format=mpeg1
+set CL=%CL% -af lavcresample=44100 -vf hqdn3d,harddup -srate 44100
+set CL=%CL% -lavcopts vcodec=mpeg1video:keyint=15:vrc_buf_size=1000
+set CL=%CL%:vrc_maxrate=2500:vbitrate=2500:trell:mbd=2:vrc_init_cplx=1000 
+set CL=%CL% -ni -nobps 
+set CL=%CL% -o %~n1.mpg %1
+%CL%&lt;/pre&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            Call your brand new batch file with the &lt;code&gt;.avi&lt;/code&gt; file you need to convert.&amp;#160; It will
+            create a file in the current directory with the same name but a &lt;code&gt;.mpg&lt;/code&gt; extension.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        This command line is totally out of control.&amp;#160; I couldn&#39;t find a way to wrap lines
+        in batch files so I did the environment variable trick.&amp;#160; I got this via trail
+        and error and I&#39;m not sure what all of the options mean, but here is what I know it
+        does: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Encodes as MPEG 1 into a .mpg file 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Upconverts the audio to 44.1 kHz as that is the only freq I could get to work. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Doesn&#39;t do any resizing or framerate changes (leaves it at 640x480x30fps for my files) 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Uses a fairly high bitrate to make sure the quality stays good 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        For a 18.5 second video doing this compression (just to MPEG1 -- let alone something
+        better) cut&amp;#160;a 35M AVI file down to 5.5M.&amp;#160; The only problem I haven&#39;t figured
+        out is that the first frame is really pixelated.&amp;#160; If you can figure it out you
+        win my undying gratitude.&amp;#160; Check out the docs&amp;#160;&lt;a href=&#34;http://www.mplayerhq.hu/DOCS/HTML/en/index.html#toc&#34;&gt;here&lt;/a&gt; or &lt;a href=&#34;http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html&#34;&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Bonus:&lt;/strong&gt; You can rotate the&amp;#160;video during the conversion with a &lt;code&gt;,rotate=90&lt;/code&gt; on
+        the after &lt;code&gt;harddup&lt;/code&gt; on the -vf argument. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Finally, check out a cute video of Annie &lt;a href=&#34;http://www.eightypercent.net/Stuff/MVI_0478.mpg&#34;&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

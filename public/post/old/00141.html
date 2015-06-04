@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Joel on Unicode &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00141.html">Joel on Unicode</a></h1>
+        <span class="lead">Tue, Oct 14, 2003</span>
+        <div class="post">
+            <p>
+
+    <p>
+        I'm sure everyone has seen this now, but <a href="http://www.joelonsoftware.com/items/2003/10/10.html">Joel
+        is dead on</a> wrt Unicode.&#160; I worked on some of the codepage reloading stuff
+        in IE so I've lived some of this stuff -- Both recognizing the BOM for Unicode and
+        implementing the reload of an already started page when we hit the codepage meta.&#160;
+        Most of IE is fully unicode of course.&#160; The only exception is when we deal with
+        URLs because, back in the day, they were restricted to 7bit ascii. 
+    </p>
+    <p>
+        There are some other issues that Joel didn't bring up that devs should be aware of: 
+    </p>
+    <ul>
+        <li>
+            Sorting unicode is hard.&#160; Each language has its own sort rules.&#160; Given any
+            particular set of strings, they may be sorted differently depending on the language. 
+        </li>
+        <li>
+            Capitilization can be hard also.&#160; There was a bug in IE at one point where we
+            didn't deal with capitilization of a japanese string right and someone's name was
+            transformed into "dead body on beach."&#160; At the very least that is a rude thing
+            to call someone. 
+        </li>
+        <li>
+            Be aware that text that looks the same on the screen can be backed by different unicode
+            codepoints.&#160; This is a problem with going to unicode for URLs as it makes domain
+            squating more difficult to deal with.&#160; Two people might own two domains that
+            look the same when typed in but are instead actually two different domains from a
+            unicode codepoint point of view.&#160; As an analogy, I was looking at an ancient
+            typewriter the other day that one of our PMs has outside of her office.&#160; It doesn't
+            have a '1' key!&#160; The solution is to just use the 'l' (L) key instead.&#160; Now
+            imagine if the keys are font glyphs as displayed on the screen and the concept of
+            '1' and 'l' are unicode codepoints.&#160; 'He11o' and 'Hello' would look exactly alike
+            on the screen but would actually be different domains.</li>
+    </ul>
+
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

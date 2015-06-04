@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+    
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00141.html">Joel on Unicode</a>
+      </h2>
+      <span class="lead">Tue, Oct 14, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I'm sure everyone has seen this now, but <a href="http://www.joelonsoftware.com/items/2003/10/10.html">Joel
+        is dead on</a> wrt Unicode.&#160; I worked on some of the codepage reloading stuff
+        in IE so I've lived some of this stuff -- Both recognizing the BOM for Unicode and
+        implementing the reload of an already started page when we hit the codepage meta.&#160;
+        Most of IE is fully unicode of course.&#160; The only exception is when we deal with
+        URLs because, back in the day, they were restricted to 7bit ascii. 
+    </p>
+    <p>
+        There are some other issues that Joel didn't bring up that devs should be aware of: 
+    </p>
+    <ul>
+        <li>
+            Sorting unicode is hard.&#160; Each language has its own sort rules.&#160; Given any
+            particular set of strings, they may be sorted differently depending on the language. 
+        </li>
+        <li>
+            Capitilization can be hard also.&#160; There was a bug in IE at one point where we
+            didn't deal with capitilization of a japanese string right and someone's name was
+            transformed into "dead body on beach."&#160; At the very least that is a rude thing
+            to call someone. 
+        </li>
+        <li>
+            Be aware that text that looks the same on the screen can be backed by different unicode
+            codepoints.&#160; This is a problem with going to unicode for URLs as it makes domain
+            squating more difficult to deal with.&#160; Two people might own two domains that
+            look the same when typed in but are instead actually two different domains from a
+            unicode codepoint point of view.&#160; As an analogy, I was looking at an ancient
+            typewriter the other day that one of our PMs has outside of her office.&#160; It doesn't
+            have a '1' key!&#160; The solution is to just use the 'l' (L) key instead.&#160; Now
+            imagine if the keys are font glyphs as displayed on the screen and the concept of
+            '1' and 'l' are unicode codepoints.&#160; 'He11o' and 'Hello' would look exactly alike
+            on the screen but would actually be different domains.</li>
+    </ul>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00140.html">New Computer</a>
+      </h2>
+      <span class="lead">Tue, Oct 14, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        The reason I haven't been posting is that I've been setting up a new computer here
+        at home.&#160; I got rid of my 1.4GHz Athlon and replaced it with a sweet 2.8GHz P4.&#160;
+        The 800MHz memory interface along with a new <a href="http://www.coolermaster.com/index.php?LT=english&amp;Language_s=2&amp;url_place=product&amp;p_serial=TAC-T01&amp;other_title=+TAC-T01+Wave%20Master">case</a>&#160;and
+        mirrored RAID 120GB SATA drives make this a sweet ride.&#160; The main reason that
+        I upgraded is that I've been taking a ton of photos and I haven't been as diligent
+        at backing them up as I should be.&#160; The mirrored drives are an extra level of
+        insurance. 
+    </p>
+    <p>
+        Plus, blue LEDs just look sweet.&#160; Now all I need is a big tailpipe and "Powered
+        by HKS" stickers! 
+    </p>
+    <p>
+        I haven't picked a new videocard yet.&#160; But when I do, I'm going to get the most
+        powerful thing that I can afford.&#160; Come to the PDC and you'll see what I've been
+        working on and why!
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00139.html">Beda&#39;s Law</a>
+      </h2>
+      <span class="lead">Sat, Oct 4, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        At the party I've come up with a law.&#160; You heard it here first: 
+    </p>
+    <p>
+        <strong>"If I can write&#160;80% of a piece of software in a weekend, there is no
+        business model for that software."</strong> 
+    </p>
+    <p>
+        I fundamentally believe that there is no money to be made by selling people blogging
+        tools (like Radio).&#160; They are just too easy to write.&#160; Providing a hosting/blogging/etc.
+        service is another thing entirely. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00138.html">Pics of the new car...</a>
+      </h2>
+      <span class="lead">Sat, Oct 4, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I really have to write some software for doing picture galleries so that I can put
+        up a bunch of stuff from my trip.&#160; In the meantime, <a href="http://bimmer.roadfly.org/bmw/forums/e85/forum.php?postid=3989380&amp;page=1">here</a>&#160;are <a href="http://bimmer.roadfly.org/bmw/forums/e85/forum.php?postid=3990064&amp;page=1">some</a> links&#160;to
+        a thread I started over on the roadfly forum about the new ride.&#160; There are some
+        pictures from the trip up there.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00137.html">Party at the Scoble&#39;s!</a>
+      </h2>
+      <span class="lead">Sat, Oct 4, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    I just got back from a house warming party at <a href="http://radio.weblogs.com/0001011/">Robert</a> and
+    Maryam Scoble's.&#160; The have a great new house and the party&#160; was a lot of
+    fun.&#160; The food was amazing! I don't think I'll be able to eat for days.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00136.html">Molly, 1997-2003</a>
+      </h2>
+      <span class="lead">Tue, Sep 30, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    My guinea pig died yesterday.&#160; We got home from our trip and picked her up from
+    the friend that was taking care of her.&#160; She was old (almost 7!) and it was probably
+    just her time.&#160; Rachel and I like to think that she waited until we got back
+    to give up.&#160; We spent all yesterday crying and dealing with it.&#160; I know
+    that it seems silly to cry over a guinea pig, but she was a very sweet pet and we
+    loved her.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00135.html">Back from vacation</a>
+      </h2>
+      <span class="lead">Tue, Sep 30, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        I'm back from vacation and catching up.&#160;&#160;We picked up a new car at the factory
+        in South Carolina and drove it back.&#160; We did a ton of different stuff along the
+        way.
+    </p>
+    <p>
+        I got some great images at Yellowstone and I'll try to get some up soon.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00134.html">Office Patches</a>
+      </h2>
+      <span class="lead">Thu, Sep 4, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        So I saw the news items about the new security issues in Office and went to update
+        my home install via <a href="http://www.officeupdate.com/ProductUpdates/default.aspx">office
+        update</a>.&#160; Unfortunately&#160;you need office SP2 to install the patches and
+        you need your original install media to install SP2.&#160; I just moved.&#160; I have
+        no idea where the original media is.&#160; How many people&#160;out there are in the
+        same boat?&#160; What if someone (gasp) pirated their copy of Office?&#160;&#160;
+    </p>
+    <p>
+        Requiring original media to install security updates seems like a bad plan to me.&#160;
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00133.html">DSL woes</a>
+      </h2>
+      <span class="lead">Sat, Aug 30, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    Well, it turns out that in my new house I can only get 256kbs up and 256kbs down.&#160;
+    In the old place I was getting 640kbs up and 256kbs down.&#160; I guess I'm just too
+    far from the CO.&#160; My choices are to (a) suck it up, (b) go with a cable modem
+    and their onerous terms of service or (c) shell out big bucks for a business class
+    line.&#160; So far (a) is looking good but I'm not happy about it.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2>
+        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="http://new.eightypercent.net/post/old/00132.html">New House!</a>
+      </h2>
+      <span class="lead">Sat, Aug 30, 2003</span>
+      <div class="readmore">
+        <div class="post">
+            <p>
+
+    <p>
+        Well, I'm moved in to my new house.&#160; The DSL is hooked up and we are starting
+        to unpack.
+    </p>
+    <p>
+        I need to change the <a href="http://www.catb.org/~esr/jargon/html/I/ICBM-address.html">ICBM</a> coords
+        for <a href="http://www.geourl.com">geourl</a>, along with 10 thousand other things
+        to do when starting out in a new house!
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    
+
+  <nav>
+    <ul class="pager">
+      <li class="previous">
+        <a href="/page/13.html"><span aria-hidden="true">&larr;</span> Newer</a>
+      </li>
+      <li class="next">
+        <a href="/page/15.html">Older <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+  </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

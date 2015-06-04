@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/12/04 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/12/04.html</link>
+    <description>Recent content in 2003/12/04 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Dec 2003 11:55:09 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/12/04.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Avalon Job Opening</title>
+      <link>http://new.eightypercent.net/post/old/00159.html</link>
+      <pubDate>Thu, 04 Dec 2003 11:55:09 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00159.html</guid>
+      <description>&lt;p&gt;
+
+    Apply &lt;a href=&#34;http://www.microsoft.com/careers/search/details.aspx?JobID=4dfb0b89-fdd4-497d-83cb-13162ad8e2c3&#34;&gt;here&lt;/a&gt; for
+    a job working on Avalon.&amp;#160; Specifically, this job is for our very cool timing
+    and animation team.&amp;#160; We are a pretty dynamic team so the actual responsibilities&amp;#160;may
+    include other parts of Avalon graphics depending on who we get and what their skills
+    are.
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2006/04/15 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2006/04/15.html</link>
+    <description>Recent content in 2006/04/15 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Apr 2006 14:12:37 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2006/04/15.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Backing up data</title>
+      <link>http://new.eightypercent.net/post/old/00267.html</link>
+      <pubDate>Sat, 15 Apr 2006 14:12:37 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00267.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Between photos of Annie, other photography and music, I have quite a bit of data.&amp;#160;
+        Probably over 300GB now and growing fast. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Backing up this much data is a challenge.&amp;#160; I&#39;ve set some requirements of for
+        what I needed in a backup system: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Automatic&lt;/strong&gt;.&amp;#160; A backup system is useless if you don&#39;t actually
+            use it.&amp;#160; I know that if I&#39;m required to do anything manually it probably won&#39;t
+            get done. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Off site&lt;/strong&gt;.&amp;#160; There are too many things that can happen if you
+            have an on site backup.&amp;#160; Your house can burn down, you can get robbed, etc. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Virus resistant&lt;/strong&gt;. If somehow a virus were to try and wipe everything
+            out, I&#39;d like my&amp;#160;data to survive. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Versioned&lt;/strong&gt;.&amp;#160; In case I delete something and don&#39;t realize right
+            away, I&#39;d like to keep versions of my data. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;Big&lt;/strong&gt;. I have lots of data and I don&#39;t imagine that I&#39;m going to stop
+            accumulating it.&amp;#160; I&#39;d like to plan for 800GB-1TB. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;On line&lt;/strong&gt;.&amp;#160; I want to be able to get to my backup without mounting/moving
+            anything. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        This is a pretty tall order.&amp;#160; Here are some things that I considered but decided
+        not to do: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;strong&gt;RAID&lt;/strong&gt;. Mirroring is pretty secure in the face of hardware failure.&amp;#160;
+            RAID 5 sounds great but stories I hear is that if one drive goes there is a serious
+            chance another will go during the rebuilding.&amp;#160;&amp;#160;Simply doing RAID&amp;#160;also
+            fails to satisfy many of the requirements above. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;DVD&lt;/strong&gt;.&amp;#160; I started backing some stuff up on DVDs.&amp;#160; I got read
+            errors a month later.&amp;#160; Too manual also. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;External Harddrives&lt;/strong&gt;. I thought about having a couple of really big
+            external drives and rotating them.&amp;#160; This solves a lot of the problems above but
+            it is pretty manual.&amp;#160; A friend of mine is going to do this and keep a copy at
+            the office.&amp;#160; He said he planned to backup/move every couple of months.&amp;#160;
+            That is just too long for me. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;strong&gt;NT Volume Shadow Copy&lt;/strong&gt;. This is a cool technology that can keep snapshots
+            through time on a drive.&amp;#160; It looks like the Linux Volume Manager (LVM) can do
+            some similar things.&amp;#160; This isn&#39;t really a backup solution as much as a versioning
+            solution.&amp;#160; This plus RAID 0 is probably pretty good except it isn&#39;t off site. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        I ended up going with a more brute force solution.&amp;#160; I bought and set up two Linux
+        servers.&amp;#160; The first is a home server.&amp;#160; The second is in a datacenter in
+        downtown Seattle. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The home Linux server is a dual core Pentium running Ubuntu 5.10 server.&amp;#160; I have
+        a HW/SW raid card driving 5 250GB drives in RAID 5.&amp;#160; It servers a data share
+        over Samba.&amp;#160; I backup that share to another directory every night.&amp;#160; That
+        archive directory is shared out via Samba also, but as read-only.&amp;#160; This makes
+        the situation fairly virus proof.&amp;#160; Since I have two copies of the data (one that
+        is r/w and the other that is a backup) I might have to add more drives in the future.&amp;#160;
+        I got a big honking case so I&#39;ll have room.&amp;#160; I&#39;m running slimserver on this amoung
+        other things.&amp;#160; I also use it to do long running batch &lt;a href=&#34;http://enblend.sourceforge.net/&#34;&gt;enblend&lt;/a&gt; stitching
+        jobs for panoramas. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The data center machine is a &lt;a href=&#34;http://www.tyan.com/products/html/gt20b5151.html&#34;&gt;1U
+        Tyan server&lt;/a&gt; with 4x320GB drives in Linux SW RAID 5.&amp;#160; It is also running Ubuntu
+        5.10 server.&amp;#160; (Getting Ubuntu installed on a RAID5 drive array was a challenge.&amp;#160;
+        I don&#39;t remember the exact steps I took or I would document them here.)&amp;#160; The
+        cost of doing this can be high unless you have a friend that can get you hooked up.&amp;#160;
+        Even if you can&#39;t, it might be worthwhile.&amp;#160; I&#39;m backing up to this every night
+        over my cable modem.&amp;#160; The cable modem upload speed is okay since I upgraded to
+        Comcast&#39;s higher level of service.&amp;#160; I now have ~768kbps up. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        There are a couple of choices for software for doing the backups.&amp;#160; The key is
+        that it has to be bandwidth smart (only update diffs), handle versioning gracefully
+        and be able to do partial copies based on a timer.&amp;#160; The last requirement is so
+        that if I have a ton of data to upload it can go over a couple of nights.&amp;#160; The
+        most obvious candidate for this is rsync.&amp;#160; rsync is an amazing tool for these
+        types of things.&amp;#160; My MS friends think that robocopy is cool -- it can&#39;t hold
+        a candle to rsync.&amp;#160; It also generally operates over ssh so it is also secure.
+        It can also build version trees where unchanged files are hardlinked to previous versions.&amp;#160;
+        The only thing it can&#39;t do is handle files that have moved but haven&#39;t changed, and
+        stop itself after a certain number of minutes. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        To solve this problem, &lt;a href=&#34;http://www.scottlu.com/&#34;&gt;Scott Ludwig&lt;/a&gt; (a coworker
+        of mine who has a similar setup) developed a python script that does much of what
+        rsync does but solves these two last problems.&amp;#160; It is called &#34;link backup&#34; and
+        you can get it &lt;a href=&#34;http://www.scottlu.com/Content/Link-Backup.html&#34;&gt;here&lt;/a&gt;.&amp;#160;
+        Every night starting at 11:30pm, I run this backup script to backup my working directory
+        to the backup directory on my home server.&amp;#160; This is usually pretty quick.&amp;#160;
+        I then backup the latest snapshot of that backup set to the server in the datacenter.&amp;#160;
+        This can take a little longer but at least I don&#39;t have to think about it. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Since I implemented this, Amazon&#39;s S3 has come on the scene.&amp;#160; While it might
+        be interesting to back up using S3, I&#39;m not sure how the economics work out.&amp;#160;
+        At my current level (300GB) and Amazon&#39;s pricing model ($0.15 per GB per month) I
+        would be paying $45 per month.&amp;#160; If I grow to 600GB, I&#39;m up to $90 per month.&amp;#160;
+        Bandwidth is extra, but I don&#39;t use much of that.&amp;#160; It should be easy to find
+        colocation hosting for that amount of coin.&amp;#160; There is the one time cost of the
+        hardware and the work of keeping it up to date also (I think my server came in around
+        $1600 but I probably overbought).&amp;#160; The advantage is that you can run and do other
+        things with your own server in a datacenter. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        [April 16, 2006: Edited to fix Ubuntu version number.]
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

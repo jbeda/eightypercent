@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/08/28 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/08/28.html</link>
+    <description>Recent content in 2004/08/28 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Aug 2004 17:57:12 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/08/28.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>16 bit Panoramas</title>
+      <link>http://new.eightypercent.net/post/old/00207.html</link>
+      <pubDate>Sat, 28 Aug 2004 17:57:12 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00207.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;ve polished up my pano building tool so that it now works with large 16 bit panoramas.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        To recap from &lt;a href=&#34;http://www.eightypercent.net/Archive/2004/06/25.html&#34;&gt;last
+        episode&lt;/a&gt;:&amp;#160; &lt;a href=&#34;http://www.tawbaware.com/ptasmblr.htm&#34;&gt;PTAssembler&lt;/a&gt; and &lt;a href=&#34;http://www.tawbaware.com/maxlyons/pano12ml.htm&#34;&gt;PanoTools&lt;/a&gt; are &lt;a href=&#34;http://www.luminous-landscape.com/tutorials/digital-panoramas.shtml&#34;&gt;really
+        cool&lt;/a&gt;&amp;#160;but there are some bugs in PanoTools that prevent it from working with
+        really large images or 16 bit images.&amp;#160; The first is that PanoTools outputs tiff
+        images that use packbits compression.&amp;#160; For some reason Photoshop chokes when
+        loading these files.&amp;#160; The second issue is that PanoTools doesn&#39;t know how to
+        create 16 bit photoshop files with layers as photoshop didn&#39;t &lt;em&gt;do&lt;/em&gt; 16 bit layers
+        when it was written.&amp;#160; I&#39;ve worked around this with my latest version of PanoTiffToPSD. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        It does the following: 
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            Optionally uses libtiff to reencode a set of tiff&amp;#160;images with no compression.&amp;#160;
+            To save disk space, you can choose to overwrite the original images or do the conversion
+            and leave the original images alone.&amp;#160; The converted version will be deleted after
+            being used by photoshop. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Loads up&amp;#160;each of the tiff files and drives Photoshop (via IDispatch COM interfaces
+            for you dorks out there) to load up each file and move it to a layer in a new image. 
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Check it out here: &lt;a href=&#34;http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-exe-1.1.zip&#34;&gt;Binaries&lt;/a&gt;, &lt;a href=&#34;http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-src-1.1.zip&#34;&gt;Source&lt;/a&gt; and &lt;a href=&#34;http://www.eightypercent.net/Stuff/PanoTiffToPSD/PanoTiffToPSD-License-1.1.txt&#34;&gt;License&lt;/a&gt; (it&#39;s
+        free).&amp;#160; It is written in C# and requires the&amp;#160;.Net&amp;#160;Runtime.&amp;#160; That
+        is available&amp;#160;at &lt;a href=&#34;http://www.windowsupdate.com&#34;&gt;windowsupdate&lt;/a&gt;. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

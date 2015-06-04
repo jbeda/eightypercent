@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/04/27 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/04/27.html</link>
+    <description>Recent content in 2003/04/27 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Apr 2003 13:56:32 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/04/27.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>FTPUpstreamer released</title>
+      <link>http://new.eightypercent.net/post/old/00085.html</link>
+      <pubDate>Sun, 27 Apr 2003 13:56:32 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00085.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Version 0.9.0 of my upstreamer is released. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Download the MSI installer &lt;a href=&#34;http://www.eightypercent.net/Stuff/FTPUpstreamer/FTPUpstreamer-0.9.0.msi&#34;&gt;here&lt;/a&gt;.
+        The source is available &lt;a href=&#34;http://www.eightypercent.net/Stuff/FTPUpstreamer/FTPUpstreamer-0.9.0.zip&#34;&gt;here&lt;/a&gt;.
+        The license for both is a zlib type license. You can read it &lt;a href=&#34;http://www.eightypercent.net/Stuff/FTPUpstreamer/License.txt&#34;&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Notes about the release: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            FTPUpstreamer is a utility to upload a local directory to a remote directory on an
+            FTP server. It keeps track of the files that have been uploaded already and the last
+            changed time on those files. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            This is a beta release. Don&#39;t expect too much. I&#39;ve only really tested this against
+            one server (W2k3, I think). I&#39;ve only tested the client on XP Pro. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            There is no support for listing or deleting files on the server. If you want to do
+            more sophisticated stuff you might want to check out a more fully featured FTP program.
+            I&#39;ve used &lt;a href=&#34;http://www.smartftp.com/&#34;&gt;SmartFTP&lt;/a&gt; and it has worked well for
+            me. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            There is no support for automatic uploading yet. You have to hit the button. At some
+            point I&#39;ll have it automatically scan for changes. I&#39;ll also make it minimize to a
+            tray icon. I figured getting something out early is best. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            The program requires the .Net framework v1.0. You can get this from Windows Update. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;b&gt;Your FTP password is stored in plain text.&lt;/b&gt; The config file is something like
+            &#34;c:\Documents and Settings\Joe\Local Settings\Application Data\FTPUploadConfig.xml&#34;.
+            I don&#39;t think the uninstaller removes this. There are some other data files in the
+            same directory that will also not be removed. Buyer beware. 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        If you have any problems go ahead and write me email at FTPUpstreamer at BedaFamily.com.
+        If I&#39;m not super responsive (I have a day job) you can always update the source yourself.
+        If you send me deltas I&#39;ll try to integrate them. At some point I may put the source
+        under some sort of project management like GotDotNet workspaces or Sourceforge. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GeoURLs near Boise</title>
+      <link>http://new.eightypercent.net/post/old/00084.html</link>
+      <pubDate>Sun, 27 Apr 2003 09:14:00 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00084.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;Pretty &lt;a href=&#34;http://geourl.org/near/?lat=43.6&amp;lon=-116.2&amp;dist=500&#34;&gt;slim&lt;/a&gt; pickings.
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

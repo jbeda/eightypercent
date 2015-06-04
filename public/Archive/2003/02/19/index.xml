@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/02/19 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/02/19.html</link>
+    <description>Recent content in 2003/02/19 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Feb 2003 05:53:05 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/02/19.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>FTP Library</title>
+      <link>http://new.eightypercent.net/post/old/00042.html</link>
+      <pubDate>Wed, 19 Feb 2003 05:53:05 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00042.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;&lt;a href=&#34;http://www.jelovic.com/weblog/index.htm&#34;&gt;Dejan Jelovic&lt;/a&gt; sent me some mail pointing to his &lt;a href=&#34;http://www.jelovic.com/ftplib/&#34;&gt;managed wrapper on wininet&lt;/a&gt;.
+&lt;P&gt;This looks pretty cool and wininet is pretty well tested, if a little quirky.  However, I think that I&#39;m going to do my own thing just for the sake of doing it.  &lt;a href=&#34;http://michaelw.net/Articles/Whywere-inventtheweblogwh.html&#34;&gt;I&#39;m having fun&lt;/a&gt; with the little victories of doing something pretty fundamental from the ground up.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>http://new.eightypercent.net/post/old/00041.html</link>
+      <pubDate>Wed, 19 Feb 2003 05:40:35 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00041.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;&lt;a href=&#34;http://www.simplegeek.com/permalink.aspx?guid=b6b07998-429a-4bbf-a49e-8fa7f9af4a30&#34;&gt;Chris&lt;/a&gt; recommends &lt;a href=&#34;http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&amp;isbn=0375756787&amp;itm=1&#34;&gt;The Rise of Theodore Roosevelt&lt;/a&gt;.  I&#39;m reading this right now and probably about 3/4 of the way done.  I&#39;m also amazed at the productivity and veriety of experiences this man had at so young an age.  It really drives me to get off of my ass and do something.
+&lt;P&gt;A few weeks ago I finished &lt;a href=&#34;http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&amp;isbn=0385495404&amp;itm=1&#34;&gt;The First American&lt;/a&gt; by H. W. Brands.  This is a biography of Benjamin Franklin.  I&#39;d also highly recommend it.  Again, this is someone who went out and created his own destiny.
+&lt;P&gt;In reading these two back to back, you can&#39;t help but see the contrasts.  Roosevelt was the jock intellectual, Franklin was the geek of his time.
+&lt;P&gt;I love american history.  In college I took quite a few courses on 20th century american history.  In the last couple of years I&#39;ve started reaching back a little further.  It is just so amazing to me to make the connection between now and say, 100 years ago.  When you start reading these histories, time tends to compress and a century is a lot closer than it appears.  Hell, a little over &lt;S&gt;100&lt;/S&gt;150 years ago we were invading Mexico (Mexican/American War).
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

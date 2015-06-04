@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/12/02 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/12/02.html</link>
+    <description>Recent content in 2003/12/02 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Dec 2003 13:03:11 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/12/02.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Avalon Visuals</title>
+      <link>http://new.eightypercent.net/post/old/00158.html</link>
+      <pubDate>Tue, 02 Dec 2003 13:03:11 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00158.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        &lt;a href=&#34;http://weblogs.asp.net/dmarsh/&#34;&gt;Drew Marsh&lt;/a&gt;&amp;#160;posted an interesting
+        article entitled &#34;&lt;a href=&#34;http://weblogs.asp.net/dmarsh/posts/40626.aspx&#34;&gt;Avalon
+        Dissected&lt;/a&gt;.&#34;&amp;#160; It is great to see people taking an interest in Avalon at this
+        level.&amp;#160; However, he got some of the details around Visuals wrong. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        The graphics system in Avalon is new and is built to take advantage of the hardware.&amp;#160;
+        Beyond this, there is a software engine for the cases when the hardware isn&#39;t supported.&amp;#160;
+        On top of this, we&#39;ve built a &#34;scene graph&#34; system that natively supports animation
+        and remoting.&amp;#160; In the normal case, the actual rendering of the scene graph is
+        done on a dedicated composition thread where third party code isn&#39;t allowed to run.&amp;#160;
+        The description of everything on screen and some primitive animation information is
+        passed to this thread so that the rendering can happen independently of what is going
+        on with the regular UI thread.&amp;#160; In the case when you are running an Avalon application
+        from a remote machine (via Terminal Services or Remote Desktop) with an advanced client,
+        this composition thread will run on the remote machine and the actual rendering of
+        the scene graph will happen without any network traffic.&amp;#160; Some animations will
+        be able to run on the remote machine without network traffic also.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        From the programming model point of view, a node in our scene graph is&amp;#160;called &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/visual/visual.aspx&#34;&gt;Visual&lt;/a&gt;.&amp;#160;
+        There are different types of visuals that are intended to be used for different purposes.&amp;#160;
+        It is also important to note that UIElement derives from Visual so every UIElement &lt;em&gt;is-a&lt;/em&gt; Visual.&amp;#160;
+        (At one point an Element &lt;em&gt;had-a&lt;/em&gt; visual but this was changed with the rearchitecture
+        that &lt;a href=&#34;http://www.simplegeek.com&#34;&gt;ChrisAn&lt;/a&gt; &lt;a href=&#34;http://www.simplegeek.com/PermaLink.aspx/359c73aa-4711-4061-b9d9-16300d8d278e&#34;&gt;talks
+        about&lt;/a&gt;.) 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Every Visual implements an interface called &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/ivisual/ivisual.aspx&#34;&gt;IVisual&lt;/a&gt;.&amp;#160;
+        There is no situation where a third user should be implementing IVisual.&amp;#160; The
+        reason that we created this interface is so that we can use&amp;#160;&lt;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csref/html/vcwlkExplicitInterfaceImplementationTutorial.asp&#34;&gt;explicit
+        interface implementation&lt;/a&gt; to hide the methods on IVisual.&amp;#160; We didn&#39;t want
+        to pollute the public object model for UIElement (and Button, etc.) with things that
+        most users weren&#39;t going to be using. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        A Visual has the following capabilities: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Children with a transform on each child 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Opacity 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Clip 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Content (defined differently for each visual type) 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Hit testing services 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Coordinate transformation services 
+        &lt;/li&gt;
+        &lt;li&gt;
+            Bounding box services 
+        &lt;/li&gt;
+        &lt;li&gt;
+            And in the future: blend mode and effect 
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        For each visual, the content of that visual is rendered followed by the children,
+        from left to right.&amp;#160; The Z-order of any children are completely implied by their
+        order in the visual tree.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Different specializations of Visual provide for specific types of content and for
+        different flavors of public programming model.&amp;#160; Here are the main ones: 
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/containervisual/containervisual.aspx&#34;&gt;ContainerVisual&lt;/a&gt;.&amp;#160;
+            This Visual has all of its&amp;#160;capabilities reflected publically and has no intrinsic
+            content. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/drawingvisual/drawingvisual.aspx&#34;&gt;DrawingVisual&lt;/a&gt;.&amp;#160;
+            This Visual also has all of its capabilties reflected publically.&amp;#160; Its content
+            is 2D vector data that is stored with it.&amp;#160; You can think of it holding on to
+            a &#34;metafile.&#34;&amp;#160; The way you change the content is&amp;#160;call&amp;#160;&lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/drawingvisual/m/renderopen.aspx&#34;&gt;DrawingVisual.RenderOpen&lt;/a&gt;,
+            get a DrawingContext and draw with that. 
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/retainedvisual/retainedvisual.aspx&#34;&gt;RetainedVisual&lt;/a&gt;.&amp;#160;
+            This guy is special.&amp;#160;&amp;#160;He is meant to be derived from.&amp;#160; This is the
+            Visual that UIElement derives from.&amp;#160; All of the services and properties are available
+            either via private functions (RenderOpen) or via the IVisual interface only.&amp;#160;
+            This visual can work in two modes: 
+            &lt;ul&gt;
+                &lt;li&gt;
+                    Fully retained.&amp;#160; This is the default case.&amp;#160; In this case the visual is exacly
+                    like&amp;#160;a DrawingVisual except the IVisual members are not reexposed in a public
+                    way.&amp;#160; RenderOpen is also protected instead of private. 
+                &lt;/li&gt;
+                &lt;li&gt;
+                    On&amp;#160;demand&amp;#160;retained.&amp;#160; If the&amp;#160;derived class implements &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/iretainedrender/iretainedrender.aspx&#34;&gt;IRetainedRender&lt;/a&gt;&amp;#160;and
+                    sets the protected &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/c/retainedvisual/p/renderbounds.aspx&#34;&gt;RenderBounds&lt;/a&gt; property,
+                    then &lt;a href=&#34;http://longhorn.msdn.microsoft.com/?//longhorn.msdn.microsoft.com/lhsdk/ref/ns/msavalon.windows.media/i/iretainedrender/m/render.aspx&#34;&gt;IRetainedRender.Render&lt;/a&gt; will
+                    be called back as necessary to fill in the &#34;metafile&#34; for this Visual.&amp;#160; They
+                    system looks at the tree and decides, based on the RenderBounds, if this Visual is
+                    on screen.&amp;#160; If it is, then the system calls IRetainedRender.Render and&amp;#160;the
+                    derived class writes into the &#34;metafile&#34; via&amp;#160;a DrawingContext passed.&amp;#160; The
+                    system then caches that metafile.&amp;#160; If the Visual is then pushed off screen for
+                    some reason(scrolling, perhaps), then the system is free to throw away the cached
+                    metafile to save space.&amp;#160; The user can force the system to throw away the metafile
+                    by calling the protected RetainedVisual.InvalidateVisual call.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        When it comes time to render (scheduled via the Dispatcher class and coordinated with
+        the animation system and layout) the system will walk the tree and decide what is
+        and isn&#39;t on screen.&amp;#160; It will then call render on any RetainedVisuals as necessary
+        and cache the result.&amp;#160; It also updates the data on the other thread for what
+        is on screen so that the render can happen async from what is going on on the UI thread.&amp;#160;
+        In this way, there is no &#34;render&#34; happening on the UI thread in the normal case.&amp;#160;
+        Instead we are &#34;compiling&#34; the scene graph down to a simpler representation to run
+        asynchronously on another thread or on another machine.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The bits that we shipped in the PDC don&#39;t have this system fully implemented.&amp;#160;
+        For example, the composition thread isn&#39;t running completely async and we don&#39;t have
+        rich TS support in.&amp;#160; Come beta, more of our system will be completed and up and
+        working.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;m sure that this is confusing and that I&#39;ve missed some stuff, so feel free to ask
+        questions and I&#39;ll do my best to answer.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

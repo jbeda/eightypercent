@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/02/24 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/02/24.html</link>
+    <description>Recent content in 2004/02/24 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Feb 2004 10:30:58 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/02/24.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Skewed view</title>
+      <link>http://new.eightypercent.net/post/old/00167.html</link>
+      <pubDate>Tue, 24 Feb 2004 10:30:58 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00167.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        &lt;a href=&#34;http://weblogs.asp.net/cumpsd/archive/2004/02/22/78076.aspx&#34;&gt;David Cumps&lt;/a&gt; is
+        playing around with XAML and skewing UI controls.&amp;#160; He found a bug which causes
+        some rendering artifacts when doing a skew of a listbox.&amp;#160; I tried some of his
+        XAML out on the latest and greatest bits and didn&#39;t find the bug.&amp;#160; So, this is
+        either a video driver issue, or it is something that we&#39;ve fixed since the PDC.&amp;#160;
+        Here is a (badly encoded -- thanks mspaint.exe) gif of a skewed list box: 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt=&#34;A skewed list box&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Images/skewbug.gif&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt; 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

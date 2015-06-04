@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2003/11/04 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00153.html">Avalon, XAML and SVG</a></h1>
+      <span class="lead">Tue, Nov 4, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        There has been a ton of speculation on SVG and its relationship (or lack thereof)
+        to Avalon.&#160; Here is some thoughts on that, collected from various responses I've
+        made or others have made. 
+    </p>
+    <ul>
+        <li>
+            Our rendering model is very much like that of SVG.&#160; We support a hierarchical
+            compositing model with transforms that affect items in the hiearchy. 
+        </li>
+        <li>
+            Our markup isn't the same mostly because XAML is a direct reflection of the programming
+            model.&#160; There is a very solid relationship between the markup and the objects
+            and methods. 
+        </li>
+        <li>
+            Our OM doesn't match the SVG DOM because we choose to go with an object model that
+            more closely matches what we think <em>our</em> users expect.&#160; Specifically,
+            we tried hard to make sure that our object model provided a certain amount of consistency
+            with WinForms (and VB and MFC before it)&#160;and ASP.Net.&#160; Beyond this, our
+            object model is strongly typed where much of the SVG DOM is based around strings.&#160; 
+        </li>
+        <li>
+            WVG is a term that we are no longer using and isn't, in my opinion, very useful.&#160;
+            We were supposed to have scrubbed this from our documentation, but apparently we missed
+            some stuff.&#160; There is no strick subset of Avalon objects and XAML markup that
+            stands on its own with respect to vector graphics.&#160; 
+            <ul>
+                <li>
+                    Whereas when using SVG inside of XHTML there is a very&#160;bright line, when using
+                    a vector graphic element in a UI authored in XAML, there is no sharp line.&#160; You
+                    can put a Rectangle element, for example, in flow with a document without a Canvas
+                    element.&#160; To do a similar thing with XHTML/SVG, you would need to wrap all SVG
+                    content in an SVG element.&#160; 
+                </li>
+                <li>
+                    For Avalon, the set of properties and property types is the same between vector graphics
+                    elements and other elements.&#160; In this way the background property for a Button
+                    is of type Brush -- the same as the fill property for a Rectangle. 
+                </li>
+                <li>
+                    There are elements that can very easily be seen to belong to both a control subset
+                    and a vector graphics subset.&#160; For example, Image makes sense in a UI sense but
+                    also in a VG sense.&#160; XHTML and SVG both have image elements.&#160; We avoid this
+                    duplicity.&#160; Text is another area where we avoid a large amount of duplication. 
+                </li>
+            </ul>
+        </li>
+        <li>
+            While we share a rendering model with SVG to a large extent, our support and features
+            don't match up completely.&#160; Some of it is stuff that we haven't implemented yet
+            and others are due to choices that we've made because of programming model concerns.&#160;
+            I'll try to put together a guide on this stuff at some point in the future.</li>
+    </ul>
+    <p>
+        I'm sure there are questions around SVG and XAML/Avalon that I haven't answered here.&#160;
+        Post in the comments and I'll update this post with the latest and greatest.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00152.html">I hate Avalon</a></h1>
+      <span class="lead">Tue, Nov 4, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        Actually, I'm proud of the work that we are doing on Avalon, but I hate the name.&#160;
+        It just sounds lame and dorky to me.&#160; I guess this is what you get when you vote
+        on a code name.&#160; Aero and Indigo are much better names.&#160; In fact, the shell
+        team has the best code names:&#160;Aero, Jade, Luna, Plex.&#160; I guess it is because
+        they have designers who are creative types.
+    </p>
+    <p>
+        The worst code name I can think of right now was for NT4.&#160; It started out being
+        just and update to the shell.&#160; So, it was called the "Shell Update Release" that
+        got abbreviated SUR.&#160; They even made T-Shirts that said "We don't need any stinkin'
+        code name."
+    </p>
+    <p>
+        Anyone haved examples of other really bad code names for projects?
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

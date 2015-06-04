@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2003/12/22 &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00165.html">Home Theater update</a></h1>
+      <span class="lead">Mon, Dec 22, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        I haven't been posting in a while as I've been working on my new Home Theater!
+    </p>
+    <p>
+        Here is the final setup:
+    </p>
+    <ul>
+        <li>
+            <a href="http://www.projectorcentral.com/Sanyo-PLV-Z2.htm">Sanyo Z2</a> LCD projector.&#160;
+            1280x720 widescreen.</li>
+        <li>
+            <a href="http://www.paradigm.com/Website/SiteParadigmProduct/ParadigmModels/MonSeriesII/Monseries.html">Paradigm
+            Monitor</a> speakers.&#160; I got Monitor 7s in front with the CC-370 center and the
+            ADP-370 dipole surrounds.&#160; I picked these up in Canada on Chris' recommendation.</li>
+        <li>
+            <a href="http://www.svsubwoofers.com/subs_pci_20-39.htm">SVS 20-39PC<em>i</em></a> subwoofer.&#160;
+            This thing is a beast!&#160; It is over 3 feet high and can really shake the walls.</li>
+        <li>
+            <a href="http://www.usa.denon.com/catalog/products.asp?l=1&amp;c=2">Denon AVR-3803</a> reciever.&#160;
+            There was a great deal going on these.&#160; Otherwise it would have been way out
+            of my price range.</li>
+        <li>
+            <a href="http://www.digitalnetworksna.com/shop/_templates/item_mainRTV.asp?model=231&amp;cat=52">ReplayTV
+            5504</a> as a TV tuner.&#160; I got one of these as it was priced wrong at Circuit
+            City.&#160; Normally it is ~$450 with 3 years of service, but they were selling them
+            for $150 with 3 years of service as they had updated the pricing for no included service
+            but the units they still had <em>did</em> have the free service.</li>
+        <li>
+            <a href="http://www.xbox.com/en-US/default.htm?culture=0">XBox</a>.&#160; Some games
+            (like Amped 2) do 720p natively.&#160; They look pretty sweet.</li>
+    </ul>
+    <p>
+        I also built my own ceiling mount for the projector and had a friend help me build
+        and paint a screen.&#160; I'll put some pictures up when things get further along.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00164.html">Changeables desconstructed</a></h1>
+      <span class="lead">Mon, Dec 22, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        Frank Hileman (no blog, Frank?) has been pounding us (the Avalon team) with some great
+        questions.&#160; Most of these have been conversations in comments, but I figured
+        that I should bring this to the front page, so to speak. 
+    </p>
+    <p>
+        Of of Frank's concerns, at least as expressed in <em>my</em> comments section, is
+        that we are essentially over engineering with the Changeable pattern.&#160; Specifically,
+        he says this: 
+    </p>
+    <blockquote> 
+    <p>
+        The non-intrusive part of Changeable has a const flag on stock brushes, etc. This
+        means the user must clone these and write to a copy. This is simple and easy to understand. 
+    </p>
+    <p>
+        The intrusive part of Changeable is the part which introduces the idea of "used" and
+        changes the simple concept of "object reference" into something complicated. From
+        what you have explained, the intrusive part of Changeable exists only to allow simultaneous
+        multi-threaded writers to the scene graph. 
+    </p>
+    </blockquote> 
+    <p>
+        I think that the point around threading is a red-herring here.&#160; 
+    </p>
+    <p>
+        <strong>Changeable Requirements</strong> 
+    </p>
+    <p>
+        The main problem that changeables are trying to solve is that we want to have, under
+        most circumstances, these changeable API objects (Brush, Pen, etc.) act like value
+        types and other times we want them to act like refernce types.&#160; We essentially
+        want to walk a fine line and get advantages from each.&#160; Frank, forgive me if
+        you've heard a bunch of this before, but I think that this is useful to put together
+        in one place. 
+    </p>
+    <p>
+        With respect to value types, we want the simple user semantic to be: Modify my local
+        copy and have it be disconnected or "severed" when I pass it in to another object.&#160;
+        When rendering this means that I can do this: 
+    </p>
+    <pre>SolidColorBrush&#160;scb = new&#160;SolidColorBrush();
+scb.Color = Colors.Blue;
+myDrawingContext.DrawGeometry(scb, null /*pen*/, myGeometry1);
+scb.Color = Colors.Red;
+myDrawingContext.DrawGeometry(scb, null /*pen*/, myGeometry2);
+</pre>
+    <p>
+        and have my two geometries be drawn with different colors.&#160; Since many times
+        the drawing context is writing in to a metafile like data structure, if we used pure
+        reference semantics both geometries would be drawn as Red.&#160; 
+    </p>
+    <p>
+        Another example is setting properties in to a set of elements: 
+    </p>
+    <pre>SolidColor Brush scb = new SolidColorBrush();
+scb.Color = Colors.Blue;
+myElement1.Background = scb;
+myElement2.Background = scb;
+
+// in some other code...
+((SolidColorBrush)myElement1.Background).Color = Colors.Red;</pre>
+    <p>
+        I think, in most cases, if some user walks up to an element, such as myElement1 above,
+        and sets the background brush, he doesn't expect that this will have the side effect
+        of changing the background brush of another element.&#160; Side effects like this
+        would make for an unstable system. 
+    </p>
+    <p>
+        Value types don't solve all of our problems though!&#160; We also want the efficiencies
+        and advanatages of making these be reference types.&#160; Specifically, we want to
+        have to have hierarchies, not have to copy the entire thing around and be able to
+        save space by having multiple places reference the same thing.&#160; We imagine a
+        world with lots of elements getting their values via styling.&#160; Because of this,
+        we want the normal case be that a user puts a value in to a style block somewhere
+        and then that object (via reference) gets widely shared, perhaps between hundreds
+        of elements.&#160; We obviously want to make the per-reference cost as small as possible
+        here.&#160; Going with a pure value type system won't work. 
+    </p>
+    <p>
+        <strong>The Builder Pattern</strong> 
+    </p>
+    <p>
+        The first cut at solving this problem was called the Builder Pattern.&#160; This pattern
+        was a generalization of the StringBuilder pattern.&#160; Specifically, for each type,
+        there was a companion, or Builder type.&#160; The main type was immutable.&#160; In
+        other words, any write operations would raise an exception.&#160; So, for SolidColorBrush,
+        we wrote a SolidColorBrushBuilder.&#160; SolidColorBrush was immutable while SolidColorBrushBuilder
+        was a fully writeable object.&#160; All of the APIs in the system (property types
+        on element, parameters in to DrawingContext methods, etc.) took the non-builder types.&#160;
+        To create one of those non-builder types, the user had to do one of the following: 
+    </p>
+    <ul>
+        <li>
+            Create the target type directly by using a constructor. 
+        </li>
+        <li>
+            Create a builder, configure it, and call the ToXXX method on it to construct the main
+            type. 
+        </li>
+        <li>
+            Create a builder by initializing it off of its companion type.&#160; Make a delta
+            and call the ToXXX method to construct the main type. 
+        </li>
+    </ul>
+    <p>
+        From one point of view, this is a great system.&#160; It is very explicit (at compile
+        time) what is editable and what isn't.&#160; However, some early users of our system
+        (ad-hoc usability) ended up really disliking this system.&#160; The need to constantly
+        deal with both types was onourous.&#160; It also meant that the user could never just
+        index directly in to a type and change it.&#160;&#160;To affect any change, it&#160;was
+        always necessary to create the builder, make the change, and set the old value in. 
+    </p>
+    <p>
+        <strong>The Changeable Pattern</strong> 
+    </p>
+    <p>
+        In response to a hail of internal criticism on the Builder Pattern we went back and
+        came up with the Changeable pattern.&#160; The idea is that we would have one type
+        object with an immutable bit.&#160; Once the immutable bit gets set, all further changes
+        to that object will throw.&#160; This opens the way up to runtime errors (instead
+        of compile time errors) but makes certain "delta" scenarios much easier to deal with. 
+    </p>
+    <p>
+        However, we still wanted to solve the problems listed in the first part of this post.&#160;
+        Specifically, we didn't want to leave it up to the user to manually flip the immutable
+        bit.&#160; In this way we defined certain types of operations that would automatically
+        create a copy and flip the immutable bit for you if necessary.&#160; We then went
+        further and added advanced modes so that those APIs either make a copy but <em>don't</em> flip
+        the immutable bit or the APIs just take a reference.&#160; These last modes (whereby
+        something like an element holds on to a <em>mutable</em> brush) were never possible
+        with the Builder pattern. 
+    </p>
+    <p>
+        We also added a notification mechanism so that someone who does hold on to an object
+        that isn't immutable can learn when that object changes. 
+    </p>
+    <p>
+        So, do you guys (Frank?) like the more explicit builder pattern better?&#160; More
+        questions? 
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00162.html">DX interop in Avalon</a></h1>
+      <span class="lead">Mon, Dec 22, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        Vince (who I knew in high school as Steve) wrote in my comments: 
+    </p>
+    <blockquote> 
+    <p>
+        How can I get to the underlying DX9-esque interface I know you guys gotta be using
+        this stuff. I don't want to deal with EllipseGeometry objects and the like, gimme
+        DrawPrimitive, push buffers, and pain-in-the ass ITexture objects. 
+    </p>
+    </blockquote> 
+    <p>
+        Don't worry dude!&#160; The details are still being worked out, but we know that we
+        have to make it possible for people to interop with old code, and with DX.&#160; At
+        the very least, you will be able to host another hwnd window that is written using
+        GDI/User or DX.&#160; The details on when and how DX will get accelerated, and how
+        it will play with the rest of the system are still TBD.&#160; At the very least, when
+        you go full screen with DX you will own the device.
+    </p>
+    <p>
+        For simple 3D stuff (load up a model and spin it around like a 3D icon) we will have
+        our own 3D API that doesn't pretent to offer all of the flexibility of D3D.
+    </p>
+    <p>
+        What specific scenarios are you interested in?&#160; My thinking is that you might
+        want to write a tool and have the UI done with Avalon and the "canvas" of the tool
+        done via D3D.&#160; In this scenario, you are in a windowed situation and Avalon is
+        on top.&#160; The 3D stuff is running in a window in an Avalon app.&#160; Another
+        scenario that might be interesting is that you have a D3D app/game and you are using
+        Avalon to drive 2D type UI inside of the game environment.
+    </p>
+    <p>
+        I can't promise that all of the scenarios will be doable, but let me know what is
+        most important to you.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+    <div>
+      <h1><a href="http://new.eightypercent.net/post/old/00161.html">Holiday parties</a></h1>
+      <span class="lead">Mon, Dec 22, 2003</span>
+      <div class="post">
+        <p>
+
+    <p>
+        I went to a great holiday party last night thrown by my neighbors, Bob and Carol.&#160;
+        We moved in quite a while ago&#160;but hadn't really had a chance to interact with
+        any of our neighbors yet.&#160; This was a great opportunity for us to not only chat
+        with our hosts, but also others from around the neighborhood.&#160; It turns out that
+        the internet makes the world even smaller.&#160; Bob had run across my blog and already
+        knew more about me (or at least my work!) than I knew about him.
+    </p>
+    <p>
+        I also chatted with our neighbors on the other side, Gary and Marge.&#160; Gary is
+        a long time photographer that just recently went digital with a Canon 10D and a sweet
+        lens setup.&#160; He sent me a link to some of <a href="http://pbase.com/mgmoogk">his
+        images</a>.&#160; These were done with film -- a Pentax 6x7 that he recently sold.&#160;
+        I really need to get off of my butt and put together a gallery of some of my better
+        up on the net.
+    </p>
+
+</p>
+
+      </div>
+    </div>
+    
+
+          <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+
+  </div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

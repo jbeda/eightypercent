@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/04/15 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/04/15.html</link>
+    <description>Recent content in 2005/04/15 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Apr 2005 14:25:29 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/04/15.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>More on 20%</title>
+      <link>http://new.eightypercent.net/post/old/00239.html</link>
+      <pubDate>Fri, 15 Apr 2005 14:25:29 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00239.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        The &lt;a href=&#34;http://www.eightypercent.net/Archive/2005/04/14.html#a238&#34;&gt;20% BoF session
+        at CFP&lt;/a&gt; last night was fun.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The most interesting thing for me was the questions about how 20% time works.&amp;#160;
+        Hopefully I can repeat some of them and the answers here.&amp;#160; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;How will this scale as Google gets bigger? &lt;/strong&gt;I don&#39;t know.&amp;#160; What
+        I&#39;ve seen of Google management is that they are committed to keeping the same atmosphere
+        as the company grows.&amp;#160; As problems crop up (and I&#39;m sure they will) I&#39;m sure
+        that Google will look for &#34;non-traditional&#34; solutions.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;How do you track this?&amp;#160; What if someone is spending 30% of their time
+        on a side project? &lt;/strong&gt;There isn&#39;t really official tracking of this sort of thing.&amp;#160;
+        It really comes down to trust of the employee.&amp;#160; At the end of the day (or year)
+        you have to list what you&#39;ve accomplished for your review.&amp;#160; If you&#39;ve wasted
+        your time then you have nothing to talk about on your review.&amp;#160; Keep in mind that
+        failures aren&#39;t the same as doing nothing -- valuable knowledge is gained.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;How do you make sure that people are using the time wisely?&amp;#160; How does
+        this relate to the goals of the division/group/etc?&lt;/strong&gt; Well -- that is just
+        it -- you don&#39;t know if the time is being used wisely.&amp;#160; You want the engineer
+        to do what &lt;em&gt;he/she&lt;/em&gt; thinks is the next big thing, not what management thinks.&amp;#160;
+        Most people want to do the next cool think that will fire people up both inside and
+        outside the company and may end up making Google money.&amp;#160; If you think that the
+        best way for you to add value with your 20% time is to slack off and do nothing than
+        that really speaks for itself.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;What is the goal for this?&amp;#160; Isn&#39;t this just a morale booster? &lt;/strong&gt;For
+        some people I&#39;m sure that this is just a morale booster.&amp;#160; My impression, from
+        the short time I&#39;ve been at Google, is that 20% time is more than that.&amp;#160; Most
+        people want to add value by doing stuff that is far easier to do inside someplace
+        like Google than anywhere else.&amp;#160; My feeling is that I want to use the time wisely
+        to add value in new and unexpected ways for the company.&amp;#160; There is a pretty fluid
+        path for these projects, if they show promise, to get funded with full time engineers.&amp;#160;
+        That path is critical if a 20% project ends up being super successful.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Where do you find 20% to spare? I can&#39;t cut 20% of my features or slip my
+        project by 20%.&lt;/strong&gt;&amp;#160; I think that there is more time then you think.&amp;#160;
+        If you do &#34;research&#34;&amp;#160;in&amp;#160; a lightweight way like this perhaps you can take
+        the time elsewhere.&amp;#160; Also keep in mind that happy engineers are more productive
+        engineers.&amp;#160; And stop going to so many meetings -- and if you do have meetings,
+        don&#39;t allow people to sit in the back and read their email.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;What about using 20% time as a reward for exceptional performers?&amp;#160; What
+        about&amp;#160;taking away&amp;#160;20% time for&amp;#160;those who don&#39;t use it wisely? &lt;/strong&gt;I&#39;m
+        not a huge fan of these ideas for a couple of reasons.&amp;#160; First, some of the best
+        ideas come from people who are looking at something with fresh eyes.&amp;#160; If we make
+        it a reward it may be too late to capture that.&amp;#160; As for punishing people, I would
+        think that this would have a chilling affect.&amp;#160; We want people to try wacky things
+        that no one else has thought of.&amp;#160; Having some missteps is bound to happen and
+        we don&#39;t want&amp;#160;people to be afraid to experiment.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Why 20%?&amp;#160; Why not 50%? or 10%? &lt;/strong&gt;I&#39;m not sure.&amp;#160; My guess
+        is that either someone took it out of thin air or some math PhD at Google has a proof
+        somewhere.&amp;#160; If anyone reads this and knows I&#39;d love to here the answer.
+    &lt;/p&gt;
+    &lt;p&gt;
+        [Added in response to comment from&amp;#160;&lt;!--StartFragment --&gt;&lt;span class=&#34;byline&#34;&gt;&lt;a href=&#34;http://basetechnology.blogspot.com/&#34;&gt;Jack
+        Krupansky&lt;/a&gt;]&lt;br /&gt;
+        &lt;strong&gt;How do you allocate the time?&amp;#160; Is it one day a week?&amp;#160; 1.6 hours
+        a day? 2 weeks a year and a weekend a month? &lt;/strong&gt;From what I&#39;ve seen so far,
+        it is up to the engineer to figure this out.&amp;#160; People can save it up and use it
+        a month at a time if they like.&amp;#160; My personal strategy is to spend some a week
+        or two really getting some momentum behind something and then switching to a more
+        integrated schedule.&amp;#160; As project hit shipping mode and such these things may
+        take a back seat while the time accrues.&amp;#160; Keep in mind that no one is watching
+        over your shoulder with a stopwatch.&lt;br /&gt;
+        [End addition]&lt;/span&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        One thing that I want to emphasize (and it came up multiple times last night) is that
+        a lot of this comes down to &lt;strong&gt;trust&lt;/strong&gt;.&amp;#160; One of the big parts of
+        the secret sauce here is that Google really trusts its&amp;#160;engineers and, from what
+        I&#39;ve seen, the engineers live up to those expectations.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

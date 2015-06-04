@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/01/23 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/01/23.html</link>
+    <description>Recent content in 2003/01/23 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jan 2003 09:13:56 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/01/23.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Untitled #16</title>
+      <link>http://new.eightypercent.net/post/old/00016.html</link>
+      <pubDate>Thu, 23 Jan 2003 09:13:56 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00016.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;m really liking &lt;a href=&#34;http://www.syndirella.com/&#34;&gt;Syndirella&lt;/a&gt;.&amp;#160; One of
+        the sites that I read a lot is the &lt;a href=&#34;http://www.luminous-landscape.com/&#34;&gt;Luminous
+        Landscape&lt;/a&gt;&amp;#160;but it doesn&#39;t have an RSS feed.&amp;#160; Instead, I&#39;ve used the html
+        scraping feature of Syndirella to parse out news items.&amp;#160; The mechanism is pretty
+        limiting, but I was able to make it work.&amp;#160; Here is the data you need (save the
+        file and import to Syndirella): &lt;a href=&#34;http://www.eightypercent.net/Stuff/LumLandscape.xml&#34;&gt;LumLandscape.xml&lt;/a&gt;
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

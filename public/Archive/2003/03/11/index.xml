@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/03/11 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/03/11.html</link>
+    <description>Recent content in 2003/03/11 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Mar 2003 21:08:18 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/03/11.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Golden Nugget</title>
+      <link>http://new.eightypercent.net/post/old/00068.html</link>
+      <pubDate>Tue, 11 Mar 2003 21:08:18 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00068.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;My wife, Rachel, has &lt;a href=&#34;http://www.eightypercent.net/CodeBlue/Archive/2003/03/11.html#a9&#34;&gt;another funny story&lt;/a&gt; on her blog.  Check it out.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Out of town for the rest of the week</title>
+      <link>http://new.eightypercent.net/post/old/00067.html</link>
+      <pubDate>Tue, 11 Mar 2003 20:39:39 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00067.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;I&#39;m heading to sunny Seattle for the rest of the week so no updates until then.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FTP Upstreamer a go</title>
+      <link>http://new.eightypercent.net/post/old/00066.html</link>
+      <pubDate>Tue, 11 Mar 2003 19:47:03 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00066.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;I&#39;ve gotten some nibbles from at least 4 people on the upstreamer.  That isn&#39;t all 7 of you out there but I guess this will do :)
+&lt;p&gt;I&#39;ll start on it this weekend or sometime early next week.  Hopefully it will go fast as I already have the FTP code.
+&lt;p&gt;&lt;a href=&#34;http://gary.burd.info&#34;&gt;Gary Burd&lt;/a&gt; suggested a combo of ssh, rsync and a crontab entry. It looks like you can &lt;a href=&#34;http://optics.ph.unimelb.edu.au/help/rsync/&#34;&gt;install RSync on windows&lt;/a&gt; if you try hard enough. However, I don&#39;t have that much control over all of the machines that I want to upload to, so this looks like a non-starter -- at least for me.  Getting a more secure connection would be nice, though.
+&lt;p&gt;I also was thinking about taking advantage of the shadow copy stuff in XP but it looks like you need to sign an NDA to get at that SDK.  Oh well.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FTP Upstreamer project</title>
+      <link>http://new.eightypercent.net/post/old/00065.html</link>
+      <pubDate>Tue, 11 Mar 2003 11:27:38 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00065.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;I want to gauge interest in a new project.  How many of you out there (and I know there are something like 7 of you :) would actually use a utility that did the following:
+&lt;ul&gt;&lt;li&gt;Had a list of local directories and FTP servers/paths
+&lt;li&gt;Monitored those dirs (timer or file change notifications) for changes.
+&lt;li&gt;Upstream new files (based on file times) to the FTP server.  This wouldn&#39;t be a full sync but would rather be a copy.  It would never delete anything from the server.
+&lt;li&gt;Has a tray icon to let you know what is going on.
+&lt;/ul&gt;
+
+&lt;P&gt;BTW, this is a feature stolen almost verbatim from Radio.  I think that it would be useful to break it out into its own utility.
+
+&lt;P&gt;The real reason I would want this is that frickin&#39; VS.Net doesn&#39;t have a way to deply an ASP.Net application to an FTP server.  You can copy it or use FP extentions, but you can&#39;t FTP that guy up there.
+
+&lt;P&gt;I would include source and an installer for this guy.
+&lt;P&gt;If you are interested, email me at &lt;a href=&#34;mailto:eightypercent at bedafamily.com&#34;&gt;eightypercent at bedafamily.com&lt;/a&gt; and I&#39;ll think about putting something together.
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

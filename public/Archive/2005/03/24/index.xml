@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/03/24 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/03/24.html</link>
+    <description>Recent content in 2005/03/24 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 24 Mar 2005 09:16:12 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/03/24.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Google 20% Time</title>
+      <link>http://new.eightypercent.net/post/old/00235.html</link>
+      <pubDate>Thu, 24 Mar 2005 09:16:12 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00235.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Tony &lt;a href=&#34;http://ponderer.org/index.xml&#34;&gt;posts some comments&lt;/a&gt; about 20% time
+        at Google and how it might not work at other companies like MS.&amp;#160; Scoble &lt;a href=&#34;http://radio.weblogs.com/0001011/2005/03/19.html#a9686&#34;&gt;responds&lt;/a&gt; based
+        on how he *thinks* 20% time works.&amp;#160; In the comments Tony backs down because he
+        doesn&#39;t have specific knowledge of how things work at Microsoft.&amp;#160; I&#39;d like to
+        add some more comments to this conversation.
+    &lt;/p&gt;
+    &lt;p&gt;
+        The Google model of development is more than just information sharing and the ability
+        to switch projects.&amp;#160; Here are the important points as I&#39;ve seen.
+    &lt;/p&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            There is, by and large, only one code base at Google.&amp;#160; This has many advantages.&amp;#160;
+            Most obvious is that it is really easy to look at and contribute to code in other
+            projects without having to talk to anyone, get special permissions or fill out forms
+            in triplicate.&amp;#160; That is just the tip of the iceberg, though.&amp;#160; Having one
+            codebase means that there is a very high degree of code sharing.&amp;#160; Need to base
+            64 encode/decode something?&amp;#160; No problem, there is a standard Google routine for
+            that.&amp;#160; Found a bug?&amp;#160; Just fix it and check it in after getting it code reviewed
+            by a documented owner.&amp;#160; One of the reasons that environments like Perl, Python,
+            C#, Java, etc. flourish is that they have large and well through out libraries of
+            useful code.&amp;#160; For a variety of reasons, C++ has never had this.&amp;#160; (I could
+            theorize but that would be off topic.)&amp;#160; Google has solved this problem by building
+            up a large library of well documented and easy to integrate code.&amp;#160; This not only
+            lowers the bar for new projects but makes it easy to switch projects as you don&#39;t
+            have to learn new conventions.&lt;/li&gt;
+        &lt;li&gt;
+            Switching teams at Google is a very fluid process.&amp;#160; An&amp;#160;engineer&amp;#160;can
+            be 40% on one project, 40% on something completely different and 20% on his or her
+            own thing.&amp;#160; That mix can be adjusted as project requirements change.&amp;#160; Switching
+            groups should also not have an affect on your annual review score because of arbitrary
+            team politics.&amp;#160;&amp;#160;&amp;#160;Joining a new group is more about find a good mutual
+            fit then going through HR and a formal interview loop.&amp;#160; When there is an important
+            project that needs to be staffed the groups and execs will evangelize that need and
+            someone who is interested is bound to step up.&amp;#160; If it is critical to the business
+            and no one is stepping up (I don&#39;t know if this has occurred or not) then I imagine
+            it would go come down to a personal appeal by the management team.&lt;/li&gt;
+        &lt;li&gt;
+            The intranet in Google is super transparent.&amp;#160; Teams are actively encouraged to
+            share the most intimate details of their projects with the rest of the company.&amp;#160;
+            This happens through tech talks, design docs, lunch table conversations, etc.&amp;#160;
+            When two teams are doing similar things, people start with the assumption that they
+            must have their reasons and that the situation will be worked out in time.&amp;#160; There
+            isn&#39;t a huge push to over optimize and have only one solution for each problem.&amp;#160;
+            This means that there isn&#39;t an adversarial relationship between teams that can lead
+            to long standing animosities and information hiding.&lt;/li&gt;
+        &lt;li&gt;
+            There is a big difference between&amp;#160;pet projects being permitted and being encouraged.&amp;#160;
+            At Google it is actively encouraged for engineers to do a 20% project.&amp;#160; This
+            isn&#39;t a matter of doing something in your &lt;em&gt;spare time, &lt;/em&gt;but more of actively
+            making time for it.&amp;#160; Heck, I don&#39;t have a good 20% project yet and I need one.&amp;#160;
+            If I don&#39;t come up with something I&#39;m sure it could negatively impact my review.&lt;/li&gt;
+        &lt;li&gt;
+            The intrapersonal environment at Google is very energizing. When someone comes up
+            with a new idea, the most common response is excitement and a brainstorming session.&amp;#160;
+            Politics and who owns what&amp;#160;area rarely enter into it.&amp;#160; I don&#39;t think that
+            I&#39;ve seen anyone really raise their voice and get into a huge knockdown drag out fight
+            since coming to Google.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p&gt;
+        Can 20% time work at other companies? I&#39;m sure that there are going to be others that
+        try.&amp;#160; However, I think that it is important to realize that it is a result of
+        an environment and philosophy to development more than a cause.&amp;#160; I don&#39;t think
+        that it is something that can be imposed in an independent way.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;d like to stress that these comments are my own and aren&#39;t any sort of official
+        word from Google.&amp;#160; Please don&#39;t draw any grand conclusions of corporate strategy
+        and such.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

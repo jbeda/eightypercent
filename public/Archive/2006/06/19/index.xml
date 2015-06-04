@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2006/06/19 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2006/06/19.html</link>
+    <description>Recent content in 2006/06/19 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Jun 2006 20:28:01 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2006/06/19.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Link-Backup v 0.6</title>
+      <link>http://new.eightypercent.net/post/old/00269.html</link>
+      <pubDate>Mon, 19 Jun 2006 20:28:01 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00269.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Scott Ludwig and I have released a new version of&amp;#160;his python based backup script,
+        Link-Backup.&amp;#160; This new version ignores broken symlinks and has an option to ensure
+        that only one backup at a time is going on.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Also with this release is a cgi script (viewlb.cgi) for exploring the backups.&amp;#160;
+        This makes it easy to keep tabs on what is going on.&amp;#160; Scott wrote this script
+        a while ago and I updated and improved it.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Details &lt;a href=&#34;http://www.scottlu.com/2006/06/link-backup-v-06.html&#34;&gt;here&lt;/a&gt;.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

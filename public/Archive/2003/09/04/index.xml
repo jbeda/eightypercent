@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/09/04 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/09/04.html</link>
+    <description>Recent content in 2003/09/04 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Sep 2003 08:47:34 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/09/04.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Office Patches</title>
+      <link>http://new.eightypercent.net/post/old/00134.html</link>
+      <pubDate>Thu, 04 Sep 2003 08:47:34 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00134.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        So I saw the news items about the new security issues in Office and went to update
+        my home install via &lt;a href=&#34;http://www.officeupdate.com/ProductUpdates/default.aspx&#34;&gt;office
+        update&lt;/a&gt;.&amp;#160; Unfortunately&amp;#160;you need office SP2 to install the patches and
+        you need your original install media to install SP2.&amp;#160; I just moved.&amp;#160; I have
+        no idea where the original media is.&amp;#160; How many people&amp;#160;out there are in the
+        same boat?&amp;#160; What if someone (gasp) pirated their copy of Office?&amp;#160;&amp;#160;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Requiring original media to install security updates seems like a bad plan to me.&amp;#160;
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

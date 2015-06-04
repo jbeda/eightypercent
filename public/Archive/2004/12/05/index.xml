@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/12/05 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/12/05.html</link>
+    <description>Recent content in 2004/12/05 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Dec 2004 19:46:31 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/12/05.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DOS/Windows command line escaping</title>
+      <link>http://new.eightypercent.net/post/old/00226.html</link>
+      <pubDate>Sun, 05 Dec 2004 19:46:31 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00226.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Here is a &lt;a href=&#34;http://weblogs.asp.net/oldnewthing/&#34;&gt;Raymond&lt;/a&gt;-esque tidbit that
+        I wanted to get out there.&amp;#160; I couldn&#39;t find anything on Google and had to figure
+        this stuff out via trail and error. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Okay -- you think you know how to escape stuff on the DOS/Windows command line?&amp;#160;
+        Probably not.&amp;#160; Let&#39;s start with a simple python script to show us what we&#39;ve
+        got: 
+    &lt;/p&gt;
+    &lt;p&gt;
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;type dumpargs.py
+# a simple program to dump the incoming arguments
+import sys
+for arg in sys.argv[1:]:
+    print repr(arg)
+&lt;/pre&gt;
+    &lt;p&gt;
+        Now lets run some tests and see what it spits out: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py &#34;hi there&#34;
+&#39;hi there&#39;
+
+C:\test&amp;gt;dumpargs.py &#34;hi \&#34; there&#34;
+&#39;hi &#34; there&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        So far so good. It looks like we know how to escape a double quote sign (&#34;). But what
+        about the pesky percent sign? DOS/Windows/Command/CMD uses this for variable substitution.
+        Let&#39;s try a bunch of stuff and see what we get: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;set foo=bar
+
+C:\test&amp;gt;dumpargs.py &#34;hi there %foo%&#34;
+&#39;hi there bar&#39;
+
+C:\test&amp;gt;dumpargs.py &#34;hi there \%foo\%&#34;
+&#39;hi there \\%foo\\%&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        Hmmm, it looks like the backslash doesn&#39;t work. Looking around, it looks like the
+        caret symbol (^) is the way to go. Lets try that out. 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py ^%foo^%
+&#39;%foo%&#39;
+
+C:\test&amp;gt;dumpargs.py &#34;hi there ^%foo^%&#34;
+&#39;hi there ^%foo^%&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        Well, it looks like that works as long as it isn&#39;t in quotes. I also found another
+        wacky case: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py &#34;hi there \&#34; ^%foo^%&#34;
+&#39;hi there &#34; %foo%&#39;
+
+C:\test&amp;gt;dumpargs.py &#34;hi there \&#34; \&#34; ^%foo^%&#34;
+&#39;hi there &#34; &#34; ^%foo^%&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        Very odd -- it looks like the caret does work as an escape character as long as there
+        is an odd number of escaped double quote characters before it in the string. The parser
+        here is obviously not a simple as one might first think. Lets try ending the string
+        before we quote the percent sign: 
+    &lt;/p&gt;
+    &lt;p&gt;
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py &#34;hi there &#34;^%&#34;foo&#34;^%&#34; bar&#34;
+&#39;hi there %foo% bar&#39;
+
+C:\test&amp;gt;dumpargs.py &#34;hi \&#34; there &#34;^%&#34;foo&#34;^%&#34; bar&#34;
+&#39;hi &#34; there ^%foo^% bar&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        We are getting closer, but that escaped quote character puts the parser into a wacky
+        state. I finally did find a good solution: 
+    &lt;/p&gt;
+    &lt;pre&gt;C:\test&amp;gt;dumpargs.py &#34;hi &#34;^&#34;&#34; there &#34;^%&#34;foo&#34;^%&#34; bar&#34;
+&#39;hi &#34; there %foo% bar&#39;&lt;/pre&gt;
+    &lt;p&gt;
+        It turns out that you must replace the double quote (&#34;) with the following sequence:
+        &#34;^&#34;&#34;. You must also quote the percent character (%) with this sequence: &#34;^%&#34;. I think
+        that everything else is okay inside of the double quotes. Very strange but true. I
+        guess this is what 20 years of back compat get you. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arizona Desert Photo 2</title>
+      <link>http://new.eightypercent.net/post/old/00225.html</link>
+      <pubDate>Sun, 05 Dec 2004 19:24:10 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00225.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Here is another photo from the trip that I described &lt;a href=&#34;http://www.eightypercent.net/Archive/2004/11/27.html#a223&#34;&gt;here&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a href=&#34;http://www.eightypercent.net/Photos/SnowTrees1-small.jpg&#34;&gt;&lt;img alt=&#34;Snowy Trees above Page, AZ&#34; src=&#34;http://www.eightypercent.net/Photos/SnowTrees1-thumb.jpg&#34; border=&#34;0&#34; /&gt;&lt;/a&gt; 
+    &lt;/p&gt;
+    &lt;p&gt;
+        This was a pretty lean day on the workshop.&amp;#160; This was our day to go and hike
+        out to &#34;the wave.&#34;&amp;#160; The Wave is a really cool set of sandstone rock formations
+        buried in the north part of &lt;a href=&#34;http://www.az.blm.gov/paria/cbusereg2.html&#34;&gt;Coyote
+        Buttes&lt;/a&gt;.&amp;#160; A permit is required to hike Coyote Buttes and the BLM restricts
+        it to 10 people per day.&amp;#160; The problem is that on the weather had taken a turn
+        for the worse during the night.&amp;#160; When we work up at 5 AM on Sunday, it was raining
+        in page.&amp;#160; As we drove toward the trailhead we gained elevation and it started
+        snowing.&amp;#160; Around 6 AM we needed to start driving on gravel roads.&amp;#160; It was
+        still snowing pretty hard and we decided to turn back.&amp;#160; I was looking forward
+        to a good hike and was disappointed that we didn&#39;t make it to the Wave. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        When we got back to the motel, we picked up everyone else and went &#34;hunting.&#34;&amp;#160;
+        Off the side of the road outside of Page, as we were climbing, we stopped to photograph
+        some fresh snow on desert trees.&amp;#160; This is one of the images that resulted. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        Technical details: Original composition was 24 images (8x3).&amp;#160; I cropped out just
+        a corner of that to make the composition as seen above.&amp;#160; Total images used then
+        is probably more like 15 (5x3).&amp;#160; Each was shot at 1/25 sec, f/11, ISO 100 with
+        the 24-70 f/2.8L @ 50mm.&amp;#160; Final image is 6000x6000 or 36 megapixel. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

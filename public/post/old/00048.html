@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>WWCDD? &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00048.html">WWCDD?</a></h1>
+        <span class="lead">Mon, Feb 24, 2003</span>
+        <div class="post">
+            <p>
+<p><a href="http://michaelw.net">Michael Winser</a> suggested that I should think about taking the same approach that citydesk uses.  They do two things differently than Radio:
+<ul>
+<li>They use a CRC instead of a byte for byte comparison.  Apparently they use this instead of filetimes altogether.  I could compute the CRC (or do the comparison with the file on disk too, I guess) by wrapping the stream that the transform is writing to and doing the CRC/comparison on the fly
+<li>They also post a list of files and CRCs as an xml file on the server. This makes it easier to synchronize files across machines
+</ul>
+
+<p>I definitely want to enable the cross machine case, and file times do seem a little fragile to me.  This is something I'll have to think about a little more.
+<p>Two way synchronization is really hard though?  What happens if the same file changes on both the client and the server?  How do you handle deleting a file?  (Do you care about deleting a file?)
+<p>Another problem comes up when you have multi-party authoring and syncing and that is with respect to item numbers.  Right now I have an item number count that I store in a config file and update every time I create a new entry (it is currently at 49).  <a href="http://simplegeek.com">ChrisAn</a> solves this problem with a good old fashion GUID (I have a bunch cheap if you need them ;)  I might be able to switch over without killing my RSS feed and perma links if I just treat the item ID as a string.
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

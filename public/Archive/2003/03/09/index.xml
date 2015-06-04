@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/03/09 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/03/09.html</link>
+    <description>Recent content in 2003/03/09 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Mar 2003 10:08:53 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/03/09.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The three B&#39;s</title>
+      <link>http://new.eightypercent.net/post/old/00064.html</link>
+      <pubDate>Sun, 09 Mar 2003 10:08:53 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00064.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stupid XSLT tricks</title>
+      <link>http://new.eightypercent.net/post/old/00063.html</link>
+      <pubDate>Sun, 09 Mar 2003 10:00:02 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00063.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;In talking with &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge&lt;/a&gt; about how he does his site, he pointed me to his XSLT source.  I&#39;ll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven&#39;t discovered yet.  Here is one of them: &lt;a href=&#34;http://www.w3.org/TR/xslt#dt-attribute-value-template&#34;&gt;http://www.w3.org/TR/xslt#dt-attribute-value-template&lt;/a&gt;.  This is a huge keystroke saver.  It lets me go from this:
+&lt;pre&gt;
+&amp;lt;A class=&#34;ArchiveLink&#34;&amp;gt;
+    &amp;lt;xsl:attribute name=&#34;href&#34;&amp;gt;
+        &amp;lt;xsl:value-of select=&#34;$SiteRoot&#34;/&amp;gt;&amp;lt;xsl:value-of 
+            select=&#34;user:FormatArchiveLink(LocalPubDate)&#34;/&amp;gt;#a&amp;lt;xsl:value-of 
+            select=&#34;BlogEntryNumber&#34;/&amp;gt;
+    &amp;lt;/xsl:attribute&amp;gt;
+    &amp;lt;!--....--&amp;gt;
+&amp;lt;/A&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;To this:
+&lt;pre&gt;
+&amp;lt;A class=&#34;ArchiveLink&#34; href=&#34;{$SiteRoot}{user:FormatArchiveLink(LocalPubDate)}#a{BlogentryNumber}&#34;&amp;gt;
+    &amp;lt;!--....--&amp;gt;
+&amp;lt;/A&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;Very cool!
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>More on RSS dates</title>
+      <link>http://new.eightypercent.net/post/old/00062.html</link>
+      <pubDate>Sun, 09 Mar 2003 09:26:04 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00062.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge Curioso&lt;/a&gt; &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/?item=63182667125303&#34;&gt;posted on his blog&lt;/a&gt; some comments around dealing with dates in RSS and the .Net framework.  I figure I&#39;d put some more detail up here on how I handle dates in JoeBlogger.
+&lt;ol&gt;
+&lt;li&gt;I store both GMT and local time when creating an entry.  I should probably keep a &#34;last updated&#34; time too but I haven&#39;t done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
+&lt;li&gt;I used C# to do all of my date processing.  Here is the code for my properites for these things:
+&lt;pre&gt;
+        // The PubDate here is in universal time -- UTC
+        [XmlIgnore]
+        public DateTime PubDate;
+
+        [XmlElement(ElementName=&#34;PubDate&#34;)]
+        public string PubDateString 
+        {
+            get
+            {
+                return PubDate.ToString(&#34;r&#34;);
+            }
+            set
+            {
+                PubDate = DateTime.ParseExact(value,&#34;r&#34;, null);
+            }
+        }
+
+        [XmlIgnore]
+        public DateTime LocalPubDate;
+
+        [XmlElement(ElementName=&#34;LocalPubDate&#34;)]
+        public string LocalPubDateString 
+        {
+            get
+            {
+                return LocalPubDate.ToString(&#34;ddd, dd MMM yyyy HH&#39;:&#39;mm&#39;:&#39;ss&#34;);
+            }
+            set
+            {
+                try
+                {
+                    LocalPubDate = DateTime.ParseExact(value,&#34;ddd, dd MMM yyyy HH&#39;:&#39;mm&#39;:&#39;ss&#34;, null);
+                }
+                catch (FormatException)
+                {
+                    LocalPubDate = DateTime.MinValue;
+                }
+            }
+        }
+&lt;/pre&gt;
+&lt;li&gt;Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  &lt;a href=&#34;http://www.eightypercent.net/Stuff/SourceExample.xml&#34;&gt;Here&lt;/a&gt; is an example of a source XML document for my main page and &lt;a href=&#34;http://www.eightypercent.net/Templates/Main.xslt&#34;&gt;here&lt;/a&gt; is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
+&lt;pre&gt;
+    &amp;lt;msxsl:script implements-prefix=&#39;user&#39; language=&#39;CSharp&#39;&amp;gt;
+        &amp;lt;![CDATA[
+        public string FormatTime(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, &#34;ddd, dd MMM yyyy HH&#39;:&#39;mm&#39;:&#39;ss&#34;, null);
+            return dt.ToString(&#34;h&#39;:&#39;mm&#39;:&#39;ss tt&#34;);
+        }
+        public string FormatArchiveLink(string input)
+        {
+            DateTime dt = DateTime.ParseExact(input, &#34;ddd, dd MMM yyyy HH&#39;:&#39;mm&#39;:&#39;ss&#34;, null);
+            return String.Format(@&#34;/Archive/{0:D4}/{1:D2}/{2:D2}.html&#34;, dt.Date.Year, dt.Date.Month, dt.Date.Day);
+        }
+        ]]&amp;gt;
+    &amp;lt;/msxsl:script&amp;gt;
+&lt;/pre&gt;
+And then use that in the output like this:
+&lt;pre&gt;
+&amp;lt;xsl:value-of select=&#34;user:FormatTime(LocalPubDate)&#34;/&amp;gt;
+&lt;/pre&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having &#34;First published&#34; and &#34;Last changed&#34; times might be interesting also.  Perhaps I&#39;ll write something up at some point.
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

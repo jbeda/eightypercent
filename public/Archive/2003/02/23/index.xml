@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/02/23 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/02/23.html</link>
+    <description>Recent content in 2003/02/23 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Feb 2003 21:57:55 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/02/23.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Before I go to bed</title>
+      <link>http://new.eightypercent.net/post/old/00047.html</link>
+      <pubDate>Sun, 23 Feb 2003 21:57:55 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00047.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;&lt;a href=&#34;http://groups.google.com/groups?hl=en&amp;lr=&amp;ie=ISO-8859-1&amp;safe=off&amp;q=eightypercent&amp;sa=N&amp;tab=wg&#34;&gt;Searching&lt;/a&gt; google groups for &#34;eightypercent&#34; turns up someone who likes to post in lots of bondage forums.  For the record, that isn&#39;t me.  :)
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Code review</title>
+      <link>http://new.eightypercent.net/post/old/00046.html</link>
+      <pubDate>Sun, 23 Feb 2003 21:00:25 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00046.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;I have the &#34;comparison before saving&#34; stuff working and that is cutting down my upload times dramatically.  This is almost like a real blogging tool now.  However, one function -- called TransformAndSaveDoc -- turned out really nasty.  This function transforms an xml document with an xslt style sheet.  It then compares the result to what is already on disk and only writes the new result to disk if the new version is different from the old version.
+&lt;p&gt;Suggestions for making this tighter?  Is there some functionality (memcmp?) that I&#39;m missing in the .Net framework?  Since I don&#39;t have comments working, send mail to &lt;a href=&#34;mailto:eightypercent@bedafamily.com&#34;&gt;eightypercent@bedafamily.com&lt;/a&gt; and I&#39;ll post the best comments up here with credit and eternal thanks.
+&lt;pre&gt;
+        private void TransformAndSaveDoc(XslTransform xslt, XmlDocument xmlSource, string fileName)
+        {           
+            using (MemoryStream memstrm = new MemoryStream())
+            {
+                bool fFileDifferent = false;
+
+                xslt.Transform(xmlSource, null, memstrm);
+
+                FileInfo fi = new FileInfo(fileName);
+
+                // Check for simple things first
+                if (!File.Exists(fileName) || fi.Length != memstrm.Length)
+                    fFileDifferent = true;
+
+                // Actually compare the file to the stream
+                if (!fFileDifferent)
+                {
+                    Byte[] buffer1 = new Byte[8096];
+                    Byte[] buffer2 = new Byte[8096];
+
+                    // compare the existing file with the memory stream
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+                        
+                        int size1 = 0, size2 = 0;
+                        while(  !fFileDifferent 
+                            &amp;&amp;  (0 != (size1 = memstrm.Read(buffer1, 0, 8096))))
+                        {
+                            size2 = fileStream.Read(buffer2, 0, 8096);
+                            Debug.Assert(size1 == size2);
+                            
+                            for (int i = 0; i &lt; size1; i++)
+                            {
+                                if (buffer1[i] != buffer2[i])
+                                {
+                                    fFileDifferent = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Write that puppy out
+                if (fFileDifferent)
+                {
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+
+                        Byte[] buffer = new Byte[8096];
+                        int size;
+                        while(0 != (size = memstrm.Read(buffer, 0, 8096)))
+                        {
+                            fileStream.Write(buffer, 0, size);
+                        }
+                    }
+                }
+            }
+        }
+&lt;/pre&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Untitled #45</title>
+      <link>http://new.eightypercent.net/post/old/00045.html</link>
+      <pubDate>Sun, 23 Feb 2003 20:27:56 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00045.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;I have the dictionary done so now I don&#39;t upload files that haven&#39;t changed.  Now all I have to do is change my generation code so that it doesn&#39;t actually write to files that haven&#39;t changed.
+&lt;p&gt;I could do this by making sure that I track which data files have changed and figuring out which output files that means that I have to generate.
+&lt;p&gt;Or, I could just always generate every output file, but compare it to what is on disk before writing it.  If it is exactly the same as what is already there, I can just throw away my in memory copy and not write anything.
+&lt;p&gt;Radio took the first approach, except it didn&#39;t get it completely right.  If you added a new entry in Radio, it wouldn&#39;t update any of the archive pages.  The problem is that you would always see links going further back on the calendar but never going forward, as it would never update one of the archive pages.  With the second approach it may take a little longer to generate the site,  but you&#39;ll be sure to update everything that needs to be updated.
+&lt;p&gt;I think that I&#39;m going to go with the second approach.  I can adapt and implement the first as needed (perhaps on a more granular level.
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FTPUpstreaming?</title>
+      <link>http://new.eightypercent.net/post/old/00044.html</link>
+      <pubDate>Sun, 23 Feb 2003 19:44:44 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00044.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;If you see this then I uploaded everything using my new FTP support.
+&lt;P&gt;Right now I just upload everything every time.  However, it shouldn&#39;t be difficult for me to keep a dictionary of file times so I can keep track of what is new since the last upload.
+&lt;P&gt;I also need to do the uploading on a different thread and report status.
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

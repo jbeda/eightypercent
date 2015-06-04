@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/02/27 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/02/27.html</link>
+    <description>Recent content in 2003/02/27 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Feb 2003 11:25:25 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/02/27.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PASV ftp</title>
+      <link>http://new.eightypercent.net/post/old/00051.html</link>
+      <pubDate>Thu, 27 Feb 2003 11:25:25 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00051.html</guid>
+      <description>&lt;p&gt;
+&lt;P&gt;My FTP code only supports PASV ftp right now.  The reasoning is that I&#39;m behind a NAT firewall and my server isn&#39;t.  PASV works much better in that configuration.  &lt;a href=&#34;http://www.simplegeek.com/PermaLink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268&#34;&gt;Chris is having problems&lt;/a&gt; getting my code to work and he is blaming this.
+&lt;P&gt;FTP generally has two TCP connections:  a control connection and a data connection.  The control connection is pretty straigtforward.  You connect to port 21 and start sending messages back and forth.  Some of these commands ask to open a data connection -- to upload a file, download a file or get a directory listing.
+&lt;P&gt;There are two ways to establish the data connection:
+&lt;ol&gt;&lt;li&gt;&lt;B&gt;Normal FTP&lt;/B&gt;: you can have the server establish the connection to your machine.  You tell the server that you are listening on a certain port and that he should connect to you there.
+&lt;li&gt;&lt;B&gt;Passive FTP&lt;/B&gt;: you establish the connection to the server.  You ask the server for another address/port and you initiate the connection.
+&lt;/ol&gt;  
+&lt;p&gt;In a world with network address translation (NAT) it is a lot easier to connect from your protected machine out to the network than it is to have another machine connect (on a new port) to you.  This is why I did passive FTP.  Doing normal FTP shouldn&#39;t be that hard if this is indeed the problem that Chris is having.
+&lt;p&gt;Oh yeah, and if both client and server are behind NAT, you are screwed.  That is unless one of the NATs is smart enough to understand FTP and translate stuff along the way.  HTTP can work better here since everyone understands it and it all happens on one socket.  However, HTTP servers aren&#39;t set up for this type of thing without wacky extensions like WebDAV or the frontpage extensions.
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>D60 obsolete</title>
+      <link>http://new.eightypercent.net/post/old/00050.html</link>
+      <pubDate>Thu, 27 Feb 2003 11:16:53 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00050.html</guid>
+      <description>&lt;p&gt;
+&lt;p&gt;Well, I knew it was coming, but my *ahem* brand new D60 is now superceded by the new &lt;a href=&#34;http://www.dpreview.com/news/0302/03022711canoneos10dpreview.asp&#34;&gt;Canon 10D&lt;/a&gt;.  It has the one thing that I really really want -- a better AF system.  At least I know that mere mortals won&#39;t get their hands on them for many months yet.
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

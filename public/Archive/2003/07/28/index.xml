@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/07/28 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/07/28.html</link>
+    <description>Recent content in 2003/07/28 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2003 09:15:12 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/07/28.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Comments by Haloscan</title>
+      <link>http://new.eightypercent.net/post/old/00125.html</link>
+      <pubDate>Mon, 28 Jul 2003 09:15:12 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00125.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I finally signed up at Haloscan and now have comments up here.&amp;#160; I don&#39;t know
+        if any of my 2 readers will care, but let&#39;s see what happens.
+    &lt;/p&gt;
+    &lt;p&gt;
+        After the first outage at Haloscan, I&#39;ll probably give up and write my own comment
+        system.&amp;#160; I want to keep it seperate from JoeBlogger though so that JoeBlogger
+        is still a client render/FTP too.&amp;#160; The comment system will probably be similar
+        to Haloscan in the way it is hosted on a page.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OSX not a 64 bit OS</title>
+      <link>http://new.eightypercent.net/post/old/00124.html</link>
+      <pubDate>Mon, 28 Jul 2003 08:49:43 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00124.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        &lt;a href=&#34;http://www.eightypercent.net/Archive/2003/06/26.html&#34;&gt;Earlier&lt;/a&gt;, I was
+        wondering if the new G5 Macs would have an OS that could take advantage of their 64
+        bit nature, or if Apple was going to take a short cut and run the G5 in a compat mode.&amp;#160;
+        Apparently, that &lt;em&gt;is&lt;/em&gt; going to be the case, at least according to &lt;a href=&#34;http://www.theregister.co.uk/content/39/31995.html&#34;&gt;this
+        Register article&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        In a lot of ways, this is just more hype from Apple.&amp;#160; Many Intel processesors
+        (I don&#39;t know the exact ones) actually have a 36 bit addressing bus.&amp;#160; Those extra
+        4 bits mean that the processor can actually address 16 times as much memory as a 32
+        bit addressing bus.&amp;#160; The difference is between 4GB and 64GB.&amp;#160; However, most
+        Windows machines don&#39;t take advantage of that extra capacity.&amp;#160; The APIs &lt;a href=&#34;http://msdn.microsoft.com/library/en-us/memory/base/address_windowing_extensions.asp?frame=true&#34;&gt;are
+        there&lt;/a&gt; though, if you want to use them.
+    &lt;/p&gt;
+    &lt;p&gt;
+        So, is the 64 bit nature of the G5 hype?&amp;#160; As far as I can tell, right now the
+        answer is yes.
+    &lt;/p&gt;
+    &lt;p&gt;
+        (Well, I&#39;m sure that someone will port 64 bit Linux to it, and that will be cool.&amp;#160;
+        It might become the cheapest way to get a 64 bit linux machine, if AMD doesn&#39;t beat
+        them to the punch)
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

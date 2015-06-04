@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/12/09 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/12/09.html</link>
+    <description>Recent content in 2004/12/09 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Dec 2004 08:45:43 -0800</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/12/09.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Full Size Pano Example</title>
+      <link>http://new.eightypercent.net/post/old/00227.html</link>
+      <pubDate>Thu, 09 Dec 2004 08:45:43 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00227.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I&#39;m trying out something new.&amp;#160; Here is a flash app that lets you zoom in to and
+        navigate around a full size version of the Horseshoe Bend pano that I posted a couple
+        of days ago.&amp;#160; Hopefully this won&#39;t kill my bandwidth. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;m using free software provided by &lt;a href=&#34;http://www.zoomify.com/&#34;&gt;Zoomify&lt;/a&gt;. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;object id=&#34;theMovie&#34; codebase=&#34;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0&#34; height=&#34;600&#34; width=&#34;800&#34; classid=&#34;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&#34;&gt;
+            &lt;param name=&#34;_cx&#34; value=&#34;21167&#34; /&gt;
+            &lt;param name=&#34;_cy&#34; value=&#34;15875&#34; /&gt;
+            &lt;param name=&#34;FlashVars&#34; value=&#34;zoomifyImagePath=http://www.eightypercent.net/Zoomify/HorseShoeBend1-zoomify&#34; /&gt;
+            &lt;param name=&#34;Movie&#34; value=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; /&gt;
+            &lt;param name=&#34;Src&#34; value=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; /&gt;
+            &lt;param name=&#34;WMode&#34; value=&#34;Window&#34; /&gt;
+            &lt;param name=&#34;Play&#34; value=&#34;-1&#34; /&gt;
+            &lt;param name=&#34;Loop&#34; value=&#34;-1&#34; /&gt;
+            &lt;param name=&#34;Quality&#34; value=&#34;High&#34; /&gt;
+            &lt;param name=&#34;SAlign&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;Menu&#34; value=&#34;-1&#34; /&gt;
+            &lt;param name=&#34;Base&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;AllowScriptAccess&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;Scale&#34; value=&#34;ShowAll&#34; /&gt;
+            &lt;param name=&#34;DeviceFont&#34; value=&#34;0&#34; /&gt;
+            &lt;param name=&#34;EmbedMovie&#34; value=&#34;0&#34; /&gt;
+            &lt;param name=&#34;BGColor&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;SWRemote&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;MovieData&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;SeamlessTabbing&#34; value=&#34;1&#34; /&gt;
+            &lt;param name=&#34;Profile&#34; value=&#34;0&#34; /&gt;
+            &lt;param name=&#34;ProfileAddress&#34; value=&#34;&#34; /&gt;
+            &lt;param name=&#34;ProfilePort&#34; value=&#34;0&#34; /&gt;
+            &lt;embed bgcolor=&#34;black&#34; flashvars=&#34;zoomifyImagePath=http://www.eightypercent.net/Zoomify/HorseShoeBend1-zoomify&#34; src=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; menu=&#34;false&#34; pluginspage=&#34;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&#34; width=&#34;750&#34; height=&#34;450&#34; name=&#34;theMovie&#34;&gt;&lt;/embed&gt; 
+        &lt;/object&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        BTW, is it bad form to put a flash app directly in an RSS feed?
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

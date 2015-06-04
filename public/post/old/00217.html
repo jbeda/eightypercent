@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Adobe DNG image format &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00217.html">Adobe DNG image format</a></h1>
+        <span class="lead">Mon, Sep 27, 2004</span>
+        <div class="post">
+            <p>
+
+    <p>
+        Adobe announced today a new image format for storing raw camera data.&#160; Dubbed <a href="http://www.adobe.com/products/dng/main.html">DNG</a>&#160;(for
+        Digital Negative) this format is meant to be a common interchange for the fast proliferating
+        collection of proprietary raw image formats.&#160; By some estimates there are over
+        60 different raw image formats out there.&#160; Because of this, there are really
+        only a couple of software vendors that can afford to get into the raw image processing
+        game.&#160; It appears that Adobe hopes to level this playing field with this new
+        specification. 
+    </p>
+    <p>
+        To understand the significance of this, it is important that you understand how raw
+        image formats work and why they are different.&#160; When most modern cameras (not
+        using the <a href="http://www.foveon.com/X3_tech.html">Foveon</a> sensor) advertise
+        take a picture, they have a grid of sensors.&#160; These sensors only measure intensity
+        but not color.&#160; To capture color data, a color filter (called a Bayer filter)
+        is placed over the sensor so that each little sensor only sees one color (typically
+        Red, Green and Blue).&#160; That means that the camera only knows one color value
+        at each pixel.&#160; This raw data is then processed using a set of complex algorithms
+        to produce an image that has all the color information for each pixel.&#160; For each
+        pixel in the raw data, these algorithms reconstruct the missing color data by looking
+        at the surrounding pixels and <em>guessing</em>.&#160; Because of this guessing, there
+        are multiple ways to process this raw data -- and there is the possibility that these
+        algorithms and guessing will get better in the future.&#160; Because of this, all
+        serious cameras offer a raw mode where the raw (or close to it) sensor data is saved
+        in a special format and the complex demosaicing algorithms can be done later on a
+        computer. 
+    </p>
+    <p>
+        So, raw images are fundamentally different from regular images in that they store
+        raw sensor data before it has been processed. 
+    </p>
+    <p>
+        The rub comes with the fact that each camera manufacturer has a proprietary raw format
+        (or two or three) and some generally crappy software for dealing with it.&#160; Companies
+        like Adobe (with the Adobe Camera Raw plugin for photoshop) and Capture One have been
+        waging a guerilla war to create products to read all of these formats.&#160; If Adobe
+        can succeed in getting camera manufacturers to implement this format in their cameras,
+        life for many photographers could become much much easier.&#160; But this isn't a
+        sure thing.&#160; Camera manufacturers are very aware of the business benefits of
+        lock in.&#160; They do it with lens mounts and with their software suites.&#160; Canon
+        or Nikon may see their proprietary formats as an advantage in the marketplace.&#160;
+        Nikon even charges for the software to convert its raw format while Canon and most
+        other manufacturers provide it for free. 
+    </p>
+    <p>
+        I haven't gotten a read from my buddies in Microsoft imaging, but I'm hoping that
+        DNG is a huge success.&#160; Assuming that Adobe doesn't try to assert its own proprietary
+        control over the format (Postscript anyone?) it may just let the camera manufacturers
+        concentrate on making cameras and leave the software development up to a third party
+        marketplace. 
+    </p>
+    <p>
+        [update: RichB points out that there is also an open source utility for dealing with
+        raw camera data called <a href="http://www.cybercom.net/~dcoffin/dcraw/">DCRaw</a> and
+        built by Dave Coffin. Apparently Photoshop (and Capture One?) build on some of Dave's
+        work.]
+    </p>
+
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

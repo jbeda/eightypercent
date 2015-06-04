@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2004/05/01 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2004/05/01.html</link>
+    <description>Recent content in 2004/05/01 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 May 2004 20:06:37 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2004/05/01.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Talking at WinHEC</title>
+      <link>http://new.eightypercent.net/post/old/00181.html</link>
+      <pubDate>Sat, 01 May 2004 20:06:37 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00181.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I should have posted this earlier, but better late than never.&amp;#160; I&#39;m going to
+        be speaking at WinHEC.&amp;#160; It&#39;ll be session TW04006: Avalon Graphics - 2D, 3D, Imaging
+        and Composition.&amp;#160; If you are there and are interested in Avalon come check it
+        out.&amp;#160; I&#39;ll be going in to some detail on what happens between when a developer
+        calls an API and we call Direct3D.&amp;#160;&amp;#160;If you aren&#39;t going to be there, wish
+        me luck.&amp;#160; The room holds 700 people (I think) and I&#39;ve never talked in front
+        of that many people before. 
+    &lt;/p&gt;
+    &lt;p&gt;
+        I&#39;ll also be hanging out in the tech lounge and be at our &#34;Ask the Experts&#34; session. 
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

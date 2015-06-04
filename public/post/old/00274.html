@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS) &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-text navbar-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net/post/old/00274.html">HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</a></h1>
+        <span class="lead">Tue, Sep 18, 2007</span>
+        <div class="post">
+            <p>
+
+    <p>
+        I haven't updated my blog in forever and I'm probably going to abandon my homebrew
+        static client generated site for something like <a href="http://mephistoblog.com/">Mephisto</a> at
+        some point but I haven't had time to make the transition. 
+    </p>
+    <p>
+        In the meantime, I'd like to save people some pain and document the steps I have go
+        through to upgrade my Highpoint RocketRaid 2220 on Linux.&#160; I installed the driver
+        a while ago and don't remember the exact steps for that, so this is just what I do
+        to upgrade.&#160; I wrote a little shell script: 
+    </p>
+    <pre>#! /bin/sh -v
+
+# Update this version every time you upgrade.
+VER=2.6.15-29-686
+
+# To update the highpoint driver:
+# 1) Download latest highpoint driver from: 
+#
+# http://www.highpoint-tech.com/BIOS_Driver/rr222x/Linux/
+#
+# 2) Patch driver by changing wrong kernel #ifdefs in osm/linux/os_linux.c  
+#   KERNEL_VERSION(2,6,15) -&gt; KERNEL_VERSION(2,6,16)
+
+# Disable sata_mv.ko by moving it to a new directory.  This driver
+# conflicts with highpoint driver.  I don't know if this is the
+# "right" way to do this, but it works.
+sudo mkdir -p /lib/modules/${VER}.disabled
+sudo mv /lib/modules/${VER}/kernel/drivers/scsi/sata_mv.ko /lib/modules/${VER}.disabled/
+
+# Make sure kernel headers are installed
+sudo apt-get install linux-headers-${VER}
+
+# Make new hpt driver:
+cd ~jbeda/sources/rr222x-linux-src-1.07/product/rr2220/linux/
+make KERNELDIR=/lib/modules/${VER}/build
+sudo make install KERNELDIR=/lib/modules/${VER}/build
+
+# make a new ramfs
+# mkinitramfs -o /boot/initrd.img-2.6.15-27-686 /lib/modules/2.6.15-27-686
+sudo dpkg-reconfigure linux-image-${VER}</pre>
+    <p>
+        Good luck. I hope this helps people out there that are stuck with this thing. I'm
+        still looking for a good cheap solution to host lots of SATA drives on Linux.&#160;
+        Port multipliers are there and aren't as cheap as they should be.&#160; The driver
+        situation is pretty dire and there aren't that many non RAID (fake or not) &gt;4 ports
+        out there.&#160; I haven't tried any SAS cards though -- perhaps the situation there
+        is better.&#160; I'm also running an LSI MegaRAID SATA 300-8XLP with the megaraid
+        driver.&#160; It wasn't as cheap but at least it works with a true open driver.&#160; 
+    </p>
+
+</p>
+
+        </div>
+
+              <footer>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-text">
+              &copy; 2003-2015 Joe Beda 
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

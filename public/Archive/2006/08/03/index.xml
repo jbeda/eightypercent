@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2006/08/03 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2006/08/03.html</link>
+    <description>Recent content in 2006/08/03 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Aug 2006 09:56:19 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2006/08/03.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>&#34;Avalon marks the end of the American Dream&#34;</title>
+      <link>http://new.eightypercent.net/post/old/00273.html</link>
+      <pubDate>Thu, 03 Aug 2006 09:56:19 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00273.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        Miguel de Icaza says &lt;a href=&#34;http://tirania.org/blog/archive/2006/Aug-02.html&#34;&gt;&#34;Avalon
+        marks the end of the American Dream.&#34;&lt;/a&gt;&amp;#160; He also compares it to J2EE -- apparently
+        implying that it is overly complex and overarchitected.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ouch.
+    &lt;/p&gt;
+    &lt;p&gt;
+        While I wouldn&#39;t put it that way, I can&#39;t disagree.&amp;#160; I left Microsoft almost
+        two years ago and Avalon still hasn&#39;t shipped.&amp;#160; A 5+ year ship cycle for a project
+        can&#39;t be seen as anything but a sign that something is horribly wrong.&amp;#160; When
+        I was on Avalon we kept talking about building an API for the next 10 years.&amp;#160;
+        Apparently, when Avalon ships there will be 5 years left on that clock.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I take partial responsibility for this.&amp;#160; When we were first starting Avalon,
+        I was all about &#34;Go big or go home&#34; and &#34;We should build something only Microsoft
+        can build.&#34;&amp;#160; In retrospect, the project and the company might have been better
+        served by starting with a much smaller team, aiming lower to start and shipping 5
+        times over those 5 years.&amp;#160; Version 1 might not have been that impressive, but
+        relentless improvement would have built something better factored, simpler, and more
+        in tune with what users actually need.
+    &lt;/p&gt;
+    &lt;p&gt;
+        I named this blog &#34;eightypercent&#34; in honor of the 80% rule.&amp;#160; It just so happens
+        there there are lots of 80% rules to apply.&amp;#160; In this case, a simpler system that
+        only solved 80% of the problem would have been good enough and would have shipped
+        multiple times already.
+    &lt;/p&gt;
+    &lt;p&gt;
+        It looks like the &lt;a href=&#34;http://www.google.com/search?hl=en&amp;amp;lr=&amp;amp;q=%22WPF%2FE%22&amp;amp;btnG=Search&#34;&gt;WPF/E&lt;/a&gt; project
+        is an effort to&amp;#160;strip Avalon down to something much more approachable.&amp;#160;
+        Cross platform, no full CLR, lower memory footprint -- sounds a lot like Flash/Flex.&amp;#160;
+        I know some of the guys working on the project and I have high hopes that it will
+        be something interesting.&amp;#160; The only question, when will&amp;#160;it ship?
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

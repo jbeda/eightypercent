@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2005/08/23 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2005/08/23.html</link>
+    <description>Recent content in 2005/08/23 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Aug 2005 20:29:06 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2005/08/23.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Welcome to Google Talk!</title>
+      <link>http://new.eightypercent.net/post/old/00249.html</link>
+      <pubDate>Tue, 23 Aug 2005 20:29:06 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00249.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        We&#39;ve been working to bring together our new IM service.&amp;#160; Most of the development
+        was centered up here in the Kirkland office.&amp;#160; Watch this space (and others) for
+        more news over the next couple of days.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;img alt=&#34;&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Images/googletalk.gif&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        In case you&#39;ve missed the fireworks, here is the summary of what we&#39;ve done:
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            Instant messaging server based on the XMPP/Jabber protocol.&amp;#160; This is an IETF
+            approved protocol.&amp;#160; Check out &lt;a href=&#34;http://www.xmpp.org&#34;&gt;www.xmpp.org&lt;/a&gt; for
+            more info.&lt;/li&gt;
+        &lt;li&gt;
+            Out of the box support for many third party clients.&amp;#160; Choose iChat, Gaim, Trillian
+            or a host of others.&amp;#160; We support them from day one.&lt;/li&gt;
+        &lt;li&gt;
+            Our own client available for download from &lt;a href=&#34;http://talk.google.com&#34;&gt;talk.google.com&lt;/a&gt;.&amp;#160;
+            We&#39;ve concentrated on a simple to use and clean interface.&amp;#160; We&#39;ve tried to strip
+            IM down to its essence.&lt;/li&gt;
+        &lt;li&gt;
+            Support for voice calls between clients that just work.&amp;#160; We&#39;ve worked hard to
+            support all sorts of network topologies.&amp;#160; We are also using first class industry
+            leading audio codecs.&lt;/li&gt;
+        &lt;li&gt;
+            A commitment to openness moving forward.&amp;#160; Choose your platform (Window, Mac,
+            Linux, etc), choose your client (ours or others) and choose your service provider
+            (we are commited to federation).&amp;#160; We want to make IM as open as the web or email.&lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

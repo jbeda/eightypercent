@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2003/08/03 on 80%</title>
+    <link>http://new.eightypercent.net/archive/2003/08/03.html</link>
+    <description>Recent content in 2003/08/03 on 80%</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Aug 2003 10:11:00 -0700</lastBuildDate>
+    <atom:link href="http://new.eightypercent.net/archive/2003/08/03.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ivory Tower?</title>
+      <link>http://new.eightypercent.net/post/old/00126.html</link>
+      <pubDate>Sun, 03 Aug 2003 10:11:00 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net/post/old/00126.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        I love &lt;a href=&#34;http://radio.weblogs.com/0117167/2003/08/01.html#a410&#34;&gt;this&lt;/a&gt;.&amp;#160;
+        When we are designing APIs, we think about this type of thing.&amp;#160; We want to make
+        it easier for the &#34;bad programmer&#34; to write code that isn&#39;t so bad.&amp;#160; However,
+        you can only do so much.
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
