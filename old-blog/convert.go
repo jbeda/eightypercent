@@ -102,7 +102,7 @@ func main() {
 			Title:   e.Title,
 			Section: "post",
 			Date:    e.PubDate.In(loc),
-			Archive: []string{e.PubDate.Format("2006/01/02")},
+			Archive: []string{e.PubDate.In(loc).Format("2006/01/02")},
 		}
 		fms, _ := json.MarshalIndent(fm, "", "  ")
 		f.Write(fms)

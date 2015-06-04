@@ -7,7 +7,7 @@ pluralizelisttitles: false
 paginate: 10
 
 taxonomies:
-  archive: archive
+  archive: Archive
 
 params:
   description: "The personal blog of Joe Beda"
