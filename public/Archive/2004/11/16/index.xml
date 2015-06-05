@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2004/11/16 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2004/11/16.html</link>
+    <link>http://localhost:1313/archive/2004/11/16.html</link>
     <description>Recent content in 2004/11/16 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Nov 2004 18:49:08 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2004/11/16.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2004/11/16.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Jobs at Google</title>
-      <link>http://new.eightypercent.net/post/old/00221.html</link>
+      <link>http://localhost:1313/post/old/00221.html</link>
       <pubDate>Tue, 16 Nov 2004 18:49:08 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00221.html</guid>
+      <guid>http://localhost:1313/post/old/00221.html</guid>
       <description>&lt;p&gt;
 
     With the advent of our new office, a lot of people have been asking (via email or
@@ -31,10 +31,10 @@
     
     <item>
       <title>Random Update</title>
-      <link>http://new.eightypercent.net/post/old/00220.html</link>
+      <link>http://localhost:1313/post/old/00220.html</link>
       <pubDate>Tue, 16 Nov 2004 18:39:02 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00220.html</guid>
+      <guid>http://localhost:1313/post/old/00220.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

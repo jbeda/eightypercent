@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>80%</title>
-    <link>http://new.eightypercent.net/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 May 2015 12:19:58 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Test Doc</title>
-      <link>http://new.eightypercent.net/post/first.html</link>
+      <link>http://localhost:1313/post/first.html</link>
       <pubDate>Tue, 12 May 2015 12:19:58 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/first.html</guid>
+      <guid>http://localhost:1313/post/first.html</guid>
       <description>
 
 &lt;h1 id=&#34;markdown-syntax:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;Markdown: Syntax&lt;/h1&gt;
 
 &lt;ul id=&#34;ProjectSubmenu&#34;&gt;
-    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/&#34; title=&#34;Markdown Project Page&#34;&gt;Main&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/basics&#34; title=&#34;Markdown Basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/projects/markdown/&#34; title=&#34;Markdown Project Page&#34;&gt;Main&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/projects/markdown/basics&#34; title=&#34;Markdown Basics&#34;&gt;Basics&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a class=&#34;selected&#34; title=&#34;Markdown Syntax Documentation&#34;&gt;Syntax&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/license&#34; title=&#34;Pricing and License Information&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;http://new.eightypercent.net/projects/markdown/dingus&#34; title=&#34;Online Markdown Web Form&#34;&gt;Dingus&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/projects/markdown/license&#34; title=&#34;Pricing and License Information&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;http://localhost:1313/projects/markdown/dingus&#34; title=&#34;Online Markdown Web Form&#34;&gt;Dingus&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;ul&gt;
@@ -62,7 +62,7 @@
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This document is itself written using Markdown; you
-can &lt;a href=&#34;http://new.eightypercent.net/projects/markdown/syntax.text&#34;&gt;see the source for it by adding &amp;lsquo;.text&amp;rsquo; to the URL&lt;/a&gt;.&lt;/p&gt;
+can &lt;a href=&#34;http://localhost:1313/projects/markdown/syntax.text&#34;&gt;see the source for it by adding &amp;lsquo;.text&amp;rsquo; to the URL&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -969,20 +969,20 @@ _   underscore
     
     <item>
       <title>About 80%</title>
-      <link>http://new.eightypercent.net/about.html</link>
+      <link>http://localhost:1313/about.html</link>
       <pubDate>Tue, 12 May 2015 12:18:21 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/about.html</guid>
+      <guid>http://localhost:1313/about.html</guid>
       <description>&lt;p&gt;80% is the personal blog for Joe Beda.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</title>
-      <link>http://new.eightypercent.net/post/old/00274.html</link>
+      <link>http://localhost:1313/post/old/00274.html</link>
       <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00274.html</guid>
+      <guid>http://localhost:1313/post/old/00274.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1042,10 +1042,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>&#34;Avalon marks the end of the American Dream&#34;</title>
-      <link>http://new.eightypercent.net/post/old/00273.html</link>
+      <link>http://localhost:1313/post/old/00273.html</link>
       <pubDate>Thu, 03 Aug 2006 09:56:19 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00273.html</guid>
+      <guid>http://localhost:1313/post/old/00273.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1092,10 +1092,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Seattle&#39;s Homeless Alcoholics on NPR</title>
-      <link>http://new.eightypercent.net/post/old/00272.html</link>
+      <link>http://localhost:1313/post/old/00272.html</link>
       <pubDate>Wed, 19 Jul 2006 10:07:05 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00272.html</guid>
+      <guid>http://localhost:1313/post/old/00272.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1124,10 +1124,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>1 to 30</title>
-      <link>http://new.eightypercent.net/post/old/00271.html</link>
+      <link>http://localhost:1313/post/old/00271.html</link>
       <pubDate>Fri, 14 Jul 2006 14:15:05 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00271.html</guid>
+      <guid>http://localhost:1313/post/old/00271.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1144,10 +1144,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Custom Weighted Vests</title>
-      <link>http://new.eightypercent.net/post/old/00270.html</link>
+      <link>http://localhost:1313/post/old/00270.html</link>
       <pubDate>Tue, 04 Jul 2006 08:50:24 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00270.html</guid>
+      <guid>http://localhost:1313/post/old/00270.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1175,10 +1175,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Link-Backup v 0.6</title>
-      <link>http://new.eightypercent.net/post/old/00269.html</link>
+      <link>http://localhost:1313/post/old/00269.html</link>
       <pubDate>Mon, 19 Jun 2006 20:28:01 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00269.html</guid>
+      <guid>http://localhost:1313/post/old/00269.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1201,10 +1201,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Annie loves flowers</title>
-      <link>http://new.eightypercent.net/post/old/00268.html</link>
+      <link>http://localhost:1313/post/old/00268.html</link>
       <pubDate>Sat, 03 Jun 2006 20:59:37 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00268.html</guid>
+      <guid>http://localhost:1313/post/old/00268.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1235,10 +1235,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Backing up data</title>
-      <link>http://new.eightypercent.net/post/old/00267.html</link>
+      <link>http://localhost:1313/post/old/00267.html</link>
       <pubDate>Sat, 15 Apr 2006 14:12:37 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00267.html</guid>
+      <guid>http://localhost:1313/post/old/00267.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1374,10 +1374,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>New Google Talk Client</title>
-      <link>http://new.eightypercent.net/post/old/00266.html</link>
+      <link>http://localhost:1313/post/old/00266.html</link>
       <pubDate>Sat, 01 Apr 2006 18:21:45 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00266.html</guid>
+      <guid>http://localhost:1313/post/old/00266.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1402,10 +1402,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>New Jingle Spec</title>
-      <link>http://new.eightypercent.net/post/old/00265.html</link>
+      <link>http://localhost:1313/post/old/00265.html</link>
       <pubDate>Sat, 01 Apr 2006 18:18:49 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00265.html</guid>
+      <guid>http://localhost:1313/post/old/00265.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1425,10 +1425,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>The Swing Years and Beyond</title>
-      <link>http://new.eightypercent.net/post/old/00264.html</link>
+      <link>http://localhost:1313/post/old/00264.html</link>
       <pubDate>Sat, 04 Mar 2006 19:16:40 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00264.html</guid>
+      <guid>http://localhost:1313/post/old/00264.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1472,10 +1472,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Peter&#39;s Jabber/Jingle talk</title>
-      <link>http://new.eightypercent.net/post/old/00263.html</link>
+      <link>http://localhost:1313/post/old/00263.html</link>
       <pubDate>Sat, 28 Jan 2006 09:51:30 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00263.html</guid>
+      <guid>http://localhost:1313/post/old/00263.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -1503,10 +1503,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Sleeping through the night</title>
-      <link>http://new.eightypercent.net/post/old/00262.html</link>
+      <link>http://localhost:1313/post/old/00262.html</link>
       <pubDate>Sun, 22 Jan 2006 06:19:12 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00262.html</guid>
+      <guid>http://localhost:1313/post/old/00262.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

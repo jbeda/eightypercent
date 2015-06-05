@@ -26,10 +26,10 @@
 
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header pull-left">
           <a href="/" class="navbar-brand">80%</a>
         </div>
-        <div class="navbar-text navbar-right">
+        <div class="navbar-header navbar-text pull-right">
           Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
         </div>
       </div>
@@ -37,7 +37,7 @@
 
 
     <div class="container">
-        <h1><a href="http://new.eightypercent.net/post/old/00009.html">Untitled #9</a></h1>
+        <h1><a href="http://localhost:1313/post/old/00009.html">Untitled #9</a></h1>
         <span class="lead">Wed, Jan 15, 2003</span>
         <div class="post">
             <p>
@@ -47,15 +47,13 @@ A friend of mine (manager in XBox user test and husband of one of Rachel's fello
         </div>
 
               <footer>
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-text">
-              &copy; 2003-2015 Joe Beda 
-              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a>
+        <nav class="footer navbar-default clearfix container-fluid">
+          <div class="row navbar-text">
+            <div class="pull-left">
+              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="pull-right"><a href="#top">Back to top</a></li>
-            </ul>
+            <div class="pull-right"><a class="navbar-link" href="#top">Back to top</a></div>
           </nav>
         </div>
       </footer>
@@ -67,7 +65,10 @@ A friend of mine (manager in XBox user test and husband of one of Rachel's fello
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     
     <script src="/js/bootstrap.min.js"></script>
-  </body>
+  <script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
 
 

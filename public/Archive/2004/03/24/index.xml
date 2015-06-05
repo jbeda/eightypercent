@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2004/03/24 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2004/03/24.html</link>
+    <link>http://localhost:1313/archive/2004/03/24.html</link>
     <description>Recent content in 2004/03/24 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Mar 2004 23:21:10 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2004/03/24.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2004/03/24.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DIY Home Theater Screen</title>
-      <link>http://new.eightypercent.net/post/old/00172.html</link>
+      <link>http://localhost:1313/post/old/00172.html</link>
       <pubDate>Wed, 24 Mar 2004 23:21:10 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00172.html</guid>
+      <guid>http://localhost:1313/post/old/00172.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -75,10 +75,10 @@
     
     <item>
       <title>Back from NZ</title>
-      <link>http://new.eightypercent.net/post/old/00171.html</link>
+      <link>http://localhost:1313/post/old/00171.html</link>
       <pubDate>Wed, 24 Mar 2004 21:32:05 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00171.html</guid>
+      <guid>http://localhost:1313/post/old/00171.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

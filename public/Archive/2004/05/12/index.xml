@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2004/05/12 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2004/05/12.html</link>
+    <link>http://localhost:1313/archive/2004/05/12.html</link>
     <description>Recent content in 2004/05/12 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 12 May 2004 10:12:34 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2004/05/12.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2004/05/12.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DanLehen on Avalon 3D</title>
-      <link>http://new.eightypercent.net/post/old/00184.html</link>
+      <link>http://localhost:1313/post/old/00184.html</link>
       <pubDate>Wed, 12 May 2004 10:12:34 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00184.html</guid>
+      <guid>http://localhost:1313/post/old/00184.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

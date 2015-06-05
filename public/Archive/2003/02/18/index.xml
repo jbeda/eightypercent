@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/02/18 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/02/18.html</link>
+    <link>http://localhost:1313/archive/2003/02/18.html</link>
     <description>Recent content in 2003/02/18 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Feb 2003 22:23:25 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/02/18.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2003/02/18.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>FTP support</title>
-      <link>http://new.eightypercent.net/post/old/00040.html</link>
+      <link>http://localhost:1313/post/old/00040.html</link>
       <pubDate>Tue, 18 Feb 2003 22:23:25 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00040.html</guid>
+      <guid>http://localhost:1313/post/old/00040.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I&#39;m busy getting my FTP support up and working.  Learning all of this new stuff is fun.  I&#39;m working directly off of &lt;a href=&#34;http://www.faqs.org/rfcs/rfc959.html&#34;&gt;RFC 959&lt;/a&gt; and looking at the debug log stuff in SmartFTP.
 &lt;P&gt;So far I can connect, log in, create a passive connection and list the root directory.  Once I have enough support to upload a file (real close now) I&#39;ll be set.  I probably have another hour or two to get that working.
@@ -26,10 +26,10 @@
     
     <item>
       <title>Photo workshop</title>
-      <link>http://new.eightypercent.net/post/old/00039.html</link>
+      <link>http://localhost:1313/post/old/00039.html</link>
       <pubDate>Tue, 18 Feb 2003 17:35:50 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00039.html</guid>
+      <guid>http://localhost:1313/post/old/00039.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;So, &lt;a href=&#34;http://michaelw.net&#34;&gt;MichaelW&lt;/a&gt; invited me to the Montreal F1 races this summer.  I would love to be able to go but it is just too much money. I haven&#39;t been at Microsoft as long as Michael has...
 &lt;P&gt;Instead, I&#39;m in the process of trying to sign up to go on &lt;a href=&#34;http://luminous-landscape.com/workshops/sk-dv-work.shtml&#34;&gt;this photo workshop&lt;/a&gt;, led by Steve Kossack.  This will be the first of this type of trip that I will have gone on.  It still isn&#39;t cheap but looks to be in line with similar excursions.  It also isn&#39;t &lt;a href=&#34;http://luminous-landscape.com/workshops/africa-ws.shtml&#34;&gt;this trip&lt;/a&gt;.
@@ -39,10 +39,10 @@
     
     <item>
       <title>MSFT @ 24</title>
-      <link>http://new.eightypercent.net/post/old/00038.html</link>
+      <link>http://localhost:1313/post/old/00038.html</link>
       <pubDate>Tue, 18 Feb 2003 08:30:39 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00038.html</guid>
+      <guid>http://localhost:1313/post/old/00038.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;Okay, I can&#39;t be the only one who was freaked out to see &lt;a href=&#34;http://finance.yahoo.com/q?s=MSFT&amp;d=c&amp;k=c4&amp;t=5d&#34;&gt;MSFT&lt;/a&gt; trading at 24 and change this morning.  I breathed a sigh of relief when I remembered the split.  So far, we&#39;ve gotten a nice boost today...
 &lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/07/21 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/07/21.html</link>
+    <link>http://localhost:1313/archive/2003/07/21.html</link>
     <description>Recent content in 2003/07/21 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 21 Jul 2003 09:01:22 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/07/21.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2003/07/21.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Goin&#39; to the PDC</title>
-      <link>http://new.eightypercent.net/post/old/00122.html</link>
+      <link>http://localhost:1313/post/old/00122.html</link>
       <pubDate>Mon, 21 Jul 2003 09:01:22 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00122.html</guid>
+      <guid>http://localhost:1313/post/old/00122.html</guid>
       <description>&lt;p&gt;
 
     Just to give Scoble some &lt;a href=&#34;http://radio.weblogs.com/0001011/2003/07/18.html#a3852&#34;&gt;back
@@ -27,10 +27,10 @@
     
     <item>
       <title>10 year reunion</title>
-      <link>http://new.eightypercent.net/post/old/00121.html</link>
+      <link>http://localhost:1313/post/old/00121.html</link>
       <pubDate>Mon, 21 Jul 2003 08:57:58 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00121.html</guid>
+      <guid>http://localhost:1313/post/old/00121.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

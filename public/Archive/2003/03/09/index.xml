@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/03/09 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/03/09.html</link>
+    <link>http://localhost:1313/archive/2003/03/09.html</link>
     <description>Recent content in 2003/03/09 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 09 Mar 2003 10:08:53 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/03/09.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2003/03/09.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The three B&#39;s</title>
-      <link>http://new.eightypercent.net/post/old/00064.html</link>
+      <link>http://localhost:1313/post/old/00064.html</link>
       <pubDate>Sun, 09 Mar 2003 10:08:53 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00064.html</guid>
+      <guid>http://localhost:1313/post/old/00064.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.
 &lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Stupid XSLT tricks</title>
-      <link>http://new.eightypercent.net/post/old/00063.html</link>
+      <link>http://localhost:1313/post/old/00063.html</link>
       <pubDate>Sun, 09 Mar 2003 10:00:02 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00063.html</guid>
+      <guid>http://localhost:1313/post/old/00063.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;In talking with &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge&lt;/a&gt; about how he does his site, he pointed me to his XSLT source.  I&#39;ll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven&#39;t discovered yet.  Here is one of them: &lt;a href=&#34;http://www.w3.org/TR/xslt#dt-attribute-value-template&#34;&gt;http://www.w3.org/TR/xslt#dt-attribute-value-template&lt;/a&gt;.  This is a huge keystroke saver.  It lets me go from this:
 &lt;pre&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>More on RSS dates</title>
-      <link>http://new.eightypercent.net/post/old/00062.html</link>
+      <link>http://localhost:1313/post/old/00062.html</link>
       <pubDate>Sun, 09 Mar 2003 09:26:04 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00062.html</guid>
+      <guid>http://localhost:1313/post/old/00062.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;&lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge Curioso&lt;/a&gt; &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/?item=63182667125303&#34;&gt;posted on his blog&lt;/a&gt; some comments around dealing with dates in RSS and the .Net framework.  I figure I&#39;d put some more detail up here on how I handle dates in JoeBlogger.
 &lt;ol&gt;

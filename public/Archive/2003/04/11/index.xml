@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/04/11 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/04/11.html</link>
+    <link>http://localhost:1313/archive/2003/04/11.html</link>
     <description>Recent content in 2003/04/11 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 11 Apr 2003 09:00:29 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/04/11.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2003/04/11.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Heh, heh, he said Fish Balls</title>
-      <link>http://new.eightypercent.net/post/old/00078.html</link>
+      <link>http://localhost:1313/post/old/00078.html</link>
       <pubDate>Fri, 11 Apr 2003 09:00:29 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00078.html</guid>
+      <guid>http://localhost:1313/post/old/00078.html</guid>
       <description>&lt;p&gt;
 Weight Watchers &lt;a href=&#34;http://home.attbi.com/~bernhard36/wwcards.html&#34;&gt;recipe cards&lt;/a&gt; from 1974.  From &lt;a href=&#34;http://doc.weblogs.com/2003/04/11#itsTrueWeWereRaisedOnThisShit&#34;&gt;Doc&lt;/a&gt;.  I almost peed laughing at this.
 &lt;/p&gt;
@@ -23,10 +23,10 @@ Weight Watchers &lt;a href=&#34;http://home.attbi.com/~bernhard36/wwcards.html&#
     
     <item>
       <title>What&#39;s that sucking sound?</title>
-      <link>http://new.eightypercent.net/post/old/00077.html</link>
+      <link>http://localhost:1313/post/old/00077.html</link>
       <pubDate>Fri, 11 Apr 2003 02:19:45 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00077.html</guid>
+      <guid>http://localhost:1313/post/old/00077.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;I&#39;ve been playing Freelancer.  Look at the time of this post.  The game just sucks you from one mission to another.  It was hard to pull myself away even now!
 &lt;/p&gt;

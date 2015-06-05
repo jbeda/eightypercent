@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/04/16 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/04/16.html</link>
+    <link>http://localhost:1313/archive/2003/04/16.html</link>
     <description>Recent content in 2003/04/16 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Apr 2003 05:39:35 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/04/16.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2003/04/16.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Congrats to Scoble</title>
-      <link>http://new.eightypercent.net/post/old/00080.html</link>
+      <link>http://localhost:1313/post/old/00080.html</link>
       <pubDate>Wed, 16 Apr 2003 05:39:35 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00080.html</guid>
+      <guid>http://localhost:1313/post/old/00080.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;&lt;a href=&#34;http://radio.weblogs.com/0001011/2003/04/15.html#a2766&#34;&gt;Congrats to Scoble&lt;/a&gt;.  You are now shilling for the Man like the rest of us.  Do we pay you enough to get a decent URL yet?
 &lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Upstreamer app</title>
-      <link>http://new.eightypercent.net/post/old/00079.html</link>
+      <link>http://localhost:1313/post/old/00079.html</link>
       <pubDate>Wed, 16 Apr 2003 05:32:16 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00079.html</guid>
+      <guid>http://localhost:1313/post/old/00079.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;I&#39;m still working on my &lt;a href=&#34;http://www.eightypercent.net/Archive/2003/03/11.html#a66&#34;&gt;FTP upstreamer&lt;/a&gt; app.  I haven&#39;t had as much time as I&#39;d have liked to work on it but it is still coming.  The backend code is all there but I haven&#39;t had the time to learn enough winforms to write a decent UI for it.  If you really want to look at the code (and itegrate it into your own project?) let me know and I&#39;ll send you something.  I&#39;m release the code under the &lt;a href=&#34;http://opensource.org/licenses/zlib-license.php&#34;&gt;zlib&lt;/a&gt; license like Chris did for BlogX.
 

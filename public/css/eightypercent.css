@@ -17,6 +17,10 @@ body {
   font-size: 24px;
 }
 
+.navbar-default {
+  font-family: Coda;
+}
+
 .readmore > div {
   max-height: 300px;
   overflow: hidden;

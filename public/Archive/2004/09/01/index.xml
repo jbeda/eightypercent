@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2004/09/01 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2004/09/01.html</link>
+    <link>http://localhost:1313/archive/2004/09/01.html</link>
     <description>Recent content in 2004/09/01 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Sep 2004 08:58:26 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2004/09/01.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/archive/2004/09/01.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>On Call: A Doctor&#39;s Days and Nights in Residency</title>
-      <link>http://new.eightypercent.net/post/old/00209.html</link>
+      <link>http://localhost:1313/post/old/00209.html</link>
       <pubDate>Wed, 01 Sep 2004 08:58:26 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00209.html</guid>
+      <guid>http://localhost:1313/post/old/00209.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
