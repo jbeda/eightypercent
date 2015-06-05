@@ -21,20 +21,40 @@ body {
   font-family: Coda;
 }
 
-.readmore > div {
+.readmore {
+  position:relative;
+}
+
+.readmore > .post {
   max-height: 300px;
   overflow: hidden;
   position: relative;
 }
 
-.readmore:after {
-  content:'';
+.readmore > a.readmore-click {
+  color: transparent;
+
+  position:absolute;
   display:block;
   width:100%;
-  height:100px;
-  position:relative;   
-  margin-top: -100px;
-  background:linear-gradient(transparent, #191919);
+  height:100%;
+  top: 0;
+  left: 0;
+  background:linear-gradient(to top, rgba(25, 25, 25, 1), rgba(25, 25, 25, 0) 100px);
+}
+
+.readmore > a.readmore-click:hover {
+  color: #DB0024;
+  background:linear-gradient(to top, rgba(25, 25, 25, 1), rgba(25, 25, 25, 0.5) 100px);
+}
+
+.readmore > a.readmore-click::after {
+  font-family: Coda;
+  font-size: 24px;
+  text-decoration: underline;
+  content: "Read More";
+  position: absolute;
+  bottom: 0px;
 }
 
 .postmark {
