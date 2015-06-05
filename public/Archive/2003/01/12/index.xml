@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/01/12 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/01/12.html</link>
+    <link>http://new.eightypercent.net:81/archive/2003/01/12.html</link>
     <description>Recent content in 2003/01/12 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 Jan 2003 22:39:04 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/01/12.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net:81/archive/2003/01/12.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Quiet night with friends</title>
-      <link>http://new.eightypercent.net/post/old/00004.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00004.html</link>
       <pubDate>Sun, 12 Jan 2003 22:39:04 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00004.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00004.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I didn&#39;t get off my ass and create my own system yet so I&#39;m still using Radio. As long as I keep things simple I only have to shut it down once per entry.&amp;nbsp; I did do a little bit of work on my RSS Aggregator.&amp;nbsp; It is starting to look like a real program.&amp;nbsp; Sometime over the next week &lt;A href=&#34;http://www.25hoursaday.com/&#34;&gt;Dare&lt;/A&gt; and I are going to get together and merge codebases.&lt;/P&gt;
 &lt;P&gt;&lt;A href=&#34;http://www.gerhardschneider.net/&#34;&gt;Gerhard&lt;/A&gt; and Angela came over tonight and we made dinner.&amp;nbsp; We did a recipe out of the &lt;A href=&#34;http://www.altonbrown.com&#34;&gt;Alton Brown&lt;/A&gt;&amp;nbsp;&lt;A href=&#34;http://www.altonbrown.com/pages/bookit.html&#34;&gt;cookbook&lt;/A&gt;.&amp;nbsp; I really like this book and Alton&#39;s show, &lt;EM&gt;Good Eats&lt;/EM&gt;.&amp;nbsp; We did the &#34;Chicken Piccata&#34; on page 170 and it turned out pretty good.&amp;nbsp; For desert we made a something from one of his shows: &lt;A href=&#34;http://www.foodtv.com/foodtv/print/recipe/0,6255,18457,00.html&#34;&gt;Spicy Pineapple Sauce&lt;/A&gt;.&amp;nbsp; That turned out well also.&lt;/P&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Radio sucks...</title>
-      <link>http://new.eightypercent.net/post/old/00003.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00003.html</link>
       <pubDate>Sun, 12 Jan 2003 15:01:02 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00003.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00003.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;Radio just doesn&#39;t work.&amp;nbsp; There are some serious bugs that aren&#39;t being addressed.&amp;nbsp; I&#39;d update here a lot more often if I didn&#39;t have to restart radio 3 times to get stuff to update.&lt;/P&gt;
 &lt;P&gt;I&#39;m going to roll my own solution for this.&amp;nbsp; Stay tuned.&lt;/P&gt;

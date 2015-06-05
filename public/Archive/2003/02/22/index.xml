@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/02/22 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/02/22.html</link>
+    <link>http://new.eightypercent.net:81/archive/2003/02/22.html</link>
     <description>Recent content in 2003/02/22 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Feb 2003 15:25:49 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/02/22.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net:81/archive/2003/02/22.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Back in Boise</title>
-      <link>http://new.eightypercent.net/post/old/00043.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00043.html</link>
       <pubDate>Sat, 22 Feb 2003 15:25:49 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00043.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00043.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I&#39;m back in Boise and Chris is still kicking my ass with BlogX.
 &lt;P&gt;I got mail from &lt;a href=&#34;http://gary.burd.info/&#34;&gt;Gary Burd&lt;/a&gt; that my RSS feed was valid.  The problem was that I was using relative URLs in some of my entries.  I&#39;ve fixed up the problem and I&#39;ll be sure to keep an eye on that in the future.

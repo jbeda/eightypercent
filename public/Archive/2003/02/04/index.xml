@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/02/04 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/02/04.html</link>
+    <link>http://new.eightypercent.net:81/archive/2003/02/04.html</link>
     <description>Recent content in 2003/02/04 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2003 22:47:16 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/02/04.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net:81/archive/2003/02/04.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>And I&#39;m off</title>
-      <link>http://new.eightypercent.net/post/old/00027.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00027.html</link>
       <pubDate>Tue, 04 Feb 2003 22:47:16 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00027.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00027.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I&#39;m off to Boise.  All my stuff is packed up and the guinea pig is packaged up in her carrier.&lt;/P&gt;
 &lt;P&gt;I probably won&#39;t have time to post again (and work on my software!) until sometime this weekend.  The cable modem is supposed to be installed on Thursday.  We&#39;ll see&lt;/P&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Boise, here I come</title>
-      <link>http://new.eightypercent.net/post/old/00026.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00026.html</link>
       <pubDate>Tue, 04 Feb 2003 00:56:41 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00026.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00026.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I meant to write this earlier but I got carried away working on JoeBlogger
 &lt;P&gt;I&#39;m moving to Boise for the next 5 months (back in July) to be with my wife.  She is a doctor and her residency takes her to Boise for a year.  She has already been out there since the beginning of July 2002, but it has been really hard being apart.
@@ -40,14 +40,14 @@
     
     <item>
       <title>One more step...</title>
-      <link>http://new.eightypercent.net/post/old/00025.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00025.html</link>
       <pubDate>Tue, 04 Feb 2003 00:21:55 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00025.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00025.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;This is a test of an entry generated in my tool.  I have to type in raw HTML right now, but everything appears to be working...&lt;/P&gt;
 &lt;P&gt;Here is a screen shot of the current UI:&lt;/P&gt;
-&lt;IMG src=&#34;http://new.eightypercent.net/Stuff/JoeBlogger2.JPG&#34; &gt;
+&lt;IMG src=&#34;http://new.eightypercent.net:81/Stuff/JoeBlogger2.JPG&#34; &gt;
 &lt;P&gt;Things yet to do...&lt;/P&gt;
 &lt;UL&gt;
 &lt;LI&gt; Use MSHTML for rich editing.  And switch back and forth in a reasonable way. (Does anyone out there have a simple example I can drop in here?  I&#39;m not looking forward to screwing with all of the interop)

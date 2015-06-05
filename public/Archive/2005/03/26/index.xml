@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2005/03/26 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2005/03/26.html</link>
+    <link>http://new.eightypercent.net:81/archive/2005/03/26.html</link>
     <description>Recent content in 2005/03/26 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Mar 2005 08:16:05 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2005/03/26.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net:81/archive/2005/03/26.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>C&#43;&#43; Standard Libraries?</title>
-      <link>http://new.eightypercent.net/post/old/00237.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00237.html</link>
       <pubDate>Sat, 26 Mar 2005 08:16:05 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00237.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00237.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

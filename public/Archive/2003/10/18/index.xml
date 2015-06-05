@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/10/18 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/10/18.html</link>
+    <link>http://new.eightypercent.net:81/archive/2003/10/18.html</link>
     <description>Recent content in 2003/10/18 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Oct 2003 08:23:08 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/10/18.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net:81/archive/2003/10/18.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>My PDC schedule</title>
-      <link>http://new.eightypercent.net/post/old/00143.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00143.html</link>
       <pubDate>Sat, 18 Oct 2003 08:23:08 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00143.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00143.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -58,10 +58,10 @@
     
     <item>
       <title>Anita is sick</title>
-      <link>http://new.eightypercent.net/post/old/00142.html</link>
+      <link>http://new.eightypercent.net:81/post/old/00142.html</link>
       <pubDate>Sat, 18 Oct 2003 08:18:42 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00142.html</guid>
+      <guid>http://new.eightypercent.net:81/post/old/00142.html</guid>
       <description>&lt;p&gt;
 
     Best wishes go out to &lt;a href=&#34;http://www.anitarowland.com/gmarchives/00001429.html&#34;&gt;Anita
