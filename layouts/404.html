@@ -4,16 +4,11 @@
     <div class="container">
 
         <h1>404 Error</h1>
-        <p>Maybe you want one of these?</p>
-
-        {{ range .Data.Pages }}
-        <ul>
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a><span class="lead">({{ .Date.Format "Mon, Jan 2, 2006" }})</span></li>
-        </ul>
-        {{ end }}
+        <div class="post">
+        <p>If this is content that got lost during the transition to my new format, please shout at <a href="http://twitter.com/jbeda">@jbeda</a>.</p>
+        </div>
 
         {{ partial "container-footer.html" . }}
-
     </div>
 
 {{ partial "footer.html" . }}
