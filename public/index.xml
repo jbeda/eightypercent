@@ -968,16 +968,6 @@ _   underscore
     </item>
     
     <item>
-      <title>About 80%</title>
-      <link>http://new.eightypercent.net:81/about.html</link>
-      <pubDate>Tue, 12 May 2015 12:18:21 -0700</pubDate>
-      
-      <guid>http://new.eightypercent.net:81/about.html</guid>
-      <description>&lt;p&gt;80% is the personal blog for Joe Beda.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</title>
       <link>http://new.eightypercent.net:81/post/old/00274.html</link>
       <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
@@ -1524,6 +1514,47 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     &lt;/p&gt;
     &lt;p&gt;
         &lt;img alt=&#34;Annie at 7 months&#34; hspace=&#34;0&#34; src=&#34;http://www.eightypercent.net/Photos/Anne7Months.jpg&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
+    &lt;/p&gt;
+
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>libjingle</title>
+      <link>http://new.eightypercent.net:81/post/old/00261.html</link>
+      <pubDate>Thu, 15 Dec 2005 21:48:23 -0800</pubDate>
+      
+      <guid>http://new.eightypercent.net:81/post/old/00261.html</guid>
+      <description>&lt;p&gt;
+
+    &lt;p&gt;
+        The second thing that happened today is that we released &lt;a href=&#34;http://code.google.com/apis/talk/index.html&#34;&gt;libjingle&lt;/a&gt; on
+        sourceforge.&amp;#160;Full details are up on the &lt;a href=&#34;http://googletalk.blogspot.com/2005/12/jingle-all-way.html&#34;&gt;Talk
+        blog&lt;/a&gt;&amp;#160;and at &lt;a href=&#34;http://google-code-updates.blogspot.com/2005/12/jingle-bells.html&#34;&gt;code.google.com&lt;/a&gt;.
+        Sean Egan (of Gaim fame) packaged up the code that Talk uses to do p2p as a library
+        for others to use.&amp;#160; Hopefully this will start a flood of interoperable voice
+        (and other p2p applications).&amp;#160; So that anyone can use it the code is released
+        under a berkeley style license. Sean put together some great docs on how to use the
+        new library &lt;a href=&#34;http://code.google.com/apis/talk/index.html&#34;&gt;here&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        One thing to keep in mind -- we haven&#39;t harmonized the specs and libjingle yet.&amp;#160;
+        The goal is to have libjingle implement the spec as it matures.&amp;#160; Right now it
+        just interoperates with Talk and is pretty far from the Jingle docs that the JSF released.&amp;#160;
+        As the spec moves forward the code will converge.&amp;#160; Most of the differences right
+        now are syntax.&amp;#160; For example the underlying technique for punching through NATs
+        is unchanged and is an adaptation of &lt;a href=&#34;http://www.ietf.org/internet-drafts/draft-ietf-mmusic-ice-06.txt&#34;&gt;ICE&lt;/a&gt;.
+    &lt;/p&gt;
+    &lt;p&gt;
+        We&#39;ve wanted to release this core part of the Talk application for a long time now
+        and I&#39;m super excited to see it happen. The combination of these new standards and
+        the libjingle library should be pretty potent.&amp;#160; And since&amp;#160;Jingle can be
+        used for more than just voice, I&#39;m sure we&#39;ll see this stuff used in interesting and
+        surprising ways that we never envisioned.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Update12/17/2006: Clarified how divergent spec/code are and pointed to ICE.
     &lt;/p&gt;
 
 &lt;/p&gt;
