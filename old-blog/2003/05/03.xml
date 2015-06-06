@@ -7,7 +7,7 @@
     &lt;p&gt;
         I was finally able to find time to put true WYSIWYG HTML editing into JoeBlogger.
         Here is a current screenshot:&lt;br /&gt;
-        &lt;img src="http://www.eightypercent.net/Stuff/JoeBlogger3.JPG" /&gt; 
+        &lt;img src="http://static.eightypercent.net/stuff/JoeBlogger3.JPG" /&gt; 
         &lt;br /&gt;
         Notice that there is no save button.&amp;#160; Just start a new entry and hit Upload.&amp;#160;
         It FTPs everything that has changed to your site on a background thread. If you don't

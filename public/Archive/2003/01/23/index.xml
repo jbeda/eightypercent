@@ -23,7 +23,7 @@
         Landscape&lt;/a&gt;&amp;#160;but it doesn&#39;t have an RSS feed.&amp;#160; Instead, I&#39;ve used the html
         scraping feature of Syndirella to parse out news items.&amp;#160; The mechanism is pretty
         limiting, but I was able to make it work.&amp;#160; Here is the data you need (save the
-        file and import to Syndirella): &lt;a href=&#34;http://www.eightypercent.net/Stuff/LumLandscape.xml&#34;&gt;LumLandscape.xml&lt;/a&gt;
+        file and import to Syndirella): &lt;a href=&#34;http://static.eightypercent.net/stuff/LumLandscape.xml&#34;&gt;LumLandscape.xml&lt;/a&gt;
     &lt;/p&gt;
 
 &lt;/p&gt;

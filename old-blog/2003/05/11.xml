@@ -131,17 +131,17 @@
         I'm releasing this as 0.9.0. 
     &lt;/p&gt;
     &lt;p&gt;
-        &lt;a href="http://www.eightypercent.net/Stuff/JoeBlogger/License.txt"&gt;License&lt;/a&gt; 
+        &lt;a href="http://static.eightypercent.net/stuff/JoeBlogger/License.txt"&gt;License&lt;/a&gt; 
         &lt;br /&gt;
-        &lt;a href="http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-0.9.0.msi"&gt;MSI install&lt;/a&gt; 
+        &lt;a href="http://static.eightypercent.net/stuff/JoeBlogger/JoeBlogger-0.9.0.msi"&gt;MSI install&lt;/a&gt; 
         &lt;br /&gt;
-        &lt;a href="http://www.eightypercent.net/Stuff/JoeBlogger/JoeBlogger-src-0.9.0.zip"&gt;Source&lt;/a&gt; 
+        &lt;a href="http://static.eightypercent.net/stuff/JoeBlogger/JoeBlogger-src-0.9.0.zip"&gt;Source&lt;/a&gt; 
     &lt;/p&gt;
     &lt;p&gt;
         Once you've installed the binaries, there is a readme on what to do next installed
         into the programs directory.&amp;#160; You have to copy some stuff around and edit some
         xml files to configure what is going on.&amp;#160; If any of this is unclear, let me know
-        and I'll update the readme.&amp;#160; The readme is &lt;a href="http://www.eightypercent.net/Stuff/JoeBlogger/Readme-0.9.0.txt"&gt;here&lt;/a&gt; also. 
+        and I'll update the readme.&amp;#160; The readme is &lt;a href="http://static.eightypercent.net/stuff/JoeBlogger/Readme-0.9.0.txt"&gt;here&lt;/a&gt; also. 
     &lt;/p&gt;
     &lt;p&gt;
         Here is the basic architecture: 

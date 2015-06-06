@@ -102,7 +102,7 @@
             }
         }
 &lt;/pre&gt;
-&lt;li&gt;Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  &lt;a href=&#34;http://www.eightypercent.net/Stuff/SourceExample.xml&#34;&gt;Here&lt;/a&gt; is an example of a source XML document for my main page and &lt;a href=&#34;http://www.eightypercent.net/Templates/Main.xslt&#34;&gt;here&lt;/a&gt; is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
+&lt;li&gt;Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  &lt;a href=&#34;http://static.eightypercent.net/stuff/SourceExample.xml&#34;&gt;Here&lt;/a&gt; is an example of a source XML document for my main page and &lt;a href=&#34;http://static.eightypercent.net/templates/Main.xslt&#34;&gt;here&lt;/a&gt; is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
 &lt;pre&gt;
     &amp;lt;msxsl:script implements-prefix=&#39;user&#39; language=&#39;CSharp&#39;&amp;gt;
         &amp;lt;![CDATA[

@@ -29,9 +29,9 @@
         &lt;object id=&#34;theMovie&#34; codebase=&#34;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0&#34; height=&#34;600&#34; width=&#34;800&#34; classid=&#34;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&#34;&gt;
             &lt;param name=&#34;_cx&#34; value=&#34;21167&#34; /&gt;
             &lt;param name=&#34;_cy&#34; value=&#34;15875&#34; /&gt;
-            &lt;param name=&#34;FlashVars&#34; value=&#34;zoomifyImagePath=http://www.eightypercent.net/Zoomify/HorseShoeBend1-zoomify&#34; /&gt;
-            &lt;param name=&#34;Movie&#34; value=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; /&gt;
-            &lt;param name=&#34;Src&#34; value=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; /&gt;
+            &lt;param name=&#34;FlashVars&#34; value=&#34;zoomifyImagePath=http://static.eightypercent.net/zoomify/HorseShoeBend1-zoomify&#34; /&gt;
+            &lt;param name=&#34;Movie&#34; value=&#34;http://static.eightypercent.net/zoomify/zoomifyViewer.swf&#34; /&gt;
+            &lt;param name=&#34;Src&#34; value=&#34;http://static.eightypercent.net/zoomify/zoomifyViewer.swf&#34; /&gt;
             &lt;param name=&#34;WMode&#34; value=&#34;Window&#34; /&gt;
             &lt;param name=&#34;Play&#34; value=&#34;-1&#34; /&gt;
             &lt;param name=&#34;Loop&#34; value=&#34;-1&#34; /&gt;
@@ -50,7 +50,7 @@
             &lt;param name=&#34;Profile&#34; value=&#34;0&#34; /&gt;
             &lt;param name=&#34;ProfileAddress&#34; value=&#34;&#34; /&gt;
             &lt;param name=&#34;ProfilePort&#34; value=&#34;0&#34; /&gt;
-            &lt;embed bgcolor=&#34;black&#34; flashvars=&#34;zoomifyImagePath=http://www.eightypercent.net/Zoomify/HorseShoeBend1-zoomify&#34; src=&#34;http://www.eightypercent.net/Zoomify/zoomifyViewer.swf&#34; menu=&#34;false&#34; pluginspage=&#34;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&#34; width=&#34;750&#34; height=&#34;450&#34; name=&#34;theMovie&#34;&gt;&lt;/embed&gt; 
+            &lt;embed bgcolor=&#34;black&#34; flashvars=&#34;zoomifyImagePath=http://static.eightypercent.net/zoomify/HorseShoeBend1-zoomify&#34; src=&#34;http://static.eightypercent.net/zoomify/zoomifyViewer.swf&#34; menu=&#34;false&#34; pluginspage=&#34;http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&#34; width=&#34;750&#34; height=&#34;450&#34; name=&#34;theMovie&#34;&gt;&lt;/embed&gt; 
         &lt;/object&gt;
     &lt;/p&gt;
     &lt;p&gt;
