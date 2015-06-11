@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>A New Beginning... &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header pull-left">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-header navbar-text pull-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container">
+        <h1><a href="http://new.eightypercent.net:81/post/relaunch.html">A New Beginning...</a></h1>
+        <span class="lead">Wed, Jun 10, 2015</span>
+        <div class="post">
+            <p>Welcome to the new <a href="http://www.eightypercent.net">80%</a>!</p>
+
+<p>I&rsquo;ve rewritten my ancient blog on top of <a href="http://gohugo.io/">Hugo</a> using <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="https://www.google.com/fonts">Google Fonts</a>.  The whole thing is hosted on <a href="https://github.com/jbeda/eightypercent">GitHub</a> if you want to check out the source.</p>
+
+<p>For headlines, I&rsquo;m using <a href="https://www.google.com/fonts/specimen/Economica">Economica</a>.  I picked it because it is narrow and I tend to write long headlines.  The body text is <a href="https://www.google.com/fonts/specimen/Lora">Lora</a>.  I like a nice Serif font for the body text and it has a bit of style while still being very readable.  Code is in <a href="https://www.google.com/fonts/specimen/Roboto+Mono">Roboto Mono</a> and the Logo and Navigation is in <a href="https://www.google.com/fonts/specimen/Coda">Coda</a>.</p>
+
+<p>I&rsquo;m not in love with the color theme I have now (dark gray background with red and blue highlights) but it&rsquo;ll do for now.  I played with some CSS gradients to show a preview on the main index page.  I&rsquo;m still not sure &ndash; it may be a little too cute.</p>
+
+<p>I&rsquo;ve done the work of importing my old blog posts and making Hugo create compatible URLs.  My original system used XML files for each day so I wrote a <a href="https://github.com/jbeda/eightypercent/blob/master/old-blog/convert.go">short Go program</a> to convert from the XML to something Hugo can consume (markdown files with a JSON header).  I had to introduce a <a href="https://github.com/jbeda/eightypercent/blob/master/layouts/shortcodes/verbatim.html">verbatim HTML shortcode</a> to make Hugo pass through the HTML from the old blog directly.</p>
+
+<p>The other tricky thing was to generate a page per <em>day</em> instead of a page per post for these old posts.  Rolling things up on a daily basis was the way things were done back when I started the blog in <a href="http://new.eightypercent.net/post/old/00001.html">January 2003</a>.  Doing this daily roll up used the <a href="http://gohugo.io/taxonomies/overview/">taxonomy</a> feature of Hugo where the taxonomy was &ldquo;archive&rdquo; and the term was the day.  This was easy to generate from the Go conversion program.</p>
+
+<p>I&rsquo;m hosting this on GCE under Docker and NGINX.  I&rsquo;m going to write up a post on how I&rsquo;m doing that and automatically syncing it to the git repro on each submit.</p>
+
+<p>Now that I have it all set up, we&rsquo;ll see if I actually have anything to say&hellip;</p>
+
+        </div>
+
+              <footer>
+        <nav class="footer navbar-default clearfix container-fluid">
+          <div class="row">
+            <div class="pull-left navbar-text">
+              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
+            </div>
+            <div class="navbar-text pull-right"><a class="navbar-link" href="#top">Back to top</a></div>
+          </nav>
+        </div>
+      </footer>
+
+ 
+     </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
