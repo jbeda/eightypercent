@@ -3,16 +3,18 @@
   <div class="container">
     {{ $paginator := .Paginate (where .Data.Pages "Section" "post") }}
     {{ range $paginator.Pages }}
-    <div>
-      <h2>
-        <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h2>
-      <div class="readmore">
-        <div class="post">
-            <span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-            {{ .Content }}
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+              {{ .Content }}
+          </div>
+          <a class="readmore-click" class="text-center" href="{{ .RelPermalink }}"></a>
         </div>
-        <a class="readmore-click" class="text-center" href="{{ .RelPermalink }}"></a>
       </div>
     </div>
     {{ end }}
