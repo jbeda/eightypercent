@@ -46,12 +46,12 @@ body {
   height:100%;
   top: 0;
   left: 0;
-  background:linear-gradient(to top, rgba(25, 25, 25, 1), rgba(25, 25, 25, 0) 100px);
+  background:linear-gradient(to top, rgba(231, 234, 210, 1), rgba(231, 234, 210, 0) 100px);
 }
 
 .readmore > a.readmore-click:hover {
-  color: #DB0024;
-  background:linear-gradient(to top, rgba(25, 25, 25, 1), rgba(25, 25, 25, 0.5) 100px);
+  color: #524645;
+  background:linear-gradient(to top, rgba(231, 234, 210, 1), rgba(231, 234, 210, 0.5) 100px);
 }
 
 .readmore > a.readmore-click::after {
@@ -64,7 +64,7 @@ body {
 }
 
 .postmark {
-  color: #004885;
+  color: #524645;
   width: 25px;
   font-size: 80%;
   margin-right: 10px;

@@ -3,12 +3,12 @@
 // --------------------------------------------------
 
 
-// Theme colors borrowed from http://www.wiliam.com.au/wiliam-blog/google-font-combinations-and-colour-pallets
-@theme-grey-dark: #191919;
-@theme-red: #DB0024;
-@theme-grey: #B7B7B7;
-@theme-white: #F1F1F1;
-@theme-blue: #004885;
+// Theme colors via: https://color.adobe.com/Eightypercent-color-theme-6409734/
+@theme-green: #DBEB74;
+@theme-blue: #4F94E0;
+@theme-creme: #E7EAD2;
+@theme-dark: #211B1A;
+@theme-sepia: #524645;
 
 //== Colors
 //
@@ -33,14 +33,14 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @theme-grey-dark;
+@body-bg:               @theme-creme;
 //** Global text color on `<body>`.
-@text-color:            @theme-white;
+@text-color:            @theme-dark;
 
 //** Global textual link color.
-@link-color:            @theme-grey;
+@link-color:            @theme-blue;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      @theme-red;
+@link-hover-color:      @theme-blue;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -366,8 +366,8 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 @navbar-collapse-max-height:       340px;
 
-@navbar-default-color:             @theme-red;
-@navbar-default-bg:                darken(@body-bg, 10%);
+@navbar-default-color:             @theme-sepia;
+@navbar-default-bg:                @theme-green;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
@@ -449,8 +449,8 @@
 //
 //##
 
-@pagination-color:                     @link-color;
-@pagination-bg:                        darken(@theme-blue, 15%);
+@pagination-color:                     @text-color;
+@pagination-bg:                        @body-bg;
 @pagination-border:                    darken(@body-bg, 10%);
 
 @pagination-hover-color:               @link-hover-color;
@@ -830,15 +830,15 @@
 //
 //##
 
-@code-color:                  lighten(@text-color, 7%);;
+@code-color:                  lighten(@text-color, 7%);
 @code-bg:                     lighten(@body-bg, 7%);
 
-@kbd-color:                   lighten(@text-color, 7%);
-@kbd-bg:                      lighten(@body-bg, 7%);
+@kbd-color:                   @code-color;
+@kbd-bg:                      @code-bg;
 
-@pre-bg:                      darken(@theme-blue, 15%);
-@pre-color:                   @theme-white;
-@pre-border-color:            @theme-grey;
+@pre-color:                   @code-color;
+@pre-bg:                      @code-bg;
+@pre-border-color:            @theme-blue;
 @pre-scrollable-max-height:   340px;
 
 
@@ -859,7 +859,7 @@
 //** Blockquote font size
 @blockquote-font-size:        (@font-size-base * 1.25);
 //** Blockquote border color
-@blockquote-border-color:     @theme-red;
+@blockquote-border-color:     @theme-blue;
 //** Page header border color
 @page-header-border-color:    @gray-lighter;
 //** Width of horizontal description list titles

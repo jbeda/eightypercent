@@ -226,11 +226,11 @@
   background-repeat: repeat-x;
 }
 .navbar-default {
-  background-image: -webkit-linear-gradient(top, #1a1a1a 0%, #000 100%);
-  background-image:      -o-linear-gradient(top, #1a1a1a 0%, #000 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(#000));
-  background-image:         linear-gradient(to bottom, #1a1a1a 0%, #000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1a1a1a', endColorstr='#ff000000', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #e7f1a1 0%, #dbeb74 100%);
+  background-image:      -o-linear-gradient(top, #e7f1a1 0%, #dbeb74 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e7f1a1), to(#dbeb74));
+  background-image:         linear-gradient(to bottom, #e7f1a1 0%, #dbeb74 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe7f1a1', endColorstr='#ffdbeb74', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
   border-radius: 4px;
@@ -239,11 +239,11 @@
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .active > a {
-  background-image: -webkit-linear-gradient(top, #000 0%, #000 100%);
-  background-image:      -o-linear-gradient(top, #000 0%, #000 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
-  background-image:         linear-gradient(to bottom, #000 0%, #000 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#ff000000', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #cee441 0%, #d1e64e 100%);
+  background-image:      -o-linear-gradient(top, #cee441 0%, #d1e64e 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cee441), to(#d1e64e));
+  background-image:         linear-gradient(to bottom, #cee441 0%, #d1e64e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcee441', endColorstr='#ffd1e64e', GradientType=0);
   background-repeat: repeat-x;
   -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
           box-shadow: inset 0 3px 9px rgba(0, 0, 0, .075);
