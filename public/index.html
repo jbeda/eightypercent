@@ -41,6 +41,119 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/new-container-image-format.html">Evolving the Container Image</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Wed, Jul 1, 2015</span>
+              
+
+<p>A lot of exciting things happened at <a href="http://www.dockercon.com/">Dockercon 2015</a> last week.  For me the most exciting was the announcement of the <a href="http://opencontainers.org/">Open Container Project</a> foundation.  Not only is it great to see the community come together under one banner but also as a chance to entertain new ideas in this space.</p>
+
+<p>These are some thoughts on how to improve what we consider a &ldquo;container image.&rdquo; I&rsquo;m looking at both the container format itself and what goes on inside of it. This obviously builds on ideas in other systems and I&rsquo;ve tried to call those out.  These thoughts are still early so I&rsquo;m hoping to find others of like mind and start a good discussion.</p>
+
+<h2 id="history-and-context:e2f7abed0f5b0c5bd1e697591b3ae6ba">History and Context</h2>
+
+<p>The thing I&rsquo;ve been exploring most recently is the intersection between the container image format and package management.  While there has been plenty of attention on base OSs to host the container (<a href="https://coreos.com/products/">CoreOS</a>, <a href="http://rancher.com/rancher-os/">RancherOS</a>, <a href="http://www.projectatomic.io/">Project Atomic</a>, <a href="https://developer.ubuntu.com/en/snappy/">Snappy Ubuntu</a>) and efforts to coordinate a cluster of hosts (<a href="http://kubernetes.io/">Kubernetes</a>, <a href="https://mesosphere.com/">Mesosphere</a>, <a href="https://www.docker.com/docker-swarm">Docker Swarm</a>) we haven&rsquo;t paid as much attention as we could to what is going on <strong>inside</strong> the container.</p>
+
+<p><strong>Docker Images</strong> are great. Images are pretty efficient to push and pull and, with new focus on security, it is getting easier and easier to be sure that what you want in the image is actually what you are running.</p>
+
+<p><strong>Dockerfiles</strong> are also great.  They are a purpose built makefile analog that are super easy to understand and logically build on the layered nature of Docker images.  Like most of the Docker project, they are much more approachable than other efforts in this area and solve real customer needs. When constructed appropriately, they allow for an efficient dev flow where many of the time consuming steps can be reused.</p>
+
+<p>One of the <strong>best innovations of Docker is actually a bit of an awesome hack</strong>.  It leverages the package managers for existing Linux distributions.  Reusing the package manager means that users can ready any number of guides on how to get software installed and easily translate it into a Dockerfile.</p>
+
+<p>Think of it this way: a typical Linux distribution is 2 things. First is a bunch of stuff to get the box booted.  Second is a package manager to install and manage software on that box.  Docker images typically only need the second one.  The first one is along for the ride even if the user never needs it.  There are package managers out there that are cleanly factored from the underlying OS (<a href="http://brew.sh/">Homebrew</a>, <a href="https://nixos.org/nix/">Nix</a>) but they aren&rsquo;t typically used in Docker images.</p>
+
+<h2 id="problems:e2f7abed0f5b0c5bd1e697591b3ae6ba">Problems</h2>
+
+<p>This all mostly works okay.  There is some cruft in the images that can easily be ignored and is &ldquo;cheap&rdquo; as the download and storage cost is amortized because of layer sharing for Docker images.</p>
+
+<p>But we can do better.</p>
+
+<p>Problems with the current state of the world:</p>
+
+<ul>
+<li><strong>No package introspection.</strong>  When the next security issue comes along it is difficult to easily see which images are vulnerable.  Furthermore, it is hard to write automated policy to prevent those images from running.</li>
+<li><strong>No easy sharing of packages.</strong>  If 2 images install the same package, the bits for that package are downloaded twice.  It isn&rsquo;t uncommon for users to construct complicated &ldquo;inheritence&rdquo; chains to help work around this issue<sup class="footnote-ref" id="fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains"><a rel="footnote" href="#fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains">1</a></sup>.</li>
+<li><strong>No surgical package updating.</strong>  Updating a package requires recreating an image and all re-running all downstream actions in the Dockerfile.  If users are good about tracking which sources go into which image<sup class="footnote-ref" id="fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs"><a rel="footnote" href="#fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs">2</a></sup>, it should be possible to just update the package but that is difficult and error prone.</li>
+<li><strong>Order dependent image builds.</strong> Order matters in a Dockerfile &mdash; even when it doesn&rsquo;t have to.  Often times two actions have zero interaction with each other.  But Docker has no way of knowing that so must assume that every action depends on everything coming previously.</li>
+
+<li><p><strong>Package manager cruft.</strong> Most well built Dockerfiles have something like:</p>
+
+<pre><code>RUN apt-get update \
+  &amp;&amp; apt-get install -y --no-install-recommends \
+    build-essential \
+  &amp;&amp; rm -rf /var/lib/apt/lists/*
+</code></pre>
+
+<p>This helps to minimize the size of the layer on disk.  This is confusing boilerplate that is likely just cargo-culted by many users.</p></li>
+</ul>
+
+<h2 id="ideas-for-solutions:e2f7abed0f5b0c5bd1e697591b3ae6ba">Ideas for Solutions</h2>
+
+<p>While I don&rsquo;t have a fully formed solution to all of these problems, I do have a bunch of ideas.</p>
+
+<p>First, imagine that we take the idea of a container image and break it down a little.  The first thing we define is a <code>FileSet</code>.  A <code>FileSet</code> is a named, versioned and verified set of files.  Google has a system internally called the &ldquo;Midas Package Manager&rdquo; (MPM) that this<sup class="footnote-ref" id="fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm"><a rel="footnote" href="#fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm">3</a></sup>.  Dinah McNutt gave a <a href="https://www.youtube.com/watch?v=_uJlTllziPI">great talk on MPM</a> at a 2013 USENIX conference.  A further tweak would allow a <code>FileSet</code> to import other <code>FileSet</code>s into the file namespace of the host.  This allows for a <code>FileSet</code> to have multiple &ldquo;parents&rdquo; &ndash; unlike the current Docker image format.</p>
+
+<p>Second, we define a <code>Package</code> as a type of <code>FileSet</code>.  It would have a standard directory structin and include metadata on other packages required along with simple instructions to &ldquo;install&rdquo; the package<sup class="footnote-ref" id="fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install"><a rel="footnote" href="#fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install">4</a></sup>.Ideally, these packages would be built from verified sources and a verified tool chain.  This would enable true provenance for every bit.  This would be optional.</p>
+
+<p>Finally, we would redefine a <code>ContainerImage</code> also as a type of <code>FileSet</code> that has metadata necessary to make it runnable.  The definition of this metadata is a big part of what the <a href="https://github.com/docker/docker/blob/master/image/spec/v1.md">Docker Image format</a> and the <a href="https://github.com/appc/spec/blob/master/SPEC.md">ACI</a> format are.</p>
+
+<p>A <code>ContainerImage</code> that is using this container native package system would define a set of read-only imports of all required packages <code>FileSet</code>s.  Image construction tools would verify that all dependencies are satisfied.  Furthermore, the install steps would be run to symlink all of the packages into the appropriate places<sup class="footnote-ref" id="fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking"><a rel="footnote" href="#fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking">5</a></sup>.</p>
+
+<p>User code could either be packed up as a <code>Package</code> or just inserted directly into the <code>ContainerImage</code>.</p>
+
+<h2 id="analysis:e2f7abed0f5b0c5bd1e697591b3ae6ba">Analysis</h2>
+
+<p>By creating a container friendly packaging system and expanding the idea of what an container image is, we can solve most of the issues outlined again.</p>
+
+<ul>
+<li>The list of <code>FileSet</code>s imported into, say, <code>/packages</code> would be the list of all packages versions that are included in that image.</li>
+<li>Individual <code>FileSet</code>s could be cached by hosts and easily and safely shared between disparate images.</li>
+<li>A package could be updated in a straightforward way.  The toolset would have to make sure that all dependencies are satisfied and that the install steps are run as necessary.</li>
+<li>Image build tools would list the packages necessary and order wouldn&rsquo;t matter.  Because there are multiple &ldquo;parents&rdquo; to an image, order cannot matter.</li>
+<li>The package install cruft (archived version of the package) would be handled on the host side similar to images themselves.  The only thing the container would see would be the actual files &ndash; and they would be symlinked in.</li>
+</ul>
+
+<p>There are some missing and underdefined parts to this story.</p>
+
+<ul>
+<li><em>How are packages created?</em>  I&rsquo;m thinking that we could do that by running a container with build time packages that produces output file into a specific directory.  Files in that directory are then used to create a package.  As part of this the inputs into the build container could be included in the package metadata and signed.</li>
+<li><em>What does a package distribution look like?</em>  I imagine we&rsquo;d have curated sets of packages that are known to work well together.  For instance, xyz.com could create <code>xyz.com/apache</code> that depends on <code>xyz.com/openssl</code>.</li>
+<li><em>How do users override packages?</em>  Perhaps <code>abc.com/openssl</code> could specify that it can be used in place of <code>xyz.com/openssl</code>.  Any guarantees by <code>xyz.com</code> would be void but it would be a way to do custom versions and carry patches.</li>
+<li><em>Opportunity: Kernel and capability requirements.</em>  Packages could specify their requirements in a way that would be visible to the host.  This would provide a more direct requirement chain between the host and the code running in the container.</li>
+</ul>
+
+<p>This solution obviously borrows from both Homebrew and Nix.  What I think is new here is the idea of expanding the definition of an container image with FileSets and making this be fundamentally decentralized.  We also need to ensure that the easy to approach spirit of Dockerfile isn&rsquo;t lost.  If we do this right we can make images much easier to efficiently create, verify, update and manage.</p>
+
+<p>(Thanks to <a href="https://twitter.com/kelseyhightower">Kelsey Hightower</a> for reviewing an earlier version of this post.)</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains">The standard golang image is a great example of this.  <code>golang:1.4.2</code> &rarr; <code>buildpack-deps:jessie-scm</code> &rarr; <code>buildpack-deps:jessie-curl</code> &rarr; <code>debian:jessie</code>.  Most of this is done to enable efficient sharing of installed packages.
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains"><sup>[return]</sup></a></li>
+<li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs">Best practices should be to track every single input into your docker file.  That means that if you are pushing sources you should know which git commit, for example, those sources come from.  My guess is that this is rarely done.
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs"><sup>[return]</sup></a></li>
+<li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm">Actually, we need our system to be decentralized.  MPM, like may package management systems (including <a href="https://github.com/Homebrew/homebrew/tree/master/Library/Formula">Homebrew</a> and <a href="https://github.com/NixOS/nixpkgs">Nix</a>) has a single central repository/database of all packages.  Whatever is used here must be distributed &mdash; probably in a namespace rooted with DNS.  Something like <a href="https://github.com/docker/notary">Docker Notary</a> would play a role in signing and verifying packages.  Something like the <a href="http://lethalman.blogspot.com/2014/08/nix-pill-9-automatic-runtime.html">Nix archive format (NAR)</a> will help make this more stable and predictable.
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm"><sup>[return]</sup></a></li>
+<li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install">Package install should consist of simply symlinking files into some common directories (<code>/bin</code>, <code>/lib</code>).  This would all be done via a declarative manifest. There are probably going to be cases where an &ldquo;install&rdquo; is a little bit more complex and a script is necessary.  I&rsquo;d love to see how far we could get before that becomes absolutely necessary.  It is also assumed that the package directories themselves are only ever mounted read only.
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install"><sup>[return]</sup></a></li>
+<li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking">There is a choice on when the package install happens.  It could happen early as the container is created.  Or it could happen late as part of the container start process.  I&rsquo;d prefer late binding as it makes surgical package updating simpler.  The directories that store the symlinks could be tmpfs directories to keep this all very speedy.
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/new-container-image-format.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/relaunch.html">A New Beginning...</a>
         </h2>
         <div class="readmore">
@@ -507,40 +620,6 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00267.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00266.html">New Google Talk Client</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sat, Apr 1, 2006</span>
-              <p>
-
-    <p>
-        If you haven't heard yet, we shipped a new version of the Google Talk client to a
-        small set of testers yesterday.&#160; You can get a review over at <a href="http://www.customizetalk.com/">customizetalk.com</a>.&#160;
-        Hopefully we'll fix any outstanding issues and get this version out to everyone soon.
-    </p>
-    <p>
-        I wasn't super involved in this version but did manage to sneak a couple of features
-        in.&#160; The first was Friend Online notifications (defaults to off to avoid annoying
-        people). I also did the new hover cards for your Friends.&#160; I wanted people to
-        be able to see all of the cool pictures in&#160;true 96x96 pixel alpha blended glory.
-    </p>
-    <p>
-        We hope you like it!&#160; Let us know what features are important to you by filling
-        out our <a href="https://services.google.com/inquiry/talk_suggest">suggestion form</a>.
-    </p>
-
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00266.html"></a>
         </div>
       </div>
     </div>

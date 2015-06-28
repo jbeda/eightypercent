@@ -41,6 +41,24 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00072.html">SharpReader...</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Sun, Apr 6, 2003</span>
+              <p>
+<p>Like <a href="http://objective.mine.nu/archive/2003/4/6.aspx#when:14:04:24.9511568">everyone</a> <a href="http://aspnetweblog.com/posts/4942.aspx">else</a> <a href="http://www.gotdotnet.com/team/dbox/default.aspx#nn2003-04-06T06:51:33Z">is</a> <a href="http://radio.weblogs.com/0001011/2003/04/06.html#a2704">saying</a>, <a href="http://www.hutteman.com/weblog/2003/04/06.html#000056">SharpReader</a> looks to be the real deal...
+</p>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00072.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00071.html">The latest...</a>
         </h2>
         <div class="readmore">
@@ -242,93 +260,6 @@
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00063.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00062.html">More on RSS dates</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sun, Mar 9, 2003</span>
-              <p>
-<p><a href="http://ocw.abf.tulane.edu/blog/">Jorge Curioso</a> <a href="http://ocw.abf.tulane.edu/blog/?item=63182667125303">posted on his blog</a> some comments around dealing with dates in RSS and the .Net framework.  I figure I'd put some more detail up here on how I handle dates in JoeBlogger.
-<ol>
-<li>I store both GMT and local time when creating an entry.  I should probably keep a "last updated" time too but I haven't done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
-<li>I used C# to do all of my date processing.  Here is the code for my properites for these things:
-<pre>
-        // The PubDate here is in universal time -- UTC
-        [XmlIgnore]
-        public DateTime PubDate;
-
-        [XmlElement(ElementName="PubDate")]
-        public string PubDateString 
-        {
-            get
-            {
-                return PubDate.ToString("r");
-            }
-            set
-            {
-                PubDate = DateTime.ParseExact(value,"r", null);
-            }
-        }
-
-        [XmlIgnore]
-        public DateTime LocalPubDate;
-
-        [XmlElement(ElementName="LocalPubDate")]
-        public string LocalPubDateString 
-        {
-            get
-            {
-                return LocalPubDate.ToString("ddd, dd MMM yyyy HH':'mm':'ss");
-            }
-            set
-            {
-                try
-                {
-                    LocalPubDate = DateTime.ParseExact(value,"ddd, dd MMM yyyy HH':'mm':'ss", null);
-                }
-                catch (FormatException)
-                {
-                    LocalPubDate = DateTime.MinValue;
-                }
-            }
-        }
-</pre>
-<li>Finially, I do all of the massaging from these times into my display times in the stylesheet itself.  <a href="http://static.eightypercent.net/stuff/SourceExample.xml">Here</a> is an example of a source XML document for my main page and <a href="http://static.eightypercent.net/templates/Main.xslt">here</a> is my XSLT template for transforming that.  If you can assume the .Net implementation of XSLT, you can use some MS specific extensions like this:
-<pre>
-    &lt;msxsl:script implements-prefix='user' language='CSharp'&gt;
-        &lt;![CDATA[
-        public string FormatTime(string input)
-        {
-            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
-            return dt.ToString("h':'mm':'ss tt");
-        }
-        public string FormatArchiveLink(string input)
-        {
-            DateTime dt = DateTime.ParseExact(input, "ddd, dd MMM yyyy HH':'mm':'ss", null);
-            return String.Format(@"/Archive/{0:D4}/{1:D2}/{2:D2}.html", dt.Date.Year, dt.Date.Month, dt.Date.Day);
-        }
-        ]]&gt;
-    &lt;/msxsl:script&gt;
-</pre>
-And then use that in the output like this:
-<pre>
-&lt;xsl:value-of select="user:FormatTime(LocalPubDate)"/&gt;
-</pre>
-</ol>
-
-<p>It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having "First published" and "Last changed" times might be interesting also.  Perhaps I'll write something up at some point.
-
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00062.html"></a>
         </div>
       </div>
     </div>
