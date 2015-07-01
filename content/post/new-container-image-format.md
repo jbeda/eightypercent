@@ -85,4 +85,6 @@ There are some missing and underdefined parts to this story.
 
 This solution obviously borrows from both Homebrew and Nix.  What I think is new here is the idea of expanding the definition of an container image with FileSets and making this be fundamentally decentralized.  We also need to ensure that the easy to approach spirit of Dockerfile isn't lost.  If we do this right we can make images much easier to efficiently create, verify, update and manage.
 
+Ping back to me on twitter ([@jbeda](http://www.twitter.com/jbeda)) or we can talk over on [Hacker News](https://news.ycombinator.com/item?id=9814131)
+
 (Thanks to [Kelsey Hightower](https://twitter.com/kelseyhightower) for reviewing an earlier version of this post.)
