@@ -16,7 +16,7 @@ The thing I've been exploring most recently is the intersection between the cont
 
 **Dockerfiles** are also great.  They are a purpose built makefile analog that are super easy to understand and logically build on the layered nature of Docker images.  Like most of the Docker project, they are much more approachable than other efforts in this area and solve real customer needs. When constructed appropriately, they allow for an efficient dev flow where many of the time consuming steps can be reused.
 
-One of the **best innovations of Docker is actually a bit of an awesome hack**.  It leverages the package managers for existing Linux distributions.  Reusing the package manager means that users can ready any number of guides on how to get software installed and easily translate it into a Dockerfile.
+One of the **best innovations of Docker is actually a bit of an awesome hack**.  It leverages the package managers for existing Linux distributions.  Reusing the package manager means that users can read any number of guides on how to get software installed and easily translate it into a Dockerfile.
 
 Think of it this way: a typical Linux distribution is 2 things. First is a bunch of stuff to get the box booted.  Second is a package manager to install and manage software on that box.  Docker images typically only need the second one.  The first one is along for the ride even if the user never needs it.  There are package managers out there that are cleanly factored from the underlying OS ([Homebrew](http://brew.sh/), [Nix](https://nixos.org/nix/)) but they aren't typically used in Docker images.
 
