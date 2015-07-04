@@ -30,8 +30,8 @@ Problems with the current state of the world:
 
 * **No package introspection.**  When the next security issue comes along it is difficult to easily see which images are vulnerable.  Furthermore, it is hard to write automated policy to prevent those images from running.
 * **No easy sharing of packages.**  If 2 images install the same package, the bits for that package are downloaded twice.  It isn't uncommon for users to construct complicated "inheritence" chains to help work around this issue[^dockerfile-chains].
-* **No surgical package updating.**  Updating a package requires recreating an image and all re-running all downstream actions in the Dockerfile.  If users are good about tracking which sources go into which image[^tracking-inputs], it should be possible to just update the package but that is difficult and error prone.
-* **Order dependent image builds.** Order matters in a Dockerfile --- even when it doesn't have to.  Often times two actions have zero interaction with each other.  But Docker has no way of knowing that so must assume that every action depends on everything coming previously.
+* **No surgical package updating.**  Updating a package requires recreating an image and re-running all downstream actions in the Dockerfile.  If users are good about tracking which sources go into which image[^tracking-inputs], it should be possible to just update the package but that is difficult and error prone.
+* **Order dependent image builds.** Order matters in a Dockerfile --- even when it doesn't have to.  Often times two actions have zero interaction with each other.  But Docker has no way of knowing that so must assume that every action depends on all preceding actions.
 * **Package manager cruft.** Most well built Dockerfiles have something like:
 
     ```
@@ -48,20 +48,21 @@ Problems with the current state of the world:
 
 ## Ideas for Solutions
 
-While I don't have a fully formed solution to all of these problems, I do have a bunch of ideas.
+While I don't have a fully formed solution to all of these problems, I do have a bunch of ideas.Imagine that we take the idea of a container image and break it down a little.  
 
-First, imagine that we take the idea of a container image and break it down a little.  The first thing we define is a `FileSet`.  A `FileSet` is a named, versioned and verified set of files.  Google has a system internally called the "Midas Package Manager" (MPM) that this[^decentralized-mpm].  Dinah McNutt gave a [great talk on MPM](https://www.youtube.com/watch?v=_uJlTllziPI) at a 2013 USENIX conference.  A further tweak would allow a `FileSet` to import other `FileSet`s into the file namespace of the host.  This allows for a `FileSet` to have multiple "parents" -- unlike the current Docker image format.
+The first thing we define is a `FileSet`.  A `FileSet` is a named, versioned and verified set of files.  Google has a system internally called the "Midas Package Manager" (MPM) that does this[^decentralized-mpm].  Dinah McNutt gave a [great talk on MPM](https://www.youtube.com/watch?v=_uJlTllziPI) at a 2013 USENIX conference.  A further tweak would allow a `FileSet` to import other `FileSet`s into the file namespace of the host.  This allows for a `FileSet` to have multiple "parents" -- unlike the current Docker layered image format.
 
 [^decentralized-mpm]: Actually, we need our system to be decentralized.  MPM, like may package management systems (including [Homebrew](https://github.com/Homebrew/homebrew/tree/master/Library/Formula) and [Nix](https://github.com/NixOS/nixpkgs)) has a single central repository/database of all packages.  Whatever is used here must be distributed --- probably in a namespace rooted with DNS.  Something like [Docker Notary](https://github.com/docker/notary) would play a role in signing and verifying packages.  Something like the [Nix archive format (NAR)](http://lethalman.blogspot.com/2014/08/nix-pill-9-automatic-runtime.html) will help make this more stable and predictable.
 
-Second, we define a `Package` as a type of `FileSet`.  It would have a standard directory structin and include metadata on other packages required along with simple instructions to "install" the package[^package-install].Ideally, these packages would be built from verified sources and a verified tool chain.  This would enable true provenance for every bit.  This would be optional.
+Second, we define a `Package` as a type of `FileSet`.  It would have a standard directory structure and include metadata on other packages required along with simple instructions to "install" the package[^package-install]. Ideally, these packages would be built from verified sources and a verified tool chain to enable true provenance for every bit. This would be optional.
 
 [^package-install]: Package install should consist of simply symlinking files into some common directories (`/bin`, `/lib`).  This would all be done via a declarative manifest. There are probably going to be cases where an "install" is a little bit more complex and a script is necessary.  I'd love to see how far we could get before that becomes absolutely necessary.  It is also assumed that the package directories themselves are only ever mounted read only. 
 
 Finally, we would redefine a `ContainerImage` also as a type of `FileSet` that has metadata necessary to make it runnable.  The definition of this metadata is a big part of what the [Docker Image format](https://github.com/docker/docker/blob/master/image/spec/v1.md) and the [ACI](https://github.com/appc/spec/blob/master/SPEC.md) format are.
 
-A `ContainerImage` that is using this container native package system would define a set of read-only imports of all required packages `FileSet`s.  Image construction tools would verify that all dependencies are satisfied.  Furthermore, the install steps would be run to symlink all of the packages into the appropriate places[^late-symlinking].
+A `ContainerImage` that is using this container native package system would define a set of read-only imports (using the `FileSet` import feature described above) of all required packages `FileSet`s.  Image construction tools would verify that all package dependencies are satisfied.  Furthermore, the install steps would be run to symlink[^symlink-problems] all of the packages into the appropriate places[^late-symlinking].
 
+[^symlink-problems]: Josh Wood ([@joshixisjosh9](https://twitter.com/joshixisjosh9)), [via twitter](https://twitter.com/joshixisjosh9/status/617008740626116609), points out [some issues with using symlinks](https://www.usenix.org/legacy/publications/library/proceedings/usenix2000/general/pikelex.html). An alternative here would be to use bind mounts.  But it is unclear how many bind mounts Linux can handle (100 containers with 100 bind mounts = 10,000 bind mounts) and setting them up requires root privledges.
 [^late-symlinking]: There is a choice on when the package install happens.  It could happen early as the container is created.  Or it could happen late as part of the container start process.  I'd prefer late binding as it makes surgical package updating simpler.  The directories that store the symlinks could be tmpfs directories to keep this all very speedy.
 
 User code could either be packed up as a `Package` or just inserted directly into the `ContainerImage`.
