@@ -6,8 +6,50 @@
     <description>Recent content in Post on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2015 10:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2015 14:51:41 -0700</lastBuildDate>
     <atom:link href="http://new.eightypercent.net:81/post.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Operations Lock-in vs. Development Lock-in</title>
+      <link>http://new.eightypercent.net:81/post/types-of-lock-in.html</link>
+      <pubDate>Tue, 01 Sep 2015 14:51:41 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net:81/post/types-of-lock-in.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m not a large enterprise developer.  My experiences are at the unique environments of Google and Microsoft&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  Over my career I&amp;rsquo;ve helped build &lt;em&gt;platforms&lt;/em&gt; and I&amp;rsquo;ve learned that to build a great developer platform (or any good product at all) requires you to talk to many customers and put yourself in their mindset.  This extends from the day to day usability of the product to the decision of a customer to bet a part of his/her business and career on the product in the first place.&lt;/p&gt;
+
+&lt;p&gt;Lock-in is obviously one of the critical things that many customers take into account. But lock-in isn&amp;rsquo;t absolute.  Different types of lock-in are defined by the friction and cost incurred in switching.&lt;/p&gt;
+
+&lt;p&gt;One interesting way to view lock-in is by looking at who will bear the brunt that switching cost.  You can look at this from the point of view of Ops vs. Dev&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;With &lt;strong&gt;Operations Lock-in&lt;/strong&gt; the operations team is primarily involved in a migration from one place to another.  The operations playbooks, policies, and procedures may have to change but the code will be substantially unchanged.  Ideally, nothing needs to be recompiled or rebuilt.&lt;/li&gt;
+&lt;li&gt;With &lt;strong&gt;Developer Lock-in&lt;/strong&gt; someone has to actually go in and crack the code.  This could be something minor (swapping in a new library with a standard language interface) to more architectural changes (changing your database).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Different organizations have different skill sets and one type of lock-in might be more serious than another.  While someplace like Google or Microsoft may have high quality software engineers to spare, most large enterprises are severly constrained here.  Often &lt;strong&gt;projects were written by developers that are long gone&lt;/strong&gt; &amp;ndash; they were independent contractors, left the company, or have moved on to other projects.  In this case developer lock-in can be much more costly than operations lock-in.&lt;/p&gt;
+
+&lt;p&gt;Think about it this way &amp;ndash; a user has a large system built on open software packages running on on-prem hardware.  &lt;strong&gt;Switching to a VM/IaaS offering is a relatively cheap project&lt;/strong&gt; as it can be an operations focused project with little to no developer involvement.  As IaaS offerings evolved to be more and more similar to real hardware (persistent network block stores, familiar networking) this trend really accelerated.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, if a user builds a software product around a very proprietary set of APIs (either language APIs or service APIs) switching can be much more expensive.  Many PaaS offerings would be in this category.  For example, &lt;strong&gt;moving a large application away from AWS Lambda would require a rewrite&lt;/strong&gt;.  Google App Engine has similar issues if the native datastore is being used.&lt;/p&gt;
+
+&lt;p&gt;This is all critical to keep in mind as we create new ways to build and run systems.  Many times betting on open APIs&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; and open source systems helps to fight lock-in by making switching an operations project vs. a development project.  This is why, despite the eye-rolls, I&amp;rsquo;m excited about the emergance of the &lt;a href=&#34;https://www.opencontainers.org/&#34;&gt;Open Container Initiative&lt;/a&gt; and the &lt;a href=&#34;https://cncf.io/&#34;&gt;Cloud Native Computing Foundation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What other ways do you think about lock-in?  Tweet at me (&lt;a href=&#34;https://twitter.com/jbeda&#34;&gt;@jbeda&lt;/a&gt;) and let&amp;rsquo;s start a discussion.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;I started my career on Internet Explorer and moved on to create graphics APIs (including XAML) for Windows Presentation Foundation (WPF).  At Google I started on Google Talk building out &lt;a href=&#34;http://xmpp.org/about-xmpp/technology-overview/jingle/&#34;&gt;XMPP specifications for call signaling&lt;/a&gt; and eventually started Google Compute Engine and helped to start Kubernetes.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;There are, of course, other types of lock-in.  One that is really interesting is data locality lock-in.  As data gets bigger and bigger, simply moving that data around can be complicated and costly.  This gets even more complicated as that data continues to grow while it is being moved.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;With the advent of cloud APIs, we&amp;rsquo;ve actually taken a bit of a step back in terms of open APIs.  While there are some companies (&lt;a href=&#34;https://twitter.com/stewart/status/634533296555339777&#34;&gt;such as Slack&lt;/a&gt;) that encourate alternate implementations of their APIs, many companies are silent or hostile to others implementing those APIs.  I&amp;rsquo;d love to see a pattern of companies releasing their APIs with an open license or donating the IP to a foundation. This is made only more critical in light of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.&#34;&gt;Oracle API copyright decision&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Container Native Package System</title>
@@ -662,35 +704,6 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     &lt;p&gt;
         Speaking of conferences, I &lt;em&gt;am&lt;/em&gt; planning on being around for a day or two of &lt;a href=&#34;http://www.von.com/&#34;&gt;Spring
         VON&lt;/a&gt;.
-    &lt;/p&gt;
-
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sleeping through the night</title>
-      <link>http://new.eightypercent.net:81/post/old/00262.html</link>
-      <pubDate>Sun, 22 Jan 2006 06:19:12 -0800</pubDate>
-      
-      <guid>http://new.eightypercent.net:81/post/old/00262.html</guid>
-      <description>&lt;p&gt;
-
-    &lt;p&gt;
-        Last night was the first time Annie slept through the night.&amp;#160; We put her to bed
-        around 8pm and it is now 6:20am and she is still asleep. We&#39;ve been working over the
-        past couple of nights to eliminate her&amp;#160;late night&amp;#160;feeding and help her to
-        get back to sleep on her own.
-    &lt;/p&gt;
-    &lt;p&gt;
-        I mentioned to my wife this morning I feel like we discovered the lost city of gold.&amp;#160;
-        Even if it doesn&#39;t go like this every night it is good to know that it can be done.
-    &lt;/p&gt;
-    &lt;p&gt;
-        Here is a recent picture of our little babe:
-    &lt;/p&gt;
-    &lt;p&gt;
-        &lt;img alt=&#34;Annie at 7 months&#34; hspace=&#34;0&#34; src=&#34;http://static.eightypercent.net/photos/Anne7Months.jpg&#34; align=&#34;baseline&#34; border=&#34;0&#34; /&gt;
     &lt;/p&gt;
 
 &lt;/p&gt;

@@ -44,6 +44,21 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00073.html">GalCiv</a></h2>
+        <span class="lead">Sun, Apr 6, 2003</span>
+        <div class="post">
+          <p>
+<p>I've been spending way too much time playing <a href="http://www.galciv.com">Galactic Civilizations</a> lately.  This game is like Masters of Orion, but better.  It is seriously hard.
+<p>The support from the company and the forums is great also.  You can upload your game results and see how you are doing compared to everyone else.  I'm not doing so well...
+<p>For $40 ($10 less than most other first-run games) this is a steal.  You can even download it directly and save yourself a trip to the store.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00072.html">SharpReader...</a></h2>
         <span class="lead">Sun, Apr 6, 2003</span>
         <div class="post">
@@ -182,36 +197,6 @@
         <div class="post">
           <p>
 <p>Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00063.html">Stupid XSLT tricks</a></h2>
-        <span class="lead">Sun, Mar 9, 2003</span>
-        <div class="post">
-          <p>
-<p>In talking with <a href="http://ocw.abf.tulane.edu/blog/">Jorge</a> about how he does his site, he pointed me to his XSLT source.  I'll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven't discovered yet.  Here is one of them: <a href="http://www.w3.org/TR/xslt#dt-attribute-value-template">http://www.w3.org/TR/xslt#dt-attribute-value-template</a>.  This is a huge keystroke saver.  It lets me go from this:
-<pre>
-&lt;A class="ArchiveLink"&gt;
-    &lt;xsl:attribute name="href"&gt;
-        &lt;xsl:value-of select="$SiteRoot"/&gt;&lt;xsl:value-of 
-            select="user:FormatArchiveLink(LocalPubDate)"/&gt;#a&lt;xsl:value-of 
-            select="BlogEntryNumber"/&gt;
-    &lt;/xsl:attribute&gt;
-    &lt;!--....--&gt;
-&lt;/A&gt;
-</pre>
-<p>To this:
-<pre>
-&lt;A class="ArchiveLink" href="{$SiteRoot}{user:FormatArchiveLink(LocalPubDate)}#a{BlogentryNumber}"&gt;
-    &lt;!--....--&gt;
-&lt;/A&gt;
-</pre>
-<p>Very cool!
 </p>
 
         </div>

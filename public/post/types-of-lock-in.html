@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Operations Lock-in vs. Development Lock-in &middot; 80%</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/eightypercent.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-93698-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <link rel="icon" type="image/png" href="/images/favicon-assets/favicon@128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="/images/favicon-assets/favicon@64.png" sizes="64x64" />
+    <link rel="icon" type="image/png" href="/images/favicon-assets/favicon@32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/images/favicon-assets/favicon@16.png" sizes="16x16" />
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header pull-left">
+          <a href="/" class="navbar-brand">80%</a>
+        </div>
+        <div class="navbar-header navbar-text pull-right">
+          Joe Beda &middot; <a href="http://www.twitter.com/jbeda" class="navbar-link">@jbeda</a>
+        </div>
+      </div>
+    </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h1><a href="http://new.eightypercent.net:81/post/types-of-lock-in.html">Operations Lock-in vs. Development Lock-in</a></h1>
+        <span class="lead">Tue, Sep 1, 2015</span>
+        <div class="post">
+            <p>I&rsquo;m not a large enterprise developer.  My experiences are at the unique environments of Google and Microsoft<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp">1</a></sup>.  Over my career I&rsquo;ve helped build <em>platforms</em> and I&rsquo;ve learned that to build a great developer platform (or any good product at all) requires you to talk to many customers and put yourself in their mindset.  This extends from the day to day usability of the product to the decision of a customer to bet a part of his/her business and career on the product in the first place.</p>
+
+<p>Lock-in is obviously one of the critical things that many customers take into account. But lock-in isn&rsquo;t absolute.  Different types of lock-in are defined by the friction and cost incurred in switching.</p>
+
+<p>One interesting way to view lock-in is by looking at who will bear the brunt that switching cost.  You can look at this from the point of view of Ops vs. Dev<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in">2</a></sup>.</p>
+
+<ul>
+<li>With <strong>Operations Lock-in</strong> the operations team is primarily involved in a migration from one place to another.  The operations playbooks, policies, and procedures may have to change but the code will be substantially unchanged.  Ideally, nothing needs to be recompiled or rebuilt.</li>
+<li>With <strong>Developer Lock-in</strong> someone has to actually go in and crack the code.  This could be something minor (swapping in a new library with a standard language interface) to more architectural changes (changing your database).</li>
+</ul>
+
+<p>Different organizations have different skill sets and one type of lock-in might be more serious than another.  While someplace like Google or Microsoft may have high quality software engineers to spare, most large enterprises are severly constrained here.  Often <strong>projects were written by developers that are long gone</strong> &ndash; they were independent contractors, left the company, or have moved on to other projects.  In this case developer lock-in can be much more costly than operations lock-in.</p>
+
+<p>Think about it this way &ndash; a user has a large system built on open software packages running on on-prem hardware.  <strong>Switching to a VM/IaaS offering is a relatively cheap project</strong> as it can be an operations focused project with little to no developer involvement.  As IaaS offerings evolved to be more and more similar to real hardware (persistent network block stores, familiar networking) this trend really accelerated.</p>
+
+<p>On the other hand, if a user builds a software product around a very proprietary set of APIs (either language APIs or service APIs) switching can be much more expensive.  Many PaaS offerings would be in this category.  For example, <strong>moving a large application away from AWS Lambda would require a rewrite</strong>.  Google App Engine has similar issues if the native datastore is being used.</p>
+
+<p>This is all critical to keep in mind as we create new ways to build and run systems.  Many times betting on open APIs<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis">3</a></sup> and open source systems helps to fight lock-in by making switching an operations project vs. a development project.  This is why, despite the eye-rolls, I&rsquo;m excited about the emergance of the <a href="https://www.opencontainers.org/">Open Container Initiative</a> and the <a href="https://cncf.io/">Cloud Native Computing Foundation</a>.</p>
+
+<p>What other ways do you think about lock-in?  Tweet at me (<a href="https://twitter.com/jbeda">@jbeda</a>) and let&rsquo;s start a discussion.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp">I started my career on Internet Explorer and moved on to create graphics APIs (including XAML) for Windows Presentation Foundation (WPF).  At Google I started on Google Talk building out <a href="http://xmpp.org/about-xmpp/technology-overview/jingle/">XMPP specifications for call signaling</a> and eventually started Google Compute Engine and helped to start Kubernetes.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp"><sup>[return]</sup></a></li>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in">There are, of course, other types of lock-in.  One that is really interesting is data locality lock-in.  As data gets bigger and bigger, simply moving that data around can be complicated and costly.  This gets even more complicated as that data continues to grow while it is being moved.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in"><sup>[return]</sup></a></li>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis">With the advent of cloud APIs, we&rsquo;ve actually taken a bit of a step back in terms of open APIs.  While there are some companies (<a href="https://twitter.com/stewart/status/634533296555339777">such as Slack</a>) that encourate alternate implementations of their APIs, many companies are silent or hostile to others implementing those APIs.  I&rsquo;d love to see a pattern of companies releasing their APIs with an open license or donating the IP to a foundation. This is made only more critical in light of the <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.">Oracle API copyright decision</a>.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+              <footer>
+        <nav class="footer navbar-default clearfix container-fluid">
+          <div class="row">
+            <div class="pull-left navbar-text">
+              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
+            </div>
+            <div class="navbar-text pull-right"><a class="navbar-link" href="#top">Back to top</a></div>
+          </nav>
+        </div>
+      </footer>
+ 
+   </div>
+     
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

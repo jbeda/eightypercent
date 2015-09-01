@@ -44,6 +44,49 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/types-of-lock-in.html">Operations Lock-in vs. Development Lock-in</a></h2>
+        <span class="lead">Tue, Sep 1, 2015</span>
+        <div class="post">
+          <p>I&rsquo;m not a large enterprise developer.  My experiences are at the unique environments of Google and Microsoft<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp">1</a></sup>.  Over my career I&rsquo;ve helped build <em>platforms</em> and I&rsquo;ve learned that to build a great developer platform (or any good product at all) requires you to talk to many customers and put yourself in their mindset.  This extends from the day to day usability of the product to the decision of a customer to bet a part of his/her business and career on the product in the first place.</p>
+
+<p>Lock-in is obviously one of the critical things that many customers take into account. But lock-in isn&rsquo;t absolute.  Different types of lock-in are defined by the friction and cost incurred in switching.</p>
+
+<p>One interesting way to view lock-in is by looking at who will bear the brunt that switching cost.  You can look at this from the point of view of Ops vs. Dev<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in">2</a></sup>.</p>
+
+<ul>
+<li>With <strong>Operations Lock-in</strong> the operations team is primarily involved in a migration from one place to another.  The operations playbooks, policies, and procedures may have to change but the code will be substantially unchanged.  Ideally, nothing needs to be recompiled or rebuilt.</li>
+<li>With <strong>Developer Lock-in</strong> someone has to actually go in and crack the code.  This could be something minor (swapping in a new library with a standard language interface) to more architectural changes (changing your database).</li>
+</ul>
+
+<p>Different organizations have different skill sets and one type of lock-in might be more serious than another.  While someplace like Google or Microsoft may have high quality software engineers to spare, most large enterprises are severly constrained here.  Often <strong>projects were written by developers that are long gone</strong> &ndash; they were independent contractors, left the company, or have moved on to other projects.  In this case developer lock-in can be much more costly than operations lock-in.</p>
+
+<p>Think about it this way &ndash; a user has a large system built on open software packages running on on-prem hardware.  <strong>Switching to a VM/IaaS offering is a relatively cheap project</strong> as it can be an operations focused project with little to no developer involvement.  As IaaS offerings evolved to be more and more similar to real hardware (persistent network block stores, familiar networking) this trend really accelerated.</p>
+
+<p>On the other hand, if a user builds a software product around a very proprietary set of APIs (either language APIs or service APIs) switching can be much more expensive.  Many PaaS offerings would be in this category.  For example, <strong>moving a large application away from AWS Lambda would require a rewrite</strong>.  Google App Engine has similar issues if the native datastore is being used.</p>
+
+<p>This is all critical to keep in mind as we create new ways to build and run systems.  Many times betting on open APIs<sup class="footnote-ref" id="fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis"><a rel="footnote" href="#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis">3</a></sup> and open source systems helps to fight lock-in by making switching an operations project vs. a development project.  This is why, despite the eye-rolls, I&rsquo;m excited about the emergance of the <a href="https://www.opencontainers.org/">Open Container Initiative</a> and the <a href="https://cncf.io/">Cloud Native Computing Foundation</a>.</p>
+
+<p>What other ways do you think about lock-in?  Tweet at me (<a href="https://twitter.com/jbeda">@jbeda</a>) and let&rsquo;s start a discussion.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp">I started my career on Internet Explorer and moved on to create graphics APIs (including XAML) for Windows Presentation Foundation (WPF).  At Google I started on Google Talk building out <a href="http://xmpp.org/about-xmpp/technology-overview/jingle/">XMPP specifications for call signaling</a> and eventually started Google Compute Engine and helped to start Kubernetes.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp"><sup>[return]</sup></a></li>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in">There are, of course, other types of lock-in.  One that is really interesting is data locality lock-in.  As data gets bigger and bigger, simply moving that data around can be complicated and costly.  This gets even more complicated as that data continues to grow while it is being moved.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in"><sup>[return]</sup></a></li>
+<li id="fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis">With the advent of cloud APIs, we&rsquo;ve actually taken a bit of a step back in terms of open APIs.  While there are some companies (<a href="https://twitter.com/stewart/status/634533296555339777">such as Slack</a>) that encourate alternate implementations of their APIs, many companies are silent or hostile to others implementing those APIs.  I&rsquo;d love to see a pattern of companies releasing their APIs with an open license or donating the IP to a foundation. This is made only more critical in light of the <a href="https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.">Oracle API copyright decision</a>.
+ <a class="footnote-return" href="#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/new-container-image-format.html">Container Native Package System</a></h2>
         <span class="lead">Wed, Jul 1, 2015</span>
         <div class="post">
@@ -434,146 +477,6 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
     </p>
     <p>
         <a href="http://static.eightypercent.net/photos/Heron-small.jpg"><img src="http://static.eightypercent.net/photos/Heron-thumb.jpg" /></a> 
-    </p>
-
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00267.html">Backing up data</a></h2>
-        <span class="lead">Sat, Apr 15, 2006</span>
-        <div class="post">
-          <p>
-
-    <p>
-        Between photos of Annie, other photography and music, I have quite a bit of data.&#160;
-        Probably over 300GB now and growing fast. 
-    </p>
-    <p>
-        Backing up this much data is a challenge.&#160; I've set some requirements of for
-        what I needed in a backup system: 
-    </p>
-    <ul>
-        <li>
-            <strong>Automatic</strong>.&#160; A backup system is useless if you don't actually
-            use it.&#160; I know that if I'm required to do anything manually it probably won't
-            get done. 
-        </li>
-        <li>
-            <strong>Off site</strong>.&#160; There are too many things that can happen if you
-            have an on site backup.&#160; Your house can burn down, you can get robbed, etc. 
-        </li>
-        <li>
-            <strong>Virus resistant</strong>. If somehow a virus were to try and wipe everything
-            out, I'd like my&#160;data to survive. 
-        </li>
-        <li>
-            <strong>Versioned</strong>.&#160; In case I delete something and don't realize right
-            away, I'd like to keep versions of my data. 
-        </li>
-        <li>
-            <strong>Big</strong>. I have lots of data and I don't imagine that I'm going to stop
-            accumulating it.&#160; I'd like to plan for 800GB-1TB. 
-        </li>
-        <li>
-            <strong>On line</strong>.&#160; I want to be able to get to my backup without mounting/moving
-            anything. 
-        </li>
-    </ul>
-    <p>
-        This is a pretty tall order.&#160; Here are some things that I considered but decided
-        not to do: 
-    </p>
-    <ul>
-        <li>
-            <strong>RAID</strong>. Mirroring is pretty secure in the face of hardware failure.&#160;
-            RAID 5 sounds great but stories I hear is that if one drive goes there is a serious
-            chance another will go during the rebuilding.&#160;&#160;Simply doing RAID&#160;also
-            fails to satisfy many of the requirements above. 
-        </li>
-        <li>
-            <strong>DVD</strong>.&#160; I started backing some stuff up on DVDs.&#160; I got read
-            errors a month later.&#160; Too manual also. 
-        </li>
-        <li>
-            <strong>External Harddrives</strong>. I thought about having a couple of really big
-            external drives and rotating them.&#160; This solves a lot of the problems above but
-            it is pretty manual.&#160; A friend of mine is going to do this and keep a copy at
-            the office.&#160; He said he planned to backup/move every couple of months.&#160;
-            That is just too long for me. 
-        </li>
-        <li>
-            <strong>NT Volume Shadow Copy</strong>. This is a cool technology that can keep snapshots
-            through time on a drive.&#160; It looks like the Linux Volume Manager (LVM) can do
-            some similar things.&#160; This isn't really a backup solution as much as a versioning
-            solution.&#160; This plus RAID 0 is probably pretty good except it isn't off site. 
-        </li>
-    </ul>
-    <p>
-        I ended up going with a more brute force solution.&#160; I bought and set up two Linux
-        servers.&#160; The first is a home server.&#160; The second is in a datacenter in
-        downtown Seattle. 
-    </p>
-    <p>
-        The home Linux server is a dual core Pentium running Ubuntu 5.10 server.&#160; I have
-        a HW/SW raid card driving 5 250GB drives in RAID 5.&#160; It servers a data share
-        over Samba.&#160; I backup that share to another directory every night.&#160; That
-        archive directory is shared out via Samba also, but as read-only.&#160; This makes
-        the situation fairly virus proof.&#160; Since I have two copies of the data (one that
-        is r/w and the other that is a backup) I might have to add more drives in the future.&#160;
-        I got a big honking case so I'll have room.&#160; I'm running slimserver on this amoung
-        other things.&#160; I also use it to do long running batch <a href="http://enblend.sourceforge.net/">enblend</a> stitching
-        jobs for panoramas. 
-    </p>
-    <p>
-        The data center machine is a <a href="http://www.tyan.com/products/html/gt20b5151.html">1U
-        Tyan server</a> with 4x320GB drives in Linux SW RAID 5.&#160; It is also running Ubuntu
-        5.10 server.&#160; (Getting Ubuntu installed on a RAID5 drive array was a challenge.&#160;
-        I don't remember the exact steps I took or I would document them here.)&#160; The
-        cost of doing this can be high unless you have a friend that can get you hooked up.&#160;
-        Even if you can't, it might be worthwhile.&#160; I'm backing up to this every night
-        over my cable modem.&#160; The cable modem upload speed is okay since I upgraded to
-        Comcast's higher level of service.&#160; I now have ~768kbps up. 
-    </p>
-    <p>
-        There are a couple of choices for software for doing the backups.&#160; The key is
-        that it has to be bandwidth smart (only update diffs), handle versioning gracefully
-        and be able to do partial copies based on a timer.&#160; The last requirement is so
-        that if I have a ton of data to upload it can go over a couple of nights.&#160; The
-        most obvious candidate for this is rsync.&#160; rsync is an amazing tool for these
-        types of things.&#160; My MS friends think that robocopy is cool -- it can't hold
-        a candle to rsync.&#160; It also generally operates over ssh so it is also secure.
-        It can also build version trees where unchanged files are hardlinked to previous versions.&#160;
-        The only thing it can't do is handle files that have moved but haven't changed, and
-        stop itself after a certain number of minutes. 
-    </p>
-    <p>
-        To solve this problem, <a href="http://www.scottlu.com/">Scott Ludwig</a> (a coworker
-        of mine who has a similar setup) developed a python script that does much of what
-        rsync does but solves these two last problems.&#160; It is called "link backup" and
-        you can get it <a href="http://www.scottlu.com/Content/Link-Backup.html">here</a>.&#160;
-        Every night starting at 11:30pm, I run this backup script to backup my working directory
-        to the backup directory on my home server.&#160; This is usually pretty quick.&#160;
-        I then backup the latest snapshot of that backup set to the server in the datacenter.&#160;
-        This can take a little longer but at least I don't have to think about it. 
-    </p>
-    <p>
-        Since I implemented this, Amazon's S3 has come on the scene.&#160; While it might
-        be interesting to back up using S3, I'm not sure how the economics work out.&#160;
-        At my current level (300GB) and Amazon's pricing model ($0.15 per GB per month) I
-        would be paying $45 per month.&#160; If I grow to 600GB, I'm up to $90 per month.&#160;
-        Bandwidth is extra, but I don't use much of that.&#160; It should be easy to find
-        colocation hosting for that amount of coin.&#160; There is the one time cost of the
-        hardware and the work of keeping it up to date also (I think my server came in around
-        $1600 but I probably overbought).&#160; The advantage is that you can run and do other
-        things with your own server in a datacenter. 
-    </p>
-    <p>
-        [April 16, 2006: Edited to fix Ubuntu version number.]
     </p>
 
 </p>

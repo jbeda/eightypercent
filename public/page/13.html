@@ -45,6 +45,83 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00153.html">Avalon, XAML and SVG</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Tue, Nov 4, 2003</span>
+              <p>
+
+    <p>
+        There has been a ton of speculation on SVG and its relationship (or lack thereof)
+        to Avalon.&#160; Here is some thoughts on that, collected from various responses I've
+        made or others have made. 
+    </p>
+    <ul>
+        <li>
+            Our rendering model is very much like that of SVG.&#160; We support a hierarchical
+            compositing model with transforms that affect items in the hiearchy. 
+        </li>
+        <li>
+            Our markup isn't the same mostly because XAML is a direct reflection of the programming
+            model.&#160; There is a very solid relationship between the markup and the objects
+            and methods. 
+        </li>
+        <li>
+            Our OM doesn't match the SVG DOM because we choose to go with an object model that
+            more closely matches what we think <em>our</em> users expect.&#160; Specifically,
+            we tried hard to make sure that our object model provided a certain amount of consistency
+            with WinForms (and VB and MFC before it)&#160;and ASP.Net.&#160; Beyond this, our
+            object model is strongly typed where much of the SVG DOM is based around strings.&#160; 
+        </li>
+        <li>
+            WVG is a term that we are no longer using and isn't, in my opinion, very useful.&#160;
+            We were supposed to have scrubbed this from our documentation, but apparently we missed
+            some stuff.&#160; There is no strick subset of Avalon objects and XAML markup that
+            stands on its own with respect to vector graphics.&#160; 
+            <ul>
+                <li>
+                    Whereas when using SVG inside of XHTML there is a very&#160;bright line, when using
+                    a vector graphic element in a UI authored in XAML, there is no sharp line.&#160; You
+                    can put a Rectangle element, for example, in flow with a document without a Canvas
+                    element.&#160; To do a similar thing with XHTML/SVG, you would need to wrap all SVG
+                    content in an SVG element.&#160; 
+                </li>
+                <li>
+                    For Avalon, the set of properties and property types is the same between vector graphics
+                    elements and other elements.&#160; In this way the background property for a Button
+                    is of type Brush -- the same as the fill property for a Rectangle. 
+                </li>
+                <li>
+                    There are elements that can very easily be seen to belong to both a control subset
+                    and a vector graphics subset.&#160; For example, Image makes sense in a UI sense but
+                    also in a VG sense.&#160; XHTML and SVG both have image elements.&#160; We avoid this
+                    duplicity.&#160; Text is another area where we avoid a large amount of duplication. 
+                </li>
+            </ul>
+        </li>
+        <li>
+            While we share a rendering model with SVG to a large extent, our support and features
+            don't match up completely.&#160; Some of it is stuff that we haven't implemented yet
+            and others are due to choices that we've made because of programming model concerns.&#160;
+            I'll try to put together a guide on this stuff at some point in the future.</li>
+    </ul>
+    <p>
+        I'm sure there are questions around SVG and XAML/Avalon that I haven't answered here.&#160;
+        Post in the comments and I'll update this post with the latest and greatest.
+    </p>
+
+</p>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00153.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00152.html">I hate Avalon</a>
         </h2>
         <div class="readmore">
@@ -437,59 +514,6 @@
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00144.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00143.html">My PDC schedule</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sat, Oct 18, 2003</span>
-              <p>
-
-    <p>
-        I made the cut and I'm going to be going to the PDC.&#160; Here is the where and when
-        of where I'm going to be for sure: 
-    </p>
-    <ul>
-        <li>
-            I will be proctoring some of the client "Hands On Labs."&#160; I'll be working Monday,
-            Tuesday and Wednesday mornings. 
-        </li>
-        <li>
-            I'm going to be an Expert at the "Ask the Experts" event on Tuesday night.&#160; I
-            don't remember the exact name of the table/room we'll be in, but look for the closest
-            thing to Avalon client graphics. 
-        </li>
-        <li>
-            I'll be cheering Greg Schechter on as he presents an in depth intro to Avalon graphics
-            at the CLI341 breakout on Tuesday afternoon (3:45-5:00). 
-        </li>
-        <li>
-            I'm not scheduled to officially man the Avalon booth, but I'll probably be hanging
-            out there some of the time. 
-        </li>
-    </ul>
-    <p>
-        Anything else you guys think I should hit?&#160; Some of the "Birds of a Feather"
-        sessions look like fun.&#160; The one titled: "Strategic Decisions and Rich Client
-        War Stories: Designing today for "Whidbey" and "Longhorn"" looks good along with the
-        "VS.NET Secret Tips &amp; Tricks" session.&#160; "What is Windows in an HD World?"
-        looks like fun too! 
-    </p>
-    <p>
-        If you want to get ahold of me during the PDC, post a comment to something up here
-        or send email to "pdc at bedafamily.com" and we'll figure out a way to meet. 
-    </p>
-
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00143.html"></a>
         </div>
       </div>
     </div>

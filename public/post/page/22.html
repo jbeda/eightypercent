@@ -44,6 +44,36 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00063.html">Stupid XSLT tricks</a></h2>
+        <span class="lead">Sun, Mar 9, 2003</span>
+        <div class="post">
+          <p>
+<p>In talking with <a href="http://ocw.abf.tulane.edu/blog/">Jorge</a> about how he does his site, he pointed me to his XSLT source.  I'll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven't discovered yet.  Here is one of them: <a href="http://www.w3.org/TR/xslt#dt-attribute-value-template">http://www.w3.org/TR/xslt#dt-attribute-value-template</a>.  This is a huge keystroke saver.  It lets me go from this:
+<pre>
+&lt;A class="ArchiveLink"&gt;
+    &lt;xsl:attribute name="href"&gt;
+        &lt;xsl:value-of select="$SiteRoot"/&gt;&lt;xsl:value-of 
+            select="user:FormatArchiveLink(LocalPubDate)"/&gt;#a&lt;xsl:value-of 
+            select="BlogEntryNumber"/&gt;
+    &lt;/xsl:attribute&gt;
+    &lt;!--....--&gt;
+&lt;/A&gt;
+</pre>
+<p>To this:
+<pre>
+&lt;A class="ArchiveLink" href="{$SiteRoot}{user:FormatArchiveLink(LocalPubDate)}#a{BlogentryNumber}"&gt;
+    &lt;!--....--&gt;
+&lt;/A&gt;
+</pre>
+<p>Very cool!
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00062.html">More on RSS dates</a></h2>
         <span class="lead">Sun, Mar 9, 2003</span>
         <div class="post">
@@ -241,19 +271,6 @@ MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<b
 <P>I coded up non passive FTP support for my FTP code.  It only took me ~30 mins.  I've handed that off to Chris so perhaps it will show up in BlogX at some point.  If not, I may write a standalone utility and release that.
 <P>It was pretty easy to send the PORT command and start accepting connections.  I had to mess around a little bit to get it right so I wish that the documentation around using sockets was better.  For instance, there is no short sample that shows creating a socket, binding it to an address and then accepting connections.
 <P>BTW, my router (Linksys wireless/4 port) works with both passive and regular FTP connections.  It must be monitoring the control connection and (a) rewriting it with the public FTP address and (b) opening the port through to my machine.  These little boxes are just amazing.
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00053.html">Rachel to blog?</a></h2>
-        <span class="lead">Sat, Mar 1, 2003</span>
-        <div class="post">
-          <p>
-<P>I'm trying to convince my wife that she needs to start a web page to tell funny medical stories.  Stay tuned!
 </p>
 
         </div>
