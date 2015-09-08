@@ -1,5 +1,5 @@
 +++
-date = "2015-09-07T16:23:25-07:00"
+date = "2015-09-08T12:10:45-07:00"
 title = "Anatomy of a Modern Production Stack"
 
 +++
