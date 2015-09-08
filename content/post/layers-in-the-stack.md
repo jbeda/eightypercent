@@ -64,6 +64,8 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
   * Logging can also throw off monitoring signals.  For instance, while processing saved logs the local agent can count 500s and feed those into a monitoring system.
   * Systems like [Apache Flume](http://flume.apache.org/)[^flume] can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  [Google BigQuery](https://cloud.google.com/bigquery/) and [Google Cloud Dataflow](https://cloud.google.com/dataflow/) are also well suited to ingesting and analyzing structured log data.
 
+PaaS systems often help to bring this all together in an easy way.  Systems like [OpenShift 3](http://www.openshift.org/), [Deis](http://deis.io/), or [Flynn](https://flynn.io) build on top of some of the independent systems above.  Other PaaS such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/docs) or [Cloud Foundry](https://www.cloudfoundry.org/) are more vertically integrated without the component layers being broken out in a well supported way.
+
 Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I'll stop here.  If this is useful (or if you think I'm missing anything huge) please let me know via [twitter](https://www.twitter.com/jbeda).
 
 [^other-posts]: [Brandon Philips](https://twitter.com/brandonphilips) from CoreOS points me to a [similar post](https://coreos.com/blog/cluster-osi-model/) from [Barak Michener](https://twitter.com/barakmich).  I go into more minutia here and don't try and define a strict stack.

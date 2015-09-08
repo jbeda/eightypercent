@@ -116,6 +116,8 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;PaaS systems often help to bring this all together in an easy way.  Systems like &lt;a href=&#34;http://www.openshift.org/&#34;&gt;OpenShift 3&lt;/a&gt;, &lt;a href=&#34;http://deis.io/&#34;&gt;Deis&lt;/a&gt;, or &lt;a href=&#34;https://flynn.io&#34;&gt;Flynn&lt;/a&gt; build on top of some of the independent systems above.  Other PaaS such as &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;, &lt;a href=&#34;https://cloud.google.com/appengine/docs&#34;&gt;Google App Engine&lt;/a&gt; or &lt;a href=&#34;https://www.cloudfoundry.org/&#34;&gt;Cloud Foundry&lt;/a&gt; are more vertically integrated without the component layers being broken out in a well supported way.&lt;/p&gt;
+
 &lt;p&gt;Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&amp;rsquo;ll stop here.  If this is useful (or if you think I&amp;rsquo;m missing anything huge) please let me know via &lt;a href=&#34;https://www.twitter.com/jbeda&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
