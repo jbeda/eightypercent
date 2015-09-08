@@ -44,6 +44,21 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00054.html">Non passive FTP support</a></h2>
+        <span class="lead">Sun, Mar 2, 2003</span>
+        <div class="post">
+          <p>
+<P>I coded up non passive FTP support for my FTP code.  It only took me ~30 mins.  I've handed that off to Chris so perhaps it will show up in BlogX at some point.  If not, I may write a standalone utility and release that.
+<P>It was pretty easy to send the PORT command and start accepting connections.  I had to mess around a little bit to get it right so I wish that the documentation around using sockets was better.  For instance, there is no short sample that shows creating a socket, binding it to an address and then accepting connections.
+<P>BTW, my router (Linksys wireless/4 port) works with both passive and regular FTP connections.  It must be monitoring the control connection and (a) rewriting it with the public FTP address and (b) opening the port through to my machine.  These little boxes are just amazing.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00053.html">Rachel to blog?</a></h2>
         <span class="lead">Sat, Mar 1, 2003</span>
         <div class="post">
@@ -240,22 +255,6 @@
 <p>Or, I could just always generate every output file, but compare it to what is on disk before writing it.  If it is exactly the same as what is already there, I can just throw away my in memory copy and not write anything.
 <p>Radio took the first approach, except it didn't get it completely right.  If you added a new entry in Radio, it wouldn't update any of the archive pages.  The problem is that you would always see links going further back on the calendar but never going forward, as it would never update one of the archive pages.  With the second approach it may take a little longer to generate the site,  but you'll be sure to update everything that needs to be updated.
 <p>I think that I'm going to go with the second approach.  I can adapt and implement the first as needed (perhaps on a more granular level.
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00044.html">FTPUpstreaming?</a></h2>
-        <span class="lead">Sun, Feb 23, 2003</span>
-        <div class="post">
-          <p>
-<P>If you see this then I uploaded everything using my new FTP support.
-<P>Right now I just upload everything every time.  However, it shouldn't be difficult for me to keep a dictionary of file times so I can keep track of what is new since the last upload.
-<P>I also need to do the uploading on a different thread and report status.
-
 </p>
 
         </div>

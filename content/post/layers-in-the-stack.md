@@ -1,6 +1,5 @@
 +++
 date = "2015-09-07T16:23:25-07:00"
-draft = true
 title = "Anatomy of a Modern Production Stack"
 
 +++

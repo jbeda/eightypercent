@@ -45,6 +45,73 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00094.html">JoeBlogger 0.9.0</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Sun, May 11, 2003</span>
+              <p>
+
+    <p>
+        I finally cleaned up my blogging software enough to release the source and an install
+        package.&#160; There is a screenshot <a href="http://www.eightypercent.net/Archive/2003/05/03.html#a88">here</a>.
+        I'm releasing this as 0.9.0. 
+    </p>
+    <p>
+        <a href="http://static.eightypercent.net/stuff/JoeBlogger/License.txt">License</a> 
+        <br />
+        <a href="http://static.eightypercent.net/stuff/JoeBlogger/JoeBlogger-0.9.0.msi">MSI install</a> 
+        <br />
+        <a href="http://static.eightypercent.net/stuff/JoeBlogger/JoeBlogger-src-0.9.0.zip">Source</a> 
+    </p>
+    <p>
+        Once you've installed the binaries, there is a readme on what to do next installed
+        into the programs directory.&#160; You have to copy some stuff around and edit some
+        xml files to configure what is going on.&#160; If any of this is unclear, let me know
+        and I'll update the readme.&#160; The readme is <a href="http://static.eightypercent.net/stuff/JoeBlogger/Readme-0.9.0.txt">here</a> also. 
+    </p>
+    <p>
+        Here is the basic architecture: 
+    </p>
+    <ul>
+        <li>
+            All data exists in <code>&lt;My Documents&gt;/JoeBlogger</code>.&#160; If you want
+            to back up your site, this is the thing to back up. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Config/Site1.Config</code> is a private config
+            file with various file paths and FTP server information. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Site1</code> is everything that gets uploaded
+            to the server.&#160; This includes the raw XML source data and the generated html
+            files.&#160; If you have images or other files in that directory also, they will get
+            uploaded for you. 
+        </li>
+        <li>
+            <code>&lt;My Documents&gt;/JoeBlogger/Site1/Config/Site.Config</code> contains public
+            config information. 
+        </li>
+        <li>
+            When publishing the client generates the site into the <code>&lt;My Documents&gt;/JoeBlogger/Site1</code> dir
+            and then uploads that to the FTP server. 
+        </li>
+    </ul>
+    <p>
+        Play around with it, send me any deltas you have and spread the word! 
+    </p>
+
+</p>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00094.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00093.html">ISP update</a>
         </h2>
         <div class="readmore">
@@ -386,24 +453,6 @@
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00085.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00084.html">GeoURLs near Boise</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sun, Apr 27, 2003</span>
-              <p>
-<p>Pretty <a href="http://geourl.org/near/?lat=43.6&lon=-116.2&dist=500">slim</a> pickings.
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00084.html"></a>
         </div>
       </div>
     </div>

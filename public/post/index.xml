@@ -6,8 +6,139 @@
     <description>Recent content in Post on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2015 14:51:41 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2015 16:23:25 -0700</lastBuildDate>
     <atom:link href="http://new.eightypercent.net:81/post.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Anatomy of a Modern Production Stack</title>
+      <link>http://new.eightypercent.net:81/post/layers-in-the-stack.html</link>
+      <pubDate>Mon, 07 Sep 2015 16:23:25 -0700</pubDate>
+      
+      <guid>http://new.eightypercent.net:81/post/layers-in-the-stack.html</guid>
+      <description>&lt;p&gt;I was chatting on an Xoogler message board the other day and Dennis Ordanov (&lt;a href=&#34;https://twitter.com/daodennis&#34;&gt;@daodennis&lt;/a&gt;) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Production Host OS&lt;/strong&gt;.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Examples include &lt;a href=&#34;https://coreos.com/using-coreos/&#34;&gt;CoreOS&lt;/a&gt;, &lt;a href=&#34;http://www.projectatomic.io/&#34;&gt;Red Hat Project Atomic&lt;/a&gt;, &lt;a href=&#34;https://developer.ubuntu.com/en/snappy/&#34;&gt;Ubuntu Snappy&lt;/a&gt;, and &lt;a href=&#34;http://rancher.com/rancher-os/&#34;&gt;Rancher OS&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Engine&lt;/strong&gt;. This is the system for setting up and managing containers.  It is the primary management agent on the node.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Examples include &lt;a href=&#34;https://www.docker.com/docker-engine&#34;&gt;Docker Engine&lt;/a&gt;, &lt;a href=&#34;https://coreos.com/rkt/docs/latest/&#34;&gt;CoreOS rkt&lt;/a&gt;, and &lt;a href=&#34;https://linuxcontainers.org/&#34;&gt;LXC&lt;/a&gt; and &lt;a href=&#34;http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html&#34;&gt;systemd-nspawn&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Some of these systems are more amenable to being directly controlled remotely than others.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://www.opencontainers.org/&#34;&gt;Open Container Initiative&lt;/a&gt; is working to standardize the input into these systems &amp;ndash; basically the root filesystem for the container along with some common parameters in a JSON file.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Image Packaging and Distribution.&lt;/strong&gt; A Container Image is a named and cloneable chroot that can be used to create container instances.  It is pretty much an efficient way to capture, name and distribute the set of files that make up a container at runtime.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Both Docker and CoreOS rkt solve this problem.  It is built into the Docker Engine but is broken out for rkt as a separate tool set call &lt;a href=&#34;https://github.com/appc/acbuild&#34;&gt;acbuild&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Inside of Google this was done slightly differently with a file package distribution system called &lt;a href=&#34;https://www.youtube.com/watch?v=_uJlTllziPI&#34;&gt;MPM&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Personally, I&amp;rsquo;m hoping that we can define a widely adopted spec for this, hopefully as part of the OCI.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Image Registry/Repository.&lt;/strong&gt; This is a central place to store and load Container Images.
+
+&lt;ul&gt;
+&lt;li&gt;Hosted versions of this include the &lt;a href=&#34;https://hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt;, &lt;a href=&#34;https://quay.io&#34;&gt;Quay.io (owned by CoreOS)&lt;/a&gt;, and &lt;a href=&#34;https://cloud.google.com/container-registry/&#34;&gt;Google Container Registry&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Docker also has an open source registry called &lt;a href=&#34;https://github.com/docker/distribution&#34;&gt;Docker Distribution&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Personally, I&amp;rsquo;m hoping that the state of the art will evolve past centralized solutions with specialized APIs to solutions that are simpler by working regular HTTP and more transport agnostic so that protocols like BitTorrent can be used to distribute images.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Distribution.&lt;/strong&gt; This is the system for structuring what is running inside of a container.  Many people don&amp;rsquo;t talk about this as a separate thing but instead reuse OS distributions such as Ubuntu, Debian, or CentOS.
+
+&lt;ul&gt;
+&lt;li&gt;Many folks are working to build minimal container distributions by either using distributions based in the embedded world (BusyBox or Alpine) or by building &lt;a href=&#34;https://medium.com/@kelseyhightower/optimizing-docker-images-for-static-binaries-b5696e26eb07&#34;&gt;static binaries&lt;/a&gt; and not needing anything else.&lt;/li&gt;
+&lt;li&gt;Personally, I&amp;rsquo;d love to see the idea of a Container Distribution be further developed and take advantage of features only available in the container world.  I wrote a &lt;a href=&#34;http://www.eightypercent.net/post/new-container-image-format.html&#34;&gt;blog post&lt;/a&gt; on this.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Orchestration System.&lt;/strong&gt; Once you have containers running on a single host, you need to get them running across multiple hosts.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This is a super hot area of interest with lots of innovation.&lt;/li&gt;
+&lt;li&gt;Open source deployable examples include &lt;a href=&#34;http://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;, &lt;a href=&#34;https://docs.docker.com/swarm/&#34;&gt;Docker Swarm&lt;/a&gt;, and &lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Apache Mesos&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Hosted systems include &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;Google Container Engine (GKE)&lt;/a&gt; (based on Kubernetes), &lt;a href=&#34;https://mesosphere.com/product/&#34;&gt;Mesosphere DCOS&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/ecs/&#34;&gt;Amazon EC2 Container Service (ECS)&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Orchestration Config.&lt;/strong&gt; Many of the orchestration systems have small granular objects.  Creating and parameterizing these by hand can be difficult.  In this context, an orchestration config system can take higher level description and compile them down to the nuts and bolts that the orchestration systems works with.
+
+&lt;ul&gt;
+&lt;li&gt;The Google solutions to this problem have never been made public (to my knowledge).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/cloudformation/&#34;&gt;AWS CloudFormation&lt;/a&gt; and &lt;a href=&#34;https://cloud.google.com/deployment-manager/overview&#34;&gt;Google Cloud Deployment Manager&lt;/a&gt; play this role for their respective cloud ecosystems (only).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hashicorp/terraform&#34;&gt;Hashicorp Terraform&lt;/a&gt; and &lt;a href=&#34;http://flabbergast.org/&#34;&gt;Flabbergast&lt;/a&gt; look like they could be applied to container orchestration systems but haven&amp;rsquo;t yet.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt; is a start to a more comprehensive config system.&lt;/li&gt;
+&lt;li&gt;The Kubernetes team (Brian Grant especially) have lots of &lt;a href=&#34;https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment&#34;&gt;ideas and plans&lt;/a&gt; for this area.  There is a &lt;a href=&#34;https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29&#34;&gt;Kubernetes SIG&lt;/a&gt; being formed.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Network Virtualization.&lt;/strong&gt; While not strictly necessary, clustered container systems are much easier to use if each container has full presence on the cluster network.  This has been referred to as &amp;ldquo;IP per Container&amp;rdquo;.
+
+&lt;ul&gt;
+&lt;li&gt;Without a networking solution, orchestration systems must allocate and enforce port assignment as ports per host are a shared resource.&lt;/li&gt;
+&lt;li&gt;Examples here include &lt;a href=&#34;https://github.com/coreos/flannel&#34;&gt;CoreOS Flannel&lt;/a&gt;, &lt;a href=&#34;http://weave.works/&#34;&gt;Weave&lt;/a&gt;, &lt;a href=&#34;http://www.projectcalico.org/&#34;&gt;Project Calico&lt;/a&gt;, and &lt;a href=&#34;https://github.com/docker/libnetwork&#34;&gt;Docker libnetwork&lt;/a&gt; (not ready for production yet).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Container Storage Systems.&lt;/strong&gt; As users move past special &amp;ldquo;pet&amp;rdquo; hosts storage becomes more difficult.
+
+&lt;ul&gt;
+&lt;li&gt;I have more to say on this that I&amp;rsquo;ll probably put into a blog post at some point in the future.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/clusterhq/flocker&#34;&gt;ClusterHQ Flocker&lt;/a&gt; deals with migrating data between hosts (among other things).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discovery Service.&lt;/strong&gt; Discovery is a fancy term for naming.  Once you launch a bunch of containers, you need to figure out where they are so you can talk to them.
+
+&lt;ul&gt;
+&lt;li&gt;DNS is often used as a solution here but can cause issues in highly dynamic environments due to aggressive caching.  Java, in particular, is troublesome as it &lt;a href=&#34;https://www.google.com/search?btnG=1&amp;amp;pws=0&amp;amp;q=networkaddress.cache.ttl+default&amp;amp;gws_rd=ssl&#34;&gt;doesn&amp;rsquo;t honor DNS TTLs by default&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Many people build on top of highly consistent stores (lock servers) for this.  Examples include: &lt;a href=&#34;https://zookeeper.apache.org/&#34;&gt;Apache Zookeeper&lt;/a&gt;, &lt;a href=&#34;https://coreos.com/etcd/&#34;&gt;CoreOS etcd&lt;/a&gt;, &lt;a href=&#34;https://www.consul.io/&#34;&gt;Hashicorp Consul&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Kubernetes supports &lt;a href=&#34;https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md&#34;&gt;service definition and discovery&lt;/a&gt; (with a stable virtual IP with load balanced proxy).&lt;/li&gt;
+&lt;li&gt;Related is a system to configure wider facing load balancer to manage the interface between the cluster and the wider network.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production Identity and Authentication.&lt;/strong&gt; As clustered deployments grow, an identity system becomes necessary.  When microservice A calls microservice B, microservice B needs some way to verify that it is actually microservice A calling.  Note that this is for computer to computer communication within the cluster
+
+&lt;ul&gt;
+&lt;li&gt;This is not a well understood component of the stack.  I expect it to be an active area of development in the near future.  Ideally the orchestration system would automatically configure the identity for each running container in a secure way.&lt;/li&gt;
+&lt;li&gt;Related areas include secret storage and authorization.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve used the term &amp;ldquo;Authentity&amp;rdquo; to describe this area. Please use it as I&amp;rsquo;m hoping it&amp;rsquo;ll catch on.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://conjur.net&#34;&gt;conjur.net&lt;/a&gt; is a commercial offering that can help out in this situation.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Monitoring.&lt;/strong&gt; A modern production application has deep monitoring.  Not only should the operations folks make sure that the binaries continue to run, they should also be monitoring application specific metrics that are thrown off by each microservice that makes up that application.&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A modern monitoring solution is characterized by its ability to deal with a wide set of metrics along with flexible vector math necessary to do complex aggregations and tests.  Time series data should be sampled frequently (30-60s or less), stored for a long time and be easily explored and graphed.  A good monitoring system not only lets you know when things are down but also is a critical debugging tool to know where and how things are broken.&lt;/li&gt;
+&lt;li&gt;For open systems, &lt;a href=&#34;http://prometheus.io/&#34;&gt;Prometheus&lt;/a&gt; looks &lt;em&gt;very&lt;/em&gt; interesting in this area.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;There are also ways to break this apart into smaller parts such as &lt;a href=&#34;http://grafana.org/&#34;&gt;Grafana&lt;/a&gt; as a frontend backed by a dedicated time series database like &lt;a href=&#34;https://influxdb.com/&#34;&gt;InfluxDB&lt;/a&gt; or &lt;a href=&#34;http://opentsdb.net/&#34;&gt;OpenTSDB&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes/heapster&#34;&gt;Heapster&lt;/a&gt; is a container specific monitoring system that surfaces data collected by &lt;a href=&#34;https://github.com/google/cadvisor&#34;&gt;cAdvisor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;There are hosted systems such as &lt;a href=&#34;https://cloud.google.com/monitoring/&#34;&gt;Google Cloud Monitoring&lt;/a&gt; and &lt;a href=&#34;https://signalfx.com/&#34;&gt;SignalFx&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;m not an expert here so I&amp;rsquo;m sure I&amp;rsquo;m missing some of the awesome stuff going on in this area.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Logging.&lt;/strong&gt; Logging can generally be broken into two types: unstructured debug logs and structured application logs.  The debug logs are used to figure out what is going on with the system while structured logs are usually used to capture important events for later processing and aggregation.  One might use structured logs for ad impressions that are critical for reconciling real money.
+
+&lt;ul&gt;
+&lt;li&gt;Systems such as &lt;a href=&#34;http://www.fluentd.org/&#34;&gt;fluentd&lt;/a&gt; and &lt;a href=&#34;https://www.elastic.co/products/logstash&#34;&gt;logstash&lt;/a&gt; are agents that collect and upload logs.&lt;/li&gt;
+&lt;li&gt;There are a ton of systems for storing and indexing logs.  This includes &lt;a href=&#34;https://www.elastic.co/&#34;&gt;elasticsearch&lt;/a&gt; along with more traditional databases (MySQL, Mongo, etc.).&lt;/li&gt;
+&lt;li&gt;Hosted systems include &lt;a href=&#34;https://cloud.google.com/logging/docs/&#34;&gt;Google Cloud Logging&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Logging can also throw off monitoring signals.  For instance, while processing saved logs the local agent can count 500s and feed those into a monitoring system.&lt;/li&gt;
+&lt;li&gt;Systems like &lt;a href=&#34;http://flume.apache.org/&#34;&gt;Apache Flume&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  &lt;a href=&#34;https://cloud.google.com/bigquery/&#34;&gt;Google BigQuery&lt;/a&gt; and &lt;a href=&#34;https://cloud.google.com/dataflow/&#34;&gt;Google Cloud Dataflow&lt;/a&gt; are also well suited to ingesting and analyzing structured log data.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&amp;rsquo;ll stop here.  If this is useful (or if you think I&amp;rsquo;m missing anything huge) please let me know via &lt;a href=&#34;https://www.twitter.com/jbeda&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a href=&#34;https://twitter.com/brandonphilips&#34;&gt;Brandon Philips&lt;/a&gt; from CoreOS points me to a &lt;a href=&#34;https://coreos.com/blog/cluster-osi-model/&#34;&gt;similar post&lt;/a&gt; from &lt;a href=&#34;https://twitter.com/barakmich&#34;&gt;Barak Michener&lt;/a&gt;.  I go into more minutia here and don&amp;rsquo;t try and define a strict stack.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;p&gt;Some caveats:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I&amp;rsquo;m sure I&amp;rsquo;m missing some parts of the stack.&lt;/li&gt;
+&lt;li&gt;The way I break this problem down is based on my experiences at Google. There are many ways to skin this cat.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve listed example projects/products/companies/systems at different levels but this isn&amp;rsquo;t meant to be exhaustive.&lt;/li&gt;
+&lt;li&gt;The fact that I&amp;rsquo;ve listed a system here doesn&amp;rsquo;t mean that I&amp;rsquo;ve run it in production and it has my stamp of approval.&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;Don&amp;rsquo;t confuse Apache Flume with &lt;a href=&#34;http://research.google.com/pubs/pub35650.html&#34;&gt;Google FlumeJava&lt;/a&gt;.  I guess once you start processing logs some names are just obvious.  Also see &lt;a href=&#34;http://research.google.com/archive/sawzall.html&#34;&gt;Google Sawzall&lt;/a&gt; and &lt;a href=&#34;http://research.google.com/pubs/pub36632.html&#34;&gt;Google Dremel&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Operations Lock-in vs. Development Lock-in</title>
@@ -673,37 +804,6 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     &lt;/blockquote&gt; 
     &lt;p&gt;
         There are just so many ways my daughter won&#39;t get this joke. 
-    &lt;/p&gt;
-
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Peter&#39;s Jabber/Jingle talk</title>
-      <link>http://new.eightypercent.net:81/post/old/00263.html</link>
-      <pubDate>Sat, 28 Jan 2006 09:51:30 -0800</pubDate>
-      
-      <guid>http://new.eightypercent.net:81/post/old/00263.html</guid>
-      <description>&lt;p&gt;
-
-    &lt;p&gt;
-        I&#39;m sorry that I missed &lt;a href=&#34;http://www.saint-andre.com/blog/2006-01.html#2006-01-27T19:31&#34;&gt;Peter
-        Saint-Andre&#39;s presentation&lt;/a&gt; at Etel this last week.&amp;#160; I wanted to be down there
-        but it is hard to get to conferences with the baby and all.&amp;#160; You can check out
-        his slides off of that link.
-    &lt;/p&gt;
-    &lt;p&gt;
-        Peter used a presentation style that I really like a lot.&amp;#160; I&#39;d love to see how
-        he pulled it off.&amp;#160; Perhaps some video will surface?&amp;#160; If you want to see
-        videos of talks done in a similar style check out &lt;a href=&#34;http://video.google.com/videoplay?docid=5100194058815018708&amp;amp;q=lessig&#34;&gt;Larry
-        Lessig&#39;s talk on Google Print&lt;/a&gt;&amp;#160;or &lt;a href=&#34;http://www.identity20.com/media/OSCON2005/&#34;&gt;Dick
-        Hardt&#39;s talk on Identity 2.0&lt;/a&gt;.&amp;#160; Very cool.&amp;#160; I&#39;m not sure I could pull
-        it off though :)
-    &lt;/p&gt;
-    &lt;p&gt;
-        Speaking of conferences, I &lt;em&gt;am&lt;/em&gt; planning on being around for a day or two of &lt;a href=&#34;http://www.von.com/&#34;&gt;Spring
-        VON&lt;/a&gt;.
     &lt;/p&gt;
 
 &lt;/p&gt;
