@@ -5,15 +5,15 @@ title = "Anatomy of a Modern Production Stack"
 
 +++
 
-I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@daodennis](https://twitter.com/daodennis)) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment[^caveats].
+I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@daodennis](https://twitter.com/daodennis)) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post[^other-posts].  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment[^caveats].
 
-* **Production Host OS**.  This is a simplified and managable Linux distribution.  Usually it is just enough to get a container engine up and running.  
+* **Production Host OS**.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.  
   * Examples include [CoreOS](https://coreos.com/using-coreos/), [Red Hat Project Atomic](http://www.projectatomic.io/), [Ubuntu Snappy](https://developer.ubuntu.com/en/snappy/), and [Rancher OS](http://rancher.com/rancher-os/).
-* **Container Engine**. This is the system for setting up and managing contianers.  It is the primary management agent on the node.  
+* **Container Engine**. This is the system for setting up and managing containers.  It is the primary management agent on the node.  
   * Examples include [Docker Engine](https://www.docker.com/docker-engine), [CoreOS rkt](https://coreos.com/rkt/docs/latest/), and [LXC](https://linuxcontainers.org/) and [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html).  
   * Some of these systems are more amenable to being directly controlled remotely than others. 
-  * The [Open Container Initiative](https://www.opencontainers.org/) is working to standarize the input into these systems -- basically the root filesystem for the container along with some common parameters in a JSON file.
-* **Container Image Packaging and Distribution.** A Container Image is a named and cloneable chroot that can be used to create container instances.  It is pretty much an efficient way to caputure, name and distribute the set of files that make up a container at runtime.  
+  * The [Open Container Initiative](https://www.opencontainers.org/) is working to standardize the input into these systems -- basically the root filesystem for the container along with some common parameters in a JSON file.
+* **Container Image Packaging and Distribution.** A Container Image is a named and cloneable chroot that can be used to create container instances.  It is pretty much an efficient way to capture, name and distribute the set of files that make up a container at runtime.  
   * Both Docker and CoreOS rkt solve this problem.  It is built into the Docker Engine but is broken out for rkt as a separate tool set call [acbuild](https://github.com/appc/acbuild).  
   * Inside of Google this was done slightly differently with a file package distribution system called [MPM](https://www.youtube.com/watch?v=_uJlTllziPI).
   * Personally, I'm hoping that we can define a widely adopted spec for this, hopefully as part of the OCI.
@@ -52,7 +52,7 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
   * [conjur.net](http://conjur.net) is a commercial offering that can help out in this situation.
 * **Monitoring.** A modern production application has deep monitoring.  Not only should the operations folks make sure that the binaries continue to run, they should also be monitoring application specific metrics that are thrown off by each microservice that makes up that application.  
   * A modern monitoring solution is characterized by its ability to deal with a wide set of metrics along with flexible vector math necessary to do complex aggregations and tests.  Time series data should be sampled frequently (30-60s or less), stored for a long time and be easily explored and graphed.  A good monitoring system not only lets you know when things are down but also is a critical debugging tool to know where and how things are broken.
-  * For open systems, [Prometheus](http://prometheus.io/) looks *very* intersting in this area.  
+  * For open systems, [Prometheus](http://prometheus.io/) looks *very* interesting in this area.  
   * There are also ways to break this apart into smaller parts such as [Grafana](http://grafana.org/) as a frontend backed by a dedicated time series database like [InfluxDB](https://influxdb.com/) or [OpenTSDB](http://opentsdb.net/).
   * [Heapster](https://github.com/kubernetes/heapster) is a container specific monitoring system that surfaces data collected by [cAdvisor](https://github.com/google/cadvisor).
   * There are hosted systems such as [Google Cloud Monitoring](https://cloud.google.com/monitoring/) and [SignalFx](https://signalfx.com/).
@@ -65,6 +65,8 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
   * Systems like [Apache Flume](http://flume.apache.org/)[^flume] can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  [Google BigQuery](https://cloud.google.com/bigquery/) and [Google Cloud Dataflow](https://cloud.google.com/dataflow/) are also well suited to ingesting and analyzing structured log data.
 
 Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I'll stop here.  If this is useful (or if you think I'm missing anything huge) please let me know via [twitter](https://www.twitter.com/jbeda).
+
+[^other-posts]: [Brandon Philips](https://twitter.com/brandonphilips) from CoreOS points me to a [similar post](https://coreos.com/blog/cluster-osi-model/) from [Barak Michener](https://twitter.com/barakmich).  I go into more minutia here and don't try and define a strict stack.
 
 [^caveats]:
     Some caveats:
