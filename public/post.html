@@ -116,6 +116,7 @@
 <li>DNS is often used as a solution here but can cause issues in highly dynamic environments due to aggressive caching.  Java, in particular, is troublesome as it <a href="https://www.google.com/search?btnG=1&amp;pws=0&amp;q=networkaddress.cache.ttl+default&amp;gws_rd=ssl">doesn&rsquo;t honor DNS TTLs by default</a>.</li>
 <li>Many people build on top of highly consistent stores (lock servers) for this.  Examples include: <a href="https://zookeeper.apache.org/">Apache Zookeeper</a>, <a href="https://coreos.com/etcd/">CoreOS etcd</a>, <a href="https://www.consul.io/">Hashicorp Consul</a>.</li>
 <li>Kubernetes supports <a href="https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md">service definition and discovery</a> (with a stable virtual IP with load balanced proxy).</li>
+<li>Weave has a built in <a href="http://blog.weave.works/2015/09/08/weave-gossip-dns/">DNS server</a> that stores data locally so that TTLs can be minimal.</li>
 <li>Related is a system to configure wider facing load balancer to manage the interface between the cluster and the wider network.</li>
 </ul></li>
 <li><strong>Production Identity and Authentication.</strong> As clustered deployments grow, an identity system becomes necessary.  When microservice A calls microservice B, microservice B needs some way to verify that it is actually microservice A calling.  Note that this is for computer to computer communication within the cluster
