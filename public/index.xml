@@ -15,13 +15,33 @@
       <pubDate>Tue, 08 Sep 2015 12:10:45 -0700</pubDate>
       
       <guid>http://new.eightypercent.net:81/post/layers-in-the-stack.html</guid>
-      <description>&lt;p&gt;I was chatting on an Xoogler message board the other day and Dennis Ordanov (&lt;a href=&#34;https://twitter.com/daodennis&#34;&gt;@daodennis&lt;/a&gt;) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;(I&amp;rsquo;m updating this post as folks comment.  You can look at the &lt;a href=&#34;https://github.com/jbeda/eightypercent/commits/master/content/post/layers-in-the-stack.md&#34;&gt;history on github&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I was chatting on an Xoogler message board the other day and Dennis Ordanov (&lt;a href=&#34;https://twitter.com/daodennis&#34;&gt;@daodennis&lt;/a&gt;) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;A note on the term &amp;ldquo;modern&amp;rdquo;:&lt;/em&gt;  This is my view, based on experiences at Google, for a stack that delivers what I&amp;rsquo;d want for a major production system.  You can do this without containers, but I think it is hard to meet my criteria that way.  The full stack here probably isn&amp;rsquo;t necessary for small applications and, as of today, is &lt;strong&gt;way&lt;/strong&gt; too hard to get up and running.  The qualities that I&amp;rsquo;d look for in a &amp;ldquo;modern&amp;rdquo; stack:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Self healing and self managing.&lt;/strong&gt; If a machine fails, I don&amp;rsquo;t want to have to think about it. The system should just work.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Supports microservices.&lt;/strong&gt; The idea of breaking your app into smaller components (regardless of the name) can help you to scale your engineering organization by keeping the dev team for each µs small enough that a 2 pizza team can own it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Efficient.&lt;/strong&gt; I want a stack that doesn&amp;rsquo;t require a lot of hand holding to make sure I&amp;rsquo;m not wasting a ton of resources.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debuggable.&lt;/strong&gt; Complex applications can be hard to debug. Having good strategies for application specific monitoring and log collection/aggregation can really help to provide insights into the stack.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, with that, here is a brain dump of the parts that make up a &amp;ldquo;modern&amp;rdquo; stack:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Production Host OS&lt;/strong&gt;.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.&lt;br /&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Examples include &lt;a href=&#34;https://coreos.com/using-coreos/&#34;&gt;CoreOS&lt;/a&gt;, &lt;a href=&#34;http://www.projectatomic.io/&#34;&gt;Red Hat Project Atomic&lt;/a&gt;, &lt;a href=&#34;https://developer.ubuntu.com/en/snappy/&#34;&gt;Ubuntu Snappy&lt;/a&gt;, and &lt;a href=&#34;http://rancher.com/rancher-os/&#34;&gt;Rancher OS&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Boostrapping system&lt;/strong&gt;.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://bosh.io/docs&#34;&gt;Cloud Foundry BOSH&lt;/a&gt; was created to do this for Cloud Foundry but is seeing new life as an independent product.&lt;/li&gt;
+&lt;li&gt;The standard config tools (&lt;a href=&#34;https://puppetlabs.com/&#34;&gt;Puppet&lt;/a&gt;, &lt;a href=&#34;https://www.chef.io/&#34;&gt;Chef&lt;/a&gt;, &lt;a href=&#34;http://www.ansible.com/home&#34;&gt;Ansible&lt;/a&gt;, &lt;a href=&#34;http://saltstack.com/&#34;&gt;Salt&lt;/a&gt;) can serve this role.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://coreos.com/using-coreos/clustering/&#34;&gt;CoreOS Fleet&lt;/a&gt; is a lightweight clustering system that can also be used to bootstrap more comprehensive solutions.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Container Engine&lt;/strong&gt;. This is the system for setting up and managing containers.  It is the primary management agent on the node.&lt;br /&gt;
 
@@ -77,6 +97,7 @@
 &lt;ul&gt;
 &lt;li&gt;I have more to say on this that I&amp;rsquo;ll probably put into a blog post at some point in the future.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/clusterhq/flocker&#34;&gt;ClusterHQ Flocker&lt;/a&gt; deals with migrating data between hosts (among other things).&lt;/li&gt;
+&lt;li&gt;I know there are other folks (someone pointed me at &lt;a href=&#34;http://www.blockbridge.com/&#34;&gt;Blockbridge&lt;/a&gt;) that are working on software defined storage systems that can work well in this world.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Discovery Service.&lt;/strong&gt; Discovery is a fancy term for naming.  Once you launch a bunch of containers, you need to figure out where they are so you can talk to them.
 
@@ -118,7 +139,7 @@
 
 &lt;p&gt;PaaS systems often help to bring this all together in an easy way.  Systems like &lt;a href=&#34;http://www.openshift.org/&#34;&gt;OpenShift 3&lt;/a&gt;, &lt;a href=&#34;http://deis.io/&#34;&gt;Deis&lt;/a&gt;, or &lt;a href=&#34;https://flynn.io&#34;&gt;Flynn&lt;/a&gt; build on top of some of the independent systems above.  Other PaaS such as &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;, &lt;a href=&#34;https://cloud.google.com/appengine/docs&#34;&gt;Google App Engine&lt;/a&gt; or &lt;a href=&#34;https://www.cloudfoundry.org/&#34;&gt;Cloud Foundry&lt;/a&gt; are more vertically integrated without the component layers being broken out in a well supported way.&lt;/p&gt;
 
-&lt;p&gt;Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&amp;rsquo;ll stop here.  If this is useful (or if you think I&amp;rsquo;m missing anything huge) please let me know via &lt;a href=&#34;https://www.twitter.com/jbeda&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&amp;rsquo;ll stop here.  If this is useful (or if you think I&amp;rsquo;m missing anything huge) please let me know via &lt;a href=&#34;https://www.twitter.com/jbeda&#34;&gt;twitter&lt;/a&gt;.  Or you can comment on the &lt;a href=&#34;https://news.ycombinator.com/item?id=10187598&#34;&gt;Hacker News thread&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;

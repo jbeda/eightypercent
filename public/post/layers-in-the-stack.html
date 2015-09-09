@@ -46,13 +46,33 @@
         <h1><a href="http://new.eightypercent.net:81/post/layers-in-the-stack.html">Anatomy of a Modern Production Stack</a></h1>
         <span class="lead">Tue, Sep 8, 2015</span>
         <div class="post">
-            <p>I was chatting on an Xoogler message board the other day and Dennis Ordanov (<a href="https://twitter.com/daodennis">@daodennis</a>) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post<sup class="footnote-ref" id="fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts"><a rel="footnote" href="#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts">1</a></sup>.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment<sup class="footnote-ref" id="fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats"><a rel="footnote" href="#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats">2</a></sup>.</p>
+            <p>(I&rsquo;m updating this post as folks comment.  You can look at the <a href="https://github.com/jbeda/eightypercent/commits/master/content/post/layers-in-the-stack.md">history on github</a>.)</p>
+
+<p>I was chatting on an Xoogler message board the other day and Dennis Ordanov (<a href="https://twitter.com/daodennis">@daodennis</a>) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post<sup class="footnote-ref" id="fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts"><a rel="footnote" href="#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts">1</a></sup>.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment<sup class="footnote-ref" id="fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats"><a rel="footnote" href="#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats">2</a></sup>.</p>
+
+<p><em>A note on the term &ldquo;modern&rdquo;:</em>  This is my view, based on experiences at Google, for a stack that delivers what I&rsquo;d want for a major production system.  You can do this without containers, but I think it is hard to meet my criteria that way.  The full stack here probably isn&rsquo;t necessary for small applications and, as of today, is <strong>way</strong> too hard to get up and running.  The qualities that I&rsquo;d look for in a &ldquo;modern&rdquo; stack:</p>
+
+<ul>
+<li><strong>Self healing and self managing.</strong> If a machine fails, I don&rsquo;t want to have to think about it. The system should just work.</li>
+<li><strong>Supports microservices.</strong> The idea of breaking your app into smaller components (regardless of the name) can help you to scale your engineering organization by keeping the dev team for each µs small enough that a 2 pizza team can own it.</li>
+<li><strong>Efficient.</strong> I want a stack that doesn&rsquo;t require a lot of hand holding to make sure I&rsquo;m not wasting a ton of resources.</li>
+<li><strong>Debuggable.</strong> Complex applications can be hard to debug. Having good strategies for application specific monitoring and log collection/aggregation can really help to provide insights into the stack.</li>
+</ul>
+
+<p>So, with that, here is a brain dump of the parts that make up a &ldquo;modern&rdquo; stack:</p>
 
 <ul>
 <li><strong>Production Host OS</strong>.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.<br />
 
 <ul>
 <li>Examples include <a href="https://coreos.com/using-coreos/">CoreOS</a>, <a href="http://www.projectatomic.io/">Red Hat Project Atomic</a>, <a href="https://developer.ubuntu.com/en/snappy/">Ubuntu Snappy</a>, and <a href="http://rancher.com/rancher-os/">Rancher OS</a>.</li>
+</ul></li>
+<li><strong>Boostrapping system</strong>.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
+
+<ul>
+<li><a href="https://bosh.io/docs">Cloud Foundry BOSH</a> was created to do this for Cloud Foundry but is seeing new life as an independent product.</li>
+<li>The standard config tools (<a href="https://puppetlabs.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>, <a href="http://www.ansible.com/home">Ansible</a>, <a href="http://saltstack.com/">Salt</a>) can serve this role.</li>
+<li><a href="https://coreos.com/using-coreos/clustering/">CoreOS Fleet</a> is a lightweight clustering system that can also be used to bootstrap more comprehensive solutions.</li>
 </ul></li>
 <li><strong>Container Engine</strong>. This is the system for setting up and managing containers.  It is the primary management agent on the node.<br />
 
@@ -108,6 +128,7 @@
 <ul>
 <li>I have more to say on this that I&rsquo;ll probably put into a blog post at some point in the future.</li>
 <li><a href="https://github.com/clusterhq/flocker">ClusterHQ Flocker</a> deals with migrating data between hosts (among other things).</li>
+<li>I know there are other folks (someone pointed me at <a href="http://www.blockbridge.com/">Blockbridge</a>) that are working on software defined storage systems that can work well in this world.</li>
 </ul></li>
 <li><strong>Discovery Service.</strong> Discovery is a fancy term for naming.  Once you launch a bunch of containers, you need to figure out where they are so you can talk to them.
 
@@ -149,7 +170,7 @@
 
 <p>PaaS systems often help to bring this all together in an easy way.  Systems like <a href="http://www.openshift.org/">OpenShift 3</a>, <a href="http://deis.io/">Deis</a>, or <a href="https://flynn.io">Flynn</a> build on top of some of the independent systems above.  Other PaaS such as <a href="https://www.heroku.com/">Heroku</a>, <a href="https://cloud.google.com/appengine/docs">Google App Engine</a> or <a href="https://www.cloudfoundry.org/">Cloud Foundry</a> are more vertically integrated without the component layers being broken out in a well supported way.</p>
 
-<p>Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&rsquo;ll stop here.  If this is useful (or if you think I&rsquo;m missing anything huge) please let me know via <a href="https://www.twitter.com/jbeda">twitter</a>.</p>
+<p>Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I&rsquo;ll stop here.  If this is useful (or if you think I&rsquo;m missing anything huge) please let me know via <a href="https://www.twitter.com/jbeda">twitter</a>.  Or you can comment on the <a href="https://news.ycombinator.com/item?id=10187598">Hacker News thread</a>.</p>
 <div class="footnotes">
 
 <hr />

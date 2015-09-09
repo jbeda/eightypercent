@@ -4,10 +4,25 @@ title = "Anatomy of a Modern Production Stack"
 
 +++
 
+(I'm updating this post as folks comment.  You can look at the [history on github](https://github.com/jbeda/eightypercent/commits/master/content/post/layers-in-the-stack.md).)
+
 I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@daodennis](https://twitter.com/daodennis)) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post[^other-posts].  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment[^caveats].
+
+*A note on the term "modern":*  This is my view, based on experiences at Google, for a stack that delivers what I'd want for a major production system.  You can do this without containers, but I think it is hard to meet my criteria that way.  The full stack here probably isn't necessary for small applications and, as of today, is **way** too hard to get up and running.  The qualities that I'd look for in a "modern" stack:
+
+* **Self healing and self managing.** If a machine fails, I don't want to have to think about it. The system should just work.
+* **Supports microservices.** The idea of breaking your app into smaller components (regardless of the name) can help you to scale your engineering organization by keeping the dev team for each µs small enough that a 2 pizza team can own it.
+* **Efficient.** I want a stack that doesn't require a lot of hand holding to make sure I'm not wasting a ton of resources.
+* **Debuggable.** Complex applications can be hard to debug. Having good strategies for application specific monitoring and log collection/aggregation can really help to provide insights into the stack.
+
+So, with that, here is a brain dump of the parts that make up a "modern" stack:
 
 * **Production Host OS**.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.  
   * Examples include [CoreOS](https://coreos.com/using-coreos/), [Red Hat Project Atomic](http://www.projectatomic.io/), [Ubuntu Snappy](https://developer.ubuntu.com/en/snappy/), and [Rancher OS](http://rancher.com/rancher-os/).
+* **Boostrapping system**.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
+  * [Cloud Foundry BOSH](https://bosh.io/docs) was created to do this for Cloud Foundry but is seeing new life as an independent product.
+  * The standard config tools ([Puppet](https://puppetlabs.com/), [Chef](https://www.chef.io/), [Ansible](http://www.ansible.com/home), [Salt](http://saltstack.com/)) can serve this role.
+  * [CoreOS Fleet](https://coreos.com/using-coreos/clustering/) is a lightweight clustering system that can also be used to bootstrap more comprehensive solutions.
 * **Container Engine**. This is the system for setting up and managing containers.  It is the primary management agent on the node.  
   * Examples include [Docker Engine](https://www.docker.com/docker-engine), [CoreOS rkt](https://coreos.com/rkt/docs/latest/), and [LXC](https://linuxcontainers.org/) and [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html).  
   * Some of these systems are more amenable to being directly controlled remotely than others. 
@@ -39,6 +54,7 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
 * **Container Storage Systems.** As users move past special "pet" hosts storage becomes more difficult.
   * I have more to say on this that I'll probably put into a blog post at some point in the future.
   * [ClusterHQ Flocker](https://github.com/clusterhq/flocker) deals with migrating data between hosts (among other things).
+  * I know there are other folks (someone pointed me at [Blockbridge](http://www.blockbridge.com/)) that are working on software defined storage systems that can work well in this world.
 * **Discovery Service.** Discovery is a fancy term for naming.  Once you launch a bunch of containers, you need to figure out where they are so you can talk to them.
   * DNS is often used as a solution here but can cause issues in highly dynamic environments due to aggressive caching.  Java, in particular, is troublesome as it [doesn't honor DNS TTLs by default](https://www.google.com/search?btnG=1&pws=0&q=networkaddress.cache.ttl+default&gws_rd=ssl).
   * Many people build on top of highly consistent stores (lock servers) for this.  Examples include: [Apache Zookeeper](https://zookeeper.apache.org/), [CoreOS etcd](https://coreos.com/etcd/), [Hashicorp Consul](https://www.consul.io/).
@@ -66,7 +82,7 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
 
 PaaS systems often help to bring this all together in an easy way.  Systems like [OpenShift 3](http://www.openshift.org/), [Deis](http://deis.io/), or [Flynn](https://flynn.io) build on top of some of the independent systems above.  Other PaaS such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/docs) or [Cloud Foundry](https://www.cloudfoundry.org/) are more vertically integrated without the component layers being broken out in a well supported way.
 
-Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I'll stop here.  If this is useful (or if you think I'm missing anything huge) please let me know via [twitter](https://www.twitter.com/jbeda).
+Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I'll stop here.  If this is useful (or if you think I'm missing anything huge) please let me know via [twitter](https://www.twitter.com/jbeda).  Or you can comment on the [Hacker News thread](https://news.ycombinator.com/item?id=10187598).
 
 [^other-posts]: [Brandon Philips](https://twitter.com/brandonphilips) from CoreOS points me to a [similar post](https://coreos.com/blog/cluster-osi-model/) from [Barak Michener](https://twitter.com/barakmich).  I go into more minutia here and don't try and define a strict stack.
 
