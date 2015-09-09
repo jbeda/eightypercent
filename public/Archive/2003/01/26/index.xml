@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/01/26 on 80%</title>
-    <link>http://new.eightypercent.net:81/archive/2003/01/26.html</link>
+    <link>http://new.eightypercent.net/archive/2003/01/26.html</link>
     <description>Recent content in 2003/01/26 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Sun, 26 Jan 2003 13:05:05 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net:81/archive/2003/01/26.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net/archive/2003/01/26.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Untitled #20</title>
-      <link>http://new.eightypercent.net:81/post/old/00020.html</link>
+      <link>http://new.eightypercent.net/post/old/00020.html</link>
       <pubDate>Sun, 26 Jan 2003 13:05:05 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00020.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00020.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;More details:&lt;/P&gt;
     &lt;P&gt;Each day&#39;s worth of entries will be stored in an XML file.&amp;nbsp; Schema TBD right now.&lt;/P&gt;
@@ -28,22 +29,22 @@
     
     <item>
       <title>Untitled #19</title>
-      <link>http://new.eightypercent.net:81/post/old/00019.html</link>
+      <link>http://new.eightypercent.net/post/old/00019.html</link>
       <pubDate>Sun, 26 Jan 2003 12:32:14 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00019.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00019.html</guid>
       <description>&lt;p&gt;
-&lt;P&gt;Here is a screen shot of what I&#39;m currently thinking:&lt;/P&gt;&lt;IMG src=&#34;http://new.eightypercent.net:81/Stuff/JoeBlogger1.jpg&#34;&gt;
+&lt;P&gt;Here is a screen shot of what I&#39;m currently thinking:&lt;/P&gt;&lt;IMG src=&#34;http://new.eightypercent.net/Stuff/JoeBlogger1.jpg&#34;&gt;
 &lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Untitled #18</title>
-      <link>http://new.eightypercent.net:81/post/old/00018.html</link>
+      <link>http://new.eightypercent.net/post/old/00018.html</link>
       <pubDate>Sun, 26 Jan 2003 12:03:25 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00018.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00018.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;Okay, here is the deal.&amp;nbsp; My weblogging software will be similar to Radio in the breakdown of client server, at least to start with.&amp;nbsp; The client will do all of the page generation and formatting and then upload the result to the server.&amp;nbsp; &lt;/P&gt;
 &lt;P&gt;However, there is still the problem where you then have one and only one computer that can produce entries.&amp;nbsp; I say we solve this by uploading the raw data and templates up to the server too.&amp;nbsp; Hell, it is just xml, right?&amp;nbsp; It will take a little more room on the server but you get these advantages:&lt;/P&gt;

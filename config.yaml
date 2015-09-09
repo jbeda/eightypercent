@@ -1,10 +1,14 @@
-baseurl: http://new.eightypercent.net:81/
+baseurl: http://new.eightypercent.net/
 languageCode: en-us
 title: 80%
 description: The personal blog of Joe Beda
 uglyurls: true
 pluralizelisttitles: false
 paginate: 10
+copyright: "© 2003-2015 Joe Beda CC by-nc-nd 4.0"
+disableRSS: false
+author: 
+  name: "Joe Beda"
 
 taxonomies:
   archive: Archive

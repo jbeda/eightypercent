@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>80%</title>
-    <link>http://new.eightypercent.net:81/</link>
+    <link>http://new.eightypercent.net/</link>
     <description>Recent content on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Tue, 08 Sep 2015 12:10:45 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net:81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Anatomy of a Modern Production Stack</title>
-      <link>http://new.eightypercent.net:81/post/layers-in-the-stack.html</link>
+      <link>http://new.eightypercent.net/post/layers-in-the-stack.html</link>
       <pubDate>Tue, 08 Sep 2015 12:10:45 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/layers-in-the-stack.html</guid>
+      <guid>http://new.eightypercent.net/post/layers-in-the-stack.html</guid>
       <description>&lt;p&gt;(I&amp;rsquo;m updating this post as folks comment.  You can look at the &lt;a href=&#34;https://github.com/jbeda/eightypercent/commits/master/content/post/layers-in-the-stack.md&#34;&gt;history on github&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;p&gt;I was chatting on an Xoogler message board the other day and Dennis Ordanov (&lt;a href=&#34;https://twitter.com/daodennis&#34;&gt;@daodennis&lt;/a&gt;) was asking about the basic moving parts of a production stack.  I just started enumerating them from memory and thought it might be a good blog post&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  So, here is a mostly stream-of-consciousness dump of the parts a modern (container based) production environment&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
@@ -166,10 +167,10 @@
     
     <item>
       <title>Operations Lock-in vs. Development Lock-in</title>
-      <link>http://new.eightypercent.net:81/post/types-of-lock-in.html</link>
+      <link>http://new.eightypercent.net/post/types-of-lock-in.html</link>
       <pubDate>Tue, 01 Sep 2015 14:51:41 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/types-of-lock-in.html</guid>
+      <guid>http://new.eightypercent.net/post/types-of-lock-in.html</guid>
       <description>&lt;p&gt;I&amp;rsquo;m not a large enterprise developer.  My experiences are at the unique environments of Google and Microsoft&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  Over my career I&amp;rsquo;ve helped build &lt;em&gt;platforms&lt;/em&gt; and I&amp;rsquo;ve learned that to build a great developer platform (or any good product at all) requires you to talk to many customers and put yourself in their mindset.  This extends from the day to day usability of the product to the decision of a customer to bet a part of his/her business and career on the product in the first place.&lt;/p&gt;
 
 &lt;p&gt;Lock-in is obviously one of the critical things that many customers take into account. But lock-in isn&amp;rsquo;t absolute.  Different types of lock-in are defined by the friction and cost incurred in switching.&lt;/p&gt;
@@ -208,10 +209,10 @@
     
     <item>
       <title>Container Native Package System</title>
-      <link>http://new.eightypercent.net:81/post/new-container-image-format.html</link>
+      <link>http://new.eightypercent.net/post/new-container-image-format.html</link>
       <pubDate>Wed, 01 Jul 2015 10:00:00 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/new-container-image-format.html</guid>
+      <guid>http://new.eightypercent.net/post/new-container-image-format.html</guid>
       <description>
 
 &lt;p&gt;A lot of exciting things happened at &lt;a href=&#34;http://www.dockercon.com/&#34;&gt;Dockercon 2015&lt;/a&gt; last week.  For me the most exciting was the announcement of the &lt;a href=&#34;http://opencontainers.org/&#34;&gt;Open Container Project&lt;/a&gt; foundation.  Not only is it great to see the community come together under one banner but also as a chance to entertain new ideas in this space.&lt;/p&gt;
@@ -319,10 +320,10 @@
     
     <item>
       <title>A New Beginning...</title>
-      <link>http://new.eightypercent.net:81/post/relaunch.html</link>
+      <link>http://new.eightypercent.net/post/relaunch.html</link>
       <pubDate>Wed, 10 Jun 2015 17:08:02 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/relaunch.html</guid>
+      <guid>http://new.eightypercent.net/post/relaunch.html</guid>
       <description>&lt;p&gt;Welcome to the new &lt;a href=&#34;http://www.eightypercent.net&#34;&gt;80%&lt;/a&gt;!&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve rewritten my ancient blog on top of &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; using &lt;a href=&#34;http://getbootstrap.com/&#34;&gt;Bootstrap&lt;/a&gt; and &lt;a href=&#34;https://www.google.com/fonts&#34;&gt;Google Fonts&lt;/a&gt;.  The whole thing is hosted on &lt;a href=&#34;https://github.com/jbeda/eightypercent&#34;&gt;GitHub&lt;/a&gt; if you want to check out the source.&lt;/p&gt;
@@ -343,10 +344,10 @@
     
     <item>
       <title>HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</title>
-      <link>http://new.eightypercent.net:81/post/old/00274.html</link>
+      <link>http://new.eightypercent.net/post/old/00274.html</link>
       <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00274.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00274.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -406,10 +407,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>&#34;Avalon marks the end of the American Dream&#34;</title>
-      <link>http://new.eightypercent.net:81/post/old/00273.html</link>
+      <link>http://new.eightypercent.net/post/old/00273.html</link>
       <pubDate>Thu, 03 Aug 2006 09:56:19 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00273.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00273.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -456,10 +457,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Seattle&#39;s Homeless Alcoholics on NPR</title>
-      <link>http://new.eightypercent.net:81/post/old/00272.html</link>
+      <link>http://new.eightypercent.net/post/old/00272.html</link>
       <pubDate>Wed, 19 Jul 2006 10:07:05 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00272.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00272.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -488,10 +489,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>1 to 30</title>
-      <link>http://new.eightypercent.net:81/post/old/00271.html</link>
+      <link>http://new.eightypercent.net/post/old/00271.html</link>
       <pubDate>Fri, 14 Jul 2006 14:15:05 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00271.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00271.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -508,10 +509,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Custom Weighted Vests</title>
-      <link>http://new.eightypercent.net:81/post/old/00270.html</link>
+      <link>http://new.eightypercent.net/post/old/00270.html</link>
       <pubDate>Tue, 04 Jul 2006 08:50:24 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00270.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00270.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -539,10 +540,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Link-Backup v 0.6</title>
-      <link>http://new.eightypercent.net:81/post/old/00269.html</link>
+      <link>http://new.eightypercent.net/post/old/00269.html</link>
       <pubDate>Mon, 19 Jun 2006 20:28:01 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00269.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00269.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -565,10 +566,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Annie loves flowers</title>
-      <link>http://new.eightypercent.net:81/post/old/00268.html</link>
+      <link>http://new.eightypercent.net/post/old/00268.html</link>
       <pubDate>Sat, 03 Jun 2006 20:59:37 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00268.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00268.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -599,10 +600,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>Backing up data</title>
-      <link>http://new.eightypercent.net:81/post/old/00267.html</link>
+      <link>http://new.eightypercent.net/post/old/00267.html</link>
       <pubDate>Sat, 15 Apr 2006 14:12:37 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00267.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00267.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -738,10 +739,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>New Google Talk Client</title>
-      <link>http://new.eightypercent.net:81/post/old/00266.html</link>
+      <link>http://new.eightypercent.net/post/old/00266.html</link>
       <pubDate>Sat, 01 Apr 2006 18:21:45 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00266.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00266.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -766,10 +767,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>New Jingle Spec</title>
-      <link>http://new.eightypercent.net:81/post/old/00265.html</link>
+      <link>http://new.eightypercent.net/post/old/00265.html</link>
       <pubDate>Sat, 01 Apr 2006 18:18:49 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00265.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00265.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;
@@ -789,10 +790,10 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     
     <item>
       <title>The Swing Years and Beyond</title>
-      <link>http://new.eightypercent.net:81/post/old/00264.html</link>
+      <link>http://new.eightypercent.net/post/old/00264.html</link>
       <pubDate>Sat, 04 Mar 2006 19:16:40 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00264.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00264.html</guid>
       <description>&lt;p&gt;
 
     &lt;p&gt;

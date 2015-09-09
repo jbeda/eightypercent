@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/02/23 on 80%</title>
-    <link>http://new.eightypercent.net:81/archive/2003/02/23.html</link>
+    <link>http://new.eightypercent.net/archive/2003/02/23.html</link>
     <description>Recent content in 2003/02/23 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Sun, 23 Feb 2003 21:57:55 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net:81/archive/2003/02/23.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net/archive/2003/02/23.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Before I go to bed</title>
-      <link>http://new.eightypercent.net:81/post/old/00047.html</link>
+      <link>http://new.eightypercent.net/post/old/00047.html</link>
       <pubDate>Sun, 23 Feb 2003 21:57:55 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00047.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00047.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;&lt;a href=&#34;http://groups.google.com/groups?hl=en&amp;lr=&amp;ie=ISO-8859-1&amp;safe=off&amp;q=eightypercent&amp;sa=N&amp;tab=wg&#34;&gt;Searching&lt;/a&gt; google groups for &#34;eightypercent&#34; turns up someone who likes to post in lots of bondage forums.  For the record, that isn&#39;t me.  :)
 &lt;/p&gt;
@@ -23,10 +24,10 @@
     
     <item>
       <title>Code review</title>
-      <link>http://new.eightypercent.net:81/post/old/00046.html</link>
+      <link>http://new.eightypercent.net/post/old/00046.html</link>
       <pubDate>Sun, 23 Feb 2003 21:00:25 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00046.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00046.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;I have the &#34;comparison before saving&#34; stuff working and that is cutting down my upload times dramatically.  This is almost like a real blogging tool now.  However, one function -- called TransformAndSaveDoc -- turned out really nasty.  This function transforms an xml document with an xslt style sheet.  It then compares the result to what is already on disk and only writes the new result to disk if the new version is different from the old version.
 &lt;p&gt;Suggestions for making this tighter?  Is there some functionality (memcmp?) that I&#39;m missing in the .Net framework?  Since I don&#39;t have comments working, send mail to &lt;a href=&#34;mailto:eightypercent@bedafamily.com&#34;&gt;eightypercent@bedafamily.com&lt;/a&gt; and I&#39;ll post the best comments up here with credit and eternal thanks.
@@ -99,10 +100,10 @@
     
     <item>
       <title>Untitled #45</title>
-      <link>http://new.eightypercent.net:81/post/old/00045.html</link>
+      <link>http://new.eightypercent.net/post/old/00045.html</link>
       <pubDate>Sun, 23 Feb 2003 20:27:56 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00045.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00045.html</guid>
       <description>&lt;p&gt;
 &lt;p&gt;I have the dictionary done so now I don&#39;t upload files that haven&#39;t changed.  Now all I have to do is change my generation code so that it doesn&#39;t actually write to files that haven&#39;t changed.
 &lt;p&gt;I could do this by making sure that I track which data files have changed and figuring out which output files that means that I have to generate.
@@ -115,10 +116,10 @@
     
     <item>
       <title>FTPUpstreaming?</title>
-      <link>http://new.eightypercent.net:81/post/old/00044.html</link>
+      <link>http://new.eightypercent.net/post/old/00044.html</link>
       <pubDate>Sun, 23 Feb 2003 19:44:44 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00044.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00044.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;If you see this then I uploaded everything using my new FTP support.
 &lt;P&gt;Right now I just upload everything every time.  However, it shouldn&#39;t be difficult for me to keep a dictionary of file times so I can keep track of what is new since the last upload.

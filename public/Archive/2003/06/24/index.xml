@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/06/24 on 80%</title>
-    <link>http://new.eightypercent.net:81/archive/2003/06/24.html</link>
+    <link>http://new.eightypercent.net/archive/2003/06/24.html</link>
     <description>Recent content in 2003/06/24 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Tue, 24 Jun 2003 08:32:33 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net:81/archive/2003/06/24.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://new.eightypercent.net/archive/2003/06/24.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Lies, Damn Lies and Benchmarks...</title>
-      <link>http://new.eightypercent.net:81/post/old/00117.html</link>
+      <link>http://new.eightypercent.net/post/old/00117.html</link>
       <pubDate>Tue, 24 Jun 2003 08:32:33 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net:81/post/old/00117.html</guid>
+      <guid>http://new.eightypercent.net/post/old/00117.html</guid>
       <description>&lt;p&gt;
 
     It looks like &lt;a href=&#34;http://www.haxial.com/spls-soapbox/apple-powermac-G5/&#34;&gt;there
