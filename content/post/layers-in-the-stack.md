@@ -18,7 +18,7 @@ I was chatting on an Xoogler message board the other day and Dennis Ordanov ([@d
 So, with that, here is a brain dump of the parts that make up a "modern" stack:
 
 * **Production Host OS**.  This is a simplified and manageable Linux distribution.  Usually it is just enough to get a container engine up and running.  
-  * Examples include [CoreOS](https://coreos.com/using-coreos/), [Red Hat Project Atomic](http://www.projectatomic.io/), [Ubuntu Snappy](https://developer.ubuntu.com/en/snappy/), and [Rancher OS](http://rancher.com/rancher-os/).
+  * Examples include [CoreOS](https://coreos.com/using-coreos/), [Red Hat Project Atomic](http://www.projectatomic.io/), [Ubuntu Snappy](https://developer.ubuntu.com/en/snappy/), [Rancher OS](http://rancher.com/rancher-os/) and [CargOS](https://cargos.io/).
 * **Bootstrapping system**.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
   * [Cloud Foundry BOSH](https://bosh.io/docs) was created to do this for Cloud Foundry but is seeing new life as an independent product.
   * The standard config tools ([Puppet](https://puppetlabs.com/), [Chef](https://www.chef.io/), [Ansible](http://www.ansible.com/home), [Salt](http://saltstack.com/)) can serve this role.
