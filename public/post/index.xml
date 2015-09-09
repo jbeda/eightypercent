@@ -37,7 +37,7 @@
 &lt;ul&gt;
 &lt;li&gt;Examples include &lt;a href=&#34;https://coreos.com/using-coreos/&#34;&gt;CoreOS&lt;/a&gt;, &lt;a href=&#34;http://www.projectatomic.io/&#34;&gt;Red Hat Project Atomic&lt;/a&gt;, &lt;a href=&#34;https://developer.ubuntu.com/en/snappy/&#34;&gt;Ubuntu Snappy&lt;/a&gt;, and &lt;a href=&#34;http://rancher.com/rancher-os/&#34;&gt;Rancher OS&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Boostrapping system&lt;/strong&gt;.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
+&lt;li&gt;&lt;strong&gt;Bootstrapping system&lt;/strong&gt;.  Assuming you are starting with a generic VM image or bare metal hardware, something has to be able to bootstrap those machines and get them running as productive members of the cluster.  This becomes very important as you are dealing with lots machines that come and go as hardware fails.
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://bosh.io/docs&#34;&gt;Cloud Foundry BOSH&lt;/a&gt; was created to do this for Cloud Foundry but is seeing new life as an independent product.&lt;/li&gt;
