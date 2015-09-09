@@ -5,7 +5,21 @@
               <span class="text-nowrap">&copy; 2003-{{ dateFormat "2006" .Site.LastChange}} Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
-            <div class="navbar-text pull-right"><a class="navbar-link" href="#top">Back to top</a></div>
-          </nav>
-        </div>
+            {{ if $.IsPage }}
+            <div class="navbar-text pull-right">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ .Permalink }}" data-text="{{ $.LinkTitle }} by @jbeda" data-dnt="true">Tweet</a>
+              <script>
+                !function(d,s,id) { 
+                  var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                  if(!d.getElementById(id)){
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js,fjs);
+                  }
+                }(document, 'script', 'twitter-wjs');</script>
+            </div>
+            {{ end }}
+          </div>
+        </nav>
       </footer>

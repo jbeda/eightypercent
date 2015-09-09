@@ -31,5 +31,32 @@
 
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link href="/index.xml" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ if $.IsPage }}{{ if eq $.Type "post" }}
+    <script type="application/ld+json">
+      {
+        "@context":"http://schema.org",
+        "@type":"BlogPosting",
+        "@id":"{{ $.Permalink }}",
+        "datePublished":"{{ dateFormat "2006-01-02T15:04:05Z07:00" $.Date }}",
+        "headline":"{{ $.Title }}",
+        "image": "/images/container@512.png",
+        "author": {
+          "@id": "_:n1",
+          "@type": "Person",
+          "name": "Joe Beda",
+          "image": "/images/container@512.png",
+          "url": "http://www.eightypercent.net",
+          "sameAs": [
+            "https://twitter.com/jbeda",
+            "https://www.facebook.com/joe.beda",
+            "https://www.linkedin.com/in/jbeda",
+            "https://plus.google.com/+JoeBeda"
+          ]
+        },
+        "copyrightHolder": { "@id": "_:n1" },
+        "copyrightYear": "{{ dateFormat "2006" $.Date }}"
+      }
+    </script>
+    {{ end }} {{ end }}
   </head>
   <body>
