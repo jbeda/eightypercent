@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/05/18 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/05/18.html</link>
+    <link>http://www.eightypercent.net/archive/2003/05/18.html</link>
     <description>Recent content in 2003/05/18 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Sun, 18 May 2003 08:33:05 -0700</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/05/18.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.eightypercent.net/archive/2003/05/18.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Validation in IE4</title>
-      <link>http://new.eightypercent.net/post/old/00099.html</link>
+      <link>http://www.eightypercent.net/post/old/00099.html</link>
       <pubDate>Sun, 18 May 2003 08:33:05 -0700</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00099.html</guid>
+      <guid>http://www.eightypercent.net/post/old/00099.html</guid>
       <description>&lt;p&gt;
 
     &lt;blockquote&gt;I just noticed that when RSS Bandit finds an invalid RSS feed, it offers

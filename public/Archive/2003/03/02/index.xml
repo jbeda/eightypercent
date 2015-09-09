@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2003/03/02 on 80%</title>
-    <link>http://new.eightypercent.net/archive/2003/03/02.html</link>
+    <link>http://www.eightypercent.net/archive/2003/03/02.html</link>
     <description>Recent content in 2003/03/02 on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Sun, 02 Mar 2003 18:54:52 -0800</lastBuildDate>
-    <atom:link href="http://new.eightypercent.net/archive/2003/03/02.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.eightypercent.net/archive/2003/03/02.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Jackpot, NV</title>
-      <link>http://new.eightypercent.net/post/old/00055.html</link>
+      <link>http://www.eightypercent.net/post/old/00055.html</link>
       <pubDate>Sun, 02 Mar 2003 18:54:52 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00055.html</guid>
+      <guid>http://www.eightypercent.net/post/old/00055.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;Rachel and I took a quick trip to Jackpot, NV this weekend.  Watch this space -- stories to come.  It was &lt;a href=&#34;http://static.eightypercent.net/stuff/Craptacular.wav&#34;&gt;Craptacular&lt;/a&gt;!
 &lt;/p&gt;
@@ -24,10 +24,10 @@
     
     <item>
       <title>Non passive FTP support</title>
-      <link>http://new.eightypercent.net/post/old/00054.html</link>
+      <link>http://www.eightypercent.net/post/old/00054.html</link>
       <pubDate>Sun, 02 Mar 2003 18:50:01 -0800</pubDate>
       
-      <guid>http://new.eightypercent.net/post/old/00054.html</guid>
+      <guid>http://www.eightypercent.net/post/old/00054.html</guid>
       <description>&lt;p&gt;
 &lt;P&gt;I coded up non passive FTP support for my FTP code.  It only took me ~30 mins.  I&#39;ve handed that off to Chris so perhaps it will show up in BlogX at some point.  If not, I may write a standalone utility and release that.
 &lt;P&gt;It was pretty easy to send the PORT command and start accepting connections.  I had to mess around a little bit to get it right so I wish that the documentation around using sockets was better.  For instance, there is no short sample that shows creating a socket, binding it to an address and then accepting connections.
