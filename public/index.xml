@@ -91,7 +91,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;Without a networking solution, orchestration systems must allocate and enforce port assignment as ports per host are a shared resource.&lt;/li&gt;
-&lt;li&gt;Examples here include &lt;a href=&#34;https://github.com/coreos/flannel&#34;&gt;CoreOS Flannel&lt;/a&gt;, &lt;a href=&#34;http://weave.works/&#34;&gt;Weave&lt;/a&gt;, &lt;a href=&#34;http://www.projectcalico.org/&#34;&gt;Project Calico&lt;/a&gt;, and &lt;a href=&#34;https://github.com/docker/libnetwork&#34;&gt;Docker libnetwork&lt;/a&gt; (not ready for production yet).&lt;/li&gt;
+&lt;li&gt;Examples here include &lt;a href=&#34;https://github.com/coreos/flannel&#34;&gt;CoreOS Flannel&lt;/a&gt;, &lt;a href=&#34;http://weave.works/&#34;&gt;Weave&lt;/a&gt;, &lt;a href=&#34;http://www.projectcalico.org/&#34;&gt;Project Calico&lt;/a&gt;, and &lt;a href=&#34;https://github.com/docker/libnetwork&#34;&gt;Docker libnetwork&lt;/a&gt; (not ready for production yet).  I&amp;rsquo;ve also been pointed to &lt;a href=&#34;http://www.opencontrail.org/&#34;&gt;OpenContrail&lt;/a&gt; but haven&amp;rsquo;t looked deeply.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Container Storage Systems.&lt;/strong&gt; As users move past special &amp;ldquo;pet&amp;rdquo; hosts storage becomes more difficult.
 

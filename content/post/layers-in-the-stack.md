@@ -50,7 +50,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * The Kubernetes team (Brian Grant especially) have lots of [ideas and plans](https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment) for this area.  There is a [Kubernetes SIG](https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29) being formed.
 * **Network Virtualization.** While not strictly necessary, clustered container systems are much easier to use if each container has full presence on the cluster network.  This has been referred to as "IP per Container".
   * Without a networking solution, orchestration systems must allocate and enforce port assignment as ports per host are a shared resource.
-  * Examples here include [CoreOS Flannel](https://github.com/coreos/flannel), [Weave](http://weave.works/), [Project Calico](http://www.projectcalico.org/), and [Docker libnetwork](https://github.com/docker/libnetwork) (not ready for production yet).
+  * Examples here include [CoreOS Flannel](https://github.com/coreos/flannel), [Weave](http://weave.works/), [Project Calico](http://www.projectcalico.org/), and [Docker libnetwork](https://github.com/docker/libnetwork) (not ready for production yet).  I've also been pointed to [OpenContrail](http://www.opencontrail.org/) but haven't looked deeply.
 * **Container Storage Systems.** As users move past special "pet" hosts storage becomes more difficult.
   * I have more to say on this that I'll probably put into a blog post at some point in the future.
   * [ClusterHQ Flocker](https://github.com/clusterhq/flocker) deals with migrating data between hosts (among other things).
