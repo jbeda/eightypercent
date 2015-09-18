@@ -171,7 +171,12 @@
 <li>Logging can also throw off monitoring signals.  For instance, while processing saved logs the local agent can count 500s and feed those into a monitoring system.</li>
 <li>Systems like <a href="http://flume.apache.org/">Apache Flume</a><sup class="footnote-ref" id="fnref:279eeec6803ac0fbef058e6f7576d2f6:flume"><a rel="footnote" href="#fn:279eeec6803ac0fbef058e6f7576d2f6:flume">3</a></sup> can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  <a href="https://cloud.google.com/bigquery/">Google BigQuery</a> and <a href="https://cloud.google.com/dataflow/">Google Cloud Dataflow</a> are also well suited to ingesting and analyzing structured log data.</li>
 </ul></li>
-<li><strong>Deep Inspection and Tracing</strong> There are a class of tools that help to do deep debugging.  Inside of Google, <a href="http://research.google.com/pubs/pub36356.html">Dapper</a> is a great example of tracing a user request across many microservices.  I&rsquo;d put start ups like <a href="http://www.sysdig.org/">Sysdig</a> in this category too.</li>
+<li><strong>Deep Inspection and Tracing</strong> There are a class of tools that help to do deep debugging.<br />
+
+<ul>
+<li>Inside of Google, <a href="http://research.google.com/pubs/pub36356.html">Dapper</a> is a great example of tracing a user request across many microservices.  <a href="https://github.com/sourcegraph/appdash">Appdash</a> and <a href="http://zipkin.io/">Zipkin</a> are open source system inspired by Dapper.</li>
+<li>Startups like <a href="http://www.sysdig.org/">Sysdig</a> in this category too by allowing deep inspection and capture of what is going on with a machine.</li>
+</ul></li>
 </ul>
 
 <p>PaaS systems often help to bring this all together in an easy way.  Systems like <a href="http://www.openshift.org/">OpenShift 3</a>, <a href="http://deis.io/">Deis</a>, or <a href="https://flynn.io">Flynn</a> build on top of some of the independent systems above.  Other PaaS such as <a href="https://www.heroku.com/">Heroku</a>, <a href="https://cloud.google.com/appengine/docs">Google App Engine</a> or <a href="https://www.cloudfoundry.org/">Cloud Foundry</a> are more vertically integrated without the component layers being broken out in a well supported way.</p>

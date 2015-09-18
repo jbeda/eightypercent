@@ -79,7 +79,9 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * Hosted systems include [Google Cloud Logging](https://cloud.google.com/logging/docs/).
   * Logging can also throw off monitoring signals.  For instance, while processing saved logs the local agent can count 500s and feed those into a monitoring system.
   * Systems like [Apache Flume](http://flume.apache.org/)[^flume] can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  [Google BigQuery](https://cloud.google.com/bigquery/) and [Google Cloud Dataflow](https://cloud.google.com/dataflow/) are also well suited to ingesting and analyzing structured log data.
-* **Deep Inspection and Tracing** There are a class of tools that help to do deep debugging.  Inside of Google, [Dapper](http://research.google.com/pubs/pub36356.html) is a great example of tracing a user request across many microservices.  I'd put start ups like [Sysdig](http://www.sysdig.org/) in this category too.
+* **Deep Inspection and Tracing** There are a class of tools that help to do deep debugging.  
+  * Inside of Google, [Dapper](http://research.google.com/pubs/pub36356.html) is a great example of tracing a user request across many microservices.  [Appdash](https://github.com/sourcegraph/appdash) and [Zipkin](http://zipkin.io/) are open source system inspired by Dapper. 
+  * Startups like [Sysdig](http://www.sysdig.org/) in this category too by allowing deep inspection and capture of what is going on with a machine.
 
 PaaS systems often help to bring this all together in an easy way.  Systems like [OpenShift 3](http://www.openshift.org/), [Deis](http://deis.io/), or [Flynn](https://flynn.io) build on top of some of the independent systems above.  Other PaaS such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/docs) or [Cloud Foundry](https://www.cloudfoundry.org/) are more vertically integrated without the component layers being broken out in a well supported way.
 
