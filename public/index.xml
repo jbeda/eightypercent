@@ -76,7 +76,7 @@
 &lt;ul&gt;
 &lt;li&gt;This is a super hot area of interest with lots of innovation.&lt;/li&gt;
 &lt;li&gt;Open source deployable examples include &lt;a href=&#34;http://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;, &lt;a href=&#34;https://docs.docker.com/swarm/&#34;&gt;Docker Swarm&lt;/a&gt;, and &lt;a href=&#34;http://mesos.apache.org/&#34;&gt;Apache Mesos&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Hosted systems include &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;Google Container Engine (GKE)&lt;/a&gt; (based on Kubernetes), &lt;a href=&#34;https://mesosphere.com/product/&#34;&gt;Mesosphere DCOS&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/ecs/&#34;&gt;Amazon EC2 Container Service (ECS)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Hosted systems include &lt;a href=&#34;https://cloud.google.com/container-engine/&#34;&gt;Google Container Engine (GKE)&lt;/a&gt; (based on Kubernetes), &lt;a href=&#34;https://mesosphere.com/product/&#34;&gt;Mesosphere DCOS&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/ecs/&#34;&gt;Amazon EC2 Container Service (ECS)&lt;/a&gt;.  Recently announced is the &lt;a href=&#34;https://azure.microsoft.com/en-us/blog/azure-container-service-now-and-the-future/&#34;&gt;Microsoft Azure Container Service&lt;/a&gt; based on Mesosphere DCOS and Docker Swarm.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Orchestration Config.&lt;/strong&gt; Many of the orchestration systems have small granular objects.  Creating and parameterizing these by hand can be difficult.  In this context, an orchestration config system can take higher level description and compile them down to the nuts and bolts that the orchestration systems works with.
 
