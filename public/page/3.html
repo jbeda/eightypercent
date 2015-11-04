@@ -49,6 +49,103 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00259.html">Converting Digicam Video</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Mon, Dec 12, 2005</span>
+              <p>
+
+    <p>
+        For serious portraits or low light situations, we've been taking lots of pictures
+        of Annie with my Canon 20D.&#160; I also have a Canon SD300 for convience and video.&#160;
+        The video modes on these small cameras are amazing!&#160; I can't see myself needing
+        more than a couple minutes of video.&#160; Who needs a video camera for their kids
+        these days? 
+    </p>
+    <p>
+        However, dealing with the video out of these things can be tricky.&#160; I post my
+        pictures to <a href="http://www.smugmug.com/">smugmug.com</a> (if you sign up use
+        my referrer coupon: <span class="title">aoVCSFuPXSipF</span>).&#160; I've got a plan
+        that also lets me upload videos.&#160; The only format they take is MPEG 1 (for compat
+        reasons)&#160;but the camera produces MJpeg AVI files.&#160; Converting these things
+        can be trickier than you'd think.&#160; 
+    </p>
+    <p>
+        Here is what I've ended up doing -- if someone else has a better solution let me know. 
+    </p>
+    <ol>
+        <li>
+            Download 'MPlayer-mingw32-1.0pre7.zip' from <a href="http://www2.mplayerhq.hu/MPlayer/releases/win32-beta/">here</a>&#160;[7.8M].
+            There are a lot of distributions out there but most of the older ones don't work for
+            some reason.&#160; This one at least does something reasonable. 
+        </li>
+        <li>
+            Unzip this into a directory.&#160; I put it under an MPlayer dir in my "program files"
+            dir. 
+        </li>
+        <li>
+            Create a batch file with this in it (call it <code>convert-avi.cmd</code> or something):<pre>@echo off
+setlocal
+
+set CL="c:\Program Files\MPlayer\mencoder"
+set CL=%CL% -oac lavc -ovc lavc -of mpeg -mpegopts format=mpeg1
+set CL=%CL% -af lavcresample=44100 -vf hqdn3d,harddup -srate 44100
+set CL=%CL% -lavcopts vcodec=mpeg1video:keyint=15:vrc_buf_size=1000
+set CL=%CL%:vrc_maxrate=2500:vbitrate=2500:trell:mbd=2:vrc_init_cplx=1000 
+set CL=%CL% -ni -nobps 
+set CL=%CL% -o %~n1.mpg %1
+%CL%</pre>
+        </li>
+        <li>
+            Call your brand new batch file with the <code>.avi</code> file you need to convert.&#160; It will
+            create a file in the current directory with the same name but a <code>.mpg</code> extension.</li>
+    </ol>
+    <p>
+        This command line is totally out of control.&#160; I couldn't find a way to wrap lines
+        in batch files so I did the environment variable trick.&#160; I got this via trail
+        and error and I'm not sure what all of the options mean, but here is what I know it
+        does: 
+    </p>
+    <ul>
+        <li>
+            Encodes as MPEG 1 into a .mpg file 
+        </li>
+        <li>
+            Upconverts the audio to 44.1 kHz as that is the only freq I could get to work. 
+        </li>
+        <li>
+            Doesn't do any resizing or framerate changes (leaves it at 640x480x30fps for my files) 
+        </li>
+        <li>
+            Uses a fairly high bitrate to make sure the quality stays good 
+        </li>
+    </ul>
+    <p>
+        For a 18.5 second video doing this compression (just to MPEG1 -- let alone something
+        better) cut&#160;a 35M AVI file down to 5.5M.&#160; The only problem I haven't figured
+        out is that the first frame is really pixelated.&#160; If you can figure it out you
+        win my undying gratitude.&#160; Check out the docs&#160;<a href="http://www.mplayerhq.hu/DOCS/HTML/en/index.html#toc">here</a> or <a href="http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html">here</a>. 
+    </p>
+    <p>
+        <strong>Bonus:</strong> You can rotate the&#160;video during the conversion with a <code>,rotate=90</code> on
+        the after <code>harddup</code> on the -vf argument. 
+    </p>
+    <p>
+        Finally, check out a cute video of Annie <a href="http://static.eightypercent.net/stuff/MVI_0478.mpg">here</a>. 
+    </p>
+
+</p>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00259.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00257.html">Google Talk Blog</a>
         </h2>
         <div class="readmore">
@@ -417,106 +514,6 @@
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00248.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00247.html">Baby: A Programmers View</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sun, Jul 24, 2005</span>
-              <p>
-
-    <p>
-        I'm an engineer at heart and I like to understand how things work.&#160; Our new baby, <a href="http://www.eightypercent.net/Archive/2005/06/25.html#a244">Anne</a>,
-        is no exception.&#160; Let's take a programmers approach to understanding this mysterious
-        black box. 
-    </p>
-    <p>
-        Inputs (the 5 senses): 
-    </p>
-    <ul>
-        <li>
-            <strong>Sight </strong>Anne certainly likes to look around.&#160; My understanding
-            is that babies generally see only high contrast at a pretty short distance (1 foot?)&#160;
-            She certainly likes looking at faces close up. 
-        </li>
-        <li>
-            <strong>Sound </strong>Whitenoise is supposed to be soothing.&#160; She also likes
-            U2 and (heaven help me) Cher.&#160; Loud.&#160; I think she likes my singing too.&#160;
-            I'm not sure why. 
-        </li>
-        <li>
-            <strong>Taste </strong>She eats a lot.&#160; I'm not sure how much variation in taste
-            she actually gets.&#160; There are theories that the mother's diet can affect the
-            milk, but I haven't personally verified that. <em>Ewwww.</em> 
-        </li>
-        <li>
-            <strong>Touch </strong>Babies need to be held and touched.&#160; They also need to
-            be warm.&#160; One input is swaddling&#160;-- wrapping her tightly so that she can't
-            move her arms or legs. Rocking and dancing with her count here too. 
-        </li>
-        <li>
-            <strong>Smell </strong>Smell is supposed to be one of the most powerful senses.&#160;
-            I've yet to see her react to any smells specifically, but I'm sure she is paying attention. 
-        </li>
-    </ul>
-    <p>
-        Outputs: 
-    </p>
-    <ul>
-        <li>
-            <strong>Biological Outputs</strong> Doctors are funny creatures.&#160;&#160; They
-            are really concerned about all forms of matter escaping from our bodies: liquid, solid
-            or gas.&#160; Parents also pay close attention to this.&#160; The amount, type and
-            origin seem to be important clues to understanding the baby. 
-        </li>
-        <li>
-            <strong>Cries </strong>She has many and varied cries.&#160; Some of them are short
-            yelps to draw attention while others are reports of murder nearby.&#160; Then there
-            is the scary quivering lower lip.&#160; This is supposedly normal and a byproduct
-            of her immature nervous system.&#160; It just kills me to see her do it though. 
-        </li>
-        <li>
-            <strong>Posture </strong>The way she holds her body is an important clue.&#160; If
-            she is curled up like a bug or stretched out and rigid means something. 
-        </li>
-        <li>
-            <strong>Eyes and Face </strong>Her eyes and face are very expressive.&#160; Almost
-            too expressive.&#160; She goes through a facial expression every 5 seconds or so. 
-        </li>
-        <li>
-            <strong>Sleep</strong> You'd think that it would be easy to tell if she is asleep
-            or not.&#160; It really isn't though.&#160; She can be sleeping with her eyes closed
-            or just pretending to sleep so that the minute you put her down she perks right up
-            again. 
-        </li>
-    </ul>
-    <p>
-        There you have it&#160;-- 5 inputs and 5 outputs.&#160; Sounds like a pretty simple
-        system to me.&#160; The problem is that she is indeed a very complex state machine.&#160;
-        She is so complex that there is no way to map the effect of the inputs (feeding her,
-        for example) to the outputs (her current crying state).&#160; One would think that
-        it would be easy to empirically derive causal relationships between certain inputs
-        and certain outputs.&#160; Nope. She has more states than a Rubik's cube (<a href="http://en.wikipedia.org/wiki/Rubik's_Cube">43,252,003,274,489,856,000</a>).
-        The baby is indeed a very complex creature that does not yield her secrets to such
-        a naïve logical approach. 
-    </p>
-    <p>
-        The amazing part is that biology takes over.&#160; My own brain is more complex than
-        it can understand.&#160; It has adapted to the baby and somehow we're able make it
-        work.&#160; Except when we can't&#160;-- like last night when all of us were up every
-        90 minutes.<br />
-    </p>
-
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00247.html"></a>
         </div>
       </div>
     </div>

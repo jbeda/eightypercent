@@ -49,6 +49,29 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00196.html">Great BBQ, Scoble!</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Sun, Aug 8, 2004</span>
+              <p>
+
+    Yesterday Rachel and I <a href="http://radio.weblogs.com/0001011/2004/08/07.html#a8048">went
+    over to the Scoble estate</a> for a BBQ.&#160; It was great to see Robert and Maryam.&#160;
+    The food and company was excellent.&#160; The conversation drifted between geeky things
+    (cameras, HDTV, Tivo/Media Center) and other non geeky things (jokes, BBQ technique,
+    etc.)&#160; I also finially met Mr. Winer -- an interesting experience.
+</p>
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00196.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00195.html">Photography as protest</a>
         </h2>
         <div class="readmore">
@@ -747,166 +770,6 @@ executeAction( id375, desc84, DialogModes.NO );</pre>
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00187.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00186.html">Slashdot results</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Mon, May 24, 2004</span>
-              <p>
-
-    <p>
-        My <a href="http://www.eightypercent.net/Archive/2004/05/18.html#a185">entry</a> pointing
-        to our WinHEC slides resulted in links from quite a few sites and a ton of hits.&#160;
-        Top among these was an article on <a href="http://developers.slashdot.org/developers/04/05/23/1737226.shtml?tid=109&amp;tid=185&amp;tid=187&amp;tid=190&amp;tid=201">Slashdot</a>.&#160;
-        Also notable are links from <a href="http://www.osnews.com/comment.php?news_id=7134">OSNews</a>&#160;and <a href="http://www.joeuser.com/index.asp?AID=16309&amp;u=0">Brad
-        Wardell (joeuser.com)</a>.&#160; In the last year my blog has gotten 20k hits (not
-        counting RSS reads).&#160; In the last day it has gotten something like 25k hits.&#160;
-        I'm sure that most of those 25k people won't be back to read this entry, but I'll
-        respond anyway. 
-    </p>
-    <p>
-        I appreciate the attention and I've been trying to keep up with all of the comments.&#160;
-        Here are some notes and responses: 
-    </p>
-    <ul>
-        <li>
-            First off, I can't answer every question.&#160; I have no desire to get in to a flame
-            war over specific details or comparisons. 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232376">Avalon's
-            relationship to Direct3D</a>:&#160; I tried to make this clear in the slides, but
-            it is worth repeating.&#160; We are building a managed presentation and UI layer on
-            top of Direct3D.&#160; While we will be exposing a 3D API, it is meant to round out
-            the UI story and integrate well with our 2D API.&#160; If you are doing super complex
-            3D stuff (FPS games), or want access to the latest and greatest Direct3D features,
-            Direct3D is the way to go.&#160; If you want to mix a little 3D in with your 2D, Avalon's
-            3D APIs will let you do that in a painless way. 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232430">Do
-            we really need the eye candy?</a>: This has been a popular topic ever since we started
-            planning and talking about Avalon.&#160; I'm planning on posting something on this
-            later to start the discussion.&#160; My short take: I think that providing more capability
-            in the platform is a good thing that will make Windows a more attractive place to
-            write applications.&#160; I think that it will also allow our stock user experience
-            (Aero and the shell team) and application developers to push the limits and interact
-            with users in fundamentally better ways.&#160; However, with power comes responsibility.&#160;
-            We are working on a set of <a href="http://msdn.microsoft.com/Longhorn/understanding/ux/default.aspx?pull=/library/en-us/dnaero/html/samplerintro.asp">guidelines</a> (these
-            are the Aero user interface guidelines) to help application authors use this stuff
-            in a consistent way. 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232485">The
-            3D bar graph demo is useless</a>: I admit, this <a href="http://www.eightypercent.net/Archive/2004/05/06.html#a182">example</a> is
-            useless as is.&#160; In a <em>real</em> application there will be a lot more UI about
-            picking what data you want to look at and how you want to look at it.&#160; The position
-            and view of the 3D graph would probably be controlled by the mouse so that you can
-            rotate things around to see hidden data.&#160; There would probably be different types
-            of graphs that you would switch between.&#160; However, this was meant as a demo application
-            that we threw together in a couple of days.&#160; While the application is a demo,
-            the platform that it is running on is real.&#160; There should be nothing stopping
-            someone from building a more industrial strength really usable version of this. 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232540">We
-            are behind the ball on 64 bit</a>:&#160; While Windows had been compiling and shipping
-            (well, in beta to be clear) on 64 bit for quite a while (we handed out ia64 and x64
-            versions of Longhorn at WinHEC and via MSDN) the real call to action here was to IHVs.&#160;
-            Remember this&#160;was the Windows Hardware Engineering Conference.&#160; IHVs have
-            limited resources wrt writing drivers and we want to encourage them to write and maintain
-            64 bit drivers.&#160; This was one of the big pushes for the conference as a whole.&#160;
-            We don't want 64 bit uptake to be slowed down by lack of driver support. 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9232633">The
-            longhorn requirements are crazy</a>: I don't know where the requirements listed here
-            came from, but I haven't seen that list.&#160; Obviously we won't see that on a laptop!&#160;
-            There are a couple of things to note here.&#160; 
-            <ul>
-                <li>
-                    First, we will run in software and on lower end machines.&#160; Things may run slower,
-                    but it will run.&#160; 
-                </li>
-                <li>
-                    Second, we are going to offer multiple experiences based on hardware capabilities
-                    and user preferences.&#160; This ranges from a classic view, to Aero to Aero Glass.&#160; 
-                </li>
-                <li>
-                    Third, the current minimum requirement for Aero Glass is a DX9 class card with 64MB
-                    of video memory.&#160; More video memory will be required for higher resolutions or
-                    multiple monitors.&#160; We also require the GPU to support PS 2.0 and have a LDDM
-                    (Longhorn Device Driver Model) driver. 
-                </li>
-                <li>
-                    Fourth, as for processor requirements, most of the time when we have, in the past,
-                    required a certain speed processor it has been because that speed has been an indicator
-                    of the rest of the components in the machine (bus speed, hard driver speed, memory
-                    speed, processor instruction support, etc.)&#160; The idea has been to use that one
-                    number&#160;as a <span style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">heuristic </span>for
-                    the "generation" of the machine.&#160; Hell, I've run Win2k3 server on a 400MHz celeron.&#160; 
-                </li>
-                <li>
-                    Lastly, we <em>are</em> really concerned about battery life and are working hard to
-                    come up with a scalable user experience for times when battery life is more important
-                    than running the GPU at full throttle.&#160; I believe that there are a bunch of slides
-                    in Kerry's talk on that. 
-                </li>
-            </ul>
-        </li>
-        <li>
-            (my favorite) <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9233103">"dipshits
-            still can't code html/css?"</a>: I never claimed to be an artist, but the CSS in question
-            was my attempt to get a little bit funky with the style of my site.&#160; It is on
-            purpose.&#160; I assume that it will work in most browsers but, honestly, I only tested
-            it with IE and Pocket IE.&#160; I posted a <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=201&amp;mode=thread&amp;pid=9233844#9234182">response</a> to
-            this on slashdot but apparently someone <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=201&amp;mode=thread&amp;pid=9234182#9235628">thought
-            I wasn't me</a>.&#160; Too funny! 
-        </li>
-        <li>
-            <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;cid=9235276">The
-            whole Apple transparent window thing</a>:&#160; I don't read or comment on patents.&#160;
-            However, transparent windows have been around for quite a while.&#160; In the windows
-            world, these things were introduced in W2K with <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwui/html/layerwin.asp">layered
-            window support</a>.&#160; Other OSs may have had something similar earlier. 
-        </li>
-        <li>
-            <a href="http://www.osnews.com/comment.php?news_id=7134&amp;offset=15&amp;rows=30#239957">Longhorn
-            is just vaporware.</a>&#160; <a href="http://developers.slashdot.org/comments.pl?sid=108587&amp;threshold=1&amp;commentsort=0&amp;tid=109&amp;tid=185&amp;tid=187&amp;tid=190&amp;tid=201&amp;mode=thread&amp;cid=9232324">I'll
-            believe it when it ships in 2017</a>:&#160; I'm not crazy enough to comment on ship
-            dates.&#160; I'll leave that to the PR people and the execs.&#160; However, we are
-            showing off real code.&#160; We've publicly shipped two builds of Longhorn (the PDC
-            and the recent WinHEC build) along with SDKs.&#160; Not everything is done yet and
-            it is rough around the edges, but this isn't just slideware. 
-        </li>
-        <li>
-            <a href="http://www.osnews.com/comment.php?news_id=7134#239905">Innovation</a>:&#160;
-            Innovation is such a loaded word.&#160; Hell, MS probably did more to make it loaded
-            than anyone else :).&#160; However, I never used the word on my blog and I don't know
-            where the guy who posted this to OSNews.com got it.&#160; It really touched off a
-            flamewar there which basically comes down to your definition of innovation.&#160;
-            Leaving that aside...&#160; I think that Avalon, and Longhorn in general, puts a lot
-            of very interesting features together in an integrated API that will benefit developers
-            and end users in very exciting ways.&#160; Use your own definition of innovative to
-            parse that last sentence. 
-        </li>
-    </ul>
-    <p>
-        Well, hopefully that runs the gamut.&#160; I probably missed some stuff, but I have
-        to get some real work done today. 
-    </p>
-
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00186.html"></a>
         </div>
       </div>
     </div>

@@ -48,6 +48,101 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00226.html">DOS/Windows command line escaping</a></h2>
+        <span class="lead">Sun, Dec 5, 2004</span>
+        <div class="post">
+          <p>
+
+    <p>
+        Here is a <a href="http://weblogs.asp.net/oldnewthing/">Raymond</a>-esque tidbit that
+        I wanted to get out there.&#160; I couldn't find anything on Google and had to figure
+        this stuff out via trail and error. 
+    </p>
+    <p>
+        Okay -- you think you know how to escape stuff on the DOS/Windows command line?&#160;
+        Probably not.&#160; Let's start with a simple python script to show us what we've
+        got: 
+    </p>
+    <p>
+    </p>
+    <pre>C:\test&gt;type dumpargs.py
+# a simple program to dump the incoming arguments
+import sys
+for arg in sys.argv[1:]:
+    print repr(arg)
+</pre>
+    <p>
+        Now lets run some tests and see what it spits out: 
+    </p>
+    <pre>C:\test&gt;dumpargs.py "hi there"
+'hi there'
+
+C:\test&gt;dumpargs.py "hi \" there"
+'hi " there'</pre>
+    <p>
+        So far so good. It looks like we know how to escape a double quote sign ("). But what
+        about the pesky percent sign? DOS/Windows/Command/CMD uses this for variable substitution.
+        Let's try a bunch of stuff and see what we get: 
+    </p>
+    <pre>C:\test&gt;set foo=bar
+
+C:\test&gt;dumpargs.py "hi there %foo%"
+'hi there bar'
+
+C:\test&gt;dumpargs.py "hi there \%foo\%"
+'hi there \\%foo\\%'</pre>
+    <p>
+        Hmmm, it looks like the backslash doesn't work. Looking around, it looks like the
+        caret symbol (^) is the way to go. Lets try that out. 
+    </p>
+    <pre>C:\test&gt;dumpargs.py ^%foo^%
+'%foo%'
+
+C:\test&gt;dumpargs.py "hi there ^%foo^%"
+'hi there ^%foo^%'</pre>
+    <p>
+        Well, it looks like that works as long as it isn't in quotes. I also found another
+        wacky case: 
+    </p>
+    <pre>C:\test&gt;dumpargs.py "hi there \" ^%foo^%"
+'hi there " %foo%'
+
+C:\test&gt;dumpargs.py "hi there \" \" ^%foo^%"
+'hi there " " ^%foo^%'</pre>
+    <p>
+        Very odd -- it looks like the caret does work as an escape character as long as there
+        is an odd number of escaped double quote characters before it in the string. The parser
+        here is obviously not a simple as one might first think. Lets try ending the string
+        before we quote the percent sign: 
+    </p>
+    <p>
+    </p>
+    <pre>C:\test&gt;dumpargs.py "hi there "^%"foo"^%" bar"
+'hi there %foo% bar'
+
+C:\test&gt;dumpargs.py "hi \" there "^%"foo"^%" bar"
+'hi " there ^%foo^% bar'</pre>
+    <p>
+        We are getting closer, but that escaped quote character puts the parser into a wacky
+        state. I finally did find a good solution: 
+    </p>
+    <pre>C:\test&gt;dumpargs.py "hi "^"" there "^%"foo"^%" bar"
+'hi " there %foo% bar'</pre>
+    <p>
+        It turns out that you must replace the double quote (") with the following sequence:
+        "^"". You must also quote the percent character (%) with this sequence: "^%". I think
+        that everything else is okay inside of the double quotes. Very strange but true. I
+        guess this is what 20 years of back compat get you. 
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00225.html">Arizona Desert Photo 2</a></h2>
         <span class="lead">Sun, Dec 5, 2004</span>
         <div class="post">
@@ -606,52 +701,6 @@
         raw camera data called <a href="http://www.cybercom.net/~dcoffin/dcraw/">DCRaw</a> and
         built by Dave Coffin. Apparently Photoshop (and Capture One?) build on some of Dave's
         work.]
-    </p>
-
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00216.html">Gyros with Dave</a></h2>
-        <span class="lead">Wed, Sep 22, 2004</span>
-        <div class="post">
-          <p>
-
-    <p>
-        <a href="http://www.scripting.com">Dave Winer</a> and I hung out tonight and went
-        to dinner together.&#160; We started out from my house in Montlake and walked through
-        the university to Aladdin Gyro's up north of 45th on the Ave.&#160; We were going
-        to go to Thai Tom but the line was too long. 
-    </p>
-    <p>
-        We talked about Google, Microsoft and the industry as a whole.&#160; Tip jars, Bush
-        and how I should never expect to get social security (I already knew this).&#160;
-        He's a good guy who likes to shake things up. 
-    </p>
-    <p>
-        Since everyone wanted to see me wearing my Noogler hat, I had him snap a quick picture
-        with my new Canon 20D.&#160; I also grabbed a picture of him. We are both looking
-        a little worse for wear from the long walk up there and back. 
-    </p>
-    <p>
-        <a href="http://static.eightypercent.net/photos/NooglerHat-sm.jpg"><img alt="Joe Beda wearing his Noogler hat" hspace="0" src="http://static.eightypercent.net/photos/NooglerHat-thumb.jpg" align="baseline" border="0" /></a>&#160;<a href="http://static.eightypercent.net/photos/DaveWiner-sm.jpg"><img alt="Dave Winer" hspace="0" src="http://static.eightypercent.net/photos/DaveWiner-thumb.jpg" align="baseline" border="0" /></a> 
-    </p>
-    <p>
-        If you really want to chew up some of my bandwidth (I may have to take this down)
-        you can grab the original files (~2MB each) of <a href="http://www.eightypercent.net.nyud.net:8090/photos/NooglerHat-orig.jpg">me</a> and <a href="http://www.eightypercent.net.nyud.net:8090/photos/DaveWiner-orig.jpg">Dave</a>.&#160;
-        These are jpgs right out the camera.&#160; Be warned that they are shot in the AdobeRGB
-        color space so you should really view them in a color space aware application (something
-        more like Photoshop and not IE). 
-    </p>
-    <p>
-        [Update:&#160; <a href="http://www.freeke.org/ffg">Dave Walker</a> suggested I check
-        out <a href="http://www.scs.cs.nyu.edu/coral/">Coral</a> -- a distributed network
-        cache by NYU as a way to reduce the bandwidth hit.&#160; The links above have been
-        changed to give that a try.&#160; Post a comment if you have problems.]
     </p>
 
 </p>

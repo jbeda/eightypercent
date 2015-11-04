@@ -48,6 +48,23 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00045.html">Untitled #45</a></h2>
+        <span class="lead">Sun, Feb 23, 2003</span>
+        <div class="post">
+          <p>
+<p>I have the dictionary done so now I don't upload files that haven't changed.  Now all I have to do is change my generation code so that it doesn't actually write to files that haven't changed.
+<p>I could do this by making sure that I track which data files have changed and figuring out which output files that means that I have to generate.
+<p>Or, I could just always generate every output file, but compare it to what is on disk before writing it.  If it is exactly the same as what is already there, I can just throw away my in memory copy and not write anything.
+<p>Radio took the first approach, except it didn't get it completely right.  If you added a new entry in Radio, it wouldn't update any of the archive pages.  The problem is that you would always see links going further back on the calendar but never going forward, as it would never update one of the archive pages.  With the second approach it may take a little longer to generate the site,  but you'll be sure to update everything that needs to be updated.
+<p>I think that I'm going to go with the second approach.  I can adapt and implement the first as needed (perhaps on a more granular level.
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00044.html">FTPUpstreaming?</a></h2>
         <span class="lead">Sun, Feb 23, 2003</span>
         <div class="post">
@@ -173,25 +190,6 @@
 <P>I have a calendar that now points to my archives.  I think that I'm at feature parity with what I was using from Radio, at least with respect to blog generation.  I didn't use any tables in my layout, so let me know if things don't look good in a browser other than IE for windows.
 <P>I think that I'm done for tonight.  Next I'm going to work on an FTP upstreamer so that I can just hit a button (or work it on a timer/file system change notification) to upload the site instead of using <a href="http://www.smartftp.com">SmartFTP</a> to upload manually.
 <P>In some ways this would be a lot easier with a server side solution backed up to SQL server.  I'm tempted to switch over, but I really do like the idea of client side+FTP.
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00035.html">Why no updates?</a></h2>
-        <span class="lead">Sun, Feb 16, 2003</span>
-        <div class="post">
-          <p>
-<p>Okay, <a href="http://www.simplegeek.com/2003/02/16.html#a204">Chris</a> has put me to shame.
-
-<p>To try and redeem myself I have my archives working now.  I also have permalinks.
-
-<p>I haven't uploaded posts in a couple of days as I renumbered all of my entries and I didn't want to screw everyone's Syndirella feed until I had permalinks and guids working.
-
-<p>To see some of the workings behind the scenes, <a href="http://static.eightypercent.net/templates/Main.xslt">here</a> is the xslt for my main page.
 </p>
 
         </div>

@@ -48,6 +48,33 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00269.html">Link-Backup v 0.6</a></h2>
+        <span class="lead">Mon, Jun 19, 2006</span>
+        <div class="post">
+          <p>
+
+    <p>
+        Scott Ludwig and I have released a new version of&#160;his python based backup script,
+        Link-Backup.&#160; This new version ignores broken symlinks and has an option to ensure
+        that only one backup at a time is going on.
+    </p>
+    <p>
+        Also with this release is a cgi script (viewlb.cgi) for exploring the backups.&#160;
+        This makes it easy to keep tabs on what is going on.&#160; Scott wrote this script
+        a while ago and I updated and improved it.
+    </p>
+    <p>
+        Details <a href="http://www.scottlu.com/2006/06/link-backup-v-06.html">here</a>.
+    </p>
+
+</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00268.html">Annie loves flowers</a></h2>
         <span class="lead">Sat, Jun 3, 2006</span>
         <div class="post">
@@ -447,98 +474,6 @@
     </p>
     <p>
         The current protocols are still a work in progress so stay tuned for more developments.
-    </p>
-
-</p>
-
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00259.html">Converting Digicam Video</a></h2>
-        <span class="lead">Mon, Dec 12, 2005</span>
-        <div class="post">
-          <p>
-
-    <p>
-        For serious portraits or low light situations, we've been taking lots of pictures
-        of Annie with my Canon 20D.&#160; I also have a Canon SD300 for convience and video.&#160;
-        The video modes on these small cameras are amazing!&#160; I can't see myself needing
-        more than a couple minutes of video.&#160; Who needs a video camera for their kids
-        these days? 
-    </p>
-    <p>
-        However, dealing with the video out of these things can be tricky.&#160; I post my
-        pictures to <a href="http://www.smugmug.com/">smugmug.com</a> (if you sign up use
-        my referrer coupon: <span class="title">aoVCSFuPXSipF</span>).&#160; I've got a plan
-        that also lets me upload videos.&#160; The only format they take is MPEG 1 (for compat
-        reasons)&#160;but the camera produces MJpeg AVI files.&#160; Converting these things
-        can be trickier than you'd think.&#160; 
-    </p>
-    <p>
-        Here is what I've ended up doing -- if someone else has a better solution let me know. 
-    </p>
-    <ol>
-        <li>
-            Download 'MPlayer-mingw32-1.0pre7.zip' from <a href="http://www2.mplayerhq.hu/MPlayer/releases/win32-beta/">here</a>&#160;[7.8M].
-            There are a lot of distributions out there but most of the older ones don't work for
-            some reason.&#160; This one at least does something reasonable. 
-        </li>
-        <li>
-            Unzip this into a directory.&#160; I put it under an MPlayer dir in my "program files"
-            dir. 
-        </li>
-        <li>
-            Create a batch file with this in it (call it <code>convert-avi.cmd</code> or something):<pre>@echo off
-setlocal
-
-set CL="c:\Program Files\MPlayer\mencoder"
-set CL=%CL% -oac lavc -ovc lavc -of mpeg -mpegopts format=mpeg1
-set CL=%CL% -af lavcresample=44100 -vf hqdn3d,harddup -srate 44100
-set CL=%CL% -lavcopts vcodec=mpeg1video:keyint=15:vrc_buf_size=1000
-set CL=%CL%:vrc_maxrate=2500:vbitrate=2500:trell:mbd=2:vrc_init_cplx=1000 
-set CL=%CL% -ni -nobps 
-set CL=%CL% -o %~n1.mpg %1
-%CL%</pre>
-        </li>
-        <li>
-            Call your brand new batch file with the <code>.avi</code> file you need to convert.&#160; It will
-            create a file in the current directory with the same name but a <code>.mpg</code> extension.</li>
-    </ol>
-    <p>
-        This command line is totally out of control.&#160; I couldn't find a way to wrap lines
-        in batch files so I did the environment variable trick.&#160; I got this via trail
-        and error and I'm not sure what all of the options mean, but here is what I know it
-        does: 
-    </p>
-    <ul>
-        <li>
-            Encodes as MPEG 1 into a .mpg file 
-        </li>
-        <li>
-            Upconverts the audio to 44.1 kHz as that is the only freq I could get to work. 
-        </li>
-        <li>
-            Doesn't do any resizing or framerate changes (leaves it at 640x480x30fps for my files) 
-        </li>
-        <li>
-            Uses a fairly high bitrate to make sure the quality stays good 
-        </li>
-    </ul>
-    <p>
-        For a 18.5 second video doing this compression (just to MPEG1 -- let alone something
-        better) cut&#160;a 35M AVI file down to 5.5M.&#160; The only problem I haven't figured
-        out is that the first frame is really pixelated.&#160; If you can figure it out you
-        win my undying gratitude.&#160; Check out the docs&#160;<a href="http://www.mplayerhq.hu/DOCS/HTML/en/index.html#toc">here</a> or <a href="http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html">here</a>. 
-    </p>
-    <p>
-        <strong>Bonus:</strong> You can rotate the&#160;video during the conversion with a <code>,rotate=90</code> on
-        the after <code>harddup</code> on the -vf argument. 
-    </p>
-    <p>
-        Finally, check out a cute video of Annie <a href="http://static.eightypercent.net/stuff/MVI_0478.mpg">here</a>. 
     </p>
 
 </p>
