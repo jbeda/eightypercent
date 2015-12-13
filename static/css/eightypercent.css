@@ -1,8 +1,8 @@
 /* 
 https://www.google.com/fonts#UsePlace:use/Collection:Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic
 */
-@import url(http://fonts.googleapis.com/css?family=Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic);
-@import url(http://fonts.googleapis.com/css?family=Coda);
+@import url(https://fonts.googleapis.com/css?family=Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Coda);
 
 body { 
   /* Make room for the fixed navbar */
