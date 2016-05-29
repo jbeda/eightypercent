@@ -16,11 +16,11 @@
       <pubDate>Tue, 04 Feb 2003 22:47:16 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00027.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;I&#39;m off to Boise.  All my stuff is packed up and the guinea pig is packaged up in her carrier.&lt;/P&gt;
 &lt;P&gt;I probably won&#39;t have time to post again (and work on my software!) until sometime this weekend.  The cable modem is supposed to be installed on Thursday.  We&#39;ll see&lt;/P&gt;
 &lt;P&gt;Wish me luck!&lt;/P&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -30,12 +30,12 @@
       <pubDate>Tue, 04 Feb 2003 00:56:41 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00026.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;I meant to write this earlier but I got carried away working on JoeBlogger
 &lt;P&gt;I&#39;m moving to Boise for the next 5 months (back in July) to be with my wife.  She is a doctor and her residency takes her to Boise for a year.  She has already been out there since the beginning of July 2002, but it has been really hard being apart.
 &lt;P&gt;I&#39;ve worked it out with my management so that I can telecommute.  Everyone at MSFT has been super supportive about this.  I think that the whole thing is just amazing. I&#39;m looking forward to being able to really crank on stuff without all of the interuptions of being at the office.
 &lt;P&gt;Now all I have to do is avoid all of the &#34;interuptions&#34; at home
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -45,7 +45,7 @@
       <pubDate>Tue, 04 Feb 2003 00:21:55 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00025.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;This is a test of an entry generated in my tool.  I have to type in raw HTML right now, but everything appears to be working...&lt;/P&gt;
 &lt;P&gt;Here is a screen shot of the current UI:&lt;/P&gt;
 &lt;IMG src=&#34;http://www.eightypercent.net/Stuff/JoeBlogger2.JPG&#34; &gt;
@@ -61,7 +61,7 @@
 &lt;/UL&gt;
 &lt;P&gt;I&#39;ve also decided that storing the entries in an xml file per day is a bad idea.  The timezones will get you.  I store the timestamp on an entry using GMT but the XML file (which is used as input into the UI) is based on local time.  I also use localtime all over the place in the UI.  I&#39;ll probably move to a flat list of entries (one per XML file) at some point and just figure out the local day assignments at runtime.  This will map much better to a real database anyway.&lt;/P&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     

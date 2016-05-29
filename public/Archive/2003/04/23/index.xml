@@ -16,7 +16,7 @@
       <pubDate>Wed, 23 Apr 2003 11:00:39 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00083.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;I think I&#39;m going to evolve my blogging software some more over the next couple of weeks.  I want to add the following features:
 &lt;ul&gt;
 &lt;li&gt;True WYSIWYG HTML editing.  I&#39;m still writing HTML directly.  I think that I&#39;m going to steal whatever Chris has in BlogX.
@@ -26,7 +26,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Right now the UI for JoeBlogger is dead simple.  There is no &#34;save&#34; button.  Just a &#34;New Entry&#34; and an &#34;Upload&#34; button.  There is a calendar control for finding entries and a list for all of the entries for that day.  My goal is to keep it that simple as I add these new features.
 &lt;p&gt;BTW, I still plan on finishing the stand alone FTP uploader first!
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -36,10 +36,10 @@
       <pubDate>Wed, 23 Apr 2003 10:52:19 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00082.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;Here is a panorama from Dante&#39;s View in Death Valley.  We made it up there for this spectacular sunset.  This is a stich of 6 images shot with my 20mm f/2.8 lens on my D60.  It has a horizontal FOV of somewhere around 120 degrees.  Since this is a rectilinear projection, it is equivalent to shooting with a rectilinear 4mm lens.
 &lt;p&gt;&lt;a href=&#34;http://static.eightypercent.net/photos/DantesView-Small.jpg&#34;&gt;&lt;img src=&#34;http://static.eightypercent.net/photos/DantesView-Thumb.jpg&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     

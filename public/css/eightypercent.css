@@ -1,10 +1,10 @@
-/* 
+/*
 https://www.google.com/fonts#UsePlace:use/Collection:Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic
 */
 @import url(https://fonts.googleapis.com/css?family=Economica:700|Lora:400,700,400italic,700italic|Roboto+Mono:400,700,400italic,700italic);
 @import url(https://fonts.googleapis.com/css?family=Coda);
 
-body { 
+body {
   /* Make room for the fixed navbar */
   padding-top: 70px;
 }
@@ -13,6 +13,23 @@ body {
   .container {
     width: 970px;
   }
+}
+
+figure {
+  background-color: #f4f5ea;
+  border: 1px solid #4f94e0;
+  border-radius: 4px;
+  padding: 9.5px;
+  margin: 0 0 10px;
+}
+
+figure img {
+  width: 100%;
+}
+
+figure h4 {
+  color: #927E7C;
+  text-align: center;
 }
 
 .navbar {

@@ -16,9 +16,9 @@
       <pubDate>Sat, 08 Feb 2003 15:08:27 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00031.html</guid>
-      <description>&lt;p&gt;
+      <description>
 Plugin for WMP and Winamp: &lt;a href=&#34;http://www.cs.unibo.it/~ljw1004/sticky/&#34;&gt;Dancing Stick Figures&lt;/a&gt;.  I currently have the dancing cactus running.
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -28,9 +28,9 @@ Plugin for WMP and Winamp: &lt;a href=&#34;http://www.cs.unibo.it/~ljw1004/stick
       <pubDate>Sat, 08 Feb 2003 10:04:09 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00030.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;In other news, &lt;a href=&#34;http://aspnetweblog.com/&#34;&gt;Scott Watermasysk&lt;/a&gt; kindly offered to send me the source to his HTML editing control, pictured &lt;a href=&#34;http://aspnetweblog.com/images/richeditor.gif&#34;&gt;here&lt;/a&gt;.  I&#39;m scared of the legal implications of looking at others&#39; source outside of MS.  He may still send me the binaries though and those are fair game.  One question Scott, where did you get the cool flat tab control?  It looks like the one VS.Net uses.
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -40,12 +40,12 @@ Plugin for WMP and Winamp: &lt;a href=&#34;http://www.cs.unibo.it/~ljw1004/stick
       <pubDate>Sat, 08 Feb 2003 09:50:27 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00029.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;ChrisAn &lt;a href=&#34;http://www.simplegeek.com/2003/02/06.html#a167&#34;&gt;says&lt;/a&gt; that I need to support permalinks.  This is part of the plan but I need to renumber my entries (as I have duplicates now!) and I want to think long and hard about what I want my permalinks to be.  I&#39;d also like to do this only once so that I don&#39;t spam everyone using Syndirella or other RSS aggregators as my feed completely changes.
 &lt;P&gt;Ideally I&#39;d like to create a page per day or per week and have the permalink point into that.  However, I don&#39;t want to break links around midnight as I move back to Seattle at some point.  I think that I&#39;m going to start storing a time zone with each of my entries and use that to adjust when figuring out which entries go in which days.  
 &lt;P&gt;In some ways this would be easier with a server side solution as I would just have an archive page that takes the entry number as a parameter.  There are other advantages to the client side solution though.
 
-&lt;/p&gt;
+
 </description>
     </item>
     

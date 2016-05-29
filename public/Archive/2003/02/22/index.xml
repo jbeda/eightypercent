@@ -16,11 +16,11 @@
       <pubDate>Sat, 22 Feb 2003 15:25:49 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00043.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;I&#39;m back in Boise and Chris is still kicking my ass with BlogX.
 &lt;P&gt;I got mail from &lt;a href=&#34;http://gary.burd.info/&#34;&gt;Gary Burd&lt;/a&gt; that my RSS feed was valid.  The problem was that I was using relative URLs in some of my entries.  I&#39;ve fixed up the problem and I&#39;ll be sure to keep an eye on that in the future.
 &lt;P&gt;At least I&#39;m putting out good XML, unlike Radio...
-&lt;/p&gt;
+
 </description>
     </item>
     

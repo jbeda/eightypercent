@@ -48,10 +48,81 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00217.html">Adobe DNG image format</a></h2>
+        <span class="lead">Mon, Sep 27, 2004</span>
+        <div class="post">
+          
+
+    <p>
+        Adobe announced today a new image format for storing raw camera data.&#160; Dubbed <a href="http://www.adobe.com/products/dng/main.html">DNG</a>&#160;(for
+        Digital Negative) this format is meant to be a common interchange for the fast proliferating
+        collection of proprietary raw image formats.&#160; By some estimates there are over
+        60 different raw image formats out there.&#160; Because of this, there are really
+        only a couple of software vendors that can afford to get into the raw image processing
+        game.&#160; It appears that Adobe hopes to level this playing field with this new
+        specification. 
+    </p>
+    <p>
+        To understand the significance of this, it is important that you understand how raw
+        image formats work and why they are different.&#160; When most modern cameras (not
+        using the <a href="http://www.foveon.com/X3_tech.html">Foveon</a> sensor) advertise
+        take a picture, they have a grid of sensors.&#160; These sensors only measure intensity
+        but not color.&#160; To capture color data, a color filter (called a Bayer filter)
+        is placed over the sensor so that each little sensor only sees one color (typically
+        Red, Green and Blue).&#160; That means that the camera only knows one color value
+        at each pixel.&#160; This raw data is then processed using a set of complex algorithms
+        to produce an image that has all the color information for each pixel.&#160; For each
+        pixel in the raw data, these algorithms reconstruct the missing color data by looking
+        at the surrounding pixels and <em>guessing</em>.&#160; Because of this guessing, there
+        are multiple ways to process this raw data -- and there is the possibility that these
+        algorithms and guessing will get better in the future.&#160; Because of this, all
+        serious cameras offer a raw mode where the raw (or close to it) sensor data is saved
+        in a special format and the complex demosaicing algorithms can be done later on a
+        computer. 
+    </p>
+    <p>
+        So, raw images are fundamentally different from regular images in that they store
+        raw sensor data before it has been processed. 
+    </p>
+    <p>
+        The rub comes with the fact that each camera manufacturer has a proprietary raw format
+        (or two or three) and some generally crappy software for dealing with it.&#160; Companies
+        like Adobe (with the Adobe Camera Raw plugin for photoshop) and Capture One have been
+        waging a guerilla war to create products to read all of these formats.&#160; If Adobe
+        can succeed in getting camera manufacturers to implement this format in their cameras,
+        life for many photographers could become much much easier.&#160; But this isn't a
+        sure thing.&#160; Camera manufacturers are very aware of the business benefits of
+        lock in.&#160; They do it with lens mounts and with their software suites.&#160; Canon
+        or Nikon may see their proprietary formats as an advantage in the marketplace.&#160;
+        Nikon even charges for the software to convert its raw format while Canon and most
+        other manufacturers provide it for free. 
+    </p>
+    <p>
+        I haven't gotten a read from my buddies in Microsoft imaging, but I'm hoping that
+        DNG is a huge success.&#160; Assuming that Adobe doesn't try to assert its own proprietary
+        control over the format (Postscript anyone?) it may just let the camera manufacturers
+        concentrate on making cameras and leave the software development up to a third party
+        marketplace. 
+    </p>
+    <p>
+        [update: RichB points out that there is also an open source utility for dealing with
+        raw camera data called <a href="http://www.cybercom.net/~dcoffin/dcraw/">DCRaw</a> and
+        built by Dave Coffin. Apparently Photoshop (and Capture One?) build on some of Dave's
+        work.]
+    </p>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00216.html">Gyros with Dave</a></h2>
         <span class="lead">Wed, Sep 22, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         <a href="http://www.scripting.com">Dave Winer</a> and I hung out tonight and went
@@ -86,7 +157,7 @@
         changed to give that a try.&#160; Post a comment if you have problems.]
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -97,7 +168,7 @@
         <h2><a href="/post/old/00215.html">Camera Lust</a></h2>
         <span class="lead">Tue, Sep 21, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Taking a break from inadvertently feeding the rumor mill, I'd like to point to the
@@ -120,7 +191,7 @@
         and shoot.
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -131,7 +202,7 @@
         <h2><a href="/post/old/00214.html">NY Post article</a></h2>
         <span class="lead">Sun, Sep 19, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Check it the article about Google hiring at the <a href="http://www.nypost.com/business/30438.htm">NY
@@ -145,7 +216,7 @@
         they will miss having me around, won't put the project in jeopardy or anything.
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -156,7 +227,7 @@
         <h2><a href="/post/old/00213.html">Noogler</a></h2>
         <span class="lead">Tue, Sep 14, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         They call new Google employees Nooglers.&#160; That was what I was last week when
@@ -172,7 +243,7 @@
         write code and ship product.&#160; That is about all I can say too :)
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -183,7 +254,7 @@
         <h2><a href="/post/old/00212.html">Trip to Mountain View</a></h2>
         <span class="lead">Mon, Sep 6, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I'm going to be gone all next week doing orientation and training type stuff at Google.&#160;
@@ -193,7 +264,7 @@
         I'll try to collect some impressions and stories to give a taste of the Google experience.
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -204,7 +275,7 @@
         <h2><a href="/post/old/00211.html">The life of the unemployed</a></h2>
         <span class="lead">Sat, Sep 4, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I met with HR yesterday afternoon to turn in my batch and my corporate AmEx card.&#160;
@@ -242,7 +313,7 @@
         at Google on Tuesday, my wife won't let me do that.&#160; 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -253,7 +324,7 @@
         <h2><a href="/post/old/00210.html">Microsoft--; Google&#43;&#43;;</a></h2>
         <span class="lead">Thu, Sep 2, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Tomorrow, friday, is my last day at Microsoft.&#160; I've been there for a little
@@ -309,7 +380,7 @@
         Wish me luck!
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -320,7 +391,7 @@
         <h2><a href="/post/old/00209.html">On Call: A Doctor&#39;s Days and Nights in Residency</a></h2>
         <span class="lead">Wed, Sep 1, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Rachel and I went to a reading from <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0312324839/qid=1094054140/sr=8-1/ref=pd_ka_1/102-5121671-1377764?v=glance&amp;s=books&amp;n=507846">"On
@@ -342,7 +413,7 @@
         <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0312324839/qid=1094054140/sr=8-1/ref=pd_ka_1/102-5121671-1377764?v=glance&amp;s=books&amp;n=507846"><img src="http://static.eightypercent.net/images/OnCall.jpg" /></a> 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -353,7 +424,7 @@
         <h2><a href="/post/old/00208.html">Avalon Changes</a></h2>
         <span class="lead">Mon, Aug 30, 2004</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Everyone is still digesting what exactly is going on with Avalon, WinFS and Longhorn.&#160; <a href="http://radio.weblogs.com/0001011/2004/08/30.html#a8167">Scoble</a> is
@@ -456,54 +527,7 @@
         see in to the future. 
     </p>
 
-</p>
 
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00207.html">16 bit Panoramas</a></h2>
-        <span class="lead">Sat, Aug 28, 2004</span>
-        <div class="post">
-          <p>
-
-    <p>
-        I've polished up my pano building tool so that it now works with large 16 bit panoramas.&#160; 
-    </p>
-    <p>
-        To recap from <a href="http://www.eightypercent.net/Archive/2004/06/25.html">last
-        episode</a>:&#160; <a href="http://www.tawbaware.com/ptasmblr.htm">PTAssembler</a> and <a href="http://www.tawbaware.com/maxlyons/pano12ml.htm">PanoTools</a> are <a href="http://www.luminous-landscape.com/tutorials/digital-panoramas.shtml">really
-        cool</a>&#160;but there are some bugs in PanoTools that prevent it from working with
-        really large images or 16 bit images.&#160; The first is that PanoTools outputs tiff
-        images that use packbits compression.&#160; For some reason Photoshop chokes when
-        loading these files.&#160; The second issue is that PanoTools doesn't know how to
-        create 16 bit photoshop files with layers as photoshop didn't <em>do</em> 16 bit layers
-        when it was written.&#160; I've worked around this with my latest version of PanoTiffToPSD. 
-    </p>
-    <p>
-        It does the following: 
-    </p>
-    <ol>
-        <li>
-            Optionally uses libtiff to reencode a set of tiff&#160;images with no compression.&#160;
-            To save disk space, you can choose to overwrite the original images or do the conversion
-            and leave the original images alone.&#160; The converted version will be deleted after
-            being used by photoshop. 
-        </li>
-        <li>
-            Loads up&#160;each of the tiff files and drives Photoshop (via IDispatch COM interfaces
-            for you dorks out there) to load up each file and move it to a layer in a new image. 
-        </li>
-    </ol>
-    <p>
-        Check it out here: <a href="http://static.eightypercent.net/stuff/PanoTiffToPSD/PanoTiffToPSD-exe-1.1.zip">Binaries</a>, <a href="http://static.eightypercent.net/stuff/PanoTiffToPSD/PanoTiffToPSD-src-1.1.zip">Source</a> and <a href="http://static.eightypercent.net/stuff/PanoTiffToPSD/PanoTiffToPSD-License-1.1.txt">License</a> (it's
-        free).&#160; It is written in C# and requires the&#160;.Net&#160;Runtime.&#160; That
-        is available&#160;at <a href="http://www.windowsupdate.com">windowsupdate</a>. 
-    </p>
-
-</p>
 
         </div>
       </div>
@@ -527,7 +551,7 @@
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             

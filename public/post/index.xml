@@ -7,8 +7,166 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
-    <lastBuildDate>Wed, 04 Nov 2015 10:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2016 09:54:29 -0700</lastBuildDate>
     <atom:link href="http://www.eightypercent.net/post.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Recipe: Docker Logs → Google Stackdriver Logging</title>
+      <link>http://www.eightypercent.net/post/docker-gcplogs.html</link>
+      <pubDate>Sun, 29 May 2016 09:54:29 -0700</pubDate>
+      
+      <guid>http://www.eightypercent.net/post/docker-gcplogs.html</guid>
+      <description>
+
+&lt;p&gt;Docker logs are a pain to deal with.  If you don&amp;rsquo;t do anything they&amp;rsquo;ll fill up
+your disk&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.  In addition logs are easily lost if you need
+to delete and recreate a container.&lt;/p&gt;
+
+&lt;p&gt;Google Cloud Platform has a &lt;a href=&#34;https://cloud.google.com/logging/docs/&#34;&gt;debug log
+service&lt;/a&gt; that has evolved from the
+(excellent) logging system built in to App Engine.  With the acquisition and
+integration of Stackdriver it looks like this has been rebranded/merged.&lt;/p&gt;
+
+&lt;p&gt;Recently a new &lt;a href=&#34;https://docs.docker.com/engine/admin/logging/gcplogs/&#34;&gt;&lt;code&gt;gcplogs&lt;/code&gt; Docker log
+driver&lt;/a&gt; was merged (by
+&lt;a href=&#34;https://github.com/docker/docker/pull/18766&#34;&gt;Mike Danese&lt;/a&gt;) and it looks like it
+is available in Docker 1.11.  Getting it up and working is pretty easy but there
+are couple of gotchas.&lt;/p&gt;
+
+&lt;h2 id=&#34;service-account-scopes:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;Service Account Scopes&lt;/h2&gt;
+
+&lt;p&gt;First, I did this on a GCE instance that already had the right service account scopes set up.  It &lt;a href=&#34;https://developers.google.com/identity/protocols/googlescopes#loggingv2beta1&#34;&gt;looks like&lt;/a&gt; you need the &lt;code&gt;https://www.googleapis.com/auth/logging.write&lt;/code&gt; or &lt;code&gt;https://www.googleapis.com/auth/cloud-platform&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; scopes.&lt;/p&gt;
+
+&lt;p&gt;My instance already had the &lt;code&gt;logging.write&lt;/code&gt; scope so I was all set.  I was able to tell by looking at the instance in the cloud console.  Or you can use gcloud (as below).  If you don&amp;rsquo;t see the right scope here you&amp;rsquo;ll need to restart your instance or pretend you aren&amp;rsquo;t on GCE.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gcloud compute instances describe --format=&#39;yaml(serviceAccounts[].scopes[])&#39; my-instance
+serviceAccounts:
+- scopes:
+  - https://www.googleapis.com/auth/compute
+  - https://www.googleapis.com/auth/devstorage.read_write
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/userinfo.email
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you aren&amp;rsquo;t on GCE, you&amp;rsquo;ll want to get a service account key and use that.  I haven&amp;rsquo;t done this but it is documented as part of the Google Cloud &lt;a href=&#34;https://developers.google.com/identity/protocols/application-default-credentials#howtheywork&#34;&gt;Application Default Credentials&lt;/a&gt; system.&lt;/p&gt;
+
+&lt;h2 id=&#34;activate-the-logging-api:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;Activate the Logging API&lt;/h2&gt;
+
+&lt;p&gt;You need to &amp;ldquo;enable&amp;rdquo; the logging API before you can use it.  The fact that you
+have to manually toggle APIs is probably a historical artifact at GCP.  Just go
+&lt;a href=&#34;https://console.developers.google.com/apis/api/logging/overview&#34;&gt;here&lt;/a&gt; and flip
+it on.  Make sure you are pointed to the right project.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t do this first you may tickle &lt;a href=&#34;https://github.com/docker/docker/issues/21704#issuecomment-222365187&#34;&gt;a bug in
+Docker/aufs&lt;/a&gt;
+that will make the container un-deletable.&lt;/p&gt;
+
+&lt;h2 id=&#34;launch-a-container:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;Launch a container&lt;/h2&gt;
+
+&lt;p&gt;Now just launch a container and have it log to GCP.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run -d --name my-container \
+  --log-driver=gcplogs \
+  --log-opt gcp-log-cmd=true \
+  [...]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also set gcplogs as the default for all containers in the daemon but I
+haven&amp;rsquo;t tried that yet.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-logs-on-cloud-console:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;View Logs on Cloud Console&lt;/h2&gt;
+
+&lt;p&gt;You can now view these logs on the &lt;a href=&#34;https://console.cloud.google.com/logs?project=jbeda-personal&amp;amp;service=custom.googleapis.com&amp;amp;key1=&amp;amp;key2=&amp;amp;logName=&#34;&gt;cloud
+console&lt;/a&gt;.
+Again, make sure you are pointed at the right project.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    &lt;a href=&#34;http://www.eightypercent.net/images/gcp-log-ui.png&#34;&gt;
+        &lt;img src=&#34;http://www.eightypercent.net/images/gcp-log-ui.png&#34; /&gt;
+    &lt;/a&gt;
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Google Cloud Console Logging&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;To be honest, there is a lot of structure here and the web UI isn&amp;rsquo;t as smooth as
+it could be.  You can &lt;em&gt;filter&lt;/em&gt; on these fields but you can&amp;rsquo;t control what is
+shown.&lt;/p&gt;
+
+&lt;p&gt;You can
+&lt;a href=&#34;https://cloud.google.com/logging/docs/view/advanced_filters#introduction&#34;&gt;filter&lt;/a&gt;
+which events are shown.  This bit is a bit confusing.  It looks like there are 2
+filter UIs.  I was using the &amp;ldquo;advanced&amp;rdquo; filter UI that you can get to from the
+little down arrow icon to the right of the filter box.  The easiest thing to
+filter on is the container name like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;structPayload.container.name=&amp;quot;/my-container&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In addition, there is a v1 syntax and a v2 syntax.  I think this box uses the v1
+syntax.  It isn&amp;rsquo;t clear how deep the differences are.&lt;/p&gt;
+
+&lt;h2 id=&#34;view-logs-from-the-command-line:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;View logs from the command line&lt;/h2&gt;
+
+&lt;p&gt;Because of the lack of control on which fields are show in the log viewer, it is
+probably best to view logs from the command line.  Note that this is beta level
+in &lt;code&gt;gcloud&lt;/code&gt; so the examples here may break in the future.&lt;/p&gt;
+
+&lt;p&gt;First, install the beta &lt;code&gt;gcloud&lt;/code&gt; tools if you don&amp;rsquo;t already have them.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gcloud components install beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you can list the logs easily using &lt;a href=&#34;https://cloud.google.com/sdk/gcloud/reference/beta/logging/read&#34;&gt;&lt;code&gt;gcloud beta logging
+read&lt;/code&gt;&lt;/a&gt;.  I
+bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;function gcloud-docker-logs {
+  gcloud beta logging read \
+    --order ASC \
+    --format=&#39;value(timestamp, jsonPayload.data)&#39; \
+    &amp;quot;jsonPayload.container.name=\&amp;quot;/$1\&amp;quot;&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Decoder ring:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--order ASC&lt;/code&gt; makes it look like you are &lt;code&gt;cat&lt;/code&gt;ing a log file.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--format=&#39;value(timestamp, jsonPayload.data)&#39;&lt;/code&gt; picks the fields we want to show.  This is just the timestamp and the log line.  For some reason in the web UI this is called &lt;code&gt;structPayload&lt;/code&gt; but here it is &lt;code&gt;jsonPayload&lt;/code&gt;.  Perhaps this is v1 vs v2 of the API and filter syntax?&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;jsonPayload.container.name=\&amp;quot;/$1\&amp;quot;&amp;quot;&lt;/code&gt; is the filter to apply.  Here we just slap in the name.&lt;/li&gt;
+&lt;li&gt;By default this&amp;rsquo;ll just return logs from the last day.  To limit in number or time look at the &lt;a href=&#34;https://cloud.google.com/sdk/gcloud/reference/beta/logging/read&#34;&gt;flags to &lt;code&gt;gcloud beta logging read&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;feedback-for-product-groups:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;Feedback for product groups&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Docker logging should have rotation by default.  The fact that out of the box it fills up your disk is horrible.&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;m sad that you still can&amp;rsquo;t change the scopes on a GCE instance while it is running.  This has been in the bug database since scopes were first added.&lt;/li&gt;
+&lt;li&gt;There is a bunch of structure in that isn&amp;rsquo;t making it into the logging system.  For instance, severity isn&amp;rsquo;t reflected (at least put stderr as WARN?).  It also might be good to hoist the instance name and container name into the primary and secondary keys for logging.  &lt;code&gt;custom.googleapis.com/primary_key: &amp;quot;primary_key&amp;quot;&lt;/code&gt; looks like something was left stubbed out.&lt;/li&gt;
+&lt;li&gt;The logging UI should let you select what to show in addition to filtering the events.  As more structure gets added the simple JSON serialization that is there now won&amp;rsquo;t work.  In addition, that JSON serialization seems to be non-deterministic with respect to field order.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gcloud beta logging read&lt;/code&gt; should have a &amp;ldquo;follow&amp;rdquo; mode so that you can tail the logs.  This mode exists in the UI.&lt;/li&gt;
+&lt;li&gt;The GCP logging filter syntax is confusing and inconsistent.  Simple vs advanced. v1 vs v2.&lt;/li&gt;
+&lt;li&gt;Why am I the one writing this guide? I don&amp;rsquo;t work for Google anymore.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;It isn&amp;rsquo;t that hard to set up log rotation but you have to do it.  And after you do, &lt;code&gt;docker logs&lt;/code&gt; can&amp;rsquo;t see old logs.  Example on how to do that &lt;a href=&#34;https://github.com/jbeda/docker-postfix-forwarder#gotcha-logging&#34;&gt;here&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;This scope is new since from when I worked at Google. I &lt;em&gt;think&lt;/em&gt; it is a &amp;ldquo;catch all&amp;rdquo; scope across many GCP services.  Kind of like root.  I can&amp;rsquo;t find any documentation on it specifically.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Taking a Leap: Entrepreneur in Residence at Accel</title>
@@ -386,7 +544,7 @@
       <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00274.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         I haven&#39;t updated my blog in forever and I&#39;m probably going to abandon my homebrew
@@ -439,7 +597,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         driver.&amp;#160; It wasn&#39;t as cheap but at least it works with a true open driver.&amp;#160; 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -449,7 +607,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Thu, 03 Aug 2006 09:56:19 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00273.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Miguel de Icaza says &lt;a href=&#34;http://tirania.org/blog/archive/2006/Aug-02.html&#34;&gt;&#34;Avalon
@@ -489,7 +647,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         be something interesting.&amp;#160; The only question, when will&amp;#160;it ship?
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -499,7 +657,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Wed, 19 Jul 2006 10:07:05 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00272.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Coming in this morning, I heard a&amp;#160;&lt;a href=&#34;http://www.npr.org/templates/story/story.php?storyId=5567184&#34;&gt;segment
@@ -521,7 +679,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         solved, but, failing that, at least the county is trying to manage it. 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -531,7 +689,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Fri, 14 Jul 2006 14:15:05 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00271.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Check &lt;a href=&#34;http://n.nfshost.com/1.html&#34;&gt;this&lt;/a&gt; out.&amp;#160; Get to 30.&amp;#160; Your
@@ -541,7 +699,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         (I just finished.) 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -551,7 +709,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Tue, 04 Jul 2006 08:50:24 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00270.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Happy fourth!
@@ -572,7 +730,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         You can also check out some other custom sewing she does at &lt;a href=&#34;http://www.stitchessosweet.com&#34;&gt;www.stitchessosweet.com&lt;/a&gt;.&amp;#160; 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -582,7 +740,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Mon, 19 Jun 2006 20:28:01 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00269.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Scott Ludwig and I have released a new version of&amp;#160;his python based backup script,
@@ -598,7 +756,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         Details &lt;a href=&#34;http://www.scottlu.com/2006/06/link-backup-v-06.html&#34;&gt;here&lt;/a&gt;.
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -608,7 +766,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Sat, 03 Jun 2006 20:59:37 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00268.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         I haven&#39;t been posting anything lately because I&#39;ve been so busy with work and Annie.&amp;#160;
@@ -632,7 +790,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         &lt;a href=&#34;http://static.eightypercent.net/photos/Heron-small.jpg&#34;&gt;&lt;img src=&#34;http://static.eightypercent.net/photos/Heron-thumb.jpg&#34; /&gt;&lt;/a&gt; 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -642,7 +800,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Sat, 15 Apr 2006 14:12:37 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00267.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         Between photos of Annie, other photography and music, I have quite a bit of data.&amp;#160;
@@ -771,7 +929,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         [April 16, 2006: Edited to fix Ubuntu version number.]
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -781,7 +939,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
       <pubDate>Sat, 01 Apr 2006 18:21:45 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00266.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         If you haven&#39;t heard yet, we shipped a new version of the Google Talk client to a
@@ -799,30 +957,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         out our &lt;a href=&#34;https://services.google.com/inquiry/talk_suggest&#34;&gt;suggestion form&lt;/a&gt;.
     &lt;/p&gt;
 
-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>New Jingle Spec</title>
-      <link>http://www.eightypercent.net/post/old/00265.html</link>
-      <pubDate>Sat, 01 Apr 2006 18:18:49 -0800</pubDate>
-      
-      <guid>http://www.eightypercent.net/post/old/00265.html</guid>
-      <description>&lt;p&gt;
 
-    &lt;p&gt;
-        I was going to stay away from all of the April 1st shenanigans, but couldn&#39;t pass
-        up linking to the new Jingle transport spec that Peter Saint-Andre put together: 
-    &lt;/p&gt;
-    &lt;p&gt;
-        &lt;a href=&#34;http://www.jabber.org/jeps/jep-0183.html&#34;&gt;JEP-0183: Jingle Telepathy Transport&lt;/a&gt; 
-    &lt;/p&gt;
-    &lt;p&gt;
-        Nice one! 
-    &lt;/p&gt;
-
-&lt;/p&gt;
 </description>
     </item>
     

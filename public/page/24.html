@@ -49,18 +49,100 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00046.html">Code review</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Sun, Feb 23, 2003</span>
+              
+<p>I have the "comparison before saving" stuff working and that is cutting down my upload times dramatically.  This is almost like a real blogging tool now.  However, one function -- called TransformAndSaveDoc -- turned out really nasty.  This function transforms an xml document with an xslt style sheet.  It then compares the result to what is already on disk and only writes the new result to disk if the new version is different from the old version.
+<p>Suggestions for making this tighter?  Is there some functionality (memcmp?) that I'm missing in the .Net framework?  Since I don't have comments working, send mail to <a href="mailto:eightypercent@bedafamily.com">eightypercent@bedafamily.com</a> and I'll post the best comments up here with credit and eternal thanks.
+<pre>
+        private void TransformAndSaveDoc(XslTransform xslt, XmlDocument xmlSource, string fileName)
+        {           
+            using (MemoryStream memstrm = new MemoryStream())
+            {
+                bool fFileDifferent = false;
+
+                xslt.Transform(xmlSource, null, memstrm);
+
+                FileInfo fi = new FileInfo(fileName);
+
+                // Check for simple things first
+                if (!File.Exists(fileName) || fi.Length != memstrm.Length)
+                    fFileDifferent = true;
+
+                // Actually compare the file to the stream
+                if (!fFileDifferent)
+                {
+                    Byte[] buffer1 = new Byte[8096];
+                    Byte[] buffer2 = new Byte[8096];
+
+                    // compare the existing file with the memory stream
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+                        
+                        int size1 = 0, size2 = 0;
+                        while(  !fFileDifferent 
+                            &&  (0 != (size1 = memstrm.Read(buffer1, 0, 8096))))
+                        {
+                            size2 = fileStream.Read(buffer2, 0, 8096);
+                            Debug.Assert(size1 == size2);
+                            
+                            for (int i = 0; i < size1; i++)
+                            {
+                                if (buffer1[i] != buffer2[i])
+                                {
+                                    fFileDifferent = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Write that puppy out
+                if (fFileDifferent)
+                {
+                    using (FileStream fileStream = File.Open(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+                    {
+                        memstrm.Seek(0, SeekOrigin.Begin);
+
+                        Byte[] buffer = new Byte[8096];
+                        int size;
+                        while(0 != (size = memstrm.Read(buffer, 0, 8096)))
+                        {
+                            fileStream.Write(buffer, 0, size);
+                        }
+                    }
+                }
+            }
+        }
+</pre>
+
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00046.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00045.html">Untitled #45</a>
         </h2>
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Feb 23, 2003</span>
-              <p>
+              
 <p>I have the dictionary done so now I don't upload files that haven't changed.  Now all I have to do is change my generation code so that it doesn't actually write to files that haven't changed.
 <p>I could do this by making sure that I track which data files have changed and figuring out which output files that means that I have to generate.
 <p>Or, I could just always generate every output file, but compare it to what is on disk before writing it.  If it is exactly the same as what is already there, I can just throw away my in memory copy and not write anything.
 <p>Radio took the first approach, except it didn't get it completely right.  If you added a new entry in Radio, it wouldn't update any of the archive pages.  The problem is that you would always see links going further back on the calendar but never going forward, as it would never update one of the archive pages.  With the second approach it may take a little longer to generate the site,  but you'll be sure to update everything that needs to be updated.
 <p>I think that I'm going to go with the second approach.  I can adapt and implement the first as needed (perhaps on a more granular level.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00045.html"></a>
@@ -76,12 +158,12 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Feb 23, 2003</span>
-              <p>
+              
 <P>If you see this then I uploaded everything using my new FTP support.
 <P>Right now I just upload everything every time.  However, it shouldn't be difficult for me to keep a dictionary of file times so I can keep track of what is new since the last upload.
 <P>I also need to do the uploading on a different thread and report status.
 
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00044.html"></a>
@@ -97,11 +179,11 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sat, Feb 22, 2003</span>
-              <p>
+              
 <P>I'm back in Boise and Chris is still kicking my ass with BlogX.
 <P>I got mail from <a href="http://gary.burd.info/">Gary Burd</a> that my RSS feed was valid.  The problem was that I was using relative URLs in some of my entries.  I've fixed up the problem and I'll be sure to keep an eye on that in the future.
 <P>At least I'm putting out good XML, unlike Radio...
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00043.html"></a>
@@ -117,10 +199,10 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Wed, Feb 19, 2003</span>
-              <p>
+              
 <P><a href="http://www.jelovic.com/weblog/index.htm">Dejan Jelovic</a> sent me some mail pointing to his <a href="http://www.jelovic.com/ftplib/">managed wrapper on wininet</a>.
 <P>This looks pretty cool and wininet is pretty well tested, if a little quirky.  However, I think that I'm going to do my own thing just for the sake of doing it.  <a href="http://michaelw.net/Articles/Whywere-inventtheweblogwh.html">I'm having fun</a> with the little victories of doing something pretty fundamental from the ground up.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00042.html"></a>
@@ -136,12 +218,12 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Wed, Feb 19, 2003</span>
-              <p>
+              
 <P><a href="http://www.simplegeek.com/permalink.aspx?guid=b6b07998-429a-4bbf-a49e-8fa7f9af4a30">Chris</a> recommends <a href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&isbn=0375756787&itm=1">The Rise of Theodore Roosevelt</a>.  I'm reading this right now and probably about 3/4 of the way done.  I'm also amazed at the productivity and veriety of experiences this man had at so young an age.  It really drives me to get off of my ass and do something.
 <P>A few weeks ago I finished <a href="http://search.barnesandnoble.com/booksearch/isbnInquiry.asp?userid=68CELOCOM7&isbn=0385495404&itm=1">The First American</a> by H. W. Brands.  This is a biography of Benjamin Franklin.  I'd also highly recommend it.  Again, this is someone who went out and created his own destiny.
 <P>In reading these two back to back, you can't help but see the contrasts.  Roosevelt was the jock intellectual, Franklin was the geek of his time.
 <P>I love american history.  In college I took quite a few courses on 20th century american history.  In the last couple of years I've started reaching back a little further.  It is just so amazing to me to make the connection between now and say, 100 years ago.  When you start reading these histories, time tends to compress and a century is a lot closer than it appears.  Hell, a little over <S>100</S>150 years ago we were invading Mexico (Mexican/American War).
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00041.html"></a>
@@ -157,12 +239,12 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Tue, Feb 18, 2003</span>
-              <p>
+              
 <P>I'm busy getting my FTP support up and working.  Learning all of this new stuff is fun.  I'm working directly off of <a href="http://www.faqs.org/rfcs/rfc959.html">RFC 959</a> and looking at the debug log stuff in SmartFTP.
 <P>So far I can connect, log in, create a passive connection and list the root directory.  Once I have enough support to upload a file (real close now) I'll be set.  I probably have another hour or two to get that working.
 <P>However, I'm going to be travelling back to Seattle the rest of this week so I won't be able to work on my little tool here.
 
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00040.html"></a>
@@ -178,10 +260,10 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Tue, Feb 18, 2003</span>
-              <p>
+              
 <P>So, <a href="http://michaelw.net">MichaelW</a> invited me to the Montreal F1 races this summer.  I would love to be able to go but it is just too much money. I haven't been at Microsoft as long as Michael has...
 <P>Instead, I'm in the process of trying to sign up to go on <a href="http://luminous-landscape.com/workshops/sk-dv-work.shtml">this photo workshop</a>, led by Steve Kossack.  This will be the first of this type of trip that I will have gone on.  It still isn't cheap but looks to be in line with similar excursions.  It also isn't <a href="http://luminous-landscape.com/workshops/africa-ws.shtml">this trip</a>.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00039.html"></a>
@@ -197,9 +279,9 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Tue, Feb 18, 2003</span>
-              <p>
+              
 <P>Okay, I can't be the only one who was freaked out to see <a href="http://finance.yahoo.com/q?s=MSFT&d=c&k=c4&t=5d">MSFT</a> trading at 24 and change this morning.  I breathed a sigh of relief when I remembered the split.  So far, we've gotten a nice boost today...
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00038.html"></a>
@@ -215,33 +297,13 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Feb 16, 2003</span>
-              <p>
+              
 <P>Ha, I just read Michaels <a href="http://michaelw.net/Articles/Idontgettheweblogcalendar.html">article</a> on why he considers calendars on weblogs useless.  Funny I read this right after implementing mine.
 <P>Well, the reason that I did mine is that I want my archives to be reachable in some fashion -- perhaps if only for google.  A search or keyword "related" section would be more usable, for sure.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00037.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00036.html">Cool calendar, huh?</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Sun, Feb 16, 2003</span>
-              <p>
-<P>I have a calendar that now points to my archives.  I think that I'm at feature parity with what I was using from Radio, at least with respect to blog generation.  I didn't use any tables in my layout, so let me know if things don't look good in a browser other than IE for windows.
-<P>I think that I'm done for tonight.  Next I'm going to work on an FTP upstreamer so that I can just hit a button (or work it on a timer/file system change notification) to upload the site instead of using <a href="http://www.smartftp.com">SmartFTP</a> to upload manually.
-<P>In some ways this would be a lot easier with a server side solution backed up to SQL server.  I'm tempted to switch over, but I really do like the idea of client side+FTP.
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00036.html"></a>
         </div>
       </div>
     </div>
@@ -263,7 +325,7 @@
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             

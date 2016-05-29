@@ -16,7 +16,7 @@
       <pubDate>Mon, 12 Dec 2005 23:29:41 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00259.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         For serious portraits or low light situations, we&#39;ve been taking lots of pictures
@@ -97,7 +97,7 @@ set CL=%CL% -o %~n1.mpg %1
         Finally, check out a cute video of Annie &lt;a href=&#34;http://static.eightypercent.net/stuff/MVI_0478.mpg&#34;&gt;here&lt;/a&gt;. 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     

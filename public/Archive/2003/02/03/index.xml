@@ -16,13 +16,13 @@
       <pubDate>Mon, 03 Feb 2003 00:04:18 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00024.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;Radio screwed the pooch and deleted all of my data.  That kind of put a rush on my own software.&lt;/P&gt;
 
 &lt;P&gt;Well, here it is.  It isn&#39;t much right now but I can load up my data and generate an index page and RSS feed.  I have to generate the xml files for entries by hand right now, but that will be one of the next things that I implement.  After that, I&#39;ll generate an archive.  The last thing I have to do before it will be usable is do an FTP upstreaming solution (similar to Radio, but one that doesn&#39;t hang)&lt;/P&gt;
 
 &lt;P&gt;Like I said -- .Net killed the Radio star&lt;/P&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     

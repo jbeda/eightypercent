@@ -16,7 +16,7 @@
       <pubDate>Mon, 03 Mar 2003 10:04:00 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00056.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;&lt;a href=&#34;http://www.simplegeek.com/permalink.aspx/55cdfe57-82bf-47aa-9beb-5dc06d966724&#34;&gt;Bitch&lt;/a&gt;, &lt;a href=&#34;http://www.simplegeek.com/permalink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268&#34;&gt;bitch&lt;/a&gt;, bitch.  Okay, Chris, what &lt;i&gt;do&lt;/i&gt; you want in the FTP upstreamer?  I don&#39;t think that Radio&#39;s upstreamer deletes either.  Here is what I can do easily:
 &lt;ul&gt;
 &lt;li&gt;CD to a directory.  Throw if the dir isn&#39;t there.
@@ -32,7 +32,7 @@
 &lt;/ul&gt;
 &lt;p&gt;The only thing that isn&#39;t easy and that will probably take quite a while to get right is parsing the output of the directory listing.  I don&#39;t have a bunch of servers to test this against to make sure it will work.
 &lt;p&gt;As for the upstreamer itself, I&#39;d rather have it not try and sync the stuff on the server (and hence delete stuff) because I&#39;d be afraid of loosing data.  For instance, I upstream into the root of my site and I have all sorts of subdirs off of that.  I&#39;m setting up a weblog for Rachel on eightypercent.net and her root will be a subdir.  I don&#39;t want to clobber her stuff whenever I upload my site.
-&lt;/p&gt;
+
 </description>
     </item>
     

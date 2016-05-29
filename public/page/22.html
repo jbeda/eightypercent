@@ -49,12 +49,33 @@
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
         <h2>
+          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00066.html">FTP Upstreamer a go</a>
+        </h2>
+        <div class="readmore">
+          <div class="post">
+              <span class="lead">Tue, Mar 11, 2003</span>
+              
+<p>I've gotten some nibbles from at least 4 people on the upstreamer.  That isn't all 7 of you out there but I guess this will do :)
+<p>I'll start on it this weekend or sometime early next week.  Hopefully it will go fast as I already have the FTP code.
+<p><a href="http://gary.burd.info">Gary Burd</a> suggested a combo of ssh, rsync and a crontab entry. It looks like you can <a href="http://optics.ph.unimelb.edu.au/help/rsync/">install RSync on windows</a> if you try hard enough. However, I don't have that much control over all of the machines that I want to upload to, so this looks like a non-starter -- at least for me.  Getting a more secure connection would be nice, though.
+<p>I also was thinking about taking advantage of the shadow copy stuff in XP but it looks like you need to sign an NDA to get at that SDK.  Oh well.
+
+
+          </div>
+          <a class="readmore-click" class="text-center" href="/post/old/00066.html"></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <h2>
           <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00065.html">FTP Upstreamer project</a>
         </h2>
         <div class="readmore">
           <div class="post">
               <span class="lead">Tue, Mar 11, 2003</span>
-              <p>
+              
 <P>I want to gauge interest in a new project.  How many of you out there (and I know there are something like 7 of you :) would actually use a utility that did the following:
 <ul><li>Had a list of local directories and FTP servers/paths
 <li>Monitored those dirs (timer or file change notifications) for changes.
@@ -68,7 +89,7 @@
 
 <P>I would include source and an installer for this guy.
 <P>If you are interested, email me at <a href="mailto:eightypercent at bedafamily.com">eightypercent at bedafamily.com</a> and I'll think about putting something together.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00065.html"></a>
@@ -84,9 +105,9 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Mar 9, 2003</span>
-              <p>
+              
 <p>Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00064.html"></a>
@@ -102,7 +123,7 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Mar 9, 2003</span>
-              <p>
+              
 <p>In talking with <a href="http://ocw.abf.tulane.edu/blog/">Jorge</a> about how he does his site, he pointed me to his XSLT source.  I'll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven't discovered yet.  Here is one of them: <a href="http://www.w3.org/TR/xslt#dt-attribute-value-template">http://www.w3.org/TR/xslt#dt-attribute-value-template</a>.  This is a huge keystroke saver.  It lets me go from this:
 <pre>
 &lt;A class="ArchiveLink"&gt;
@@ -121,7 +142,7 @@
 &lt;/A&gt;
 </pre>
 <p>Very cool!
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00063.html"></a>
@@ -137,7 +158,7 @@
         <div class="readmore">
           <div class="post">
               <span class="lead">Sun, Mar 9, 2003</span>
-              <p>
+              
 <p><a href="http://ocw.abf.tulane.edu/blog/">Jorge Curioso</a> <a href="http://ocw.abf.tulane.edu/blog/?item=63182667125303">posted on his blog</a> some comments around dealing with dates in RSS and the .Net framework.  I figure I'd put some more detail up here on how I handle dates in JoeBlogger.
 <ol>
 <li>I store both GMT and local time when creating an entry.  I should probably keep a "last updated" time too but I haven't done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
@@ -208,7 +229,7 @@ And then use that in the output like this:
 
 <p>It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having "First published" and "Last changed" times might be interesting also.  Perhaps I'll write something up at some point.
 
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00062.html"></a>
@@ -224,9 +245,9 @@ And then use that in the output like this:
         <div class="readmore">
           <div class="post">
               <span class="lead">Fri, Mar 7, 2003</span>
-              <p>
+              
 <a href="http://neelbubba.com/Play/">Bubba</a> got all the mad <a href="http://www.gamecubicle.com/specials-mario_twins_shiggidy.htm">links</a>.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00061.html"></a>
@@ -242,11 +263,11 @@ And then use that in the output like this:
         <div class="readmore">
           <div class="post">
               <span class="lead">Fri, Mar 7, 2003</span>
-              <p>
+              
 MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<br>
 <a href="http://michaelw.net/Articles/YesIhaveanRSSfeed.html"/>http://michaelw.net/Articles/YesIhaveanRSSfeed.html</a>
 <p>And the latest version of Syndirella can eat his dates but he still has it all screwed up.  I think that he is outputting GMT for when he started the post but marking the date with EST.  Then, when displaying it on his HTML site, he is outputting true EST for the last change of the post.  Times zones and weblogs are hard.  It sounds like they are even harder in CityDesk.  Dates and times are something that everyone stumbles on wrt weblog software..  I know that <a href="http://www.simplegeek.com">ChrisAn</a> has had some problems too.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00060.html"></a>
@@ -262,10 +283,10 @@ MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<b
         <div class="readmore">
           <div class="post">
               <span class="lead">Fri, Mar 7, 2003</span>
-              <p>
+              
 <p>My wife, Rachel, has her blog up and running.  It has absolutely nothing whatsoever to do with computers or code.  Instead of being a computer dork, she is going to be a medical dork!  She is going to tell funny stories from the hospital.
 <p><a href="http://www.eightypercent.net/codeblue">http://www.eightypercent.net/codeblue</a>
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00059.html"></a>
@@ -281,9 +302,9 @@ MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<b
         <div class="readmore">
           <div class="post">
               <span class="lead">Thu, Mar 6, 2003</span>
-              <p>
+              
 <a href="http://www.fastcompany.com/online/68/richlife.html">How To Lead a Rich Life</a> from <a href="http://www.neelbubba.com/Play/Archive/2003_03_01_index.php#90208936">Bubba</a>.  I particularly like the happiness price list.
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00058.html"></a>
@@ -299,44 +320,12 @@ MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<b
         <div class="readmore">
           <div class="post">
               <span class="lead">Wed, Mar 5, 2003</span>
-              <p>
+              
 <a href="http://home.att.net/~slugbutter/evil/" target="new"><img src="http://home.att.net/~slugbutter/evil/neutral.jpg" border=0></a><br><a href="http://home.att.net/~slugbutter/evil/" target="new">How evil are <i>you</i>?</a>
-</p>
+
 
           </div>
           <a class="readmore-click" class="text-center" href="/post/old/00057.html"></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2>
-          <span class="glyphicon glyphicon-remove-sign postmark" aria-hidden="true"></span><a href="/post/old/00056.html">More FTP stuff</a>
-        </h2>
-        <div class="readmore">
-          <div class="post">
-              <span class="lead">Mon, Mar 3, 2003</span>
-              <p>
-<p><a href="http://www.simplegeek.com/permalink.aspx/55cdfe57-82bf-47aa-9beb-5dc06d966724">Bitch</a>, <a href="http://www.simplegeek.com/permalink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268">bitch</a>, bitch.  Okay, Chris, what <i>do</i> you want in the FTP upstreamer?  I don't think that Radio's upstreamer deletes either.  Here is what I can do easily:
-<ul>
-<li>CD to a directory.  Throw if the dir isn't there.
-<li>[done] Ensure a directory.  Try my best to make sure that a directory (and the path up to it) exists.
-<li>Delete a directory.  The server will probably return an error if there are files in it.  I will throw.
-<li>Get the current directory.
-<li>Move up a direcotry.
-<li>[done] Upload a file into the current directory.
-<li>Download a file in the current directory and return a stream.  It would be easiest to buffer the entire file in memory.
-<li>Delete a file in the current directory.
-<li>[done] Return a text string with the current directory listing.
-<li>Call SYST and return whatever the system gives us.  This might help detect the type of system on the other end.
-</ul>
-<p>The only thing that isn't easy and that will probably take quite a while to get right is parsing the output of the directory listing.  I don't have a bunch of servers to test this against to make sure it will work.
-<p>As for the upstreamer itself, I'd rather have it not try and sync the stuff on the server (and hence delete stuff) because I'd be afraid of loosing data.  For instance, I upstream into the root of my site and I have all sorts of subdirs off of that.  I'm setting up a weblog for Rachel on eightypercent.net and her root will be a subdir.  I don't want to clobber her stuff whenever I upload my site.
-</p>
-
-          </div>
-          <a class="readmore-click" class="text-center" href="/post/old/00056.html"></a>
         </div>
       </div>
     </div>
@@ -358,7 +347,7 @@ MichaelW <i>does</i> have an RSS feed -- he just makes it really hard to find:<b
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             

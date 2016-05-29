@@ -16,12 +16,12 @@
       <pubDate>Thu, 09 Jan 2003 04:09:14 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00001.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;P&gt;I&#39;ve finally beaten radio into submission and have it uploading to my domain.&lt;/P&gt;
 &lt;P&gt;It uploads in batches of 25 files and for some reason was stalling and taking forever.&amp;nbsp; After tweaking stuff to try to take care of the staling problem it looks like it might be working now...&lt;/P&gt;
 &lt;P&gt;In the end I ended up debugging through the very strange scripting language that they use.&amp;nbsp; It is a&amp;nbsp;wacky mix between a really primitive &lt;A href=&#34;http://www.omniscium.com/nerdy/ip/&#34;&gt;intentional programming&lt;/A&gt; (with the outlining) and pascal.&amp;nbsp; The environment for editing and debugging this stuff just seems arcane.&amp;nbsp; This just screams for .Net....&lt;/P&gt;
 &lt;P&gt;&lt;EM&gt;.Net killed the Radio star..&lt;/EM&gt;&lt;/P&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     

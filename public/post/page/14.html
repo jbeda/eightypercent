@@ -48,10 +48,164 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/old/00146.html">scRGB as Unicode</a></h2>
+        <span class="lead">Thu, Oct 23, 2003</span>
+        <div class="post">
+          
+
+    <p>
+        <a href="http://www.joelonsoftware.com/items/2003/10/10.html"><font color="#336699">Joel's
+        post</font></a> a couple of days ago reminded me of a conversation I had about a year
+        ago with <a href="http://www.google.com/search?hl=en&amp;lr=&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=michael+stokes+color"><font color="#336699">Michael
+        Stokes</font></a>, a PM in our group at the time dealing with color.&#160; Specifically,
+        we were talking about how color profiles work and how scRGB makes the world a better
+        place. 
+    </p>
+    <p>
+        I'm going to do my best to explain this, but I'm simplifying some of it and I can't
+        claim to be a color expert.&#160; There are many people out there who know much more
+        about this than I do, but I don't think I've seen any body present this to the average
+        programmer.&#160; It goes like this -- there is color data (similar to an 8 bit char)
+        and there is the color profile that describes how to interpret that data (similar
+        to a codepage).&#160; The combination of the&#160;color&#160;and the color profile
+        give you everything you need, in theory,&#160;to get accurate color. 
+    </p>
+    <p>
+        There is a simple standard color space called sRGB which is a formalization of the
+        ad hoc "standard" that has developed over the years.&#160; It is a color space that
+        most monitors and graphics cards support by default.&#160; In other words, if you
+        send&#160;raw RGB data to today's graphics hardware, the thing you see on the screen
+        will be within spitting distance of the sRGB standard.&#160; This is in some ways
+        a parallel to the ASCII with text.&#160; What we end up with is a standard that works
+        well if all you are interested in is showing something on a monitor and you don't
+        care too much about the accuracy of the color.&#160; This is all good and fine as
+        long as you aren't too picky about the color of the shirt you are buying from JCrew.com. 
+    </p>
+    <p>
+        Things start to get complicated once you start talking about gamut.&#160; Any particular
+        device that deals with color (camera, scanner, screen, printer, etc.) has a gamut.&#160;
+        The gamut is the range of physical colors that the device can operate with.&#160;
+        There are colors that you can see that your monitor cannot produce.&#160; Similarly,
+        there are colors that your monitor can produce that your printer can't print.&#160;
+        There are probably even colors that your printer can&#160;put on paper&#160;that your
+        monitor can't display.&#160; In other words, there are physical limitations and characteristics
+        built in to any device.&#160; Since profiles a color space, they too have a gamut. 
+    </p>
+    <p>
+        The sad part here is that sRGB is defined around how computer display hardware happened
+        to work.&#160; There are colors that fall outside of the definition of sRGB.&#160;
+        In fact, there are <em>lots </em>of colors that fall outside of the sRGB gamut.&#160;
+        My camera (a Canon D60) can capture colors that can't be described by sRGB.&#160;
+        It is like trying to describe a sanskrit character with 7 bit ASCII.&#160; My printer
+        (an Epson 1270) can print colors are also outside of sRGB.&#160; Since I'm in photography
+        for artistic purposes, I'm a bit of a perfectionist and not happy with limiting the
+        colors in my prints by what my monitor can and can't display. 
+    </p>
+    <p>
+        The logical next step here is to redefine the color space so that we can represent
+        colors that sRGB can't represent.&#160; Lots of people have done this.&#160; The most
+        popular color space out there (outside of sRGB) would be AdobeRGB 98 that Adobe popularized
+        via Photoshop.&#160;Reality is that if you define the gamut to be too narrow you end
+        up excluding colors and if you expand the gamut too much you end with too few gradations
+        in colors you care about.&#160; This makes your smooth blue sky look like an&#160;Aztec
+        pyramid.&#160; Because there is a tradeoff here, everyone and their brother have created
+        a color space to fit&#160;a particular need.&#160; The result is that 0xFF0000 (using
+        web syntax) means different things depending on the color space that you are using
+        to interpret it. 
+    </p>
+    <p>
+        Sophisticated software both built into Windows (and Mac OS) and into photoshop does
+        the translation between the data and your screen.&#160; Or from your data to your
+        printer.&#160; Or from you data into a "working color space" and then into the color
+        space of your printer.&#160; This color management software essentially manages mapping
+        from one space to another.&#160; Oh yeah, and don't forget that converting from one
+        space to another is a lossy operation.&#160; All is good and&#160;lightness, right? 
+    </p>
+    <p>
+        Well, no. Just like 8 bit characters and codepages, it is all too easy to ignore this
+        stuff and just hope for the best.&#160; Almost every consumer level device outputs
+        sRGB, most printer drivers assume sRGB incoming and almost every picture on the web
+        is authored to sRGB (unless it is authored on a Mac which uses a 1.8 gamma space instead
+        of the 2.2 gamma as defined in sRGB).&#160; If most developers just stick their head
+        in the sand and ignore it, then things will mostly work themselves out.&#160; If you
+        take a photo that is encoded in AdobeRGB and interpret it as sRGB, things will mostly
+        work -- it will just look pretty washed out. 
+    </p>
+    <p>
+        Add to this the fact that right now it isn't clear what piece of software is supposed
+        to translate form what space in to whatever other space and at what time and we have
+        a mess on our hands.&#160; Your camera captures more data than can fit in to sRGB
+        but it may throw that data away and store your photo in sRGB.&#160; Photoshop loads
+        this up and throws a dialog that most users have no idea what to do with.&#160; When
+        you print there are an array of choices in both Photoshop and the printer driver.
+        To be honest, I do some of this stuff for a living and I've wasted a lot of paper
+        trying to figure out what the right settings are. 
+    </p>
+    <p>
+        The state of the color union is that most people have just given up and standardized
+        on sRGB across the board.&#160; This is really a shame because we can do so much more.&#160;
+        We are shortchanging ourselves.&#160; This is like asking the entire world to just
+        learn English. 
+    </p>
+    <p>
+        The&#160;way out is Unicode, err, scRGB.&#160; I'm honestly not sure what the 'sc'
+        in scRGB stands for.&#160; scRGB defines a gamut that is much wider than anything
+        you or I can see.&#160; All of the other custom color spaces that have been defined
+        fit inside of scRGB.&#160; However, this comes at a price.&#160; If you were to take
+        an image and encode it in scRGB at 8 bits per channel (bpc), your image would look
+        like crap.&#160; The expanded gamut means that we need much more precision to avoid
+        the color granularity problem described above.&#160; 8bpc isn't good enough.&#160;
+        And you thought we would never need anything more than 16.7 million colors!&#160;
+        The cost of unifying all of the various color spaces is 16bpc or even 32bpc.&#160;
+        Sure it costs more, but your pictures are worth it, right?&#160; Jumping up to 16
+        or 32bpc may seem like a huge leap, but it probably isn't that big a deal in practice.&#160;
+        Memory and disk space is cheap and this stuff can compress pretty well.&#160; Unicode
+        was painful at one point but it is definitely worth it now.&#160; Beyond this, when
+        persisting this stuff out, there are ways to encode scRGB data that recognizes that
+        most of the extra precision isn't needed in many common cases.&#160; This is similar
+        to the UTF-8 or UTF-16 encodings for UCS-4 (in unicode speak). 
+    </p>
+    <p>
+        The benifits to this switch are huge.&#160; All of the color data that you might want
+        to store can be represented in the scRGB model.&#160; Whereas in today's model converting
+        to any particular color space could be a mistake, converting to scRGB is generally
+        never the wrong thing to do.&#160; With the extended gamut you can be sure that you
+        won't have to clamp or compress your colors and with the extra precision you mitigate
+        the lossyness of&#160;the conversion.&#160; If the printer driver speaks scRGB it
+        can do the best job it knows how to get that on to the paper.&#160; 
+    </p>
+    <p>
+        scRGB is the Unicode of color. 
+    </p>
+    <p>
+        For more detail, <a href="http://www.extremetech.com/article2/0,3973,15467,00.asp"><font color="#336699">here</font></a> is
+        an (old) article on ExtremeTech on scRGB. 
+    </p>
+    <p>
+        <strong>Update on April 30, 2005</strong> 
+        <br />
+        This article has been in the top 3 results for "scRGB" on Google for quite a while.&#160;
+        I was chatting with Michael Stokes (Color Architect at Microsoft) and he had some
+        comments to add on the naming of scRGB: 
+    </p>
+    <blockquote>The "sc" in "scRGB" is not defined by IEC, but the annex uses the term
+    "specular component" and that is probably the closest thing to a true definition that
+    IEC has provided.&#160; Historically it was called "sRGB-X" then "XsRGB" (but the
+    marketing folks didn't like "excess" in the pronunciation) and then "sRGB-64" but
+    that was too close to Nintendo 64 and finally "scRGB" but it is all the same thing. </blockquote>
+
+
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/old/00145.html">Here&#39;s my card</a></h2>
         <span class="lead">Thu, Oct 23, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         This afternoon I went to some meetings on how to present yourself as a Microsoft employee
@@ -63,7 +217,7 @@
         this new approach a lot more.
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -74,12 +228,12 @@
         <h2><a href="/post/old/00144.html">PDCBloggers.com</a></h2>
         <span class="lead">Thu, Oct 23, 2003</span>
         <div class="post">
-          <p>
+          
 
     I know I'm late to the party here, but I finially <a href="http://pdcbloggers.net/Bloggers/Staff/Joe_Beda.category">signed
     up</a> to get my site listed on PDCBloggers.com.&#160; I'm super jazzed about the
     PDC and all the stuff that we are presenting there.
-</p>
+
 
         </div>
       </div>
@@ -90,7 +244,7 @@
         <h2><a href="/post/old/00143.html">My PDC schedule</a></h2>
         <span class="lead">Sat, Oct 18, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I made the cut and I'm going to be going to the PDC.&#160; Here is the where and when
@@ -127,7 +281,7 @@
         or send email to "pdc at bedafamily.com" and we'll figure out a way to meet. 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -138,12 +292,12 @@
         <h2><a href="/post/old/00142.html">Anita is sick</a></h2>
         <span class="lead">Sat, Oct 18, 2003</span>
         <div class="post">
-          <p>
+          
 
     Best wishes go out to <a href="http://www.anitarowland.com/gmarchives/00001429.html">Anita
     Rowland</a>&#160;as she recovers from surgery.&#160; I worked with Anita back in the
     day on IE4/5.&#160; I hope she has a fast and full recovery.
-</p>
+
 
         </div>
       </div>
@@ -154,7 +308,7 @@
         <h2><a href="/post/old/00141.html">Joel on Unicode</a></h2>
         <span class="lead">Tue, Oct 14, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I'm sure everyone has seen this now, but <a href="http://www.joelonsoftware.com/items/2003/10/10.html">Joel
@@ -191,7 +345,7 @@
             on the screen but would actually be different domains.</li>
     </ul>
 
-</p>
+
 
         </div>
       </div>
@@ -202,7 +356,7 @@
         <h2><a href="/post/old/00140.html">New Computer</a></h2>
         <span class="lead">Tue, Oct 14, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         The reason I haven't been posting is that I've been setting up a new computer here
@@ -223,7 +377,7 @@
         working on and why!
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -234,7 +388,7 @@
         <h2><a href="/post/old/00139.html">Beda&#39;s Law</a></h2>
         <span class="lead">Sat, Oct 4, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         At the party I've come up with a law.&#160; You heard it here first: 
@@ -249,7 +403,7 @@
         service is another thing entirely. 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -260,7 +414,7 @@
         <h2><a href="/post/old/00138.html">Pics of the new car...</a></h2>
         <span class="lead">Sat, Oct 4, 2003</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I really have to write some software for doing picture galleries so that I can put
@@ -269,7 +423,7 @@
         pictures from the trip up there.
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -280,31 +434,12 @@
         <h2><a href="/post/old/00137.html">Party at the Scoble&#39;s!</a></h2>
         <span class="lead">Sat, Oct 4, 2003</span>
         <div class="post">
-          <p>
+          
 
     I just got back from a house warming party at <a href="http://radio.weblogs.com/0001011/">Robert</a> and
     Maryam Scoble's.&#160; The have a great new house and the party&#160; was a lot of
     fun.&#160; The food was amazing! I don't think I'll be able to eat for days.
-</p>
 
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00136.html">Molly, 1997-2003</a></h2>
-        <span class="lead">Tue, Sep 30, 2003</span>
-        <div class="post">
-          <p>
-
-    My guinea pig died yesterday.&#160; We got home from our trip and picked her up from
-    the friend that was taking care of her.&#160; She was old (almost 7!) and it was probably
-    just her time.&#160; Rachel and I like to think that she waited until we got back
-    to give up.&#160; We spent all yesterday crying and dealing with it.&#160; I know
-    that it seems silly to cry over a guinea pig, but she was a very sweet pet and we
-    loved her.
-</p>
 
         </div>
       </div>
@@ -328,7 +463,7 @@
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             

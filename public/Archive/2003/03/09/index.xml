@@ -16,9 +16,9 @@
       <pubDate>Sun, 09 Mar 2003 10:08:53 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00064.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;Rachel and I hit the Boise trifecta last night: Bowling, Bud Light and Butt Rock.  All Van Halen all the time.
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -28,7 +28,7 @@
       <pubDate>Sun, 09 Mar 2003 10:00:02 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00063.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;In talking with &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge&lt;/a&gt; about how he does his site, he pointed me to his XSLT source.  I&#39;ll let him post links to those on his own site ifi he wants to.  However, he knows some advanced moves that I haven&#39;t discovered yet.  Here is one of them: &lt;a href=&#34;http://www.w3.org/TR/xslt#dt-attribute-value-template&#34;&gt;http://www.w3.org/TR/xslt#dt-attribute-value-template&lt;/a&gt;.  This is a huge keystroke saver.  It lets me go from this:
 &lt;pre&gt;
 &amp;lt;A class=&#34;ArchiveLink&#34;&amp;gt;
@@ -47,7 +47,7 @@
 &amp;lt;/A&amp;gt;
 &lt;/pre&gt;
 &lt;p&gt;Very cool!
-&lt;/p&gt;
+
 </description>
     </item>
     
@@ -57,7 +57,7 @@
       <pubDate>Sun, 09 Mar 2003 09:26:04 -0800</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00062.html</guid>
-      <description>&lt;p&gt;
+      <description>
 &lt;p&gt;&lt;a href=&#34;http://ocw.abf.tulane.edu/blog/&#34;&gt;Jorge Curioso&lt;/a&gt; &lt;a href=&#34;http://ocw.abf.tulane.edu/blog/?item=63182667125303&#34;&gt;posted on his blog&lt;/a&gt; some comments around dealing with dates in RSS and the .Net framework.  I figure I&#39;d put some more detail up here on how I handle dates in JoeBlogger.
 &lt;ol&gt;
 &lt;li&gt;I store both GMT and local time when creating an entry.  I should probably keep a &#34;last updated&#34; time too but I haven&#39;t done that yet.  From these two you can either output absolute time (for RSS) or you can output local time so that everyone can know your state of mind when you made that post.  It makes a difference if you are posting at 5 am in the morning vs. 10 am.
@@ -128,7 +128,7 @@ And then use that in the output like this:
 
 &lt;p&gt;It might be a good thing if we someone came up with a namespaced extension for RSS to speicfy local time along with GMT.  Having &#34;First published&#34; and &#34;Last changed&#34; times might be interesting also.  Perhaps I&#39;ll write something up at some point.
 
-&lt;/p&gt;
+
 </description>
     </item>
     

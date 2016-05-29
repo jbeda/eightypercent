@@ -48,6 +48,165 @@
     
     <div class="row">
       <div class="col-sm-offset-2 col-sm-8">
+        <h2><a href="/post/docker-gcplogs.html">Recipe: Docker Logs → Google Stackdriver Logging</a></h2>
+        <span class="lead">Sun, May 29, 2016</span>
+        <div class="post">
+          
+
+<p>Docker logs are a pain to deal with.  If you don&rsquo;t do anything they&rsquo;ll fill up
+your disk<sup class="footnote-ref" id="fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation"><a rel="footnote" href="#fn:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation">1</a></sup>.  In addition logs are easily lost if you need
+to delete and recreate a container.</p>
+
+<p>Google Cloud Platform has a <a href="https://cloud.google.com/logging/docs/">debug log
+service</a> that has evolved from the
+(excellent) logging system built in to App Engine.  With the acquisition and
+integration of Stackdriver it looks like this has been rebranded/merged.</p>
+
+<p>Recently a new <a href="https://docs.docker.com/engine/admin/logging/gcplogs/"><code>gcplogs</code> Docker log
+driver</a> was merged (by
+<a href="https://github.com/docker/docker/pull/18766">Mike Danese</a>) and it looks like it
+is available in Docker 1.11.  Getting it up and working is pretty easy but there
+are couple of gotchas.</p>
+
+<h2 id="service-account-scopes:8c4ec0dc973016a59ed5175b2e089189">Service Account Scopes</h2>
+
+<p>First, I did this on a GCE instance that already had the right service account scopes set up.  It <a href="https://developers.google.com/identity/protocols/googlescopes#loggingv2beta1">looks like</a> you need the <code>https://www.googleapis.com/auth/logging.write</code> or <code>https://www.googleapis.com/auth/cloud-platform</code><sup class="footnote-ref" id="fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope"><a rel="footnote" href="#fn:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope">2</a></sup> scopes.</p>
+
+<p>My instance already had the <code>logging.write</code> scope so I was all set.  I was able to tell by looking at the instance in the cloud console.  Or you can use gcloud (as below).  If you don&rsquo;t see the right scope here you&rsquo;ll need to restart your instance or pretend you aren&rsquo;t on GCE.</p>
+
+<pre><code>$ gcloud compute instances describe --format='yaml(serviceAccounts[].scopes[])' my-instance
+serviceAccounts:
+- scopes:
+  - https://www.googleapis.com/auth/compute
+  - https://www.googleapis.com/auth/devstorage.read_write
+  - https://www.googleapis.com/auth/logging.write
+  - https://www.googleapis.com/auth/userinfo.email
+</code></pre>
+
+<p>If you aren&rsquo;t on GCE, you&rsquo;ll want to get a service account key and use that.  I haven&rsquo;t done this but it is documented as part of the Google Cloud <a href="https://developers.google.com/identity/protocols/application-default-credentials#howtheywork">Application Default Credentials</a> system.</p>
+
+<h2 id="activate-the-logging-api:8c4ec0dc973016a59ed5175b2e089189">Activate the Logging API</h2>
+
+<p>You need to &ldquo;enable&rdquo; the logging API before you can use it.  The fact that you
+have to manually toggle APIs is probably a historical artifact at GCP.  Just go
+<a href="https://console.developers.google.com/apis/api/logging/overview">here</a> and flip
+it on.  Make sure you are pointed to the right project.</p>
+
+<p>If you don&rsquo;t do this first you may tickle <a href="https://github.com/docker/docker/issues/21704#issuecomment-222365187">a bug in
+Docker/aufs</a>
+that will make the container un-deletable.</p>
+
+<h2 id="launch-a-container:8c4ec0dc973016a59ed5175b2e089189">Launch a container</h2>
+
+<p>Now just launch a container and have it log to GCP.</p>
+
+<pre><code>$ docker run -d --name my-container \
+  --log-driver=gcplogs \
+  --log-opt gcp-log-cmd=true \
+  [...]
+</code></pre>
+
+<p>You can also set gcplogs as the default for all containers in the daemon but I
+haven&rsquo;t tried that yet.</p>
+
+<h2 id="view-logs-on-cloud-console:8c4ec0dc973016a59ed5175b2e089189">View Logs on Cloud Console</h2>
+
+<p>You can now view these logs on the <a href="https://console.cloud.google.com/logs?project=jbeda-personal&amp;service=custom.googleapis.com&amp;key1=&amp;key2=&amp;logName=">cloud
+console</a>.
+Again, make sure you are pointed at the right project.</p>
+
+
+<figure >
+    <a href="/images/gcp-log-ui.png">
+        <img src="/images/gcp-log-ui.png" />
+    </a>
+    
+    <figcaption>
+        <h4>Google Cloud Console Logging</h4>
+        
+    </figcaption>
+    
+</figure>
+
+
+<p>To be honest, there is a lot of structure here and the web UI isn&rsquo;t as smooth as
+it could be.  You can <em>filter</em> on these fields but you can&rsquo;t control what is
+shown.</p>
+
+<p>You can
+<a href="https://cloud.google.com/logging/docs/view/advanced_filters#introduction">filter</a>
+which events are shown.  This bit is a bit confusing.  It looks like there are 2
+filter UIs.  I was using the &ldquo;advanced&rdquo; filter UI that you can get to from the
+little down arrow icon to the right of the filter box.  The easiest thing to
+filter on is the container name like so:</p>
+
+<pre><code>structPayload.container.name=&quot;/my-container&quot;
+</code></pre>
+
+<p>In addition, there is a v1 syntax and a v2 syntax.  I think this box uses the v1
+syntax.  It isn&rsquo;t clear how deep the differences are.</p>
+
+<h2 id="view-logs-from-the-command-line:8c4ec0dc973016a59ed5175b2e089189">View logs from the command line</h2>
+
+<p>Because of the lack of control on which fields are show in the log viewer, it is
+probably best to view logs from the command line.  Note that this is beta level
+in <code>gcloud</code> so the examples here may break in the future.</p>
+
+<p>First, install the beta <code>gcloud</code> tools if you don&rsquo;t already have them.</p>
+
+<pre><code>gcloud components install beta
+</code></pre>
+
+<p>Now you can list the logs easily using <a href="https://cloud.google.com/sdk/gcloud/reference/beta/logging/read"><code>gcloud beta logging
+read</code></a>.  I
+bundled this up into a shell function that is in my <code>.bashrc</code>.</p>
+
+<pre><code class="language-bash">function gcloud-docker-logs {
+  gcloud beta logging read \
+    --order ASC \
+    --format='value(timestamp, jsonPayload.data)' \
+    &quot;jsonPayload.container.name=\&quot;/$1\&quot;&quot;
+}
+</code></pre>
+
+<p>Decoder ring:</p>
+
+<ul>
+<li><code>--order ASC</code> makes it look like you are <code>cat</code>ing a log file.</li>
+<li><code>--format='value(timestamp, jsonPayload.data)'</code> picks the fields we want to show.  This is just the timestamp and the log line.  For some reason in the web UI this is called <code>structPayload</code> but here it is <code>jsonPayload</code>.  Perhaps this is v1 vs v2 of the API and filter syntax?</li>
+<li><code>&quot;jsonPayload.container.name=\&quot;/$1\&quot;&quot;</code> is the filter to apply.  Here we just slap in the name.</li>
+<li>By default this&rsquo;ll just return logs from the last day.  To limit in number or time look at the <a href="https://cloud.google.com/sdk/gcloud/reference/beta/logging/read">flags to <code>gcloud beta logging read</code></a>.</li>
+</ul>
+
+<h2 id="feedback-for-product-groups:8c4ec0dc973016a59ed5175b2e089189">Feedback for product groups</h2>
+
+<ul>
+<li>Docker logging should have rotation by default.  The fact that out of the box it fills up your disk is horrible.</li>
+<li>I&rsquo;m sad that you still can&rsquo;t change the scopes on a GCE instance while it is running.  This has been in the bug database since scopes were first added.</li>
+<li>There is a bunch of structure in that isn&rsquo;t making it into the logging system.  For instance, severity isn&rsquo;t reflected (at least put stderr as WARN?).  It also might be good to hoist the instance name and container name into the primary and secondary keys for logging.  <code>custom.googleapis.com/primary_key: &quot;primary_key&quot;</code> looks like something was left stubbed out.</li>
+<li>The logging UI should let you select what to show in addition to filtering the events.  As more structure gets added the simple JSON serialization that is there now won&rsquo;t work.  In addition, that JSON serialization seems to be non-deterministic with respect to field order.</li>
+<li><code>gcloud beta logging read</code> should have a &ldquo;follow&rdquo; mode so that you can tail the logs.  This mode exists in the UI.</li>
+<li>The GCP logging filter syntax is confusing and inconsistent.  Simple vs advanced. v1 vs v2.</li>
+<li>Why am I the one writing this guide? I don&rsquo;t work for Google anymore.</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation">It isn&rsquo;t that hard to set up log rotation but you have to do it.  And after you do, <code>docker logs</code> can&rsquo;t see old logs.  Example on how to do that <a href="https://github.com/jbeda/docker-postfix-forwarder#gotcha-logging">here</a>.
+ <a class="footnote-return" href="#fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation"><sup>[return]</sup></a></li>
+<li id="fn:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope">This scope is new since from when I worked at Google. I <em>think</em> it is a &ldquo;catch all&rdquo; scope across many GCP services.  Kind of like root.  I can&rsquo;t find any documentation on it specifically.
+ <a class="footnote-return" href="#fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
         <h2><a href="/post/eir-at-accel.html">Taking a Leap: Entrepreneur in Residence at Accel</a></h2>
         <span class="lead">Wed, Nov 4, 2015</span>
         <div class="post">
@@ -426,7 +585,7 @@
         <h2><a href="/post/old/00274.html">HOWTO: Installing Highpoint Rocketraid 222x on Ubuntu Dapper (6.06 LTS)</a></h2>
         <span class="lead">Tue, Sep 18, 2007</span>
         <div class="post">
-          <p>
+          
 
     <p>
         I haven't updated my blog in forever and I'm probably going to abandon my homebrew
@@ -479,7 +638,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         driver.&#160; It wasn't as cheap but at least it works with a true open driver.&#160; 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -490,7 +649,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         <h2><a href="/post/old/00273.html">&#34;Avalon marks the end of the American Dream&#34;</a></h2>
         <span class="lead">Thu, Aug 3, 2006</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Miguel de Icaza says <a href="http://tirania.org/blog/archive/2006/Aug-02.html">"Avalon
@@ -530,7 +689,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         be something interesting.&#160; The only question, when will&#160;it ship?
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -541,7 +700,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         <h2><a href="/post/old/00272.html">Seattle&#39;s Homeless Alcoholics on NPR</a></h2>
         <span class="lead">Wed, Jul 19, 2006</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Coming in this morning, I heard a&#160;<a href="http://www.npr.org/templates/story/story.php?storyId=5567184">segment
@@ -563,7 +722,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         solved, but, failing that, at least the county is trying to manage it. 
     </p>
 
-</p>
+
 
         </div>
       </div>
@@ -574,7 +733,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         <h2><a href="/post/old/00271.html">1 to 30</a></h2>
         <span class="lead">Fri, Jul 14, 2006</span>
         <div class="post">
-          <p>
+          
 
     <p>
         Check <a href="http://n.nfshost.com/1.html">this</a> out.&#160; Get to 30.&#160; Your
@@ -584,39 +743,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         (I just finished.) 
     </p>
 
-</p>
 
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-sm-offset-2 col-sm-8">
-        <h2><a href="/post/old/00270.html">Custom Weighted Vests</a></h2>
-        <span class="lead">Tue, Jul 4, 2006</span>
-        <div class="post">
-          <p>
-
-    <p>
-        Happy fourth!
-    </p>
-    <p>
-        I just wanted to post a note bragging about my sister, Jill.&#160; The Chicago Tribune
-        just <a href="http://www.chicagotribune.com/entertainment/chi-0607040196jul04,1,4767917.story?ctrack=1&amp;cset=true">ran
-        an article</a> about her and her daughter Ellie.&#160; Ellie has what they are calling
-        "Sensory Integration Disorder."&#160; She is basically really hyper and needs to jump,
-        spin, rock, swing, etc.&#160; I think I probably had a touch of something similar
-        when I was small.&#160; One of the things that helps&#160;Ellie has been a weighted
-        vest.&#160; Jill couldn't find any she and Ellie liked and so made one herself.&#160;
-        It turned out so well, she decided to start making them for others.&#160; 
-    </p>
-    <p>
-        I've helped her get a web site up and running to show off what she has done.&#160;
-        Check it out at <a href="http://www.customweightedvests.com">www.customweightedvests.com</a>.
-        You can also check out some other custom sewing she does at <a href="http://www.stitchessosweet.com">www.stitchessosweet.com</a>.&#160; 
-    </p>
-
-</p>
 
         </div>
       </div>
@@ -640,7 +767,7 @@ sudo dpkg-reconfigure linux-image-${VER}</pre>
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             

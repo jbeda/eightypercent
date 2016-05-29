@@ -16,7 +16,7 @@
       <pubDate>Tue, 18 Sep 2007 22:19:30 -0700</pubDate>
       
       <guid>http://www.eightypercent.net/post/old/00274.html</guid>
-      <description>&lt;p&gt;
+      <description>
 
     &lt;p&gt;
         I haven&#39;t updated my blog in forever and I&#39;m probably going to abandon my homebrew
@@ -69,7 +69,7 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
         driver.&amp;#160; It wasn&#39;t as cheap but at least it works with a true open driver.&amp;#160; 
     &lt;/p&gt;
 
-&lt;/p&gt;
+
 </description>
     </item>
     

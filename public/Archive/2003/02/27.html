@@ -50,7 +50,7 @@
       <h1><a href="http://www.eightypercent.net/post/old/00051.html">PASV ftp</a></h1>
       <span class="lead">Thu, Feb 27, 2003</span>
       <div class="post">
-        <p>
+        
 <P>My FTP code only supports PASV ftp right now.  The reasoning is that I'm behind a NAT firewall and my server isn't.  PASV works much better in that configuration.  <a href="http://www.simplegeek.com/PermaLink.aspx/063d639b-10c7-4826-9f5f-0b6c026a9268">Chris is having problems</a> getting my code to work and he is blaming this.
 <P>FTP generally has two TCP connections:  a control connection and a data connection.  The control connection is pretty straigtforward.  You connect to port 21 and start sending messages back and forth.  Some of these commands ask to open a data connection -- to upload a file, download a file or get a directory listing.
 <P>There are two ways to establish the data connection:
@@ -60,7 +60,7 @@
 <p>In a world with network address translation (NAT) it is a lot easier to connect from your protected machine out to the network than it is to have another machine connect (on a new port) to you.  This is why I did passive FTP.  Doing normal FTP shouldn't be that hard if this is indeed the problem that Chris is having.
 <p>Oh yeah, and if both client and server are behind NAT, you are screwed.  That is unless one of the NATs is smart enough to understand FTP and translate stuff along the way.  HTTP can work better here since everyone understands it and it all happens on one socket.  However, HTTP servers aren't set up for this type of thing without wacky extensions like WebDAV or the frontpage extensions.
 
-</p>
+
 
       </div>
     </div>
@@ -69,9 +69,9 @@
       <h1><a href="http://www.eightypercent.net/post/old/00050.html">D60 obsolete</a></h1>
       <span class="lead">Thu, Feb 27, 2003</span>
       <div class="post">
-        <p>
+        
 <p>Well, I knew it was coming, but my *ahem* brand new D60 is now superceded by the new <a href="http://www.dpreview.com/news/0302/03022711canoneos10dpreview.asp">Canon 10D</a>.  It has the one thing that I really really want -- a better AF system.  At least I know that mere mortals won't get their hands on them for many months yet.
-</p>
+
 
       </div>
     </div>
@@ -81,7 +81,7 @@
         <nav class="footer navbar-default clearfix container-fluid">
           <div class="row">
             <div class="pull-left navbar-text">
-              <span class="text-nowrap">&copy; 2003-2015 Joe Beda</span>
+              <span class="text-nowrap">&copy; 2003-2016 Joe Beda</span>
               <span class="text-nowrap"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="navbar-link">CC by-nc-nd 4.0</a></span>
             </div>
             
