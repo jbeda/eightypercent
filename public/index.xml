@@ -127,10 +127,17 @@ read&lt;/code&gt;&lt;/a&gt;.  I
 bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;function gcloud-docker-logs {
+  local dayago
+  if [ $(uname -s) = &amp;quot;Darwin&amp;quot; ]; then
+    dayago=$(date -v-1d -u &#39;+%Y-%m-%dT%H:%M:%SZ&#39;)
+  else
+    dayago=$(date  --date=&amp;quot;-1 day&amp;quot; -Isec -u)
+  fi
+
   gcloud beta logging read \
     --order ASC \
     --format=&#39;value(timestamp, jsonPayload.data)&#39; \
-    &amp;quot;jsonPayload.container.name=\&amp;quot;/$1\&amp;quot;&amp;quot;
+    &amp;quot;jsonPayload.container.name=\&amp;quot;/$1\&amp;quot; AND timestamp &amp;gt; \&amp;quot;${dayago}\&amp;quot;&amp;quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -140,7 +147,7 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 &lt;li&gt;&lt;code&gt;--order ASC&lt;/code&gt; makes it look like you are &lt;code&gt;cat&lt;/code&gt;ing a log file.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--format=&#39;value(timestamp, jsonPayload.data)&#39;&lt;/code&gt; picks the fields we want to show.  This is just the timestamp and the log line.  For some reason in the web UI this is called &lt;code&gt;structPayload&lt;/code&gt; but here it is &lt;code&gt;jsonPayload&lt;/code&gt;.  Perhaps this is v1 vs v2 of the API and filter syntax?&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&amp;quot;jsonPayload.container.name=\&amp;quot;/$1\&amp;quot;&amp;quot;&lt;/code&gt; is the filter to apply.  Here we just slap in the name.&lt;/li&gt;
-&lt;li&gt;By default this&amp;rsquo;ll just return logs from the last day.  To limit in number or time look at the &lt;a href=&#34;https://cloud.google.com/sdk/gcloud/reference/beta/logging/read&#34;&gt;flags to &lt;code&gt;gcloud beta logging read&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;We limit this to the last day or logs.  This happens by default when &lt;code&gt;order&lt;/code&gt; is set to &lt;code&gt;DESC&lt;/code&gt; but we want ascending order.  Because of this we have to explicitly limit the date range.  &lt;code&gt;date&lt;/code&gt; is different on BSD systems (MacOS) vs. GNU systems (Linux). Ug.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;feedback-for-product-groups:8c4ec0dc973016a59ed5175b2e089189&#34;&gt;Feedback for product groups&lt;/h2&gt;

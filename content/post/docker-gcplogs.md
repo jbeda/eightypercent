@@ -111,10 +111,17 @@ bundled this up into a shell function that is in my `.bashrc`.
 
 ```bash
 function gcloud-docker-logs {
+  local dayago
+  if [ $(uname -s) = "Darwin" ]; then
+    dayago=$(date -v-1d -u '+%Y-%m-%dT%H:%M:%SZ')
+  else
+    dayago=$(date  --date="-1 day" -Isec -u)
+  fi
+
   gcloud beta logging read \
     --order ASC \
     --format='value(timestamp, jsonPayload.data)' \
-    "jsonPayload.container.name=\"/$1\""
+    "jsonPayload.container.name=\"/$1\" AND timestamp > \"${dayago}\""
 }
 ```
 
@@ -123,7 +130,7 @@ Decoder ring:
 * `--order ASC` makes it look like you are `cat`ing a log file.
 * `--format='value(timestamp, jsonPayload.data)'` picks the fields we want to show.  This is just the timestamp and the log line.  For some reason in the web UI this is called `structPayload` but here it is `jsonPayload`.  Perhaps this is v1 vs v2 of the API and filter syntax?
 * `"jsonPayload.container.name=\"/$1\""` is the filter to apply.  Here we just slap in the name.
-* By default this'll just return logs from the last day.  To limit in number or time look at the [flags to `gcloud beta logging read`](https://cloud.google.com/sdk/gcloud/reference/beta/logging/read).
+* We limit this to the last day or logs.  This happens by default when `order` is set to `DESC` but we want ascending order.  Because of this we have to explicitly limit the date range.  `date` is different on BSD systems (MacOS) vs. GNU systems (Linux). Ug.
 
 ## Feedback for product groups
 
