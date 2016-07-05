@@ -24,7 +24,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * The standard config tools ([Puppet](https://puppetlabs.com/), [Chef](https://www.chef.io/), [Ansible](http://www.ansible.com/home), [Salt](http://saltstack.com/)) can serve this role.
   * [CoreOS Fleet](https://coreos.com/using-coreos/clustering/) is a lightweight clustering system that can also be used to bootstrap more comprehensive solutions.
 * **Container Engine**. This is the system for setting up and managing containers.  It is the primary management agent on the node.  
-  * Examples include [Docker Engine](https://www.docker.com/docker-engine), [CoreOS rkt](https://coreos.com/rkt/docs/latest/), and [LXC](https://linuxcontainers.org/) and [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html).  
+  * Examples include [Docker Engine](https://www.docker.com/docker-engine)-[containerd](https://blog.docker.com/2015/12/containerd-daemon-to-control-runc/), [CoreOS rkt](https://coreos.com/rkt/docs/latest/), and [LXC](https://linuxcontainers.org/) and [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html).  
   * Some of these systems are more amenable to being directly controlled remotely than others. 
   * The [Open Container Initiative](https://www.opencontainers.org/) is working to standardize the input into these systems -- basically the root filesystem for the container along with some common parameters in a JSON file.
 * **Container Image Packaging and Distribution.** A Container Image is a named and cloneable chroot that can be used to create container instances.  It is pretty much an efficient way to capture, name and distribute the set of files that make up a container at runtime.  
@@ -47,6 +47,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * [AWS CloudFormation](https://aws.amazon.com/cloudformation/) and [Google Cloud Deployment Manager](https://cloud.google.com/deployment-manager/overview) play this role for their respective cloud ecosystems (only).
   * [Hashicorp Terraform](https://github.com/hashicorp/terraform) and [Flabbergast](http://flabbergast.org/) look like they could be applied to container orchestration systems but haven't yet.
   * [Docker Compose](https://docs.docker.com/compose/) is a start to a more comprehensive config system.
+  * [Nulecule](http://www.projectatomic.io/docs/nulecule/): [pronounce: newly-cool]A RedHat project that allows you to describe a multi-container application including all dependencies. It is also container independent. It supports parameterization, inheritence, and variable substitution among others and building a graph of your dependencies. It utilizes Kubernetes, OpenShift, Docker Compose, or Mesos as 'providers.'  
   * The Kubernetes team (Brian Grant especially) have lots of [ideas and plans](https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment) for this area.  There is a [Kubernetes SIG](https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29) being formed.
 * **Network Virtualization.** While not strictly necessary, clustered container systems are much easier to use if each container has full presence on the cluster network.  This has been referred to as "IP per Container".
   * Without a networking solution, orchestration systems must allocate and enforce port assignment as ports per host are a shared resource.
@@ -87,7 +88,13 @@ PaaS systems often help to bring this all together in an easy way.  Systems like
 
 Next on the list would be to talk about continuous integration/continuous deployment (CI/CD) systems and systems for communicating between microservices (RPC and queues). But I think I'll stop here.  If this is useful (or if you think I'm missing anything huge) please let me know via [twitter](https://www.twitter.com/jbeda).  Or you can comment on the [Hacker News thread](https://news.ycombinator.com/item?id=10187598).
 
-[^other-posts]: [Brandon Philips](https://twitter.com/brandonphilips) from CoreOS points me to a [similar post](https://coreos.com/blog/cluster-osi-model/) from [Barak Michener](https://twitter.com/barakmich).  I go into more minutia here and don't try and define a strict stack.
+[^other-posts]: 
+* [Brandon Philips](https://twitter.com/brandonphilips) from CoreOS points me to a [similar post](https://coreos.com/blog/cluster-osi-model/) from [Barak Michener](https://twitter.com/barakmich).  I go into more minutia here and don't try and define a strict stack.
+* The [Programmable Infrastructure](http://programmableinfrastructure.com/) website appears to try to be an exhaustive list of projects used in a modern infrastructures.
+
+[^ the extremely technical on containers]
+At the lowest levels a container utilizes two main facilities in the kernel. The LWN has two multi-part series describing these features [cgroups](https://lwn.net/Articles/604609/) and [namespaces](https://lwn.net/Articles/531114/). For more up-to date documentation the Kernel Documentation is best.
+
 
 [^caveats]:
     Some caveats:
