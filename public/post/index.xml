@@ -6,7 +6,7 @@
     <description>Recent content in Post-rss on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2003-2015 Joe Beda CC by-nc-nd 4.0</copyright>
+    <copyright>© 2003-2016 Joe Beda CC by-nc-nd 4.0</copyright>
     <lastBuildDate>Sun, 29 May 2016 09:54:29 -0700</lastBuildDate>
     <atom:link href="http://www.eightypercent.net/post.xml" rel="self" type="application/rss+xml" />
     
@@ -167,9 +167,9 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 
 &lt;ol&gt;
 &lt;li id=&#34;fn:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;It isn&amp;rsquo;t that hard to set up log rotation but you have to do it.  And after you do, &lt;code&gt;docker logs&lt;/code&gt; can&amp;rsquo;t see old logs.  Example on how to do that &lt;a href=&#34;https://github.com/jbeda/docker-postfix-forwarder#gotcha-logging&#34;&gt;here&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:docker-log-rotation&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;This scope is new since from when I worked at Google. I &lt;em&gt;think&lt;/em&gt; it is a &amp;ldquo;catch all&amp;rdquo; scope across many GCP services.  Kind of like root.  I can&amp;rsquo;t find any documentation on it specifically.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8c4ec0dc973016a59ed5175b2e089189:cloud-platform-scope&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -350,7 +350,7 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 
 &lt;ol&gt;
 &lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;a href=&#34;https://twitter.com/brandonphilips&#34;&gt;Brandon Philips&lt;/a&gt; from CoreOS points me to a &lt;a href=&#34;https://coreos.com/blog/cluster-osi-model/&#34;&gt;similar post&lt;/a&gt; from &lt;a href=&#34;https://twitter.com/barakmich&#34;&gt;Barak Michener&lt;/a&gt;.  I go into more minutia here and don&amp;rsquo;t try and define a strict stack.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:other-posts&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 
 &lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;p&gt;Some caveats:&lt;/p&gt;
 
@@ -360,9 +360,9 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 &lt;li&gt;I&amp;rsquo;ve listed example projects/products/companies/systems at different levels but this isn&amp;rsquo;t meant to be exhaustive.&lt;/li&gt;
 &lt;li&gt;The fact that I&amp;rsquo;ve listed a system here doesn&amp;rsquo;t mean that I&amp;rsquo;ve run it in production and it has my stamp of approval.&lt;/li&gt;
 &lt;/ul&gt;
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:caveats&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;Don&amp;rsquo;t confuse Apache Flume with &lt;a href=&#34;http://research.google.com/pubs/pub35650.html&#34;&gt;Google FlumeJava&lt;/a&gt;.  I guess once you start processing logs some names are just obvious.  Also see &lt;a href=&#34;http://research.google.com/archive/sawzall.html&#34;&gt;Google Sawzall&lt;/a&gt; and &lt;a href=&#34;http://research.google.com/pubs/pub36632.html&#34;&gt;Google Dremel&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:279eeec6803ac0fbef058e6f7576d2f6:flume&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -400,11 +400,11 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 
 &lt;ol&gt;
 &lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;I started my career on Internet Explorer and moved on to create graphics APIs (including XAML) for Windows Presentation Foundation (WPF).  At Google I started on Google Talk building out &lt;a href=&#34;http://xmpp.org/about-xmpp/technology-overview/jingle/&#34;&gt;XMPP specifications for call signaling&lt;/a&gt; and eventually started Google Compute Engine and helped to start Kubernetes.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:exp&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;There are, of course, other types of lock-in.  One that is really interesting is data locality lock-in.  As data gets bigger and bigger, simply moving that data around can be complicated and costly.  This gets even more complicated as that data continues to grow while it is being moved.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:data-lock-in&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;With the advent of cloud APIs, we&amp;rsquo;ve actually taken a bit of a step back in terms of open APIs.  While there are some companies (&lt;a href=&#34;https://twitter.com/stewart/status/634533296555339777&#34;&gt;such as Slack&lt;/a&gt;) that encourage alternate implementations of their APIs, many companies are silent or hostile to others implementing those APIs.  I&amp;rsquo;d love to see a pattern of companies releasing their APIs with an open license or donating the IP to a foundation. This is made only more critical in light of the &lt;a href=&#34;https://en.wikipedia.org/wiki/Oracle_America,_Inc._v._Google,_Inc.&#34;&gt;Oracle API copyright decision&lt;/a&gt;.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9b53a7dde7ddb7e5a1060a94458fa1f8:open-apis&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>
@@ -505,17 +505,17 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 
 &lt;ol&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains&#34;&gt;The standard golang image is a great example of this.  &lt;code&gt;golang:1.4.2&lt;/code&gt; &amp;rarr; &lt;code&gt;buildpack-deps:jessie-scm&lt;/code&gt; &amp;rarr; &lt;code&gt;buildpack-deps:jessie-curl&lt;/code&gt; &amp;rarr; &lt;code&gt;debian:jessie&lt;/code&gt;.  Most of this is done to enable efficient sharing of installed packages.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs&#34;&gt;Best practices should be to track every single input into your docker file.  That means that if you are pushing sources you should know which git commit, for example, those sources come from.  My guess is that this is rarely done.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm&#34;&gt;Actually, we need our system to be decentralized.  MPM, like may package management systems (including &lt;a href=&#34;https://github.com/Homebrew/homebrew/tree/master/Library/Formula&#34;&gt;Homebrew&lt;/a&gt; and &lt;a href=&#34;https://github.com/NixOS/nixpkgs&#34;&gt;Nix&lt;/a&gt;) has a single central repository/database of all packages.  Whatever is used here must be distributed &amp;mdash; probably in a namespace rooted with DNS.  Something like &lt;a href=&#34;https://github.com/docker/notary&#34;&gt;Docker Notary&lt;/a&gt; would play a role in signing and verifying packages.  Something like the &lt;a href=&#34;http://lethalman.blogspot.com/2014/08/nix-pill-9-automatic-runtime.html&#34;&gt;Nix archive format (NAR)&lt;/a&gt; will help make this more stable and predictable.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install&#34;&gt;Package install should consist of simply symlinking files into some common directories (&lt;code&gt;/bin&lt;/code&gt;, &lt;code&gt;/lib&lt;/code&gt;).  This would all be done via a declarative manifest. There are probably going to be cases where an &amp;ldquo;install&amp;rdquo; is a little bit more complex and a script is necessary.  I&amp;rsquo;d love to see how far we could get before that becomes absolutely necessary.  It is also assumed that the package directories themselves are only ever mounted read only.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems&#34;&gt;Josh Wood (&lt;a href=&#34;https://twitter.com/joshixisjosh9&#34;&gt;@joshixisjosh9&lt;/a&gt;), &lt;a href=&#34;https://twitter.com/joshixisjosh9/status/617008740626116609&#34;&gt;via twitter&lt;/a&gt;, points out &lt;a href=&#34;https://www.usenix.org/legacy/publications/library/proceedings/usenix2000/general/pikelex.html&#34;&gt;some issues with using symlinks&lt;/a&gt;. An alternative here would be to use bind mounts.  But it is unclear how many bind mounts Linux can handle (100 containers with 100 bind mounts = 10,000 bind mounts) and setting them up requires root privledges.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;li id=&#34;fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking&#34;&gt;There is a choice on when the package install happens.  It could happen early as the container is created.  Or it could happen late as part of the container start process.  I&amp;rsquo;d prefer late binding as it makes surgical package updating simpler.  The directories that store the symlinks could be tmpfs directories to keep this all very speedy.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking&#34;&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 </description>

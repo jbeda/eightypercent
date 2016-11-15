@@ -165,17 +165,17 @@
 
 <ol>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains">The standard golang image is a great example of this.  <code>golang:1.4.2</code> &rarr; <code>buildpack-deps:jessie-scm</code> &rarr; <code>buildpack-deps:jessie-curl</code> &rarr; <code>debian:jessie</code>.  Most of this is done to enable efficient sharing of installed packages.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:dockerfile-chains">↩</a></li>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs">Best practices should be to track every single input into your docker file.  That means that if you are pushing sources you should know which git commit, for example, those sources come from.  My guess is that this is rarely done.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:tracking-inputs">↩</a></li>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm">Actually, we need our system to be decentralized.  MPM, like may package management systems (including <a href="https://github.com/Homebrew/homebrew/tree/master/Library/Formula">Homebrew</a> and <a href="https://github.com/NixOS/nixpkgs">Nix</a>) has a single central repository/database of all packages.  Whatever is used here must be distributed &mdash; probably in a namespace rooted with DNS.  Something like <a href="https://github.com/docker/notary">Docker Notary</a> would play a role in signing and verifying packages.  Something like the <a href="http://lethalman.blogspot.com/2014/08/nix-pill-9-automatic-runtime.html">Nix archive format (NAR)</a> will help make this more stable and predictable.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:decentralized-mpm">↩</a></li>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install">Package install should consist of simply symlinking files into some common directories (<code>/bin</code>, <code>/lib</code>).  This would all be done via a declarative manifest. There are probably going to be cases where an &ldquo;install&rdquo; is a little bit more complex and a script is necessary.  I&rsquo;d love to see how far we could get before that becomes absolutely necessary.  It is also assumed that the package directories themselves are only ever mounted read only.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:package-install">↩</a></li>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems">Josh Wood (<a href="https://twitter.com/joshixisjosh9">@joshixisjosh9</a>), <a href="https://twitter.com/joshixisjosh9/status/617008740626116609">via twitter</a>, points out <a href="https://www.usenix.org/legacy/publications/library/proceedings/usenix2000/general/pikelex.html">some issues with using symlinks</a>. An alternative here would be to use bind mounts.  But it is unclear how many bind mounts Linux can handle (100 containers with 100 bind mounts = 10,000 bind mounts) and setting them up requires root privledges.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:symlink-problems">↩</a></li>
 <li id="fn:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking">There is a choice on when the package install happens.  It could happen early as the container is created.  Or it could happen late as part of the container start process.  I&rsquo;d prefer late binding as it makes surgical package updating simpler.  The directories that store the symlinks could be tmpfs directories to keep this all very speedy.
- <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking"><sup>[return]</sup></a></li>
+ <a class="footnote-return" href="#fnref:e2f7abed0f5b0c5bd1e697591b3ae6ba:late-symlinking">↩</a></li>
 </ol>
 </div>
 

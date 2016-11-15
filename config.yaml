@@ -5,10 +5,9 @@ description: The personal blog of Joe Beda
 uglyurls: true
 pluralizelisttitles: false
 paginate: 10
-copyright: "© 2003-2015 Joe Beda CC by-nc-nd 4.0"
+copyright: "© 2003-2016 Joe Beda CC by-nc-nd 4.0"
 disableRSS: false
-disableHugoGeneratorInject: true
-#footnotereturnlinkcontents: "↩"
+footnotereturnlinkcontents: "↩"
 
 blackfriday:
   plainIDAnchors: false
