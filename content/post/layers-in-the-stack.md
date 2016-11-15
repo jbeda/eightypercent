@@ -25,7 +25,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * [CoreOS Fleet](https://coreos.com/using-coreos/clustering/) is a lightweight clustering system that can also be used to bootstrap more comprehensive solutions.
 * **Container Engine**. This is the system for setting up and managing containers.  It is the primary management agent on the node.  
   * Examples include [Docker Engine](https://www.docker.com/docker-engine), [CoreOS rkt](https://coreos.com/rkt/docs/latest/), and [LXC](https://linuxcontainers.org/) and [systemd-nspawn](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html).  
-  * Some of these systems are more amenable to being directly controlled remotely than others. 
+  * Some of these systems are more amenable to being directly controlled remotely than others.
   * The [Open Container Initiative](https://www.opencontainers.org/) is working to standardize the input into these systems -- basically the root filesystem for the container along with some common parameters in a JSON file.
 * **Container Image Packaging and Distribution.** A Container Image is a named and cloneable chroot that can be used to create container instances.  It is pretty much an efficient way to capture, name and distribute the set of files that make up a container at runtime.  
   * Both Docker and CoreOS rkt solve this problem.  It is built into the Docker Engine but is broken out for rkt as a separate tool set call [acbuild](https://github.com/appc/acbuild).  
@@ -47,7 +47,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * [AWS CloudFormation](https://aws.amazon.com/cloudformation/) and [Google Cloud Deployment Manager](https://cloud.google.com/deployment-manager/overview) play this role for their respective cloud ecosystems (only).
   * [Hashicorp Terraform](https://github.com/hashicorp/terraform) and [Flabbergast](http://flabbergast.org/) look like they could be applied to container orchestration systems but haven't yet.
   * [Docker Compose](https://docs.docker.com/compose/) is a start to a more comprehensive config system.
-  * The Kubernetes team (Brian Grant especially) have lots of [ideas and plans](https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment) for this area.  There is a [Kubernetes SIG](https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29) being formed.
+  * The Kubernetes team (Brian Grant especially) have lots of [ideas and plans](https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment) for this area.  There is a [Kubernetes SIG](https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29)) being formed.
 * **Network Virtualization.** While not strictly necessary, clustered container systems are much easier to use if each container has full presence on the cluster network.  This has been referred to as "IP per Container".
   * Without a networking solution, orchestration systems must allocate and enforce port assignment as ports per host are a shared resource.
   * Examples here include [CoreOS Flannel](https://github.com/coreos/flannel), [Weave](http://weave.works/), [Project Calico](http://www.projectcalico.org/), and [Docker libnetwork](https://github.com/docker/libnetwork) (not ready for production yet).  I've also been pointed to [OpenContrail](http://www.opencontrail.org/) but haven't looked deeply.
@@ -61,7 +61,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * Kubernetes supports [service definition and discovery](https://github.com/kubernetes/kubernetes/blob/master/docs/user-guide/services.md) (with a stable virtual IP with load balanced proxy).
   * Weave has a built in [DNS server](http://blog.weave.works/2015/09/08/weave-gossip-dns/) that stores data locally so that TTLs can be minimal.
   * Related is a system to configure wider facing load balancer to manage the interface between the cluster and the wider network.
-* **Production Identity and Authentication.** As clustered deployments grow, an identity system becomes necessary.  When microservice A calls microservice B, microservice B needs some way to verify that it is actually microservice A calling.  Note that this is for computer to computer communication within the cluster 
+* **Production Identity and Authentication.** As clustered deployments grow, an identity system becomes necessary.  When microservice A calls microservice B, microservice B needs some way to verify that it is actually microservice A calling.  Note that this is for computer to computer communication within the cluster
   * This is not a well understood component of the stack.  I expect it to be an active area of development in the near future.  Ideally the orchestration system would automatically configure the identity for each running container in a secure way.
   * Related areas include secret storage and authorization.
   * I've used the term "Authentity" to describe this area. Please use it as I'm hoping it'll catch on.
@@ -80,7 +80,7 @@ So, with that, here is a brain dump of the parts that make up a "modern" stack:
   * Logging can also throw off monitoring signals.  For instance, while processing saved logs the local agent can count 500s and feed those into a monitoring system.
   * Systems like [Apache Flume](http://flume.apache.org/)[^flume] can be used to collect and reliably save structured logs for processing in the Hadoop ecosystem.  [Google BigQuery](https://cloud.google.com/bigquery/) and [Google Cloud Dataflow](https://cloud.google.com/dataflow/) are also well suited to ingesting and analyzing structured log data.
 * **Deep Inspection and Tracing** There are a class of tools that help to do deep debugging.  
-  * Inside of Google, [Dapper](http://research.google.com/pubs/pub36356.html) is a great example of tracing a user request across many microservices.  [Appdash](https://github.com/sourcegraph/appdash) and [Zipkin](http://zipkin.io/) are open source system inspired by Dapper. 
+  * Inside of Google, [Dapper](http://research.google.com/pubs/pub36356.html) is a great example of tracing a user request across many microservices.  [Appdash](https://github.com/sourcegraph/appdash) and [Zipkin](http://zipkin.io/) are open source system inspired by Dapper.
   * Startups like [Sysdig](http://www.sysdig.org/) in this category too by allowing deep inspection and capture of what is going on with a machine.
 
 PaaS systems often help to bring this all together in an easy way.  Systems like [OpenShift 3](http://www.openshift.org/), [Deis](http://deis.io/), or [Flynn](https://flynn.io) build on top of some of the independent systems above.  Other PaaS such as [Heroku](https://www.heroku.com/), [Google App Engine](https://cloud.google.com/appengine/docs) or [Cloud Foundry](https://www.cloudfoundry.org/) are more vertically integrated without the component layers being broken out in a well supported way.

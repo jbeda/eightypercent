@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>80%</title>
-    <link>http://www.eightypercent.net/</link>
+    <link>http://www.eightypercent.net/index.xml</link>
     <description>Recent content on 80%</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -282,7 +282,7 @@ bundled this up into a shell function that is in my &lt;code&gt;.bashrc&lt;/code
 &lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/cloudformation/&#34;&gt;AWS CloudFormation&lt;/a&gt; and &lt;a href=&#34;https://cloud.google.com/deployment-manager/overview&#34;&gt;Google Cloud Deployment Manager&lt;/a&gt; play this role for their respective cloud ecosystems (only).&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/hashicorp/terraform&#34;&gt;Hashicorp Terraform&lt;/a&gt; and &lt;a href=&#34;http://flabbergast.org/&#34;&gt;Flabbergast&lt;/a&gt; look like they could be applied to container orchestration systems but haven&amp;rsquo;t yet.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt; is a start to a more comprehensive config system.&lt;/li&gt;
-&lt;li&gt;The Kubernetes team (Brian Grant especially) have lots of &lt;a href=&#34;https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment&#34;&gt;ideas and plans&lt;/a&gt; for this area.  There is a &lt;a href=&#34;https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29&#34;&gt;Kubernetes SIG&lt;/a&gt; being formed.&lt;/li&gt;
+&lt;li&gt;The Kubernetes team (Brian Grant especially) have lots of &lt;a href=&#34;https://github.com/kubernetes/kubernetes/labels/area%2Fapp-config-deployment&#34;&gt;ideas and plans&lt;/a&gt; for this area.  There is a &lt;a href=&#34;https://github.com/kubernetes/kubernetes/wiki/Special-Interest-Groups-(SIGs%29)&#34;&gt;Kubernetes SIG&lt;/a&gt; being formed.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Network Virtualization.&lt;/strong&gt; While not strictly necessary, clustered container systems are much easier to use if each container has full presence on the cluster network.  This has been referred to as &amp;ldquo;IP per Container&amp;rdquo;.
 
