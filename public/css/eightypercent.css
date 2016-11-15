@@ -15,6 +15,10 @@ body {
   }
 }
 
+p {
+  margin-bottom: 14px;
+}
+
 figure {
   background-color: #f4f5ea;
   border: 1px solid #4f94e0;
