@@ -7,8 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2003-2016 Joe Beda CC by-nc-nd 4.0</copyright>
-    <lastBuildDate>Sun, 29 May 2016 09:54:29 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 16 Nov 2016 08:00:00 -0800</lastBuildDate>
     <atom:link href="http://www.eightypercent.net/post.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Another Leap: Heptio</title>
+      <link>http://www.eightypercent.net/post/another-leap-heptio.html</link>
+      <pubDate>Wed, 16 Nov 2016 08:00:00 -0800</pubDate>
+      
+      <guid>http://www.eightypercent.net/post/another-leap-heptio.html</guid>
+      <description>&lt;p&gt;&lt;center&gt;&lt;a href=&#34;https://heptio.com&#34;&gt;&lt;img src=&#34;http://www.eightypercent.net/images/heptio-logo.png&#34; alt=&#34;Heptio Logo&#34; srcset=&#34;http://www.eightypercent.net/images/heptio-logo@2x.png 2x, http://www.eightypercent.net/images/heptio-logo@3x.png 3x&#34;&gt;&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;As I write this it is Monday evening and I&amp;rsquo;m actually in an office.  &lt;a href=&#34;https://twitter.com/cmcluck&#34;&gt;Craig McLuckie&lt;/a&gt; and I have been hanging around the Madrona Venture Group offices here in Seattle.  We started a new company together named Heptio.&lt;/p&gt;
+
+&lt;p&gt;We are announcing that we have taken Series A funding from &lt;a href=&#34;http://www.accel.com/&#34;&gt;Accel&lt;/a&gt; and &lt;a href=&#34;http://www.madrona.com/&#34;&gt;Madrona&lt;/a&gt;.  I want to thank Ping and everyone else at Accel for the support through the &lt;a href=&#34;https://www.eightypercent.net/post/eir-at-accel.html&#34;&gt;EIR journey&lt;/a&gt; over the past year.  It has been an amazing opportunity to meet a ton of interesting people and explore this space in depth.&lt;/p&gt;
+
+&lt;p&gt;While Heptio is new, the goals and vision for what we are doing are part of a longer arc.  For a long time now both Craig and I have been focused on bringing new experiences and efficiencies to the wider IT world.  We did this through our work together building and launching &lt;a href=&#34;https://cloud.google.com/compute/&#34;&gt;Google Compute Engine&lt;/a&gt; (GCE) and then through our work creating &lt;a href=&#34;http://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt;.  Heptio is the next chapter.&lt;/p&gt;
+
+&lt;p&gt;When I set out as an EIR over a year ago I had three things I wanted to line up before I started a company.  Those were (1) preparing for the marathon, (2) finding the right co-founder and (3) have a compelling vision.  I think we are in good shape on all three of these points.&lt;/p&gt;
+
+&lt;p&gt;First, I&amp;rsquo;ve taken the time over the last year and half (Google COBRA runs out this month) to take care of myself and &lt;strong&gt;recharge&lt;/strong&gt;.  I&amp;rsquo;ve spent lots of quality time with my kids and tried to pull my weight as my wife, Rachel, builds a panel at her small clinic here in Seattle.&lt;/p&gt;
+
+&lt;p&gt;On the &lt;strong&gt;co-founder&lt;/strong&gt; front, I&amp;rsquo;m lucky to have worked with Craig for years.  While I did a bit of &amp;ldquo;cofounder dating&amp;rdquo; over the last year and met a lot of great people, I&amp;rsquo;m most comfortable doing this with someone that I know I work well with.  There will be ups and downs ahead and I know that Craig and I will work well together through it all.&lt;/p&gt;
+
+&lt;p&gt;The third point was &lt;strong&gt;vision&lt;/strong&gt;. It has been incredibly exciting to see the Kubernetes community grow over the last several years.  The core project itself is proving itself out across many dimensions.  In addition, there is the start of a vibrant ecosystem of people building products, projects and services on top of and around Kubernetes.  A recurring point of joy for me is to see new folks &amp;ldquo;get it&amp;rdquo; as they understand the unlimited potential of the world we are building together.  The vision for Heptio is to accelerate and amplify by bringing Kubernetes to everyone.&lt;/p&gt;
+
+&lt;p&gt;Additionally, Back in May 2015 I tweeted this:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I&amp;#39;ve decided my next job will be someplace that pushes me toward healthier interactions. Empathy and diversity.&lt;/p&gt;&amp;mdash; Joe Beda (@jbeda) &lt;a href=&#34;https://twitter.com/jbeda/status/597948232476397568&#34;&gt;May 12, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Right now Heptio is, essentially, two middle aged white dudes.  &lt;strong&gt;We need to change that.&lt;/strong&gt;  Both Craig and I are committed to building a company that welcomes everyone.  I can&amp;rsquo;t say we have cracked the code here (has anyone?) but we will do our best to build the company we want vs accepting the industry default.  We will also welcome ideas, input and criticism as we continue to learn.&lt;/p&gt;
+
+&lt;p&gt;Finally, it almost goes without saying that &lt;strong&gt;we are hiring&lt;/strong&gt;.  Right now we are looking to build a team in Seattle but are seriously considering what it takes to go fully distributed.  If you want to join us in bringing the joys of &amp;ldquo;cloud native&amp;rdquo; infrastructure to everyone by working on open source software, please reach out to &lt;a href=&#34;mailto:jobs@heptio.com&#34;&gt;jobs@heptio.com&lt;/a&gt; and say that I sent you.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Recipe: Docker Logs → Google Stackdriver Logging</title>
@@ -934,34 +967,6 @@ sudo dpkg-reconfigure linux-image-${VER}&lt;/pre&gt;
     &lt;/p&gt;
     &lt;p&gt;
         [April 16, 2006: Edited to fix Ubuntu version number.]
-    &lt;/p&gt;
-
-
-</description>
-    </item>
-    
-    <item>
-      <title>New Google Talk Client</title>
-      <link>http://www.eightypercent.net/post/old/00266.html</link>
-      <pubDate>Sat, 01 Apr 2006 18:21:45 -0800</pubDate>
-      
-      <guid>http://www.eightypercent.net/post/old/00266.html</guid>
-      <description>
-
-    &lt;p&gt;
-        If you haven&#39;t heard yet, we shipped a new version of the Google Talk client to a
-        small set of testers yesterday.&amp;#160; You can get a review over at &lt;a href=&#34;http://www.customizetalk.com/&#34;&gt;customizetalk.com&lt;/a&gt;.&amp;#160;
-        Hopefully we&#39;ll fix any outstanding issues and get this version out to everyone soon.
-    &lt;/p&gt;
-    &lt;p&gt;
-        I wasn&#39;t super involved in this version but did manage to sneak a couple of features
-        in.&amp;#160; The first was Friend Online notifications (defaults to off to avoid annoying
-        people). I also did the new hover cards for your Friends.&amp;#160; I wanted people to
-        be able to see all of the cool pictures in&amp;#160;true 96x96 pixel alpha blended glory.
-    &lt;/p&gt;
-    &lt;p&gt;
-        We hope you like it!&amp;#160; Let us know what features are important to you by filling
-        out our &lt;a href=&#34;https://services.google.com/inquiry/talk_suggest&#34;&gt;suggestion form&lt;/a&gt;.
     &lt;/p&gt;
 
 
