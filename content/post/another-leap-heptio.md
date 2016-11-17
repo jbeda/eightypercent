@@ -20,7 +20,7 @@ On the **co-founder** front, I'm lucky to have worked with Craig for years.  Whi
 
 The third point was **vision**. It has been incredibly exciting to see the Kubernetes community grow over the last several years.  The core project itself is proving itself out across many dimensions.  In addition, there is the start of a vibrant ecosystem of people building products, projects and services on top of and around Kubernetes.  A recurring point of joy for me is to see new folks "get it" as they understand the unlimited potential of the world we are building together.  The vision for Heptio is to accelerate and amplify by bringing Kubernetes to everyone.
 
-Additionally, Back in May 2015 I tweeted this:
+Additionally, back in May 2015 I tweeted this:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I&#39;ve decided my next job will be someplace that pushes me toward healthier interactions. Empathy and diversity.</p>&mdash; Joe Beda (@jbeda) <a href="https://twitter.com/jbeda/status/597948232476397568">May 12, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
